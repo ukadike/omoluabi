@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/source.schema.json",
+  "title": "Source",
+  "description": "Provenance metadata identifying where an observation came from: origin, device, collector, or import method (SSL-002).",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["source_id", "origin_type", "recorded_at"],
+  "properties": {
+    "source_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "origin_type": {"type": "string", "enum": ["web-form", "field-device", "import", "sensor"]},
+    "collector_id": {"type": "string"},
+    "device_id": {"type": "string"},
+    "import_method": {"type": "string"},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  },
+  "examples": [
+    {
+      "source_id": "source-0001",
+      "observation_id": "om-obs-0001",
+      "origin_type": "field-device",
+      "collector_id": "observer-local-001",
+      "device_id": "om-device-prototype-001",
+      "recorded_at": "2026-06-25T19:30:00-04:00"
+    }
+  ]
+}

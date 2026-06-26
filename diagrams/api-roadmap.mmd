@@ -1,0 +1,7 @@
+flowchart TD
+  Schemas[JSON Schemas] --> Validation[Validation Layer]
+  Validation --> Records[Governed Records]
+  Records --> Private[Private Archive]
+  Records --> Public[Public Archive]
+  Public --> API[Public API]
+  API --> Partners[Researchers / Newsrooms / Museums / Communities]

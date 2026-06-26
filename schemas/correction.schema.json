@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/correction.schema.json",
+  "title": "Correction",
+  "description": "Records a correction to a prior record; preserves what changed, when, why, and by whom (SSL-007). See governance/correction-model.md.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["correction_id", "observation_id", "field_or_claim", "prior_value", "new_value", "corrected_by", "corrected_at", "reason"],
+  "properties": {
+    "correction_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "field_or_claim": {"type": "string"},
+    "prior_value": {"type": "string"},
+    "new_value": {"type": "string"},
+    "corrected_by": {"type": "string"},
+    "corrected_at": {"type": "string", "format": "date-time"},
+    "reason": {"type": "string"}
+  },
+  "examples": [
+    {
+      "correction_id": "corr-0001",
+      "observation_id": "om-obs-0001",
+      "field_or_claim": "location.precision",
+      "prior_value": "exact",
+      "new_value": "approximate",
+      "corrected_by": "editor-001",
+      "corrected_at": "2026-06-26T09:00:00-04:00",
+      "reason": "Subject requested reduced location precision after initial review."
+    }
+  ]
+}

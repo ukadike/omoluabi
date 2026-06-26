@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/federation.schema.json",
+  "title": "Federation",
+  "description": "Status: draft placeholder. Records which fields of a record have been exposed to another node or the public API. The federation trust model and manifest shape are not yet scoped — see architecture/sync-and-federation.md.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["federation_id", "observation_id", "exposed_fields"],
+  "properties": {
+    "federation_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "node_id": {"type": "string"},
+    "exposed_fields": {"type": "array", "items": {"type": "string"}},
+    "trust_level": {"type": "string"},
+    "shared_at": {"type": "string", "format": "date-time"}
+  },
+  "examples": [
+    {
+      "federation_id": "fed-0001",
+      "observation_id": "om-obs-0001",
+      "node_id": "node-example",
+      "exposed_fields": ["observation_id", "created_at", "system", "publication_status"],
+      "shared_at": "2026-06-26T09:00:00-04:00"
+    }
+  ]
+}

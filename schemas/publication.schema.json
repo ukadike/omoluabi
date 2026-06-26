@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/publication.schema.json",
+  "title": "Publication",
+  "description": "Records the governed publication_status decision for an observation (SSL-006). See governance/publication-status.md.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["publication_id", "status", "decided_at"],
+  "properties": {
+    "publication_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "status": {"type": "string", "enum": ["private", "internal_review", "public", "embargoed", "withdrawn"]},
+    "decided_by": {"type": "string"},
+    "decided_at": {"type": "string", "format": "date-time"},
+    "embargo_until": {"type": "string", "format": "date-time"},
+    "withdrawal_reason": {"type": "string"}
+  },
+  "examples": [
+    {
+      "publication_id": "pub-0001",
+      "observation_id": "om-obs-0001",
+      "status": "internal_review",
+      "decided_by": "editor-001",
+      "decided_at": "2026-06-25T20:00:00-04:00"
+    }
+  ]
+}

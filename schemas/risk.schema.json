@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/risk.schema.json",
+  "title": "Risk",
+  "description": "Risk assessment used to constrain distribution before exposure (SSL-008). The risk_level scale and risk_factors examples are a first-draft taxonomy, not yet reviewed by Kemi.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["risk_id", "risk_level", "assessed_at"],
+  "properties": {
+    "risk_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "risk_level": {"type": "string", "enum": ["low", "moderate", "high", "severe"]},
+    "risk_factors": {"type": "array", "items": {"type": "string"}},
+    "mitigations": {"type": "string"},
+    "reach_constraint": {"type": "string"},
+    "assessed_by": {"type": "string"},
+    "assessed_at": {"type": "string", "format": "date-time"}
+  },
+  "examples": [
+    {
+      "risk_id": "risk-0001",
+      "observation_id": "om-obs-0001",
+      "risk_level": "low",
+      "risk_factors": [],
+      "assessed_by": "observer-local-001",
+      "assessed_at": "2026-06-25T19:30:00-04:00"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/observation.schema.json",
+  "title": "Observation",
+  "type": "object",
+  "required": ["observation_id", "created_at", "system", "publication_status"],
+  "properties": {
+    "observation_id": {"type": "string"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "system": {"type": "string", "enum": ["omoluabi", "earth-sensors-lab", "echo", "ounje", "accessible-by-design", "umada"]},
+    "observer_id": {"type": "string"},
+    "device_id": {"type": "string"},
+    "location": {
+      "type": "object",
+      "properties": {
+        "lat": {"type": "number"},
+        "lng": {"type": "number"},
+        "precision": {"type": "string", "enum": ["exact", "approximate", "withheld", "unknown"]}
+      }
+    },
+    "media": {
+      "type": "object",
+      "properties": {
+        "audio": {"type": "string"},
+        "image": {"type": "string"},
+        "video": {"type": "string"},
+        "transcript": {"type": "string"}
+      }
+    },
+    "consent_id": {"type": "string"},
+    "source_id": {"type": "string"},
+    "risk_id": {"type": "string"},
+    "accessibility_id": {"type": "string"},
+    "ai_assist": {
+      "type": "object",
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "model": {"type": "string"},
+        "task": {"type": "string"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "human_verified": {"type": "boolean"}
+      }
+    },
+    "publication_status": {"type": "string", "enum": ["private", "internal_review", "public", "embargoed", "withdrawn"]}
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/memory.schema.json",
+  "title": "Memory",
+  "description": "Status: draft. The packet names a Memory Card/schema (STABLE_SCHEMA_CARDS.md, ESL_BRIDGE.md) without specifying its shape. This first draft models a community/oral-memory contribution that may reference one or more observations; it should be revisited once the community-memory research question (research/research-questions.md, question 7) is explored further.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["memory_id", "recorded_at"],
+  "properties": {
+    "memory_id": {"type": "string"},
+    "title": {"type": "string"},
+    "description": {"type": "string"},
+    "related_observation_ids": {"type": "array", "items": {"type": "string"}},
+    "contributors": {"type": "array", "items": {"type": "string"}},
+    "consent_id": {"type": "string"},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "publication_status": {"type": "string", "enum": ["private", "internal_review", "public", "embargoed", "withdrawn"]}
+  },
+  "examples": [
+    {
+      "memory_id": "mem-0001",
+      "title": "Community recollection of the market relocation",
+      "related_observation_ids": ["om-obs-0001"],
+      "contributors": ["community-member-001"],
+      "consent_id": "consent-0001",
+      "recorded_at": "2026-06-26T09:00:00-04:00",
+      "publication_status": "private"
+    }
+  ]
+}

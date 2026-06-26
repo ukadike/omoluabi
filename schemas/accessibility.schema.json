@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/accessibility.schema.json",
+  "title": "Accessibility",
+  "description": "Accessibility metadata required before any object is considered complete for publication (SSL-004).",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["accessibility_id", "recorded_at"],
+  "properties": {
+    "accessibility_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "alt_text": {"type": "string"},
+    "transcript": {"type": "string"},
+    "captions_available": {"type": "boolean"},
+    "plain_language_summary": {"type": "string"},
+    "tactile_or_haptic_equivalent": {"type": "string"},
+    "screen_reader_label": {"type": "string"},
+    "reduced_motion_safe": {"type": "boolean"},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  },
+  "examples": [
+    {
+      "accessibility_id": "access-0001",
+      "observation_id": "om-obs-0001",
+      "alt_text": "Field recording of a community meeting, audio only.",
+      "captions_available": false,
+      "recorded_at": "2026-06-25T19:30:00-04:00"
+    }
+  ]
+}

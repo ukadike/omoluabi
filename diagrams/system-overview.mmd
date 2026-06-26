@@ -1,0 +1,10 @@
+flowchart TD
+  SSL[Small Systems Lab] --> Rules[Rules Library]
+  Rules --> Cards[Schema Cards]
+  Cards --> Schemas[JSON Schemas]
+  Schemas --> Device[Physical Device]
+  Schemas --> Web[Web Engine]
+  Device --> Archive[Archive]
+  Web --> Archive
+  Archive --> API[Future APIs]
+  API --> Federation[Federation]

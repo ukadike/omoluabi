@@ -1,0 +1,11 @@
+{
+  "observation_id": "umada-fragment-0001",
+  "created_at": "2226-03-19T00:00:00Z",
+  "system": "umada",
+  "observer_id": "future-reporter-obscured",
+  "device_id": "omoluabi-future-device",
+  "location": {"precision": "withheld"},
+  "media": {"transcript": "fragmentary record from Cape Wipeout"},
+  "publication_status": "internal_review",
+  "canon_note": "UMADA sandbox record used to stress-test Omoluabi schemas under speculative conditions."
+}

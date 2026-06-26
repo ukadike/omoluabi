@@ -1,24 +1,41 @@
 # Omoluabi
+
 ![Minimal black-and-white line drawing of a woman seated at a desk in Lagos, wearing a headwrap and working on a laptop connected to a small portable publishing device, with cables visible and a faint city skyline in the background.](omoluabi-sketch.png)
 
 ## An accessible portable newsroom system and publishing node.
 
-Omoluabi is an accessible, portable newsroom system designed to help independent publishers reclaim control over how they create, publish, and sustain their work.
+Omoluabi is an open research initiative developing trustworthy infrastructure for observation, documentation, accessibility, provenance, consent, and civic knowledge.
 
-Built to be self-hostable and deployable on low-cost hardware, Omoluabi functions as a portable publishing node. Omoluabi-News serves as the first live implementation of this model.
+Omoluabi-News, an accessible, portable newsroom system, is the first live implementation of this model: self-hostable, deployable on low-cost hardware, and built to help independent publishers reclaim control over how they create, publish, and sustain their work.
 
-The system integrates AI assistance with clear human oversight, prioritizing editorial accountability, accessibility, and long-term autonomy from platform dependence.
+The system integrates AI assistance with clear human oversight, prioritizing editorial accountability, accessibility, and long-term autonomy from platform dependence. Omoluabi is designed to support interconnected deployments, enabling stories to be shared across independent nodes without central platform control.
 
-Omoluabi is designed to support interconnected deployments, enabling stories to be shared across independent nodes without central platform control.
+## Core Principle
+
+> AI assists. Rules govern. Humans publish.
+
+## The Governance Loop
+
+Observation → Consent → Source → Risk → Accessibility → Human Review → Publication Status → Archive → API-ready record
 
 ## Core Principles
 
-- Editorial control with transparent AI assistance  
-- Accessibility-centered design  
-- Portable, self-hosted infrastructure  
-- Durable autonomy from platform dependence  
-- Support for interconnected nodes  
+- Editorial control with transparent AI assistance
+- Accessibility-centered design
+- Portable, self-hosted infrastructure
+- Durable autonomy from platform dependence
+- Support for interconnected nodes
+
+## Start Here
+
+- [`000_START_HERE.md`](000_START_HERE.md) — orientation and reading order
+- [`ROADMAP.md`](ROADMAP.md) — what's built, in progress, and planned
+- [`SSL-METHOD.md`](SSL-METHOD.md) — the Small Systems Lab method this project applies
 
 ## Status
 
-Prototype development and architectural documentation in progress.
+Prototype development and architectural documentation in progress. This repository is being scaffolded in public; see `ROADMAP.md` for what exists today versus what is planned.
+
+## Small Systems Lab
+
+Omoluabi is part of Small Systems Lab, a public-interest lab for tender systems.

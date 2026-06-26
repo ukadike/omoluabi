@@ -1,0 +1,14 @@
+{
+  "observation_id": "esl-obs-0001",
+  "created_at": "2026-06-25T10:00:00-04:00",
+  "system": "earth-sensors-lab",
+  "observer_id": "sensor-kit-001",
+  "device_id": "arduino-nano-33-ble-sense-rev2",
+  "location": {"precision": "approximate"},
+  "sensor_reading": {
+    "soil_moisture": 0.42,
+    "temperature_c": 28.4,
+    "humidity": 0.66
+  },
+  "publication_status": "private"
+}

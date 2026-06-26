@@ -36,6 +36,15 @@ Observation → Consent → Source → Risk → Accessibility → Human Review �
 
 Prototype development and architectural documentation in progress. This repository is being scaffolded in public; see `ROADMAP.md` for what exists today versus what is planned.
 
+## License
+
+This repository uses two licenses, split by content type:
+
+- **Code, JSON Schemas, and firmware** — `schemas/`, `device/`, `web-engine/` code, `api/` — are licensed under [Apache License 2.0](LICENSE).
+- **Documentation, governance, research, and narrative materials** — everything else, including `governance/`, `cards/`, `architecture/`, `research/`, `docs/`, `funding/`, `umada-sandbox/`, `earth-sensors-lab-bridge/`, `diagrams/`, and this README — are licensed under [CC BY 4.0](LICENSE-DOCS.md).
+
+If a specific file's license is unclear from this split, open an issue.
+
 ## Small Systems Lab
 
 Omoluabi is part of Small Systems Lab, a public-interest lab for tender systems.

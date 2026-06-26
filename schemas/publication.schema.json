@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://omoluabi.example/schemas/publication.schema.json",
   "title": "Publication",
-  "description": "Records the governed publication_status decision for an observation (SSL-006). See governance/publication-status.md.",
+  "description": "Records the governed publication_status decision for an observation (SSL-006). This is a separate, later field from consent (schemas/consent.schema.json): consent constrains which status values are reachable, but publication_status is set by human editorial review, not by the device. See governance/publication-status.md and ADR-0004.",
   "version": "0.1.0",
   "type": "object",
   "required": ["publication_id", "status", "decided_at"],

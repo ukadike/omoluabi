@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://omoluabi.example/schemas/consent.schema.json",
   "title": "Consent",
-  "description": "Versioned record of how an observation's subject(s) permit it to be used and shared (SSL-003). The state enum reflects the three states named for the planned device consent switch (DEVICE_MVP_PLAN.md). Reconciliation with the five-state publication_status model is an open question — see governance/consent-model.md.",
+  "description": "Versioned record of how an observation's subject(s) permit it to be used and shared (SSL-003). The state enum reflects the three states named for the planned device consent switch (DEVICE_MVP_PLAN.md). Consent is distinct from, and prior to, the five-state publication_status model: consent constrains which publication statuses are reachable but does not set that field directly. See governance/consent-model.md and ADR-0004.",
   "version": "0.1.0",
   "type": "object",
   "required": ["consent_id", "state", "consent_version", "recorded_at"],

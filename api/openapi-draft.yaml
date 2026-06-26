@@ -1,0 +1,120 @@
+openapi: 3.1.0
+info:
+  title: Omoluabi API (Draft)
+  version: 0.0.1
+  description: >
+    Draft, unimplemented API surface for the Omoluabi governance loop.
+    Every path below is a design sketch, not a working service. No
+    endpoint should be called by production code. See
+    api/api-principles.md and api/versioning.md.
+servers:
+  - url: /api/v0
+    description: Draft namespace. No stability guarantee.
+paths:
+  /schemas:
+    get:
+      summary: List available record schemas
+      responses:
+        "200":
+          description: "Draft — not yet implemented"
+  /rules:
+    get:
+      summary: List governance rules (SSL-001..SSL-010)
+      responses:
+        "200":
+          description: "Draft — not yet implemented"
+  /observations:
+    post:
+      summary: Submit a new observation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/observation.schema.json"
+      responses:
+        "201":
+          description: "Draft — not yet implemented"
+  /observations/{id}:
+    get:
+      summary: Get an observation by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: "Draft — not yet implemented"
+  /consent:
+    post:
+      summary: Record a consent decision
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/consent.schema.json"
+      responses:
+        "201":
+          description: "Draft — not yet implemented"
+  /sources/{id}:
+    get:
+      summary: Get a source record by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: "Draft — not yet implemented"
+  /risk:
+    post:
+      summary: Record a risk assessment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/risk.schema.json"
+      responses:
+        "201":
+          description: "Draft — not yet implemented"
+  /accessibility:
+    post:
+      summary: Record an accessibility assessment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/accessibility.schema.json"
+      responses:
+        "201":
+          description: "Draft — not yet implemented"
+  /publication-decisions:
+    post:
+      summary: Record a human publication decision
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/publication.schema.json"
+      responses:
+        "201":
+          description: "Draft — not yet implemented"
+  /public-archive:
+    get:
+      summary: List publicly archived records
+      responses:
+        "200":
+          description: "Draft — not yet implemented"
+  /federation/manifest:
+    get:
+      summary: Get the federation manifest
+      description: >
+        Depends on the federation trust model, which is not yet scoped.
+        See architecture/sync-and-federation.md and
+        schemas/federation.schema.json.
+      responses:
+        "200":
+          description: "Draft — not yet implemented"

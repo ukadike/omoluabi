@@ -1,0 +1,7 @@
+flowchart LR
+  Buttons[Buttons + Switches] --> UNO[Arduino UNO Q]
+  Nicla[Nicla Vision] --> UNO
+  Sensors[GPS / RTC / Display / Haptics] --> UNO
+  UNO --> Package[Observation Package]
+  Package --> Sync[Sync]
+  Sync --> Web[Omoluabi Web Engine]

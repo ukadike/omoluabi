@@ -14,7 +14,7 @@ Anyone who would see, or stop seeing, the observation as a result of the decisio
 
 ## Consent required
 
-The decision must respect the linked consent record's state; see the open reconciliation question in `governance/consent-model.md`.
+The decision must respect the linked consent record's state. A `private` consent state limits `status` to `private` only; `consented` and `review-public` permit any of the five publication statuses, subject to human review. See the constraint table in `governance/consent-model.md` and ADR-0004.
 
 ## Evidence required
 

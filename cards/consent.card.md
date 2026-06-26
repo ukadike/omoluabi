@@ -46,7 +46,7 @@ Every `consent_version` is preserved; consent is versioned, not overwritten (Con
 
 ## Publication status
 
-Not applicable directly — consent gates publication status but is tracked separately. See `governance/consent-model.md` for the open question of how the two relate.
+Not set directly by this card. Consent constrains which publication statuses are reachable — see the constraint table in `governance/consent-model.md` and ADR-0004 — but the publication status itself is decided separately, later, during human review (SSL-006, `cards/publication.card.md`).
 
 ## Federation status
 

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/ai-permission.schema.json",
+  "title": "AI Permission",
+  "description": "Records an AI-assist action taken on an observation and its human verification, per the AI May / AI May Not lists in governance/ai-permissions.md (SSL-005).",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["ai_permission_id", "task", "human_verified"],
+  "properties": {
+    "ai_permission_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "task": {"type": "string", "enum": ["transcript-draft", "translation-draft", "alt-text-draft", "entity-suggestion", "risk-suggestion", "summary-draft"]},
+    "model": {"type": "string"},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "human_verified": {"type": "boolean"},
+    "human_verified_by": {"type": "string"},
+    "human_verified_at": {"type": "string", "format": "date-time"},
+    "forbidden_actions_acknowledged": {"type": "boolean", "description": "Confirms the AI did not override consent, publish, delete evidence, erase provenance, finalize risk, or decide publication status."}
+  },
+  "examples": [
+    {
+      "ai_permission_id": "aip-0001",
+      "observation_id": "om-obs-0001",
+      "task": "transcript-draft",
+      "model": "local-or-browser-prototype",
+      "confidence": 0.72,
+      "human_verified": false,
+      "forbidden_actions_acknowledged": true
+    }
+  ]
+}

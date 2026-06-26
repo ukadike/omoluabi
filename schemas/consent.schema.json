@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/consent.schema.json",
+  "title": "Consent",
+  "description": "Versioned record of how an observation's subject(s) permit it to be used and shared (SSL-003). The state enum reflects the three states named for the planned device consent switch (DEVICE_MVP_PLAN.md). Reconciliation with the five-state publication_status model is an open question — see governance/consent-model.md.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["consent_id", "state", "consent_version", "recorded_at"],
+  "properties": {
+    "consent_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "state": {"type": "string", "enum": ["private", "consented", "review-public"]},
+    "consent_version": {"type": "integer", "minimum": 1},
+    "subject_acknowledged": {"type": "boolean"},
+    "recorded_by": {"type": "string"},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "notes": {"type": "string"}
+  },
+  "examples": [
+    {
+      "consent_id": "consent-0001",
+      "observation_id": "om-obs-0001",
+      "state": "consented",
+      "consent_version": 1,
+      "subject_acknowledged": true,
+      "recorded_by": "observer-local-001",
+      "recorded_at": "2026-06-25T19:30:00-04:00"
+    }
+  ]
+}

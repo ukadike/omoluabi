@@ -1,0 +1,14 @@
+# License
+
+**Status: decision pending.**
+
+This repository does not yet have a finalized license. Code, schemas, and documentation are shared publicly for review and collaboration, but no license has been formally chosen.
+
+## Open Decision
+
+A likely direction is a split license:
+
+- a permissive open-source license (e.g., MIT or Apache-2.0) for code and JSON Schemas
+- a content license (e.g., CC-BY-4.0) for documentation, research, and narrative materials
+
+This is a decision for the project's maintainer (Kemi) and is intentionally not assumed here. Until a license is chosen, please treat this repository as "all rights reserved" for reuse purposes beyond review and discussion, and open an issue if you need clarity for a specific use case.

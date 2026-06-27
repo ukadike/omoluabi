@@ -16,7 +16,7 @@ Omoluabi is governed before it is built. Contributions are welcome, but every co
 
 1. Open an issue describing the observation, gap, or proposal before writing code or schema.
 2. If your contribution touches governance, schemas, or cards, reference the relevant rule ID(s).
-3. Flag open questions explicitly rather than resolving them silently — see `governance/consent-model.md` for an example of a flagged, unresolved tension.
+3. Flag open questions explicitly rather than resolving them silently — see `research/design-decisions/ADR-0004-consent-and-publication-status-are-distinct.md` for an example of how a flagged open question (originally raised in `research/design-decisions/ADR-0003-device-as-observation-instrument.md`) was carried through to a documented, resolved decision.
 4. Keep documentation and code in the same change when they describe the same decision.
 
 ## Code of Conduct

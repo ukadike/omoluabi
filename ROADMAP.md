@@ -2,27 +2,29 @@
 
 Status legend: **Done** · **In Progress** · **Planned** · **Research**
 
-## Now
+## Scaffolding Status
+
+All directories from the original packet have been scaffolded with documentation, schemas, or plans:
 
 - [Done] Repository scaffold: root documentation, `docs/`, `governance/`, `architecture/`, `research/`
-- [In Progress] `schemas/` and `cards/` — machine-readable JSON Schemas and their human-readable companions
+- [Done] `schemas/` and `cards/` — machine-readable JSON Schemas and their human-readable companions
+- [Done] `device/` — physical field-observation device plan (Arduino UNO Q 2GB + Nicla Vision + Nano 33 BLE Sense Rev2)
+- [Done] `web-engine/` — public-interest editorial intelligence infrastructure plan
+- [Done] `api/` — API roadmap and OpenAPI draft
+- [Done] `accessibility/` — accessibility workflow documentation
+- [Done] `diagrams/` — Mermaid diagram library
+- [Done] `examples/` — example governed records
+- [Done] `funding/` — SSRC and fellowship application materials
+- [Done] `umada-sandbox/` — speculative stress-testing of Omoluabi's schemas
+- [Done] `earth-sensors-lab-bridge/` — Earth Sensors Lab integration notes
+- [Done] LICENSE adopted: Apache-2.0 for code/schemas, CC-BY-4.0 for documentation — see `LICENSE` and `LICENSE-DOCS.md`
+- [Done] Consent/publication-status reconciliation — see `research/design-decisions/ADR-0004-consent-and-publication-status-are-distinct.md`
+
+"Scaffolded" means documentation, schemas, and plans exist — not running code. The device firmware, the web engine, and the API are currently plans and drafts only (the OpenAPI draft marks every response "not yet implemented"); see each directory's README for current status.
 
 ## Next
 
-- [Planned] `device/` — physical field-observation device plan (Arduino UNO Q 2GB + Nicla Vision + Nano 33 BLE Sense Rev2)
-- [Planned] `web-engine/` — public-interest editorial intelligence infrastructure plan
-- [Planned] `api/` — API roadmap and OpenAPI draft
-- [Planned] `accessibility/` — accessibility workflow documentation
-- [Planned] `diagrams/` — Mermaid diagram library
-- [Planned] `examples/` — example governed records
-
-## Later
-
-- [Planned] `funding/` — SSRC and fellowship application materials
-- [Planned] `umada-sandbox/` — speculative stress-testing of Omoluabi's schemas
-- [Planned] `earth-sensors-lab-bridge/` — Earth Sensors Lab integration notes
-- [Research] LICENSE decision (code/schemas vs. documentation licensing)
-- [Research] Reconciliation of the device's consent states with the schema's publication-status states (see `governance/consent-model.md`)
+- [Planned] First running implementation of any layer — device firmware, web engine prototype, or API. None exist yet; all current `device/`, `web-engine/`, and `api/` content is planning documentation, not code.
 
 ## Source
 

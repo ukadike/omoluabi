@@ -13,10 +13,10 @@ AI assists. Rules govern. Humans publish.
 1. `docs/vision.md`
 2. `docs/mvp-plan.md`
 3. `governance/principles.md`
-4. `schemas/` (planned — see `ROADMAP.md`)
-5. `device/README.md` (planned — see `ROADMAP.md`)
-6. `web-engine/README.md` (planned — see `ROADMAP.md`)
-7. `api/api-principles.md` (planned — see `ROADMAP.md`)
+4. `schemas/`
+5. `device/README.md`
+6. `web-engine/README.md`
+7. `api/api-principles.md`
 
 ## What This Is
 
@@ -41,9 +41,9 @@ AI assists. Rules govern. Humans publish.
 - `governance/` — principles, rule library, AI permissions, publication status, consent and correction models
 - `architecture/` — system overview, observation and governance pipelines, data lifecycle, sync/federation
 - `research/` — research questions, literature review, standards, design decisions (ADRs)
-- `schemas/`, `cards/` — machine-readable schemas and human-readable schema cards (planned)
-- `device/`, `web-engine/`, `api/` — hardware, web engine, and API plans (planned)
-- `accessibility/`, `diagrams/`, `examples/` — accessibility workflows, Mermaid diagrams, example records (planned)
-- `funding/`, `umada-sandbox/`, `earth-sensors-lab-bridge/` — funding materials and project bridges (planned)
+- `schemas/`, `cards/` — machine-readable schemas and human-readable schema cards
+- `device/`, `web-engine/`, `api/` — hardware, web engine, and API plans
+- `accessibility/`, `diagrams/`, `examples/` — accessibility workflows, Mermaid diagrams, example records
+- `funding/`, `umada-sandbox/`, `earth-sensors-lab-bridge/` — funding materials and project bridges
 
-Directories marked "planned" above do not exist yet. `ROADMAP.md` tracks the build order; this file will be updated as each stage lands.
+All directories above are scaffolded with documentation, schemas, and plans. Scaffolded is not the same as implemented: the device firmware, web engine, and API exist today as plans and drafts, not running code. See `ROADMAP.md` for current build status.

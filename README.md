@@ -10,6 +10,18 @@ Omoluabi-News, an accessible, portable newsroom system, is the first live implem
 
 The system integrates AI assistance with clear human oversight, prioritizing editorial accountability, accessibility, and long-term autonomy from platform dependence. Omoluabi is designed to support interconnected deployments, enabling stories to be shared across independent nodes without central platform control.
 
+## Why Omoluabi?
+
+Omoluabi begins with a simple question.
+
+> How do we protect stories from erasure?
+
+Rather than starting with software, Omoluabi begins with people, memory, accountability, and community stewardship.
+
+Read the full vision:
+
+**[docs/vision/omoluabi-origin-storyboard.md](docs/vision/omoluabi-origin-storyboard.md)**
+
 ## Core Principle
 
 > AI assists. Rules govern. Humans publish.

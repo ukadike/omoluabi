@@ -169,11 +169,17 @@ function parseCsv(text) {
   });
 }
 
-// A browser-like User-Agent; a custom token risks being bot-blocked by war.gov.
-const USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36 omoluabi-ufo-connection/0.3';
+// A plain UA reaches the war.gov origin; a browser-spoofing UA tripped the
+// site's bot protection (403). Override with PURSUE_USER_AGENT if needed.
+const USER_AGENT = process.env.PURSUE_USER_AGENT || 'omoluabi-ufo-connection/0.3 (+https://github.com/ukadike/omoluabi)';
 
 async function fetchText(url) {
-  const response = await fetch(url, { headers: { 'user-agent': USER_AGENT } });
+  const response = await fetch(url, {
+    headers: {
+      'user-agent': USER_AGENT,
+      'accept': 'text/csv,text/html,application/xhtml+xml,*/*'
+    }
+  });
   if (!response.ok) {
     throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
   }

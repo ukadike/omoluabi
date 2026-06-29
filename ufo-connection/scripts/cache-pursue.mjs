@@ -3,8 +3,18 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const SOURCE_PAGE = 'https://www.war.gov/ufo/';
-const DEFAULT_CSV_URL = 'https://www.war.gov/Portals/1/Interactive/2026/UFO/uap-csv.csv';
-const CSV_URL = process.env.PURSUE_CSV_URL || DEFAULT_CSV_URL;
+// PURSUE_CSV_URL, when set, is used verbatim and bypasses page discovery.
+const CSV_URL_OVERRIDE = process.env.PURSUE_CSV_URL || '';
+
+// The official page references the live CSV path from its own JavaScript and it
+// has changed before, so we discover .csv links from the page at run time.
+// These known paths are tried as fallbacks if discovery finds nothing.
+const FALLBACK_CSV_URLS = [
+  'https://www.war.gov/Portals/1/Interactive/2026/UFO/uap-csv.csv',
+  'https://www.war.gov/Portals/1/Interactive/2026/UFO/uap-release001.csv',
+  'https://www.war.gov/Portals/1/Interactive/2026/UFO/uap-release002.csv',
+  'https://www.war.gov/Portals/1/Interactive/2026/UFO/uap-release003.csv'
+];
 
 // Resolve output paths relative to this script so the cache works regardless of
 // the working directory the script is invoked from.
@@ -15,14 +25,50 @@ const RELEASE_DIR = path.join(OUT_DIR, 'releases');
 async function main() {
   await fs.mkdir(RELEASE_DIR, { recursive: true });
   const fetchedAt = new Date().toISOString();
-  const csv = await fetchText(CSV_URL);
-  const parsed = parseCsv(csv);
 
-  if (!Array.isArray(parsed) || parsed.length === 0) {
-    throw new Error('Refusing to overwrite cache: parsed zero records.');
+  // Build the candidate CSV list: an explicit override wins; otherwise discover
+  // .csv links from the official page and append the known fallbacks.
+  let candidates;
+  if (CSV_URL_OVERRIDE) {
+    candidates = [CSV_URL_OVERRIDE];
+  } else {
+    const discovered = await discoverCsvUrls(SOURCE_PAGE);
+    candidates = [...new Set([...discovered, ...FALLBACK_CSV_URLS])];
+    console.log('Candidate CSV URLs:', candidates);
   }
 
-  const headers = Object.keys(parsed[0] || {});
+  // Fetch every candidate that responds; merge and de-duplicate the rows so a
+  // combined CSV and per-release CSVs can coexist without double-counting.
+  const seen = new Set();
+  const parsed = [];
+  const usedUrls = [];
+  let lastError;
+  for (const url of candidates) {
+    try {
+      const rows = parseCsv(await fetchText(url));
+      if (!rows.length) continue;
+      let added = 0;
+      for (const row of rows) {
+        const key = JSON.stringify(row);
+        if (seen.has(key)) continue;
+        seen.add(key);
+        parsed.push(row);
+        added++;
+      }
+      if (added) usedUrls.push(url);
+      console.log(`Fetched ${rows.length} rows (${added} new) from ${url}`);
+    } catch (error) {
+      lastError = error;
+      console.log(`Skipped ${url}: ${error.message}`);
+    }
+  }
+
+  if (parsed.length === 0) {
+    throw new Error(`Refusing to overwrite cache: no PURSUE CSV could be fetched or parsed. Last error: ${lastError ? lastError.message : 'all candidates were empty'}`);
+  }
+
+  const CSV_URL = usedUrls.length === 1 ? usedUrls[0] : usedUrls;
+  const headers = [...new Set(parsed.flatMap(row => Object.keys(row)))];
   console.log('Observed CSV headers:', headers);
 
   const records = parsed.map((row, index) => normalizePursueRow(row, index));
@@ -123,12 +169,39 @@ function parseCsv(text) {
   });
 }
 
+// A browser-like User-Agent; a custom token risks being bot-blocked by war.gov.
+const USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36 omoluabi-ufo-connection/0.3';
+
 async function fetchText(url) {
-  const response = await fetch(url, { headers: { 'user-agent': 'omoluabi-ufo-connection/0.2' } });
+  const response = await fetch(url, { headers: { 'user-agent': USER_AGENT } });
   if (!response.ok) {
     throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
   }
   return response.text();
+}
+
+// Discover absolute .csv URLs referenced anywhere in the official page's HTML or
+// inline JavaScript. Relative paths are resolved against war.gov. Returns [] if
+// the page itself cannot be fetched (callers fall back to known URLs).
+async function discoverCsvUrls(pageUrl) {
+  let html;
+  try {
+    html = await fetchText(pageUrl);
+  } catch (error) {
+    console.log(`Could not load ${pageUrl} for CSV discovery: ${error.message}`);
+    return [];
+  }
+  const found = new Set();
+  const re = /(https?:\/\/[^\s"'<>()]+?\.csv|\/[^\s"'<>()]+?\.csv)/gi;
+  let match;
+  while ((match = re.exec(html)) !== null) {
+    try {
+      found.add(new URL(match[1], 'https://www.war.gov').href);
+    } catch {
+      // ignore malformed matches
+    }
+  }
+  return [...found];
 }
 
 function normalizePursueRow(row, index) {

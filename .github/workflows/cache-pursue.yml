@@ -18,12 +18,13 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
+      # No PURSUE_CSV_URL is set so the script discovers the live CSV link(s)
+      # from the official page. Set PURSUE_CSV_URL here only to pin a specific
+      # endpoint and bypass discovery.
       - name: Fetch and cache PURSUE data
         working-directory: ufo-connection
-        env:
-          PURSUE_CSV_URL: https://www.war.gov/Portals/1/Interactive/2026/UFO/uap-csv.csv
         run: npm run cache:pursue
 
       - name: Commit updated data

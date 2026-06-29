@@ -36,12 +36,13 @@ overwritten with partial data.
 ## Official source
 
 - PURSUE official page: https://www.war.gov/ufo/
-- Default CSV endpoint (verify before relying on it):
-  `https://www.war.gov/Portals/1/Interactive/2026/UFO/uap-csv.csv`
 
-If the endpoint changes, update `PURSUE_CSV_URL` in
-`.github/workflows/cache-pursue.yml` (repository root) or pass it as an
-environment variable when running the script.
+The official CSV path is referenced from the page's own JavaScript and has
+changed before, so the cache script **discovers `.csv` link(s) from the page at
+run time**, fetches and merges them (combined or per-release), and falls back to
+known paths (`uap-csv.csv`, `uap-release001..003.csv`) if discovery finds none.
+To pin a specific endpoint and bypass discovery, set `PURSUE_CSV_URL` (in
+`.github/workflows/cache-pursue.yml` or as an environment variable).
 
 ## Serve locally
 

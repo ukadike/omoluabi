@@ -32,6 +32,16 @@ Observation → Consent → Source → Risk → Accessibility → Human Review �
 - [`ROADMAP.md`](ROADMAP.md) — what's built, in progress, and planned
 - [`SSL-METHOD.md`](SSL-METHOD.md) — the Small Systems Lab method this project applies
 
+## Demonstrations
+
+- [`ufo-connection/`](ufo-connection/) — **The UFO Connection**, an Omoluabi user case that
+  reads official PURSUE UAP/UFO disclosure records through the evidence-reading layer (known /
+  missing / unresolved), keeping official records separate from public discourse and making no
+  claims about the phenomena. Data is cached locally by a scheduled GitHub Action.
+- [`world-layer-sandbox/`](world-layer-sandbox/) — exploratory **Umada world-layer** visuals
+  (e.g. the *Coastal Relay* p5 sketch), kept deliberately separate from the archival layer:
+  non-canon, reduced-motion aware, offline.
+
 ## Status
 
 Prototype development and architectural documentation in progress. This repository is being scaffolded in public; see `ROADMAP.md` for what exists today versus what is planned.
@@ -40,8 +50,10 @@ Prototype development and architectural documentation in progress. This reposito
 
 This repository uses two licenses, split by content type:
 
-- **Code, JSON Schemas, and firmware** — `schemas/`, `device/`, `web-engine/` code, `api/` — are licensed under [Apache License 2.0](LICENSE).
+- **Code, JSON Schemas, and firmware** — `schemas/`, `device/`, `web-engine/` code, `api/`, and the demonstration code in `ufo-connection/` and `world-layer-sandbox/` — are licensed under [Apache License 2.0](LICENSE).
 - **Documentation, governance, research, and narrative materials** — everything else, including `governance/`, `cards/`, `architecture/`, `research/`, `docs/`, `funding/`, `umada-sandbox/`, `earth-sensors-lab-bridge/`, `diagrams/`, and this README — are licensed under [CC BY 4.0](LICENSE-DOCS.md).
+
+One exception: `world-layer-sandbox/p5-coastal-relay/vendor/p5.min.js` is third-party software (p5.js) under its own LGPL-2.1 license, included verbatim as `vendor/p5-LICENSE.txt`.
 
 If a specific file's license is unclear from this split, open an issue.
 

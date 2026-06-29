@@ -45,5 +45,7 @@ AI assists. Rules govern. Humans publish.
 - `device/`, `web-engine/`, `api/` — hardware, web engine, and API plans
 - `accessibility/`, `diagrams/`, `examples/` — accessibility workflows, Mermaid diagrams, example records
 - `funding/`, `umada-sandbox/`, `earth-sensors-lab-bridge/` — funding materials and project bridges
+- `ufo-connection/` — running demonstration: the UFO Connection, an Omoluabi user case that reads official PURSUE UAP/UFO records through the evidence-reading layer
+- `world-layer-sandbox/` — exploratory Umada world-layer visuals (non-canon, kept separate from the archival layer)
 
-All directories above are scaffolded with documentation, schemas, and plans. Scaffolded is not the same as implemented: the device firmware, web engine, and API exist today as plans and drafts, not running code. See `ROADMAP.md` for current build status.
+Most directories above are scaffolded with documentation, schemas, and plans. Scaffolded is not the same as implemented: the device firmware, web engine, and API exist today as plans and drafts, not running code. The exception is `ufo-connection/`, a working demonstration. See `ROADMAP.md` for current build status.

@@ -20,6 +20,7 @@ let cycleStart = 0;
 const CYCLE = 7200;        // ms for one tick-tick-tick-tick-BOOM cycle
 const TICKS = [0.10, 0.22, 0.34, 0.46];   // four ticks
 const BOOM = 0.60;          // the bloom
+const STATIC_PHASE = 0.66;  // reduced-motion still frame: bloom mid-expansion
 let grain;                  // pre-rendered painted grain overlay
 
 function setup() {
@@ -35,9 +36,16 @@ function setup() {
 
   reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   cycleStart = millis();
-  if (reduceMotion) {
+
+  // ?phase=0..1 freezes the scene at one moment (handy for static previews).
+  const frozen = parseFloat(new URLSearchParams(location.search).get('phase'));
+  if (!Number.isNaN(frozen)) {
     motionOn = false;
-    drawScene(BOOM + 0.04); // a settled frame that still shows the bloom
+    drawScene(Math.max(0, Math.min(1, frozen)));
+    noLoop();
+  } else if (reduceMotion) {
+    motionOn = false;
+    drawScene(STATIC_PHASE); // one still frame caught mid-bloom
     noLoop();
   }
   syncMotionButton();
@@ -148,15 +156,27 @@ function paintRelay(phase) {
   const bl = (phase - BOOM) / 0.34;
   if (bl >= 0 && bl <= 1) {
     const ease = 1 - Math.pow(1 - bl, 3);
-    const radius = lerp(10, width * 0.7, ease);
-    const alpha = (1 - bl) * 200;
+    const radius = lerp(12, width * 1.0, ease);
+    const fade = Math.pow(1 - bl, 1.3);          // hold brightness longer
+
+    // initial white flash + a vertical light pillar at the origin
+    if (bl < 0.5) {
+      const flash = (0.5 - bl) / 0.5;
+      glow(width * 0.5, horizon, lerp(60, 200, bl), color(255, 251, 240), 245 * flash);
+      noStroke();
+      fill(255, 250, 235, 150 * flash);
+      ellipse(width * 0.5, horizon, lerp(26, 120, bl), height * lerp(0.5, 1.1, bl));
+    }
+
+    // bright concentric rings that arc up into the sky and down over the water
     noFill();
     for (let r = 0; r < 4; r++) {
-      stroke(255, 240, 210, alpha * (1 - r * 0.2));
-      strokeWeight(lerp(6, 1, bl));
-      ellipse(width * 0.5, horizon, radius * (1 + r * 0.12), radius * (0.5 + r * 0.06));
+      stroke(255, 248, 230, 255 * fade * (1 - r * 0.14));
+      strokeWeight(lerp(11, 2.5, bl));
+      ellipse(width * 0.5, horizon, radius * (1 + r * 0.18), radius * (0.7 + r * 0.1));
     }
-    glow(width * 0.5, horizon, lerp(30, 80, bl), color(255, 245, 220), alpha);
+    // sustained core glow on the horizon
+    glow(width * 0.5, horizon, lerp(60, 150, bl), color(255, 249, 230), 220 * fade);
   }
 }
 
@@ -233,7 +253,7 @@ function windowResized() {
   const w = Math.min(host.clientWidth || 960, 1100);
   resizeCanvas(w, Math.round(w * 0.5625));
   buildGrain();
-  if (!isLooping()) drawScene(reduceMotion ? BOOM + 0.04 : ((millis() - cycleStart) % CYCLE) / CYCLE);
+  if (!isLooping()) drawScene(reduceMotion ? STATIC_PHASE : ((millis() - cycleStart) % CYCLE) / CYCLE);
 }
 
 window.addEventListener('DOMContentLoaded', () => {

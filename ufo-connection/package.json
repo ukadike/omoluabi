@@ -1,0 +1,12 @@
+{
+  "name": "omoluabi-ufo-connection",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cache:pursue": "node scripts/cache-pursue.mjs"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.6"
+  }
+}

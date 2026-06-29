@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Omoluabi — The UFO Connection</title>
+  <link rel="stylesheet" href="./css/ufo-connection.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <p class="label">OMOLUABI USER CASE</p>
+    <h1>The UFO Connection</h1>
+    <p class="dek">A small public-interest demonstration of official UAP disclosure records, public discourse, and the Omoluabi evidence-reading layer.</p>
+    <blockquote>Omoluabi does not tell you what to believe. It helps you see what is there, what is missing, and what questions remain.</blockquote>
+  </header>
+
+  <main id="main">
+    <section aria-labelledby="status-heading" class="panel">
+      <h2 id="status-heading">Data status</h2>
+      <div id="data-status" aria-live="polite">Loading local disclosure cache…</div>
+    </section>
+
+    <section aria-labelledby="filters-heading" class="panel">
+      <h2 id="filters-heading">Explore records</h2>
+      <div class="controls">
+        <label>Release
+          <select id="release-filter">
+            <option value="all">All releases</option>
+          </select>
+        </label>
+        <label>Type
+          <select id="type-filter">
+            <option value="all">All types</option>
+          </select>
+        </label>
+        <label>Search
+          <input id="search-input" type="search" placeholder="agency, title, location, description" />
+        </label>
+      </div>
+      <p id="record-count-message" aria-live="polite" aria-atomic="true"></p>
+    </section>
+
+    <section aria-labelledby="records-heading" class="panel">
+      <h2 id="records-heading">Official records</h2>
+      <div id="records" class="records" aria-label="Official PURSUE records"></div>
+    </section>
+
+    <section aria-labelledby="discourse-heading" class="panel">
+      <h2 id="discourse-heading">Beautiful Disclosure</h2>
+      <p class="quiet">Public conversation, hearings, interviews, and YouTube discussions. This layer is commentary and discourse, not official evidence.</p>
+      <div id="public-discourse" class="records"></div>
+    </section>
+
+    <section aria-labelledby="ontology-heading" class="panel">
+      <h2 id="ontology-heading">Ontological Realities</h2>
+      <p>This layer keeps different ways of knowing separate. It does not collapse evidence into belief or speculation into fact.</p>
+      <ul class="ontology-list">
+        <li><strong>Evidence:</strong> what the official record contains.</li>
+        <li><strong>Interpretation:</strong> what a reader or institution thinks the evidence may mean.</li>
+        <li><strong>Hypothesis:</strong> a testable explanation that needs more evidence.</li>
+        <li><strong>Belief:</strong> a meaning framework held by a community or individual.</li>
+        <li><strong>Speculation:</strong> an imaginative possibility not yet supported by the record.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Official source: <a href="https://www.war.gov/ufo/" rel="noopener noreferrer">PURSUE / WAR.GOV UFO</a></p>
+  </footer>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

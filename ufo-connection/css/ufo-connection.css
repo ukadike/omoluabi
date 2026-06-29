@@ -1,0 +1,124 @@
+:root {
+  --paper: #efece2;
+  --ink: #1a1a1a;
+  --muted: #56534d;
+  --line: #d0cdc6;
+  --panel: #f8f6ef;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+}
+
+a { color: inherit; text-decoration-thickness: 0.08em; }
+
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.5rem;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.site-header, main, .site-footer {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+.label, .quiet, .meta {
+  color: var(--muted);
+  font-family: "Courier Prime", "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2.4rem, 7vw, 5.4rem); margin: 0.2rem 0 1rem; }
+
+.dek { max-width: 760px; font-size: 1.15rem; }
+
+blockquote {
+  border-left: 3px solid var(--ink);
+  margin: 1.5rem 0 0;
+  padding-left: 1rem;
+  max-width: 760px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.panel {
+  border-bottom: 1px solid var(--line);
+  padding: 1.5rem 0;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+label { font-weight: 700; }
+
+input, select, button {
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.7rem;
+  border: 1px solid var(--ink);
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+}
+
+.records {
+  display: grid;
+  gap: 1rem;
+}
+
+.record-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 1rem;
+}
+
+.record-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.field-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.3rem 1rem;
+}
+
+.field-list dt { font-weight: 700; }
+.field-list dd { margin: 0; }
+
+.media-preview img { max-width: 100%; height: auto; border: 1px solid var(--line); }
+
+.ontology-list { columns: 2; }
+
+@media (max-width: 760px) {
+  .controls, .record-grid { grid-template-columns: 1fr; }
+  .ontology-list { columns: 1; }
+  .site-header, main, .site-footer { padding: 1rem; }
+}

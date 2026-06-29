@@ -1,0 +1,43 @@
+name: Cache PURSUE Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 8 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        working-directory: ufo-connection
+        run: npm install
+
+      - name: Fetch and cache PURSUE data
+        working-directory: ufo-connection
+        env:
+          PURSUE_CSV_URL: https://www.war.gov/Portals/1/Interactive/2026/UFO/uap-csv.csv
+        run: npm run cache:pursue
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add ufo-connection/data/
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "chore: update UAP disclosure data [skip ci]"
+            git push
+          fi

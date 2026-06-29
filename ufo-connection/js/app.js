@@ -12,19 +12,17 @@ const discourseEl = document.querySelector('#public-discourse');
 const csvInput = document.querySelector('#csv-file');
 const loadStatus = document.querySelector('#load-status');
 const downloadButton = document.querySelector('#download-json');
+const resetButton = document.querySelector('#reset-data');
 
 let allRecords = [];
+let cachedDisclosure = null;
 let loadedDisclosure = null;
 
 init().catch(showFatalError);
 
 async function init() {
-  const disclosure = await loadDisclosure();
-  allRecords = (Array.isArray(disclosure.records) ? disclosure.records : []).map(normalizeRecord);
-
-  populateFilters(allRecords);
-  renderRecords(allRecords);
-  renderStatus(disclosure, allRecords);
+  cachedDisclosure = await loadDisclosure();
+  applyCachedDisclosure();
   await renderBeautifulDisclosure();
 
   releaseFilter.addEventListener('change', applyFilters);
@@ -32,6 +30,27 @@ async function init() {
   searchInput.addEventListener('input', applyFilters);
   if (csvInput) csvInput.addEventListener('change', handleCsvFile);
   if (downloadButton) downloadButton.addEventListener('click', downloadDisclosure);
+  if (resetButton) resetButton.addEventListener('click', resetToCache);
+}
+
+function applyCachedDisclosure() {
+  const records = (Array.isArray(cachedDisclosure.records) ? cachedDisclosure.records : []).map(normalizeRecord);
+  allRecords = records;
+  resetFilter(releaseFilter);
+  resetFilter(typeFilter);
+  populateFilters(allRecords);
+  searchInput.value = '';
+  renderRecords(allRecords);
+  renderStatus(cachedDisclosure, allRecords);
+}
+
+function resetToCache() {
+  applyCachedDisclosure();
+  loadedDisclosure = null;
+  downloadButton.hidden = true;
+  resetButton.hidden = true;
+  if (csvInput) csvInput.value = '';
+  loadStatus.textContent = 'Cleared. Showing the cached records again.';
 }
 
 function handleCsvFile(event) {
@@ -67,6 +86,7 @@ function handleCsvFile(event) {
       records
     };
     downloadButton.hidden = false;
+    resetButton.hidden = false;
   };
   reader.readAsText(file);
 }

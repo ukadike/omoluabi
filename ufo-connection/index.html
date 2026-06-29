@@ -33,9 +33,12 @@
         <input id="csv-file" type="file" accept=".csv,text/csv" />
       </label>
       <p id="load-status" aria-live="polite"></p>
-      <p><button id="download-json" type="button" hidden>Download as disclosure.json</button>
-        <span class="quiet">Save this into <code>ufo-connection/data/</code> and commit it to make the records permanent.</span>
+      <p>
+        <button id="download-json" type="button" hidden>Download as disclosure.json</button>
+        <button id="reset-data" type="button" hidden>Clear loaded data</button>
       </p>
+      <p class="quiet">Download saves the records so you can put them into
+        <code>ufo-connection/data/</code> and commit them. Clear returns to the cached records.</p>
     </section>
 
     <section aria-labelledby="filters-heading" class="panel">

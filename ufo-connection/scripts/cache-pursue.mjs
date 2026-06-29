@@ -1,4 +1,3 @@
-import { parse } from 'csv-parse/sync';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -17,13 +16,7 @@ async function main() {
   await fs.mkdir(RELEASE_DIR, { recursive: true });
   const fetchedAt = new Date().toISOString();
   const csv = await fetchText(CSV_URL);
-  const parsed = parse(csv, {
-    bom: true,
-    columns: true,
-    skip_empty_lines: true,
-    trim: true,
-    relax_column_count: true
-  });
+  const parsed = parseCsv(csv);
 
   if (!Array.isArray(parsed) || parsed.length === 0) {
     throw new Error('Refusing to overwrite cache: parsed zero records.');
@@ -79,6 +72,55 @@ async function main() {
   // Only write after all fetch/parse/normalization succeeds.
   await Promise.all(filesToWrite.map(file => fs.writeFile(file.path, JSON.stringify(file.data, null, 2))));
   console.log(`Cached ${validRecords.length} PURSUE records from ${CSV_URL}`);
+}
+
+// Minimal dependency-free RFC 4180-style CSV parser. Handles quoted fields,
+// embedded commas/newlines, "" escaping, BOM, and CRLF. The first non-empty
+// row is treated as the header; each record is returned as a trimmed object.
+// Short or long rows are tolerated (extra cells ignored, missing cells empty).
+function parseCsv(text) {
+  const rows = [];
+  let field = '';
+  let row = [];
+  let inQuotes = false;
+  const src = text.charCodeAt(0) === 0xfeff ? text.slice(1) : text; // strip BOM
+
+  const endField = () => { row.push(field); field = ''; };
+  const endRow = () => { endField(); rows.push(row); row = []; };
+
+  for (let i = 0; i < src.length; i++) {
+    const ch = src[i];
+    if (inQuotes) {
+      if (ch === '"') {
+        if (src[i + 1] === '"') { field += '"'; i++; }
+        else inQuotes = false;
+      } else {
+        field += ch;
+      }
+    } else if (ch === '"') {
+      inQuotes = true;
+    } else if (ch === ',') {
+      endField();
+    } else if (ch === '\n') {
+      endRow();
+    } else if (ch === '\r') {
+      // swallow; \n (if present) ends the row
+    } else {
+      field += ch;
+    }
+  }
+  // flush trailing field/row if the file did not end with a newline
+  if (field !== '' || row.length) endRow();
+
+  const nonEmpty = rows.filter(r => r.some(c => c.trim() !== ''));
+  if (!nonEmpty.length) return [];
+
+  const headers = nonEmpty[0].map(h => h.trim());
+  return nonEmpty.slice(1).map(cells => {
+    const record = {};
+    headers.forEach((key, idx) => { record[key] = (cells[idx] ?? '').trim(); });
+    return record;
+  });
 }
 
 async function fetchText(url) {

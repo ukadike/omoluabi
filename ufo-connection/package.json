@@ -5,8 +5,5 @@
   "type": "module",
   "scripts": {
     "cache:pursue": "node scripts/cache-pursue.mjs"
-  },
-  "dependencies": {
-    "csv-parse": "^5.5.6"
   }
 }

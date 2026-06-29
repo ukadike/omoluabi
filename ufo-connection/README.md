@@ -55,14 +55,14 @@ python3 -m http.server 8000 -d ufo-connection
 
 ```bash
 cd ufo-connection
-npm install
-npm run cache:pursue
+npm run cache:pursue        # or: node scripts/cache-pursue.mjs
 ```
 
-The script writes `data/disclosure.json`, per-release files under
-`data/releases/`, and `data/schema-observation.json` (the real observed CSV
-headers). Output paths are resolved relative to the script, so it works from any
-working directory.
+No dependencies and no `npm install` are required — the script uses a built-in
+CSV parser and Node's `fetch`. It writes `data/disclosure.json`, per-release
+files under `data/releases/`, and `data/schema-observation.json` (the real
+observed CSV headers). Output paths are resolved relative to the script, so it
+works from any working directory.
 
 ## Folder structure
 

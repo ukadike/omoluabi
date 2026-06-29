@@ -50,10 +50,10 @@ Prototype development and architectural documentation in progress. This reposito
 
 This repository uses two licenses, split by content type:
 
-- **Code, JSON Schemas, and firmware** — `schemas/`, `device/`, `web-engine/` code, `api/`, and the demonstration code in `ufo-connection/` and `world-layer-sandbox/` — are licensed under [Apache License 2.0](LICENSE).
+- **Code, JSON Schemas, and firmware** — `schemas/`, `device/`, `web-engine/` code, `api/` — are licensed under [Apache License 2.0](LICENSE).
 - **Documentation, governance, research, and narrative materials** — everything else, including `governance/`, `cards/`, `architecture/`, `research/`, `docs/`, `funding/`, `umada-sandbox/`, `earth-sensors-lab-bridge/`, `diagrams/`, and this README — are licensed under [CC BY 4.0](LICENSE-DOCS.md).
 
-One exception: `world-layer-sandbox/p5-coastal-relay/vendor/p5.min.js` is third-party software (p5.js) under its own LGPL-2.1 license, included verbatim as `vendor/p5-LICENSE.txt`.
+The demonstration directories follow the same split (code under Apache-2.0, docs under CC BY 4.0). One exception: `world-layer-sandbox/p5-coastal-relay/vendor/p5.min.js` is third-party software (p5.js) under its own LGPL-2.1 license, included verbatim as `vendor/p5-LICENSE.txt`.
 
 If a specific file's license is unclear from this split, open an issue.
 

@@ -21,6 +21,23 @@
       <div id="data-status" aria-live="polite">Loading local disclosure cache…</div>
     </section>
 
+    <section aria-labelledby="load-heading" class="panel">
+      <h2 id="load-heading">Load official records</h2>
+      <p class="quiet">If no records are shown, the automated cache could not reach the
+        official source. You can load them yourself, no command line needed:</p>
+      <ol class="load-steps">
+        <li>Open the <a href="https://www.war.gov/ufo/" rel="noopener noreferrer">official PURSUE page</a> and download its records as a CSV file.</li>
+        <li>Choose that file below. It is read only in your browser — nothing is uploaded, and no request is made to war.gov from this page.</li>
+      </ol>
+      <label>PURSUE CSV file
+        <input id="csv-file" type="file" accept=".csv,text/csv" />
+      </label>
+      <p id="load-status" aria-live="polite"></p>
+      <p><button id="download-json" type="button" hidden>Download as disclosure.json</button>
+        <span class="quiet">Save this into <code>ufo-connection/data/</code> and commit it to make the records permanent.</span>
+      </p>
+    </section>
+
     <section aria-labelledby="filters-heading" class="panel">
       <h2 id="filters-heading">Explore records</h2>
       <div class="controls">

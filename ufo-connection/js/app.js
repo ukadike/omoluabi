@@ -1,5 +1,6 @@
 import { normalizeRecord, getSearchableText } from './data-normalizer.js';
 import { loadBeautifulDisclosure, extractYouTubeEmbedUrl } from './youtube-layer.js';
+import { recordsFromCsv } from './csv-loader.js';
 
 const statusEl = document.querySelector('#data-status');
 const releaseFilter = document.querySelector('#release-filter');
@@ -8,8 +9,12 @@ const searchInput = document.querySelector('#search-input');
 const countMessage = document.querySelector('#record-count-message');
 const recordsEl = document.querySelector('#records');
 const discourseEl = document.querySelector('#public-discourse');
+const csvInput = document.querySelector('#csv-file');
+const loadStatus = document.querySelector('#load-status');
+const downloadButton = document.querySelector('#download-json');
 
 let allRecords = [];
+let loadedDisclosure = null;
 
 init().catch(showFatalError);
 
@@ -25,6 +30,63 @@ async function init() {
   releaseFilter.addEventListener('change', applyFilters);
   typeFilter.addEventListener('change', applyFilters);
   searchInput.addEventListener('input', applyFilters);
+  if (csvInput) csvInput.addEventListener('change', handleCsvFile);
+  if (downloadButton) downloadButton.addEventListener('click', downloadDisclosure);
+}
+
+function handleCsvFile(event) {
+  const file = event.target.files && event.target.files[0];
+  if (!file) return;
+  loadStatus.textContent = `Reading "${file.name}"…`;
+  const reader = new FileReader();
+  reader.onerror = () => { loadStatus.textContent = 'That file could not be read.'; };
+  reader.onload = () => {
+    let records;
+    try {
+      records = recordsFromCsv(String(reader.result));
+    } catch {
+      loadStatus.textContent = 'That file could not be parsed as CSV. Make sure it is the PURSUE CSV.';
+      return;
+    }
+    if (!records.length) {
+      loadStatus.textContent = 'No records were found in that file. Make sure it is the PURSUE CSV.';
+      return;
+    }
+    allRecords = records.map(normalizeRecord);
+    resetFilter(releaseFilter);
+    resetFilter(typeFilter);
+    populateFilters(allRecords);
+    searchInput.value = '';
+    renderRecords(allRecords);
+    statusEl.textContent = `${records.length} records loaded from "${file.name}" in this browser session. This data is shown here only and is not saved to the site.`;
+    loadStatus.textContent = `Loaded ${records.length} records. Filters and search now work on them.`;
+    loadedDisclosure = {
+      _fetchedAt: new Date().toISOString(),
+      source: 'https://www.war.gov/ufo/',
+      note: 'Loaded in-browser from a user-provided CSV file.',
+      records
+    };
+    downloadButton.hidden = false;
+  };
+  reader.readAsText(file);
+}
+
+function downloadDisclosure() {
+  if (!loadedDisclosure) return;
+  const blob = new Blob([JSON.stringify(loadedDisclosure, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'disclosure.json';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+function resetFilter(select) {
+  while (select.options.length > 1) select.remove(1);
+  select.value = 'all';
 }
 
 async function loadDisclosure() {

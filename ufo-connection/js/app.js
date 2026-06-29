@@ -1,6 +1,7 @@
 import { normalizeRecord, getSearchableText } from './data-normalizer.js';
 import { loadBeautifulDisclosure, extractYouTubeEmbedUrl } from './youtube-layer.js';
 import { recordsFromCsv } from './csv-loader.js';
+import { renderOverview } from './overview.js';
 
 const statusEl = document.querySelector('#data-status');
 const releaseFilter = document.querySelector('#release-filter');
@@ -8,11 +9,15 @@ const typeFilter = document.querySelector('#type-filter');
 const searchInput = document.querySelector('#search-input');
 const countMessage = document.querySelector('#record-count-message');
 const recordsEl = document.querySelector('#records');
+const overviewEl = document.querySelector('#overview');
 const discourseEl = document.querySelector('#public-discourse');
 const csvInput = document.querySelector('#csv-file');
+const dropzone = document.querySelector('#dropzone');
 const loadStatus = document.querySelector('#load-status');
 const downloadButton = document.querySelector('#download-json');
 const resetButton = document.querySelector('#reset-data');
+const sampleBanner = document.querySelector('#sample-banner');
+const loadSampleButton = document.querySelector('#load-sample');
 
 let allRecords = [];
 let cachedDisclosure = null;
@@ -22,39 +27,76 @@ init().catch(showFatalError);
 
 async function init() {
   cachedDisclosure = await loadDisclosure();
-  applyCachedDisclosure();
+  const cachedRecords = Array.isArray(cachedDisclosure.records) ? cachedDisclosure.records : [];
+  if (cachedRecords.length) {
+    showOfficialCache();
+  } else {
+    // Nothing cached (war.gov is unreachable from automation), so populate the
+    // page with clearly-labelled sample data — a visitor sees it working at once.
+    await loadSample('No official records are cached yet, so this is sample data.');
+  }
   await renderBeautifulDisclosure();
 
   releaseFilter.addEventListener('change', applyFilters);
   typeFilter.addEventListener('change', applyFilters);
   searchInput.addEventListener('input', applyFilters);
-  if (csvInput) csvInput.addEventListener('change', handleCsvFile);
+  if (csvInput) csvInput.addEventListener('change', event => readCsvFile(event.target.files && event.target.files[0]));
   if (downloadButton) downloadButton.addEventListener('click', downloadDisclosure);
-  if (resetButton) resetButton.addEventListener('click', resetToCache);
+  if (resetButton) resetButton.addEventListener('click', showOfficialCache);
+  if (loadSampleButton) loadSampleButton.addEventListener('click', () => loadSample());
+  setupDropzone();
 }
 
-function applyCachedDisclosure() {
-  const records = (Array.isArray(cachedDisclosure.records) ? cachedDisclosure.records : []).map(normalizeRecord);
-  allRecords = records;
+// --- dataset modes: official cache / sample / user CSV ----------------
+
+function setDataset(records, { statusText, sample = false, allowDownload = false } = {}) {
+  allRecords = records.map(normalizeRecord);
   resetFilter(releaseFilter);
   resetFilter(typeFilter);
   populateFilters(allRecords);
   searchInput.value = '';
-  renderRecords(allRecords);
-  renderStatus(cachedDisclosure, allRecords);
+  renderView(allRecords);
+  statusEl.textContent = statusText;
+
+  sampleBanner.hidden = !sample;
+  if (sample) {
+    sampleBanner.textContent = 'Demonstration view — sample data, not official PURSUE records. Load the official CSV, or clear to return to the official (currently empty) cache.';
+  }
+  loadedDisclosure = allowDownload
+    ? { _fetchedAt: new Date().toISOString(), source: 'https://www.war.gov/ufo/', note: 'Loaded in-browser from a user-provided CSV file.', records }
+    : null;
+  downloadButton.hidden = !allowDownload;
+  resetButton.hidden = !(sample || allowDownload);
 }
 
-function resetToCache() {
-  applyCachedDisclosure();
-  loadedDisclosure = null;
-  downloadButton.hidden = true;
-  resetButton.hidden = true;
+function showOfficialCache() {
+  const records = Array.isArray(cachedDisclosure.records) ? cachedDisclosure.records : [];
+  const fetchedAt = cachedDisclosure._fetchedAt || 'not yet fetched';
+  setDataset(records, { statusText: `${records.length} cached official records loaded. Last cache update: ${fetchedAt}.` });
   if (csvInput) csvInput.value = '';
-  loadStatus.textContent = 'Cleared. Showing the cached records again.';
+  loadStatus.textContent = records.length ? '' : 'Showing the official cache (currently empty). Load sample data or an official CSV above.';
 }
 
-function handleCsvFile(event) {
-  const file = event.target.files && event.target.files[0];
+async function loadSample(prefix = '') {
+  let data;
+  try {
+    const response = await fetch('./data/sample-records.json');
+    if (!response.ok) throw new Error('sample missing');
+    data = await response.json();
+  } catch {
+    loadStatus.textContent = 'Sample data could not be loaded.';
+    return;
+  }
+  const records = Array.isArray(data.records) ? data.records : [];
+  setDataset(records, {
+    sample: true,
+    statusText: `${prefix} Showing ${records.length} sample records (illustrative, not official).`.trim()
+  });
+  if (csvInput) csvInput.value = '';
+  loadStatus.textContent = `Loaded ${records.length} sample records. Filters, search, and the overview now work on them.`;
+}
+
+function readCsvFile(file) {
   if (!file) return;
   loadStatus.textContent = `Reading "${file.name}"…`;
   const reader = new FileReader();
@@ -71,24 +113,34 @@ function handleCsvFile(event) {
       loadStatus.textContent = 'No records were found in that file. Make sure it is the PURSUE CSV.';
       return;
     }
-    allRecords = records.map(normalizeRecord);
-    resetFilter(releaseFilter);
-    resetFilter(typeFilter);
-    populateFilters(allRecords);
-    searchInput.value = '';
-    renderRecords(allRecords);
-    statusEl.textContent = `${records.length} records loaded from "${file.name}" in this browser session. This data is shown here only and is not saved to the site.`;
-    loadStatus.textContent = `Loaded ${records.length} records. Filters and search now work on them.`;
-    loadedDisclosure = {
-      _fetchedAt: new Date().toISOString(),
-      source: 'https://www.war.gov/ufo/',
-      note: 'Loaded in-browser from a user-provided CSV file.',
-      records
-    };
-    downloadButton.hidden = false;
-    resetButton.hidden = false;
+    setDataset(records, {
+      allowDownload: true,
+      statusText: `${records.length} records loaded from "${file.name}" in this browser session. This data is shown here only and is not saved to the site.`
+    });
+    loadStatus.textContent = `Loaded ${records.length} records. Filters, search, and the overview now work on them.`;
   };
   reader.readAsText(file);
+}
+
+function setupDropzone() {
+  if (!dropzone) return;
+  ['dragenter', 'dragover'].forEach(evt => dropzone.addEventListener(evt, event => {
+    event.preventDefault();
+    dropzone.classList.add('dragging');
+  }));
+  ['dragleave', 'drop'].forEach(evt => dropzone.addEventListener(evt, event => {
+    event.preventDefault();
+    dropzone.classList.remove('dragging');
+  }));
+  dropzone.addEventListener('drop', event => {
+    const file = event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files[0];
+    if (file) readCsvFile(file);
+  });
+}
+
+function renderView(records) {
+  renderRecords(records);
+  renderOverview(overviewEl, records);
 }
 
 function downloadDisclosure() {
@@ -132,12 +184,7 @@ function applyFilters() {
     return true;
   });
 
-  renderRecords(filtered);
-}
-
-function renderStatus(disclosure, records) {
-  const fetchedAt = disclosure._fetchedAt || 'not yet fetched';
-  statusEl.textContent = `${records.length} cached official records loaded. Last cache update: ${fetchedAt}.`;
+  renderView(filtered);
 }
 
 function renderRecords(records) {
@@ -146,7 +193,7 @@ function renderRecords(records) {
 
   if (!records.length) {
     const empty = document.createElement('p');
-    empty.textContent = 'No records match the current filters. If this is a fresh repository, run the GitHub Action or `npm run cache:pursue` to populate data.';
+    empty.textContent = 'No records to show. Use “Get records” above to load sample data or an official CSV.';
     recordsEl.appendChild(empty);
     return;
   }

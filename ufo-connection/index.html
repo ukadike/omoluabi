@@ -16,22 +16,40 @@
   </header>
 
   <main id="main">
+    <div id="sample-banner" class="banner" role="status" hidden></div>
+
     <section aria-labelledby="status-heading" class="panel">
       <h2 id="status-heading">Data status</h2>
       <div id="data-status" aria-live="polite">Loading local disclosure cache…</div>
     </section>
 
     <section aria-labelledby="load-heading" class="panel">
-      <h2 id="load-heading">Load official records</h2>
-      <p class="quiet">If no records are shown, the automated cache could not reach the
-        official source. You can load them yourself, no command line needed:</p>
-      <ol class="load-steps">
-        <li>Open the <a href="https://www.war.gov/ufo/" rel="noopener noreferrer">official PURSUE page</a> and download its records as a CSV file.</li>
-        <li>Choose that file below. It is read only in your browser — nothing is uploaded, and no request is made to war.gov from this page.</li>
-      </ol>
-      <label>PURSUE CSV file
-        <input id="csv-file" type="file" accept=".csv,text/csv" />
-      </label>
+      <h2 id="load-heading">Get records</h2>
+      <p class="quiet">There are several ways to view records — with or without the internet,
+        with or without a file. The official cache populates automatically when war.gov is
+        reachable; otherwise use any option below.</p>
+
+      <div class="get-modes">
+        <div class="get-mode">
+          <h3>Demonstration data</h3>
+          <p class="quiet">Explore the interface and visualizations immediately, offline. Clearly
+            labelled sample data — not official records.</p>
+          <p>
+            <button id="load-sample" type="button">Load sample data</button>
+          </p>
+        </div>
+
+        <div class="get-mode">
+          <h3>Official PURSUE CSV</h3>
+          <p class="quiet">Download the CSV from the
+            <a href="https://www.war.gov/ufo/" rel="noopener noreferrer">official PURSUE page</a>,
+            then drop or choose it here. It is read only in your browser — nothing is uploaded,
+            and no request is made to war.gov from this page.</p>
+          <label id="dropzone">Drag a CSV here, or choose a file
+            <input id="csv-file" type="file" accept=".csv,text/csv" />
+          </label>
+        </div>
+      </div>
       <p id="load-status" aria-live="polite"></p>
       <p>
         <button id="download-json" type="button" hidden>Download as disclosure.json</button>
@@ -61,9 +79,14 @@
       <p id="record-count-message" aria-live="polite" aria-atomic="true"></p>
     </section>
 
+    <section aria-labelledby="overview-heading" class="panel">
+      <h2 id="overview-heading">Overview</h2>
+      <div id="overview" aria-label="Record counts by release, type, agency, and decade"></div>
+    </section>
+
     <section aria-labelledby="records-heading" class="panel">
-      <h2 id="records-heading">Official records</h2>
-      <div id="records" class="records" aria-label="Official PURSUE records"></div>
+      <h2 id="records-heading">Records</h2>
+      <div id="records" class="records" aria-label="PURSUE records"></div>
     </section>
 
     <section aria-labelledby="discourse-heading" class="panel">

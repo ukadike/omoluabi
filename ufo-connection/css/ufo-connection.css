@@ -117,8 +117,58 @@ input, select, button {
 
 .ontology-list { columns: 2; }
 
+/* Sample-data banner */
+.banner {
+  max-width: 1120px;
+  margin: 1.5rem auto 0;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--ink);
+  background: var(--panel);
+  font-family: "Courier Prime", "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+/* Get-records modes */
+.get-modes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.get-mode { border: 1px solid var(--line); background: var(--panel); padding: 1rem; }
+.get-mode h3 { margin-top: 0; }
+button {
+  font: inherit;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  width: auto;
+  display: inline-block;
+}
+button:hover { background: var(--paper); color: var(--ink); }
+button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+#dropzone { display: block; border: 1px dashed var(--muted); padding: 0.9rem; }
+#dropzone.dragging { border-color: var(--ink); background: #fffdf6; }
+
+/* Overview charts */
+.overview-total { font-family: "Courier Prime", "Courier New", monospace; color: var(--muted); }
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.chart-block h3 { margin: 0 0 0.5rem; }
+.chart { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
+.chart-row { display: grid; grid-template-columns: minmax(8rem, 14rem) 1fr; align-items: center; gap: 0.6rem; }
+.chart-label { font-size: 0.9rem; }
+.chart-bar { display: block; height: 0.7rem; background: var(--paper); border: 1px solid var(--line); }
+.chart-fill { display: block; height: 100%; background: var(--ink); }
+
 @media (max-width: 760px) {
-  .controls, .record-grid { grid-template-columns: 1fr; }
+  .controls, .record-grid, .get-modes, .overview-grid { grid-template-columns: 1fr; }
   .ontology-list { columns: 1; }
   .site-header, main, .site-footer { padding: 1rem; }
+  .chart-row { grid-template-columns: minmax(7rem, 10rem) 1fr; }
 }

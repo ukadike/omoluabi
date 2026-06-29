@@ -64,7 +64,12 @@ async function main() {
   }
 
   if (parsed.length === 0) {
-    throw new Error(`Refusing to overwrite cache: no PURSUE CSV could be fetched or parsed. Last error: ${lastError ? lastError.message : 'all candidates were empty'}`);
+    // No data is an expected, safe outcome: war.gov's edge blocks automated
+    // (datacenter) requests with 403, so a CI run usually cannot reach it. We
+    // keep the existing cache untouched and exit cleanly rather than failing
+    // loudly every day. A genuine bug elsewhere still throws (exit 1).
+    console.warn(`No PURSUE CSV could be fetched or parsed; the official source is likely unreachable from this network. Keeping existing cached data unchanged. Last error: ${lastError ? lastError.message : 'all candidates were empty'}`);
+    return;
   }
 
   const CSV_URL = usedUrls.length === 1 ? usedUrls[0] : usedUrls;

@@ -44,6 +44,27 @@ known paths (`uap-csv.csv`, `uap-release001..003.csv`) if discovery finds none.
 To pin a specific endpoint and bypass discovery, set `PURSUE_CSV_URL` (in
 `.github/workflows/cache-pursue.yml` or as an environment variable).
 
+### Why the demo may show no records
+
+war.gov fronts its site with edge bot-protection that returns `403 Forbidden`
+to automated requests from datacenter IPs — including GitHub Actions runners. So
+the scheduled cache job usually cannot reach the official source and the page
+shows empty states by design. This is intentional: the demo only ever displays
+records cached from the official source, never invented or third-party data, and
+the cache job keeps the existing data untouched and exits cleanly when the
+source is unreachable.
+
+To populate real records, run the cache once from a network that can load
+war.gov (for example your own machine):
+
+```bash
+cd ufo-connection && npm run cache:pursue
+git add data && git commit -m "chore: cache PURSUE data" && git push
+```
+
+The scheduled Action will also populate automatically if war.gov ever becomes
+reachable from CI (e.g. via a self-hosted runner on an allowed network).
+
 ## Serve locally
 
 ```bash

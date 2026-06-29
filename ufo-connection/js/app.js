@@ -186,7 +186,7 @@ async function renderBeautifulDisclosure() {
   discourseEl.replaceChildren();
   if (!items.length) {
     const empty = document.createElement('p');
-    empty.textContent = 'No curated public-discourse videos yet. Add verified YouTube items to docs/data/beautiful-disclosure.json.';
+    empty.textContent = 'No curated public-discourse videos yet. Add verified YouTube items to ufo-connection/data/beautiful-disclosure.json.';
     discourseEl.appendChild(empty);
     return;
   }

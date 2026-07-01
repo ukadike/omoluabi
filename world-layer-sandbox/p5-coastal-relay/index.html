@@ -32,11 +32,26 @@
     button:focus-visible { outline: 2px solid #ffd79a; outline-offset: 2px; }
     button[disabled] { opacity: 0.55; cursor: default; }
     a { color: #ffd79a; }
+    a:focus-visible { outline: 2px solid #ffd79a; outline-offset: 2px; }
     .meta { border-top: 1px solid var(--line); margin-top: 2rem; padding-top: 1rem; }
+    .breadcrumb { font-family: "Courier Prime", "Courier New", monospace; font-size: 0.85rem; color: var(--muted); }
+    .breadcrumb a { color: var(--mist); }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
+    <p class="breadcrumb"><a href="../../">Omoluabi</a> / <a href="../README.md">World-layer sandbox</a> / Coastal Relay</p>
     <p class="label">UMADA · World-layer sandbox · Not canon</p>
     <h1>Coastal Relay</h1>
     <p>
@@ -69,9 +84,11 @@
     </div>
 
     <p class="meta note">
-      Built with <a href="https://p5js.org/" rel="noopener noreferrer">p5.js</a>
+      Built with <a href="https://p5js.org/" target="_blank" rel="noopener noreferrer">p5.js <span class="sr-only">(opens in a new tab)</span></a>
       (vendored locally under <code>vendor/p5.min.js</code>, LGPL-2.1 — see
       <code>vendor/p5-LICENSE.txt</code>). No external network calls.
+      <br>
+      <a href="../../">Back to Omoluabi</a>
     </p>
   </main>
 

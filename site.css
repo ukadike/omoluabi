@@ -77,3 +77,40 @@ footer.site-footer {
   border-top: var(--border-thick);
   padding: var(--space-xl) 0 var(--space-2xl);
 }
+
+nav.primary {
+  margin-top: var(--space-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) 0;
+}
+nav.primary a {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin-right: var(--space-lg);
+  text-decoration: none;
+}
+nav.primary a:hover { text-decoration: underline; }
+nav.primary a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.2em;
+}
+
+.breadcrumb {
+  margin: var(--space-md) 0 0;
+}
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+}
+.breadcrumb li:not(:last-child)::after { content: "/"; margin-left: var(--space-xs); color: var(--color-muted); }
+.breadcrumb li[aria-current="page"] { color: var(--color-muted); }
+
+footer nav.footer-nav a { margin-right: var(--space-md); }

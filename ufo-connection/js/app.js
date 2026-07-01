@@ -257,12 +257,21 @@ function createMediaPreview(record) {
     const p = document.createElement('p');
     const a = document.createElement('a');
     a.href = record.video_url;
+    a.target = '_blank';
     a.rel = 'noopener noreferrer';
     a.textContent = 'Open official video source';
+    a.appendChild(createNewTabLabel());
     p.appendChild(a);
     wrap.appendChild(p);
   }
   return wrap;
+}
+
+function createNewTabLabel() {
+  const span = document.createElement('span');
+  span.className = 'sr-only';
+  span.textContent = ' (opens in a new tab)';
+  return span;
 }
 
 function createLinks(record) {
@@ -270,15 +279,19 @@ function createLinks(record) {
   if (record.file_url) {
     const file = document.createElement('a');
     file.href = record.file_url;
+    file.target = '_blank';
     file.rel = 'noopener noreferrer';
     file.textContent = 'Open source file';
+    file.appendChild(createNewTabLabel());
     p.appendChild(file);
     p.appendChild(document.createTextNode(' · '));
   }
   const official = document.createElement('a');
   official.href = record.official_source;
+  official.target = '_blank';
   official.rel = 'noopener noreferrer';
   official.textContent = 'Official PURSUE page';
+  official.appendChild(createNewTabLabel());
   p.appendChild(official);
   return p;
 }

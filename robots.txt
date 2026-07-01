@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ukadike.github.io/omoluabi/sitemap.xml

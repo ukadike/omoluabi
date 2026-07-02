@@ -16,7 +16,20 @@ All notable changes to this repository are documented here. Format loosely follo
 
 Source: this scaffold synthesizes a public-repository packet delivered by Kemi on 2026-06-26.
 
+### Added (later scaffolding stages)
+
+The build stages left open below were subsequently completed; see `ROADMAP.md` for the authoritative done/planned status:
+
+- `schemas/` and `cards/` — all ten record-type schemas and their companion cards (observation, consent, source, risk, accessibility, publication, correction, ai-permission, federation, memory)
+- `device/`, `web-engine/`, `api/`, `accessibility/`, `diagrams/`, `examples/`
+- `funding/`, `umada-sandbox/`, `earth-sensors-lab-bridge/`
+- Dual license adopted: Apache-2.0 for code/schemas (`LICENSE`), CC BY 4.0 for documentation (`LICENSE-DOCS.md`)
+- ADR-0004, reconciling consent state and publication status as distinct fields
+- `ufo-connection/` — the UFO Connection demo (self-contained GitHub Pages sub-app reading official PURSUE UAP/UFO disclosure records through the evidence-reading layer)
+- `world-layer-sandbox/` — the Coastal Relay p5.js sketch (non-canon, diegetic world-layer visual, reduced-motion aware)
+- `docs/vision/omoluabi-origin-storyboard.md` — origin storyboard and vision documentation
+- This restoration pass: `docs/REPO_AUDIT.md`, `SCHEMA_CARD.md`, `INDEX.md`, and cross-references from `accessibility/baseline.md` to Accessible by Design and from `earth-sensors-lab-bridge/README.md` to Earth Sensors Lab
+
 ### Open
 
-- LICENSE choice (see `LICENSE`)
-- Remaining build stages: `schemas/` + `cards/`; `device/` + `web-engine/` + `api/` + `accessibility/` + `diagrams/` + `examples/`; `funding/` + `umada-sandbox/` + `earth-sensors-lab-bridge/`
+- First running implementation of any layer (device firmware, web engine, or API) — see `ROADMAP.md`

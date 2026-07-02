@@ -25,6 +25,10 @@ A soil sensor reading is still an observation.
 
 See `sensor-observation-model.md` for how a sensor reading maps onto these cards, and `examples/esl-sensor-reading.json` for a worked example.
 
+## Related Repository
+
+Earth Sensors Lab is a separate Small Systems Lab repository: [github.com/ukadike/Earth-Sensors-Lab](https://github.com/ukadike/Earth-Sensors-Lab). This bridge documents how ESL observations map onto Omoluabi's schemas and cards; it does not restate ESL's own scope or contents.
+
 ## Source
 
 Verbatim from `16_esl_bridge/ESL_BRIDGE.md`.

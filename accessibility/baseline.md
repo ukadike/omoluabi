@@ -54,6 +54,10 @@ A blind editor must be able to:
 6. edit alt text
 7. approve or hold publication
 
+## Related Work
+
+Accessibility auditing methodology and tooling for this baseline (automated WCAG 2.2+ checks, p5.js/canvas-specific review, PDF structural checks, and structured remediation guidance) is developed in a sibling Small Systems Lab project, [Accessible by Design](https://github.com/ukadike/accessible-by-design-prototyping) (`accessible-by-design-prototyping`). That repository is the source of the auditing principles this baseline draws on; the `system` enum in `schemas/observation.schema.json` already lists `accessible-by-design` as one of the SSL systems that can produce a governed observation.
+
 ## Source
 
 Verbatim from `11_accessibility/ACCESSIBILITY_BASELINE.md`.

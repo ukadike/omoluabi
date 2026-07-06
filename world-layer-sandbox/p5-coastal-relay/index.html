@@ -32,11 +32,53 @@
     button:focus-visible { outline: 2px solid #ffd79a; outline-offset: 2px; }
     button[disabled] { opacity: 0.55; cursor: default; }
     a { color: #ffd79a; }
+    a:focus-visible { outline: 2px solid #ffd79a; outline-offset: 2px; }
     .meta { border-top: 1px solid var(--line); margin-top: 2rem; padding-top: 1rem; }
+    .skip-link {
+      position: absolute; left: -999px; top: 0;
+      background: var(--mist); color: var(--paper);
+      padding: 0.5rem 1rem; z-index: 100;
+      font-family: "Courier Prime", "Courier New", monospace;
+    }
+    .skip-link:focus { left: 0.5rem; top: 0.5rem; }
+    .ecosystem-nav {
+      display: flex; flex-wrap: wrap; gap: 0.4rem 1rem;
+      font-family: "Courier Prime", "Courier New", monospace; font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+    .ecosystem-nav a { text-decoration: none; }
+    .ecosystem-nav a:hover { text-decoration: underline; }
+    .ecosystem-nav a[aria-current="page"] { font-weight: 700; text-decoration: underline; }
+    .breadcrumb {
+      font-family: "Courier Prime", "Courier New", monospace; font-size: 0.85rem;
+      color: var(--muted); margin-bottom: 1rem;
+    }
+    .breadcrumb ol {
+      display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; gap: 0.35rem;
+    }
+    .breadcrumb li:not(:last-child)::after { content: "/"; margin-left: 0.35rem; }
+    .breadcrumb li[aria-current="page"] { color: var(--mist); }
   </style>
 </head>
 <body>
-  <main class="wrap">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <main class="wrap" id="main">
+    <nav class="ecosystem-nav" aria-label="Primary">
+      <a href="https://ukadike.github.io/small-systems-lab/">Small Systems Lab</a>
+      <a href="https://ukadike.github.io/omoluabi/" aria-current="page">Omoluabi</a>
+      <a href="https://ukadike.github.io/earth-sensors-lab/">Earth Sensors Lab</a>
+      <a href="https://ukadike.github.io/echo/">Echo</a>
+      <a href="https://ukadike.github.io/umada/">Umada</a>
+      <a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a>
+      <a href="https://github.com/ukadike">GitHub</a>
+    </nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="https://ukadike.github.io/small-systems-lab/">Small Systems Lab</a></li>
+        <li><a href="https://ukadike.github.io/omoluabi/">Omoluabi</a></li>
+        <li aria-current="page">World Layer Sandbox</li>
+      </ol>
+    </nav>
     <p class="label">UMADA · World-layer sandbox · Not canon</p>
     <h1>Coastal Relay</h1>
     <p>

@@ -72,3 +72,11 @@ If a specific file's license is unclear from this split, open an issue.
 ## Small Systems Lab
 
 Omoluabi is part of Small Systems Lab, a public-interest lab for tender systems.
+
+## Related SSL Projects
+
+- [Small Systems Lab](https://ukadike.github.io/small-systems-lab/) — ecosystem hub
+- [Earth Sensors Lab](https://ukadike.github.io/earth-sensors-lab/) — accessible STEAM research
+- [Echo](https://ukadike.github.io/echo/) — AI literacy
+- [Umada](https://ukadike.github.io/umada/) — speculative worldbuilding
+- [Accessible by Design](https://ukadike.github.io/accessible-by-design-prototyping/) — accessibility audit lab

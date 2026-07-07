@@ -22,14 +22,19 @@ The web engine never bypasses the governance pipeline. It surfaces consent, sour
 
 ## What is still unknown?
 
-Local-first storage and sync design, conflict resolution, and the production framework choice are not yet scoped. See `local-first-plan.md`.
+Sync design, conflict resolution across devices, and the production framework choice are not yet scoped. See `local-first-plan.md`. The storage layer question is answered for the prototype only (browser IndexedDB) — that is a prototype decision, not a production ruling.
+
+## Status: prototype running
+
+`app/` is the first running implementation of this directory's plans — a browser-only human review interface over the ten screens in `screens.md`, gated in the exact order of `architecture/governance-pipeline.md`. It is not the production web engine: no framework decision has been made, there is no sync/backend, and AI assist is a labeled stub (no model wired in). See `app/README.md` for how to run it and what it deliberately does not do yet.
 
 ## Directory Index
 
 - `architecture.md` — stack and MVP user flow
-- `screens.md` — first screens list
-- `local-first-plan.md` — local-first storage, status: research
+- `screens.md` — first screens list (now implemented — see `app/`)
+- `local-first-plan.md` — local-first storage; prototype decision recorded, production still research
 - `p5-ml5-prototype-plan.md` — role of p5.js/ml5.js prototyping, and what it must not be used for
+- `app/` — running prototype: review screens, governance gate, local IndexedDB store
 
 ## Source
 

@@ -1,6 +1,16 @@
 # Local-First Plan
 
-Status: research — not yet scoped.
+Status: research for production — not yet scoped. A prototype-only decision is recorded below for `app/`.
+
+## Prototype Decision (this pass)
+
+`web-engine/app/` uses browser IndexedDB, one object store per schema record type (`observation`, `consent`, `source`, `risk`, `accessibility`, `publication`), keyed by that record's own id field. This answers "what local storage layer" for the running prototype only. It does not answer, and should not be read as pre-deciding:
+
+- the production storage layer (could stay IndexedDB, could move to an embedded database, could change entirely)
+- sync transport or conflict resolution (still fully open, see below)
+- encryption-at-rest (not implemented in the prototype; every record in the prototype store is stored in the clear, in the reviewer's own browser, and nothing leaves that browser — there is no network call anywhere in `app/`)
+
+If this prototype's storage approach is not what Kemi wants carried into production, that's expected — it was chosen to make the review screens in `screens.md` testable, not to settle the architecture.
 
 ## Why local-first
 

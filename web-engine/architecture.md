@@ -23,7 +23,9 @@ flowchart TD
 
 ## Status
 
-Architecture is a first-pass MVP description. Framework choice, hosting, and sync transport are not yet decided.
+Architecture is a first-pass MVP description. Framework choice, hosting, and sync transport are not yet decided for production.
+
+`app/` runs this exact MVP User Flow today as a prototype: plain HTML/CSS/ES modules (no framework), served statically, storing records in browser IndexedDB (no hosting or sync — see `local-first-plan.md`). That is a prototyping choice, not the production framework decision this section still leaves open.
 
 ## Source
 

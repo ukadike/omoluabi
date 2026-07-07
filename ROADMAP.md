@@ -24,7 +24,8 @@ All directories from the original packet have been scaffolded with documentation
 
 ## Next
 
-- [Planned] First running implementation of any layer — device firmware, web engine prototype, or API. None exist yet; all current `device/`, `web-engine/`, and `api/` content is planning documentation, not code.
+- [In Progress] Web engine prototype — `web-engine/app/` is the first running implementation of any layer: a browser-only human review interface over the governance pipeline, gated in the order of `architecture/governance-pipeline.md`. Local-only (IndexedDB), no backend, no production framework decision, AI assist is a labeled stub. See `web-engine/app/README.md` for exact scope and `web-engine/local-first-plan.md` for what remains open (sync, production storage, encryption-at-rest).
+- [Planned] Device firmware and API implementation. Neither exists yet; `device/` and `api/` content remains planning documentation, not code.
 
 ## Source
 

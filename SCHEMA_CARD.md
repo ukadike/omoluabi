@@ -96,14 +96,24 @@ Except `observation.schema.json` (verbatim from the source packet), all schemas 
 
 Accessibility is treated as required infrastructure, not polish (`accessibility/baseline.md`): no public object is complete without accessibility metadata (SSL-004). Requirements span repository docs (alt text, plain-language summaries), the web engine (keyboard-first workflow, screen reader support, high contrast, captions/transcripts, visible focus states, skip links, reduced motion), and the device (tactile controls, haptic/audio feedback, status redundancy across light + sound + vibration). See `accessibility/blind-editor-workflow.md` for the specific tasks a blind editor must be able to complete end to end, and the Related Work note in `accessibility/baseline.md` for the cross-reference to Accessible by Design's auditing methodology.
 
+## Investigation Engine (new subsystem)
+
+`investigation-engine/` is a domain-agnostic evidence, reasoning, and knowledge-graph
+architecture layered on top of the concepts above: it reuses `source.schema.json`,
+`accessibility.schema.json`, and `correction.schema.json` rather than duplicating
+them, and adds seven new schemas (evidence object, claim, reasoning step,
+contradiction, confidence score, knowledge graph entity, investigation case). See
+`investigation-engine/README.md` and `research/design-decisions/ADR-0005-investigation-engine-reuses-governed-record-model.md`.
+
 ## Future Implementation Notes
 
-- Nothing here is running code yet: device firmware, web engine, and API are plans and drafts only (`ROADMAP.md`).
-- Fifteen of sixteen schemas need Kemi's review before being treated as stable.
+- Nothing here is running code yet: device firmware, web engine, and API are plans and drafts only (`ROADMAP.md`). The same is true of `investigation-engine/`'s reasoning layers, output-format generators, and knowledge-graph renderer.
+- Fifteen of sixteen schemas need Kemi's review before being treated as stable. All seven `investigation-engine/schemas/` are likewise first drafts pending review.
 - Federation trust model is unscoped (`architecture/sync-and-federation.md`); `diagrams/federation.mmd` is a stub.
 - Keyboard workflow spec (keybindings, tab order, focus-trap handling) is an open question in `accessibility/keyboard-workflow.md`.
 - `memory.schema.json`'s shape and `risk.schema.json`'s risk-level scale are first-draft judgment calls, each flagged in the schema's own `description` field.
 - The Photographic and Cartographic Witness Layers (`docs/mvp/interface/`, `docs/mvp/hardware/instrumentation-revision-v0.02.md`) are design documentation only; no camera-calibration workflow, offline map format, or RTK/post-processed positioning workflow has been chosen yet — see that hardware document's "post-MVP" column.
+- `investigation-engine/architecture/reasoning-layers.md` marks 9 of the 34 reasoning layers `[Research]` — no method exists yet, by design, rather than a schema-locked method that would overstate rigor (Bias Detection, Institutional/Economic/Political Incentives, Narrative Probability, Image/Audio/Document Analysis, Legal Review).
 
 ## SSL Universal Extension
 

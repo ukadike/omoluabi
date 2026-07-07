@@ -1,0 +1,58 @@
+{
+  "evidence_id": "ie-ev-0001",
+  "claim_ids": ["ie-claim-0001"],
+  "original_source": "Illustrative sensor-log excerpt cited for schema demonstration only",
+  "source_id": "source-ie-example-0001",
+  "acquired_at": "2026-07-01T09:00:00Z",
+  "author": "example-field-observer",
+  "organization": "example-org-0001",
+  "geographic_location": {
+    "lat": 0.0,
+    "lng": 0.0,
+    "place_name": "Example Site",
+    "precision": "approximate"
+  },
+  "timeline_position": {
+    "event_date": "2026-06-28T00:00:00Z",
+    "date_precision": "approximate",
+    "note": "Illustrative only"
+  },
+  "media_type": "sensor_reading",
+  "domain": "climate",
+  "confidence": {
+    "confidence_id": "ie-conf-0001",
+    "score": 0.55
+  },
+  "authenticity_status": "probable",
+  "accessibility_id": "access-ie-example-0001",
+  "translation_status": {
+    "is_translation": false
+  },
+  "chain_of_custody": [
+    {
+      "holder": "example-field-observer",
+      "from": "2026-06-28T00:00:00Z",
+      "to": "2026-07-01T09:00:00Z",
+      "action": "collected and logged"
+    }
+  ],
+  "citations": ["ie-ev-0002"],
+  "contradiction_ids": ["ie-contra-0001"],
+  "unknowns": [
+    "Whether ie-ev-0002 (unfiled comparison reading) corroborates or conflicts once recorded"
+  ],
+  "open_questions": [
+    "Is a second, independent sensor available to cross-check this reading?"
+  ],
+  "research_state": "possible",
+  "publication_status": "internal_review",
+  "ai_assist": {
+    "enabled": true,
+    "model": "example-model",
+    "task": "draft summary of sensor log",
+    "confidence": 0.6,
+    "human_verified": false
+  },
+  "created_at": "2026-07-01T09:00:00Z",
+  "updated_at": "2026-07-01T09:00:00Z"
+}

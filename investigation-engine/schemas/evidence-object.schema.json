@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/investigation-engine/evidence-object.schema.json",
+  "title": "Evidence Object",
+  "description": "The master evidence model for the Investigation Engine. Cross-references schemas/source.schema.json and schemas/accessibility.schema.json rather than duplicating provenance or accessibility fields. First draft, not yet reviewed by Kemi.",
+  "type": "object",
+  "required": ["evidence_id", "original_source", "acquired_at", "domain", "research_state", "publication_status"],
+  "properties": {
+    "evidence_id": {"type": "string"},
+    "claim_ids": {"type": "array", "items": {"type": "string"}},
+    "original_source": {"type": "string", "description": "Human-readable description, citation, or URL for what this evidence is and where it came from."},
+    "source_id": {"type": "string", "description": "Links to a schemas/source.schema.json record for structured provenance."},
+    "acquired_at": {"type": "string", "format": "date-time"},
+    "author": {"type": "string"},
+    "organization": {"type": "string"},
+    "geographic_location": {
+      "type": "object",
+      "properties": {
+        "lat": {"type": "number"},
+        "lng": {"type": "number"},
+        "place_name": {"type": "string"},
+        "precision": {"type": "string", "enum": ["exact", "approximate", "withheld", "unknown"]}
+      }
+    },
+    "timeline_position": {
+      "type": "object",
+      "properties": {
+        "event_date": {"type": "string", "format": "date-time"},
+        "date_precision": {"type": "string", "enum": ["exact", "approximate", "estimated", "unknown"]},
+        "note": {"type": "string"}
+      }
+    },
+    "media_type": {
+      "type": "string",
+      "enum": ["document", "image", "audio", "video", "dataset", "testimony", "sensor_reading", "physical_object", "other"]
+    },
+    "domain": {"type": "string", "description": "Free-text research domain; see docs/research-domains.md. Not a closed enum by design."},
+    "confidence": {
+      "type": "object",
+      "description": "Inline summary; the full record lives in schemas/confidence-score.schema.json.",
+      "properties": {
+        "confidence_id": {"type": "string"},
+        "score": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "authenticity_status": {
+      "type": "string",
+      "enum": ["verified", "probable", "disputed", "unverified", "fabrication_suspected", "unknown"]
+    },
+    "accessibility_id": {"type": "string", "description": "Links to a schemas/accessibility.schema.json record."},
+    "translation_status": {
+      "type": "object",
+      "properties": {
+        "is_translation": {"type": "boolean"},
+        "original_language": {"type": "string"},
+        "translated_language": {"type": "string"},
+        "translator": {"type": "string"},
+        "translation_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "provenance_note": {"type": "string"}
+      }
+    },
+    "chain_of_custody": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "holder": {"type": "string"},
+          "from": {"type": "string", "format": "date-time"},
+          "to": {"type": "string", "format": "date-time"},
+          "action": {"type": "string"}
+        }
+      }
+    },
+    "citations": {"type": "array", "items": {"type": "string"}, "description": "Other evidence_ids or external references this evidence cites or depends on."},
+    "contradiction_ids": {"type": "array", "items": {"type": "string"}},
+    "unknowns": {"type": "array", "items": {"type": "string"}, "description": "Required, not optional filler — explicit unresolved gaps."},
+    "open_questions": {"type": "array", "items": {"type": "string"}},
+    "research_state": {
+      "type": "string",
+      "enum": ["known", "supported", "likely", "possible", "disputed", "unverified", "unknown", "contradicted", "retracted", "archived"]
+    },
+    "publication_status": {"type": "string", "enum": ["private", "internal_review", "public", "embargoed", "withdrawn"]},
+    "ai_assist": {
+      "type": "object",
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "model": {"type": "string"},
+        "task": {"type": "string"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "human_verified": {"type": "boolean"}
+      }
+    },
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  }
+}

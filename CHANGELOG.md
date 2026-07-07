@@ -44,6 +44,15 @@ The build stages left open below were subsequently completed; see `ROADMAP.md` f
 - `docs/vision/omoluabi-origin-storyboard.md` — origin storyboard and vision documentation
 - This restoration pass: `docs/REPO_AUDIT.md`, `SCHEMA_CARD.md`, `INDEX.md`, and cross-references from `accessibility/baseline.md` to Accessible by Design and from `earth-sensors-lab-bridge/README.md` to Earth Sensors Lab
 
+### Added (Investigation Engine scaffold)
+
+- `investigation-engine/` — domain-agnostic evidence, reasoning, and knowledge-graph architecture: `README.md`; `architecture/` (system overview, evidence model, 34 reasoning layers, 10 research states, 13-stage workflow, knowledge graph, 12 intelligence modes); `governance/` (constitutional rules IE-001..IE-005, human-governance model); `schemas/` and `cards/` (evidence object, claim, reasoning step, contradiction, confidence score, knowledge graph entity, investigation case); `docs/` (research domains, output formats, transparency rules, accessibility); `examples/` (one linked example case across all seven schemas)
+- `research/design-decisions/ADR-0005-investigation-engine-reuses-governed-record-model.md`
+- Cross-references from root `README.md`, `INDEX.md`, `ROADMAP.md`, and `SCHEMA_CARD.md` to the new subsystem
+
+Source: synthesizes the "Omoluabi Investigation Engine — Complete Claude Code Package (Master Specification)" delivered by Kemi on 2026-07-07.
+
 ### Open
 
 - First running implementation of any layer (device firmware, web engine, or API) — see `ROADMAP.md`
+- First running implementation of any Investigation Engine reasoning layer, output-format generator, or knowledge-graph renderer — see `investigation-engine/architecture/reasoning-layers.md`

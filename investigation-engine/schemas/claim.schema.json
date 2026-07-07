@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/investigation-engine/claim.schema.json",
+  "title": "Claim",
+  "description": "A statement derived from one or more Evidence Objects, carrying a research state and a full transparency record. First draft, not yet reviewed by Kemi.",
+  "type": "object",
+  "required": ["claim_id", "statement", "domain", "research_state", "publication_status"],
+  "properties": {
+    "claim_id": {"type": "string"},
+    "statement": {"type": "string"},
+    "domain": {"type": "string", "description": "See docs/research-domains.md."},
+    "research_state": {
+      "type": "string",
+      "enum": ["known", "supported", "likely", "possible", "disputed", "unverified", "unknown", "contradicted", "retracted", "archived"]
+    },
+    "supporting_evidence_ids": {"type": "array", "items": {"type": "string"}, "description": "IDs of schemas/evidence-object.schema.json records. Required (min 1) before research_state may be anything other than unverified or unknown, per governance/constitutional-rules.md IE-001."},
+    "contradicting_claim_ids": {"type": "array", "items": {"type": "string"}},
+    "minority_hypothesis_ids": {"type": "array", "items": {"type": "string"}, "description": "Claims that remain unproven but should not be discarded (Minority Hypotheses reasoning layer)."},
+    "reasoning_step_ids": {"type": "array", "items": {"type": "string"}, "description": "IDs of schemas/reasoning-step.schema.json records applied to this claim."},
+    "confidence_id": {"type": "string", "description": "Links to a schemas/confidence-score.schema.json record."},
+    "assumptions": {"type": "array", "items": {"type": "string"}, "description": "What is taken as given without direct evidentiary support. Required by docs/transparency-rules.md."},
+    "inferences": {"type": "array", "items": {"type": "string"}, "description": "What follows from evidence via reasoning, distinct from assumptions."},
+    "unknowns": {"type": "array", "items": {"type": "string"}},
+    "missing_evidence": {"type": "array", "items": {"type": "string"}},
+    "human_reviewed": {"type": "boolean", "default": false},
+    "reviewer_id": {"type": "string"},
+    "publication_status": {"type": "string", "enum": ["private", "internal_review", "public", "embargoed", "withdrawn"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  }
+}

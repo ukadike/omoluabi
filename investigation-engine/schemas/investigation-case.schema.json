@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/investigation-engine/investigation-case.schema.json",
+  "title": "Investigation Case",
+  "description": "The top-level container tying evidence, claims, reasoning, the knowledge graph, and outputs to one investigation, gated by human governance. First draft, not yet reviewed by Kemi.",
+  "type": "object",
+  "required": ["case_id", "title", "domain", "intelligence_mode", "workflow_stage", "human_governance", "publication_status"],
+  "properties": {
+    "case_id": {"type": "string"},
+    "title": {"type": "string"},
+    "domain": {"type": "string", "description": "See docs/research-domains.md."},
+    "intelligence_mode": {
+      "type": "string",
+      "enum": [
+        "research", "journalism", "scientific_review", "historical_investigation",
+        "policy_analysis", "accessibility_audit", "technical_analysis", "educational_mode",
+        "emergency_mode", "public_briefing", "field_companion", "editorial_controller"
+      ]
+    },
+    "workflow_stage": {
+      "type": "string",
+      "enum": [
+        "observe", "collect", "verify", "compare", "challenge", "corroborate",
+        "model", "explain", "publish", "monitor", "update", "archive"
+      ]
+    },
+    "evidence_ids": {"type": "array", "items": {"type": "string"}},
+    "claim_ids": {"type": "array", "items": {"type": "string"}},
+    "reasoning_step_ids": {"type": "array", "items": {"type": "string"}},
+    "contradiction_ids": {"type": "array", "items": {"type": "string"}},
+    "knowledge_graph_entity_ids": {"type": "array", "items": {"type": "string"}},
+    "output_formats_produced": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "research_report", "evidence_cards", "interactive_timeline", "knowledge_graph",
+          "contradiction_report", "public_article", "academic_summary", "policy_brief",
+          "newsroom_package", "accessibility_report", "machine_readable_schema", "api_response", "dataset"
+        ]
+      }
+    },
+    "human_governance": {
+      "type": "object",
+      "required": ["proposed_by", "approval_status"],
+      "properties": {
+        "proposed_by": {"type": "string", "enum": ["ai", "human", "hybrid"]},
+        "approval_status": {
+          "type": "string",
+          "enum": ["proposed", "human_review", "approved", "rejected", "revision_requested"]
+        },
+        "approved_by": {"type": "string"},
+        "decision_notes": {"type": "string", "description": "Required for rejected and revision_requested."},
+        "decided_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "accessibility_id": {"type": "string"},
+    "publication_status": {"type": "string", "enum": ["private", "internal_review", "public", "embargoed", "withdrawn"]},
+    "monitor_status": {
+      "type": "object",
+      "properties": {
+        "active": {"type": "boolean"},
+        "last_checked_at": {"type": "string", "format": "date-time"},
+        "update_notes": {"type": "string"}
+      }
+    },
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  }
+}

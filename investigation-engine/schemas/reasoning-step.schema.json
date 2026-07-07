@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/investigation-engine/reasoning-step.schema.json",
+  "title": "Reasoning Step",
+  "description": "One application of a named reasoning layer (architecture/reasoning-layers.md) to a Claim or Evidence Object. Exists so every reasoning step remains inspectable (governance/constitutional-rules.md IE-004). First draft, not yet reviewed by Kemi.",
+  "type": "object",
+  "required": ["reasoning_step_id", "subject_type", "subject_id", "layer", "status", "performed_by", "performed_at"],
+  "properties": {
+    "reasoning_step_id": {"type": "string"},
+    "subject_type": {"type": "string", "enum": ["claim", "evidence"]},
+    "subject_id": {"type": "string"},
+    "layer": {
+      "type": "string",
+      "enum": [
+        "source_ladder", "evidence_quality", "data_quality", "missing_evidence", "chain_of_custody",
+        "historical_context", "temporal_reasoning", "timeline_reconstruction", "geographic_mapping",
+        "contradiction_detection", "narrative_probability", "alternative_explanations", "minority_hypotheses",
+        "bias_detection", "institutional_incentives", "economic_incentives", "political_incentives",
+        "technical_feasibility", "scientific_consensus", "sensor_correlation", "image_analysis", "audio_analysis", "document_analysis",
+        "accessibility_review", "translation_confidence", "ethics_review", "privacy_review", "legal_review",
+        "community_testimony", "field_observations",
+        "relationship_mapping",
+        "uncertainty_analysis", "confidence_scoring", "future_research_suggestions"
+      ],
+      "description": "One of the 34 reasoning layers in architecture/reasoning-layers.md."
+    },
+    "layer_category": {
+      "type": "string",
+      "enum": [
+        "source_and_evidence_quality", "context_and_time", "contradiction_and_alternatives",
+        "bias_and_incentive", "technical_and_scientific", "ethics_access_and_rights",
+        "human_and_field_input", "mapping_and_synthesis", "meta_reasoning"
+      ]
+    },
+    "method": {"type": "string", "description": "Description of the method applied."},
+    "input_ids": {"type": "array", "items": {"type": "string"}},
+    "output_summary": {"type": "string"},
+    "confidence_delta": {"type": "number", "minimum": -1, "maximum": 1},
+    "status": {
+      "type": "string",
+      "enum": ["implemented", "requires_further_evidence", "placeholder"],
+      "description": "Whether this specific application of the layer ran to completion, needs more evidence, or is a recorded placeholder pending a method that doesn't exist yet (see architecture/reasoning-layers.md's [Planned]/[Research] layers)."
+    },
+    "performed_by": {"type": "string", "enum": ["ai", "human", "hybrid"]},
+    "human_verified": {"type": "boolean", "default": false},
+    "performed_at": {"type": "string", "format": "date-time"},
+    "notes": {"type": "string"}
+  }
+}

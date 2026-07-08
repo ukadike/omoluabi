@@ -44,6 +44,13 @@ real record to review.
   each locked until every earlier stage is reviewed.
 - An Archive/search screen with JSON export, disabled for records whose
   publication decision is still `private` or undecided.
+- A News feed (`#/news`) — the public reader view. Shows only records with
+  an explicit human publication decision of `public` (the decision record
+  is the canonical gate per ADR-0004, not the observation's own
+  `publication_status` field). Embargoed, withdrawn, internal-review,
+  private, and undecided records never appear. Each story carries its
+  provenance and a link back to the full governed record — "public does
+  not mean context-free" (Constitutional Principle 12).
 
 ## What it deliberately does not do
 
@@ -70,6 +77,6 @@ real record to review.
 - `js/seed-data.js` — the repo's own example records, copied verbatim.
 - `js/gate.js` — governance-pipeline stage order and lock/current/complete logic.
 - `js/ai-assist.js` — labeled stub suggestion generator, advisory only.
-- `js/views.js` — render functions for all ten screens plus the New Observation authoring form.
+- `js/views.js` — render functions for all ten screens plus the New Observation authoring form and the News feed reader view.
 - `js/router.js` — hash router; moves focus to `<main>` on every navigation.
 - `js/main.js` — seeds the store on first run, then starts the router.

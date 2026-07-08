@@ -7,11 +7,13 @@ import {
   renderHumanReview,
   renderPublication,
   renderArchive,
+  renderNewsFeed,
 } from "./views.js";
 
 const ROUTES = [
   { pattern: /^#\/$/, handler: (c) => renderInbox(c) },
   { pattern: /^#\/new$/, handler: (c) => renderNewObservation(c) },
+  { pattern: /^#\/news$/, handler: (c) => renderNewsFeed(c) },
   { pattern: /^#\/archive$/, handler: (c) => renderArchive(c) },
   {
     pattern: /^#\/observation\/([^/]+)$/,

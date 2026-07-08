@@ -58,6 +58,10 @@ Source: synthesizes the "Omoluabi Investigation Engine — Complete Claude Code 
 - Verified end to end in a browser: created an observation manually, reviewed source/consent/risk/accessibility, recorded human review, set publication status to `public`, and confirmed it appears as exportable in the Archive screen — the full MVP governance loop now runs without a device.
 - Updated `web-engine/README.md`, `web-engine/app/README.md`, `web-engine/screens.md`, and `web-engine/app/index.html`'s header copy (previously "Not a CMS," reflecting a review-only scope that predated this form) to describe the new authoring path.
 
+### Added (news feed)
+
+- `web-engine/app/`: a News feed (`#/news`) — the public reader view completing the loop from authoring to reading. Only records with an explicit human publication decision of `public` appear (canonical gate is the publication decision record, per ADR-0004); embargoed, withdrawn, and undecided records are excluded. Verified in a browser: a published story appears with headline, provenance, and a link to its full governed record; an embargoed record and the undecided seed record never surface.
+
 ### Open
 
 - First running implementation of device firmware or the API — see `ROADMAP.md`

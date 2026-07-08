@@ -779,3 +779,77 @@ export async function renderArchive(container) {
     });
   });
 }
+
+/* ==========================================================================
+   News feed — public reader view
+   ========================================================================== */
+
+export async function renderNewsFeed(container) {
+  const observations = await getAll("observations");
+  const published = [];
+  for (const obs of observations) {
+    const linked = await getLinkedRecords(obs);
+    // The publication decision record is the canonical gate (ADR-0004),
+    // not the observation's own publication_status field. Only an explicit
+    // human decision of "public" reaches the feed — embargoed, withdrawn,
+    // internal_review, private, and undecided records never do.
+    if (linked.publication && linked.publication.status === "public") {
+      published.push({ obs, linked });
+    }
+  }
+
+  published.sort((a, b) =>
+    (b.linked.publication.decided_at || "").localeCompare(
+      a.linked.publication.decided_at || ""
+    )
+  );
+
+  if (published.length === 0) {
+    container.innerHTML = `
+      <h2>News</h2>
+      <p>Nothing published yet. A story appears here only after a human
+        editor records a <strong>public</strong> publication decision at
+        the end of the governance pipeline.</p>`;
+    return;
+  }
+
+  const articles = published.map(({ obs, linked }) => {
+    const summary = linked.accessibility?.plain_language_summary;
+    const body = obs.media?.transcript;
+    const headline = summary || (body ? `${body.slice(0, 80)}${body.length > 80 ? "…" : ""}` : obs.observation_id);
+    const decided = linked.publication;
+    const place =
+      obs.location?.precision && obs.location.precision !== "withheld"
+        ? ` &middot; Location: ${esc(obs.location.precision)}`
+        : "";
+    return `
+      <article class="review-card" aria-labelledby="news-${esc(obs.observation_id)}">
+        <h3 id="news-${esc(obs.observation_id)}" style="margin-top:0;">${esc(headline)}</h3>
+        <p class="text-small">
+          Observed by ${esc(obs.observer_id || "unrecorded")} &middot;
+          ${esc(obs.created_at)}${place}
+        </p>
+        ${summary && body ? `<p>${esc(body)}</p>` : ""}
+        ${
+          obs.media?.image
+            ? `<p class="text-small">Image: <code>${esc(obs.media.image)}</code> — ${esc(
+                linked.accessibility?.alt_text || "no alt text recorded"
+              )}</p>`
+            : ""
+        }
+        <p class="inline-note text-small">
+          Published by ${esc(decided.decided_by)} on ${esc(decided.decided_at)}
+          after source, consent, risk, accessibility, and human review
+          (Constitutional Principle 12: public does not mean context-free).
+          <a href="#/observation/${esc(obs.observation_id)}">Full governed record</a>
+        </p>
+      </article>`;
+  });
+
+  container.innerHTML = `
+    <h2>News</h2>
+    <p>Every story below passed the full governance pipeline and carries a
+      human publication decision. AI assists; it does not decide what
+      appears here (SSL-005, SSL-006).</p>
+    <div class="news-grid">${articles.join("")}</div>`;
+}

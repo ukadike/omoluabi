@@ -52,7 +52,14 @@ The build stages left open below were subsequently completed; see `ROADMAP.md` f
 
 Source: synthesizes the "Omoluabi Investigation Engine — Complete Claude Code Package (Master Specification)" delivered by Kemi on 2026-07-07.
 
+### Added (manual observation entry)
+
+- `web-engine/app/`: a "New observation" form (`#/new`) that creates an observation plus its linked consent, source, risk, and accessibility records by hand — no field device required, recorded with `source.origin_type: "web-form"` (an enum value the schema already defined). The new record enters the same gated pipeline as any other; authoring it does not mark any stage reviewed.
+- Verified end to end in a browser: created an observation manually, reviewed source/consent/risk/accessibility, recorded human review, set publication status to `public`, and confirmed it appears as exportable in the Archive screen — the full MVP governance loop now runs without a device.
+- Updated `web-engine/README.md`, `web-engine/app/README.md`, `web-engine/screens.md`, and `web-engine/app/index.html`'s header copy (previously "Not a CMS," reflecting a review-only scope that predated this form) to describe the new authoring path.
+
 ### Open
 
-- First running implementation of any layer (device firmware, web engine, or API) — see `ROADMAP.md`
+- First running implementation of device firmware or the API — see `ROADMAP.md`
+- Web engine still has no backend, sync, or production storage — the "New observation" form is local-only like the rest of the prototype
 - First running implementation of any Investigation Engine reasoning layer, output-format generator, or knowledge-graph renderer — see `investigation-engine/architecture/reasoning-layers.md`

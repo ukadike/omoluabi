@@ -26,7 +26,7 @@ Sync design, conflict resolution across devices, and the production framework ch
 
 ## Status: prototype running
 
-`app/` is the first running implementation of this directory's plans — a browser-only human review interface over the ten screens in `screens.md`, gated in the exact order of `architecture/governance-pipeline.md`. It is not the production web engine: no framework decision has been made, there is no sync/backend, and AI assist is a labeled stub (no model wired in). See `app/README.md` for how to run it and what it deliberately does not do yet.
+`app/` is the first running implementation of this directory's plans — a browser-only human review interface over the ten screens in `screens.md`, gated in the exact order of `architecture/governance-pipeline.md`, plus a manual "New observation" form so an observation can be created without a field device (`source.origin_type: "web-form"`). It is not the production web engine: no framework decision has been made, there is no sync/backend, and AI assist is a labeled stub (no model wired in). See `app/README.md` for how to run it and what it deliberately does not do yet.
 
 ## Directory Index
 

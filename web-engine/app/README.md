@@ -2,7 +2,9 @@
 
 First running implementation of the plans in `web-engine/`. A browser-only
 human review interface over the ten screens in `../screens.md`, gated in
-the order of `../../architecture/governance-pipeline.md`.
+the order of `../../architecture/governance-pipeline.md` — plus a manual
+"New observation" authoring form, so the pipeline can be used end to end
+without a field device.
 
 ## Run it
 
@@ -23,6 +25,12 @@ real record to review.
 
 ## What it does
 
+- A "New observation" form (`#/new`) that creates an observation plus its
+  linked consent, source, risk, and accessibility records by hand — no
+  device required. Recorded with `source.origin_type: "web-form"`, an enum
+  value the schema already defined for exactly this path. The new record
+  enters the same gated pipeline as any other; authoring it does not
+  mark any stage reviewed.
 - Inbox of observations, each showing how many governance stages are reviewed.
 - Observation detail with a pipeline stepper (Source → Consent → Risk →
   Accessibility → AI assist → Human review → Publication status).
@@ -62,6 +70,6 @@ real record to review.
 - `js/seed-data.js` — the repo's own example records, copied verbatim.
 - `js/gate.js` — governance-pipeline stage order and lock/current/complete logic.
 - `js/ai-assist.js` — labeled stub suggestion generator, advisory only.
-- `js/views.js` — render functions for all ten screens.
+- `js/views.js` — render functions for all ten screens plus the New Observation authoring form.
 - `js/router.js` — hash router; moves focus to `<main>` on every navigation.
 - `js/main.js` — seeds the store on first run, then starts the router.

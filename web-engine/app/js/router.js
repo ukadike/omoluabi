@@ -1,5 +1,6 @@
 import {
   renderInbox,
+  renderNewObservation,
   renderObservationDetail,
   renderStageReview,
   renderAiAssist,
@@ -10,6 +11,7 @@ import {
 
 const ROUTES = [
   { pattern: /^#\/$/, handler: (c) => renderInbox(c) },
+  { pattern: /^#\/new$/, handler: (c) => renderNewObservation(c) },
   { pattern: /^#\/archive$/, handler: (c) => renderArchive(c) },
   {
     pattern: /^#\/observation\/([^/]+)$/,

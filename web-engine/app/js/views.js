@@ -55,7 +55,8 @@ export async function renderInbox(container) {
     container.innerHTML = `
       <h2>Inbox</h2>
       <p>No observations yet. Observations arrive from the field device,
-      a web form, or import — see architecture/data-lifecycle.md.</p>`;
+      a web form, or import — see architecture/data-lifecycle.md.</p>
+      <p><a class="btn" href="#/new">+ New observation</a></p>`;
     return;
   }
 
@@ -94,9 +95,186 @@ export async function renderInbox(container) {
     <p>Each observation must pass Source, Consent, Risk, and Accessibility
       review, then Human Review, before a Publication Status decision can
       be recorded.</p>
+    <p><a class="btn" href="#/new">+ New observation</a></p>
     <ul class="inbox-grid" style="list-style:none; padding:0;">${rows.join(
       ""
     )}</ul>`;
+}
+
+/* ==========================================================================
+   New observation (manual, no field device — origin_type: "web-form")
+   ========================================================================== */
+
+function generateId(prefix) {
+  const rand =
+    typeof crypto !== "undefined" && crypto.randomUUID
+      ? crypto.randomUUID().slice(0, 8)
+      : Math.random().toString(36).slice(2, 10);
+  return `${prefix}-${rand}`;
+}
+
+export async function renderNewObservation(container) {
+  container.innerHTML = `
+    <p><a href="#/">&larr; Back to inbox</a></p>
+    <h2>New observation</h2>
+    <p class="inline-note">
+      Creates an observation with <code>source.origin_type: "web-form"</code>
+      instead of a field device (SSL-002, Provenance Required — the source
+      is still recorded, just not device-collected). It still enters the
+      same governance pipeline as any other observation: nothing here skips
+      Source, Consent, Risk, Accessibility, or Human Review.
+    </p>
+    <form class="review-form" data-role="new-observation">
+      <h3>Content</h3>
+      <div class="form-row">
+        <label for="no-observer">Your name or id</label>
+        <input type="text" id="no-observer" name="observer_id" required />
+      </div>
+      <div class="form-row">
+        <label for="no-transcript">Text content</label>
+        <textarea id="no-transcript" name="transcript" required></textarea>
+        <p class="help-text">The observation's written content. Stored as <code>media.transcript</code>.</p>
+      </div>
+      <div class="form-row">
+        <label for="no-image">Image URL or path (optional)</label>
+        <input type="text" id="no-image" name="image" />
+      </div>
+      <div class="form-row">
+        <label for="no-audio">Audio URL or path (optional)</label>
+        <input type="text" id="no-audio" name="audio" />
+      </div>
+      <div class="form-row">
+        <label for="no-precision">Location</label>
+        <select id="no-precision" name="location_precision">
+          <option value="withheld" selected>Withheld</option>
+          <option value="exact">Exact</option>
+          <option value="approximate">Approximate</option>
+          <option value="unknown">Unknown</option>
+        </select>
+      </div>
+
+      <h3>Consent (SSL-003)</h3>
+      <div class="form-row">
+        <label for="no-consent-state">Consent state</label>
+        <select id="no-consent-state" name="consent_state">
+          <option value="private" selected>Private</option>
+          <option value="consented">Consented</option>
+          <option value="review-public">Review-public</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="no-consent-ack">
+          <input type="checkbox" id="no-consent-ack" name="subject_acknowledged" style="width:auto; display:inline-block;" />
+          Subject acknowledged
+        </label>
+      </div>
+
+      <h3>Risk (SSL-008)</h3>
+      <div class="form-row">
+        <label for="no-risk-level">Risk level</label>
+        <select id="no-risk-level" name="risk_level">
+          <option value="low" selected>Low</option>
+          <option value="moderate">Moderate</option>
+          <option value="high">High</option>
+          <option value="severe">Severe</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="no-risk-factors">Risk factors (comma-separated, optional)</label>
+        <input type="text" id="no-risk-factors" name="risk_factors" />
+      </div>
+
+      <h3>Accessibility (SSL-004)</h3>
+      <div class="form-row">
+        <label for="no-alt-text">Alt text</label>
+        <input type="text" id="no-alt-text" name="alt_text" required />
+        <p class="help-text">Required before this observation can be reviewed as accessible.</p>
+      </div>
+      <div class="form-row">
+        <label for="no-plain-summary">Plain-language summary (optional)</label>
+        <textarea id="no-plain-summary" name="plain_language_summary"></textarea>
+      </div>
+
+      <button type="submit" class="btn">Create observation</button>
+    </form>`;
+
+  const form = container.querySelector('form[data-role="new-observation"]');
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const f = form.elements;
+    const observerId = f.observer_id.value.trim();
+    if (!observerId || !f.transcript.value.trim() || !f.alt_text.value.trim()) return;
+
+    const now = nowIso();
+    const observationId = generateId("om-obs");
+    const consentId = generateId("consent");
+    const sourceId = generateId("source");
+    const riskId = generateId("risk");
+    const accessibilityId = generateId("access");
+
+    const media = { transcript: f.transcript.value.trim() };
+    if (f.image.value.trim()) media.image = f.image.value.trim();
+    if (f.audio.value.trim()) media.audio = f.audio.value.trim();
+
+    const observation = {
+      observation_id: observationId,
+      created_at: now,
+      system: "omoluabi",
+      observer_id: observerId,
+      location: { precision: f.location_precision.value },
+      media,
+      consent_id: consentId,
+      source_id: sourceId,
+      risk_id: riskId,
+      accessibility_id: accessibilityId,
+      publication_status: "private",
+    };
+    const consent = {
+      consent_id: consentId,
+      observation_id: observationId,
+      state: f.consent_state.value,
+      consent_version: 1,
+      subject_acknowledged: f.subject_acknowledged.checked,
+      recorded_by: observerId,
+      recorded_at: now,
+    };
+    const source = {
+      source_id: sourceId,
+      observation_id: observationId,
+      origin_type: "web-form",
+      collector_id: observerId,
+      recorded_at: now,
+    };
+    const risk = {
+      risk_id: riskId,
+      observation_id: observationId,
+      risk_level: f.risk_level.value,
+      risk_factors: f.risk_factors.value
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean),
+      assessed_by: observerId,
+      assessed_at: now,
+    };
+    const accessibility = {
+      accessibility_id: accessibilityId,
+      observation_id: observationId,
+      alt_text: f.alt_text.value.trim(),
+      plain_language_summary: f.plain_language_summary.value.trim() || undefined,
+      captions_available: false,
+      recorded_at: now,
+    };
+
+    await Promise.all([
+      put("observations", observation),
+      put("consent", consent),
+      put("sources", source),
+      put("risks", risk),
+      put("accessibility", accessibility),
+    ]);
+
+    location.hash = `#/observation/${observationId}`;
+  });
 }
 
 /* ==========================================================================

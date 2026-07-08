@@ -19,7 +19,7 @@ Each screen corresponds to a stage of `architecture/governance-pipeline.md`. No 
 
 ## Implementation Status
 
-Screens 1–9 (Inbox through Publication status) are implemented as running screens in `app/`, gated by `app/js/gate.js`, which enforces the no-skipping-ahead rule programmatically — a locked stage renders a locked notice instead of its form even if navigated to directly by URL. Screen 10 (Archive/search) is implemented as a read-only table with export limited to non-private records. A "New observation" form (`#/new`) is also implemented, so Screen 1 covers both the inbox and manual creation — an observation can be authored without a field device, recorded with `source.origin_type: "web-form"`. This is a first-pass prototype, not a final design for any of these screens.
+Screens 1–9 (Inbox through Publication status) are implemented as running screens in the [Omoluabi-News repository](https://github.com/ukadike/omoluabi-news)'s `engine/` (moved there from this repo's `web-engine/app/` per Kemi's 2026-07-08 direction), gated by `engine/js/gate.js`, which enforces the no-skipping-ahead rule programmatically — a locked stage renders a locked notice instead of its form even if navigated to directly by URL. Screen 10 (Archive/search) is implemented as a read-only table with export limited to non-private records. A "New observation" form (`#/new`, with a required headline) and a news preview (`#/news`, human-`public`-decided records only) are also implemented. This is a first-pass prototype, not a final design for any of these screens.
 
 ## Source
 

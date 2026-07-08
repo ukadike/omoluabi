@@ -62,8 +62,14 @@ Source: synthesizes the "Omoluabi Investigation Engine — Complete Claude Code 
 
 - `web-engine/app/`: a News feed (`#/news`) — the public reader view completing the loop from authoring to reading. Only records with an explicit human publication decision of `public` appear (canonical gate is the publication decision record, per ADR-0004); embargoed, withdrawn, and undecided records are excluded. Verified in a browser: a published story appears with headline, provenance, and a link to its full governed record; an embargoed record and the undecided seed record never surface.
 
+### Changed (web engine moved to Omoluabi-News; headlines)
+
+- `web-engine/app/` moved to the [Omoluabi-News repository](https://github.com/ukadike/omoluabi-news)'s `engine/`, per Kemi's direction (2026-07-08) that Omoluabi-News is where the web engine lives. `web-engine/` here keeps the planning documentation the engine implements, with pointers updated in `web-engine/README.md` and `web-engine/screens.md`.
+- `schemas/observation.schema.json`: added optional `title` (headline) property — every story needs a headline. Required by the editorial engine's authoring form; optional at the schema level so device-era and pre-headline records remain valid. Noted in `schemas/README.md` (the schema is no longer strictly verbatim from the packet).
+
 ### Open
 
 - First running implementation of device firmware or the API — see `ROADMAP.md`
 - Web engine still has no backend, sync, or production storage — the "New observation" form is local-only like the rest of the prototype
+- Bridge from the editorial engine's published records to Omoluabi-News's `_data/news.json` (today an editor copies stories across by hand)
 - First running implementation of any Investigation Engine reasoning layer, output-format generator, or knowledge-graph renderer — see `investigation-engine/architecture/reasoning-layers.md`

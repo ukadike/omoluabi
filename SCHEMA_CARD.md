@@ -81,7 +81,7 @@ Except `observation.schema.json` (verbatim from the source packet), all schemas 
 - **Accessible by Design** (`github.com/ukadike/accessible-by-design-prototyping`) — WCAG 2.2+ auditing toolkit; source of the accessibility auditing principles referenced in `accessibility/baseline.md`. Also listed as an SSL `system` in `schemas/observation.schema.json`.
 - **Earth Sensors Lab** (`github.com/ukadike/Earth-Sensors-Lab`) — uses Omoluabi's observation/source/accessibility/publication/memory cards for sensor readings and STEAM education; bridged in `earth-sensors-lab-bridge/`.
 - **Umada** (`github.com/ukadike/Umada`) — narrative/worldbuilding project where Omoluabi appears as a fictional device carried by a future reporter. `umada-sandbox/` is a related but distinct engineering stress-test tool, not narrative canon.
-- **Small Systems Lab** (`ukadike.github.io/small-systems-lab`) — the umbrella public-interest studio Omoluabi belongs to.
+- **Small Systems Lab** (`ukadike.github.io/Small-Systems-Lab`) — the umbrella public-interest studio Omoluabi belongs to.
 
 ## Accessibility Considerations
 

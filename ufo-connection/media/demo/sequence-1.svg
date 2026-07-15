@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative sequence frame 1</title>
+  <desc id="desc">Frame 1 of a simulated observation sequence. A bright oval appears at horizontal position 430 above a dark horizon. This is not official evidence.</desc>
+  <rect width="1200" height="675" fill="#151515"/>
+  <path d="M0 525 C220 480 390 550 590 510 C800 465 980 535 1200 495 L1200 675 L0 675 Z" fill="#303030"/>
+  <line x1="80" y1="120" x2="1120" y2="120" stroke="#777" stroke-width="1"/>
+  <line x1="80" y1="240" x2="1120" y2="240" stroke="#555" stroke-width="1"/>
+  <line x1="80" y1="360" x2="1120" y2="360" stroke="#555" stroke-width="1"/>
+  <ellipse cx="430" cy="295" rx="38" ry="14" fill="#f1eee5"/>
+  <rect x="70" y="60" width="1060" height="390" fill="none" stroke="#aaa" stroke-width="2"/>
+  <text x="70" y="595" fill="#f1eee5" font-family="Arial, Helvetica, sans-serif" font-size="30">SIMULATED SEQUENCE · FRAME 1 OF 3</text>
+  <text x="70" y="635" fill="#bdb9af" font-family="Arial, Helvetica, sans-serif" font-size="20">Illustrative media for interface testing — not official evidence.</text>
+</svg>

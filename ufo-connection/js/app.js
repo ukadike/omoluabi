@@ -2,340 +2,390 @@ import { normalizeRecord, getSearchableText } from './data-normalizer.js';
 import { loadBeautifulDisclosure, extractYouTubeEmbedUrl } from './youtube-layer.js';
 import { recordsFromCsv } from './csv-loader.js';
 import { renderOverview } from './overview.js';
+import { loadRuleSet, evaluateArtifact } from './ssl-rules-engine.js';
+import './ssl-media-field.js';
 
-const statusEl = document.querySelector('#data-status');
-const releaseFilter = document.querySelector('#release-filter');
-const typeFilter = document.querySelector('#type-filter');
-const searchInput = document.querySelector('#search-input');
-const countMessage = document.querySelector('#record-count-message');
-const recordsEl = document.querySelector('#records');
-const overviewEl = document.querySelector('#overview');
-const discourseEl = document.querySelector('#public-discourse');
-const csvInput = document.querySelector('#csv-file');
-const dropzone = document.querySelector('#dropzone');
-const loadStatus = document.querySelector('#load-status');
-const downloadButton = document.querySelector('#download-json');
-const resetButton = document.querySelector('#reset-data');
-const sampleBanner = document.querySelector('#sample-banner');
-const loadSampleButton = document.querySelector('#load-sample');
+const elements = {
+  dataStatus: document.querySelector('#data-status'),
+  dataMode: document.querySelector('#data-mode'),
+  rulesStatus: document.querySelector('#rules-status'),
+  rulesSummary: document.querySelector('#rules-summary'),
+  releaseFilter: document.querySelector('#release-filter'),
+  typeFilter: document.querySelector('#type-filter'),
+  searchInput: document.querySelector('#search-input'),
+  countMessage: document.querySelector('#record-count-message'),
+  records: document.querySelector('#records'),
+  overview: document.querySelector('#overview'),
+  discourse: document.querySelector('#public-discourse'),
+  csvInput: document.querySelector('#csv-file'),
+  dropzone: document.querySelector('#dropzone'),
+  loadStatus: document.querySelector('#load-status'),
+  resetButton: document.querySelector('#reset-data'),
+  loadSampleButton: document.querySelector('#load-sample'),
+  banner: document.querySelector('#dataset-banner')
+};
 
 let allRecords = [];
 let cachedDisclosure = null;
-let loadedDisclosure = null;
+let ruleSet = null;
+let datasetMode = 'loading';
 
 init().catch(showFatalError);
 
 async function init() {
+  ruleSet = await loadRuleSet('../rules/ssl-rules.v1.json');
+  renderRuleSetStatus();
   cachedDisclosure = await loadDisclosure();
   const cachedRecords = Array.isArray(cachedDisclosure.records) ? cachedDisclosure.records : [];
-  if (cachedRecords.length) {
-    showOfficialCache();
-  } else {
-    // Nothing cached (war.gov is unreachable from automation), so populate the
-    // page with clearly-labelled sample data — a visitor sees it working at once.
-    await loadSample('No official records are cached yet, so this is sample data.');
-  }
-  await renderBeautifulDisclosure();
 
-  releaseFilter.addEventListener('change', applyFilters);
-  typeFilter.addEventListener('change', applyFilters);
-  searchInput.addEventListener('input', applyFilters);
-  if (csvInput) csvInput.addEventListener('change', event => readCsvFile(event.target.files && event.target.files[0]));
-  if (downloadButton) downloadButton.addEventListener('click', downloadDisclosure);
-  if (resetButton) resetButton.addEventListener('click', showOfficialCache);
-  if (loadSampleButton) loadSampleButton.addEventListener('click', () => loadSample());
+  if (cachedRecords.length) showOfficialCache();
+  else await loadSample('No official records are cached, so the governed demonstration is shown.');
+
+  await renderBeautifulDisclosure();
+  elements.releaseFilter.addEventListener('change', applyFilters);
+  elements.typeFilter.addEventListener('change', applyFilters);
+  elements.searchInput.addEventListener('input', applyFilters);
+  elements.csvInput?.addEventListener('change', event => readCsvFile(event.target.files?.[0]));
+  elements.resetButton?.addEventListener('click', showOfficialCache);
+  elements.loadSampleButton?.addEventListener('click', () => loadSample());
   setupDropzone();
 }
 
-// --- dataset modes: official cache / sample / user CSV ----------------
+function setDataset(records, options = {}) {
+  datasetMode = options.mode || 'unknown';
+  allRecords = records.map((record, index) => {
+    const normalized = normalizeRecord(record, index);
+    normalized.rule_evaluation = evaluateArtifact(normalized, ruleSet);
+    return normalized;
+  });
 
-function setDataset(records, { statusText, sample = false, allowDownload = false } = {}) {
-  allRecords = records.map(normalizeRecord);
-  resetFilter(releaseFilter);
-  resetFilter(typeFilter);
+  resetFilter(elements.releaseFilter);
+  resetFilter(elements.typeFilter);
   populateFilters(allRecords);
-  searchInput.value = '';
+  elements.searchInput.value = '';
+  elements.dataStatus.textContent = options.statusText || `${allRecords.length} records loaded.`;
+  elements.dataMode.textContent = datasetModeLabel(datasetMode);
+  elements.dataMode.className = `status-badge mode-${datasetMode}`;
+  renderDatasetBanner(options.bannerText || '');
+  elements.resetButton.hidden = datasetMode === 'official';
   renderView(allRecords);
-  statusEl.textContent = statusText;
-
-  sampleBanner.hidden = !sample;
-  if (sample) {
-    sampleBanner.textContent = 'Demonstration view — sample data, not official PURSUE records. Load the official CSV, or clear to return to the official (currently empty) cache.';
-  }
-  loadedDisclosure = allowDownload
-    ? { _fetchedAt: new Date().toISOString(), source: 'https://www.war.gov/ufo/', note: 'Loaded in-browser from a user-provided CSV file.', records }
-    : null;
-  downloadButton.hidden = !allowDownload;
-  resetButton.hidden = !(sample || allowDownload);
 }
 
 function showOfficialCache() {
-  const records = Array.isArray(cachedDisclosure.records) ? cachedDisclosure.records : [];
-  const fetchedAt = cachedDisclosure._fetchedAt || 'not yet fetched';
-  setDataset(records, { statusText: `${records.length} cached official records loaded. Last cache update: ${fetchedAt}.` });
-  if (csvInput) csvInput.value = '';
-  loadStatus.textContent = records.length ? '' : 'Showing the official cache (currently empty). Load sample data or an official CSV above.';
+  const records = Array.isArray(cachedDisclosure?.records) ? cachedDisclosure.records : [];
+  const fetchedAt = cachedDisclosure?._fetchedAt || 'not yet fetched';
+  setDataset(records, {
+    mode: 'official',
+    statusText: `${records.length} cached official record${records.length === 1 ? '' : 's'} loaded. Last cache update: ${fetchedAt}.`,
+    bannerText: records.length
+      ? 'OFFICIAL CACHE · Records are normalized for review. Rule results do not replace human verification.'
+      : 'OFFICIAL CACHE EMPTY · Load the governed demonstration or select an official PURSUE CSV.'
+  });
+  if (elements.csvInput) elements.csvInput.value = '';
+  elements.loadStatus.textContent = records.length ? '' : 'The official cache is currently empty.';
 }
 
 async function loadSample(prefix = '') {
-  let data;
   try {
-    const response = await fetch('./data/sample-records.json');
-    if (!response.ok) throw new Error('sample missing');
-    data = await response.json();
-  } catch {
-    loadStatus.textContent = 'Sample data could not be loaded.';
-    return;
+    const response = await fetch('./data/sample-records.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error('Sample data is missing.');
+    const data = await response.json();
+    const records = Array.isArray(data.records) ? data.records : [];
+    setDataset(records, {
+      mode: 'synthetic',
+      statusText: `${prefix} Showing ${records.length} governed synthetic record${records.length === 1 ? '' : 's'}.`.trim(),
+      bannerText: 'SYNTHETIC DEMONSTRATION · These records and media were created to show the SSL Media Field and rules engine. They are not official evidence.'
+    });
+    if (elements.csvInput) elements.csvInput.value = '';
+    elements.loadStatus.textContent = `Loaded ${records.length} demonstration records with image, video, audio, and slideshow media.`;
+  } catch (error) {
+    elements.loadStatus.textContent = `Demonstration data could not be loaded: ${error.message}`;
   }
-  const records = Array.isArray(data.records) ? data.records : [];
-  setDataset(records, {
-    sample: true,
-    statusText: `${prefix} Showing ${records.length} sample records (illustrative, not official).`.trim()
-  });
-  if (csvInput) csvInput.value = '';
-  loadStatus.textContent = `Loaded ${records.length} sample records. Filters, search, and the overview now work on them.`;
 }
 
 function readCsvFile(file) {
   if (!file) return;
-  loadStatus.textContent = `Reading "${file.name}"…`;
+  elements.loadStatus.textContent = `Reading “${file.name}”…`;
   const reader = new FileReader();
-  reader.onerror = () => { loadStatus.textContent = 'That file could not be read.'; };
+  reader.onerror = () => { elements.loadStatus.textContent = 'That file could not be read.'; };
   reader.onload = () => {
-    let records;
     try {
-      records = recordsFromCsv(String(reader.result));
-    } catch {
-      loadStatus.textContent = 'That file could not be parsed as CSV. Make sure it is the PURSUE CSV.';
-      return;
+      const records = recordsFromCsv(String(reader.result));
+      if (!records.length) throw new Error('No records were detected.');
+      setDataset(records, {
+        mode: 'local',
+        statusText: `${records.length} record${records.length === 1 ? '' : 's'} loaded locally from “${file.name}”. Nothing was uploaded.`,
+        bannerText: 'LOCAL BROWSER SESSION · The selected CSV is parsed only in this browser. Imported records remain in internal-review status until human verification.'
+      });
+      elements.loadStatus.textContent = `Loaded ${records.length} records. Media and rules are evaluated from the fields present in the CSV.`;
+    } catch (error) {
+      elements.loadStatus.textContent = `The file could not be parsed as a PURSUE-style CSV: ${error.message}`;
     }
-    if (!records.length) {
-      loadStatus.textContent = 'No records were found in that file. Make sure it is the PURSUE CSV.';
-      return;
-    }
-    setDataset(records, {
-      allowDownload: true,
-      statusText: `${records.length} records loaded from "${file.name}" in this browser session. This data is shown here only and is not saved to the site.`
-    });
-    loadStatus.textContent = `Loaded ${records.length} records. Filters, search, and the overview now work on them.`;
   };
   reader.readAsText(file);
 }
 
 function setupDropzone() {
-  if (!dropzone) return;
-  ['dragenter', 'dragover'].forEach(evt => dropzone.addEventListener(evt, event => {
+  if (!elements.dropzone) return;
+  ['dragenter', 'dragover'].forEach(type => elements.dropzone.addEventListener(type, event => {
     event.preventDefault();
-    dropzone.classList.add('dragging');
+    elements.dropzone.classList.add('dragging');
   }));
-  ['dragleave', 'drop'].forEach(evt => dropzone.addEventListener(evt, event => {
+  ['dragleave', 'drop'].forEach(type => elements.dropzone.addEventListener(type, event => {
     event.preventDefault();
-    dropzone.classList.remove('dragging');
+    elements.dropzone.classList.remove('dragging');
   }));
-  dropzone.addEventListener('drop', event => {
-    const file = event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files[0];
-    if (file) readCsvFile(file);
-  });
+  elements.dropzone.addEventListener('drop', event => readCsvFile(event.dataTransfer?.files?.[0]));
 }
 
 function renderView(records) {
   renderRecords(records);
-  renderOverview(overviewEl, records);
-}
-
-function downloadDisclosure() {
-  if (!loadedDisclosure) return;
-  const blob = new Blob([JSON.stringify(loadedDisclosure, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'disclosure.json';
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-}
-
-function resetFilter(select) {
-  while (select.options.length > 1) select.remove(1);
-  select.value = 'all';
-}
-
-async function loadDisclosure() {
-  const response = await fetch('./data/disclosure.json');
-  if (!response.ok) throw new Error('Local disclosure cache could not be loaded.');
-  return response.json();
-}
-
-function populateFilters(records) {
-  unique(records.map(r => r.release)).forEach(value => appendOption(releaseFilter, value));
-  unique(records.map(r => r.document_type)).forEach(value => appendOption(typeFilter, value));
+  renderOverview(elements.overview, records);
+  renderAggregateRules(records);
 }
 
 function applyFilters() {
-  const q = searchInput.value.toLowerCase().trim();
-  const release = releaseFilter.value;
-  const type = typeFilter.value;
-
+  const query = elements.searchInput.value.toLowerCase().trim();
+  const release = elements.releaseFilter.value;
+  const type = elements.typeFilter.value;
   const filtered = allRecords.filter(record => {
     if (release !== 'all' && record.release !== release) return false;
     if (type !== 'all' && record.document_type !== type) return false;
-    if (q && !getSearchableText(record).includes(q)) return false;
+    if (query && !getSearchableText(record).includes(query)) return false;
     return true;
   });
-
   renderView(filtered);
 }
 
 function renderRecords(records) {
-  recordsEl.replaceChildren();
-  countMessage.textContent = `Showing ${records.length} of ${allRecords.length} records.`;
+  elements.records.replaceChildren();
+  elements.countMessage.textContent = `Showing ${records.length} of ${allRecords.length} records.`;
 
   if (!records.length) {
     const empty = document.createElement('p');
-    empty.textContent = 'No records to show. Use “Get records” above to load sample data or an official CSV.';
-    recordsEl.appendChild(empty);
+    empty.textContent = 'No records match the current filters.';
+    elements.records.appendChild(empty);
     return;
   }
 
-  records.forEach((record, index) => recordsEl.appendChild(createRecordCard(record, index)));
+  records.forEach((record, index) => elements.records.appendChild(createRecordCard(record, index)));
 }
 
 function createRecordCard(record, index) {
   const article = document.createElement('article');
   article.className = 'record-card';
+  article.dataset.publicationStatus = record.publication_status;
 
+  const header = document.createElement('header');
+  header.className = 'record-header';
+  const headingWrap = document.createElement('div');
   const meta = document.createElement('p');
   meta.className = 'meta';
-  meta.textContent = `${record.agency} · Release ${record.release}`;
-
+  meta.textContent = `${record.agency} · ${record.release} · ${record.document_type}`;
   const title = document.createElement('h3');
+  title.id = `record-title-${index}`;
   title.textContent = record.title;
+  headingWrap.append(meta, title);
+  const badges = document.createElement('div');
+  badges.className = 'record-badges';
+  badges.append(
+    badge(sourceStatusLabel(record.provenance?.verification_status), `verification-${record.provenance?.verification_status || 'unknown'}`),
+    badge(publicationLabel(record.publication_status), `publication-${record.publication_status || 'unknown'}`),
+    ruleBadge(record.rule_evaluation?.summary)
+  );
+  header.append(headingWrap, badges);
+  article.appendChild(header);
+
+  const description = document.createElement('p');
+  description.className = 'record-description';
+  description.textContent = record.description;
+  article.appendChild(description);
+
+  const mediaField = document.createElement('ssl-media-field');
+  mediaField.media = record.media;
+  mediaField.evaluation = record.rule_evaluation;
+  article.appendChild(mediaField);
 
   const grid = document.createElement('div');
   grid.className = 'record-grid';
-
-  const official = document.createElement('section');
-  official.setAttribute('aria-labelledby', `official-${index}`);
-  const officialHeading = document.createElement('h4');
-  officialHeading.id = `official-${index}`;
-  officialHeading.textContent = 'Official record';
-  official.appendChild(officialHeading);
-  official.appendChild(createFieldList([
-    ['Incident date', record.incident_date],
-    ['Location', record.incident_location],
-    ['Type', record.document_type],
-    ['Description', record.description]
-  ]));
-  official.appendChild(createLinks(record));
-
-  const reading = document.createElement('section');
-  reading.setAttribute('aria-labelledby', `reading-${index}`);
-  const readingHeading = document.createElement('h4');
-  readingHeading.id = `reading-${index}`;
-  readingHeading.textContent = 'Omoluabi Reading';
-  reading.appendChild(readingHeading);
-  reading.appendChild(createList('Known', record.omoluabi.known));
-  reading.appendChild(createList('Missing / unresolved', record.omoluabi.missing));
-  reading.appendChild(createList('Evidence present', record.omoluabi.evidence_present.length ? record.omoluabi.evidence_present : ['No media/source file detected in normalized data.']));
-
-  grid.append(official, reading);
-  article.append(meta, title, createMediaPreview(record), grid);
+  grid.append(
+    officialRecordSection(record, index),
+    evidenceReadingSection(record, index),
+    governanceSection(record, index)
+  );
+  article.appendChild(grid);
+  article.appendChild(recordRulePanel(record));
   return article;
 }
 
-function createMediaPreview(record) {
-  const wrap = document.createElement('div');
-  wrap.className = 'media-preview';
-  if (record.image_url) {
-    const img = document.createElement('img');
-    img.src = record.image_url;
-    img.alt = `Official record image preview for ${record.title}`;
-    wrap.appendChild(img);
-  }
-  if (record.video_url) {
-    const p = document.createElement('p');
-    const a = document.createElement('a');
-    a.href = record.video_url;
-    a.rel = 'noopener noreferrer';
-    a.textContent = 'Open official video source';
-    p.appendChild(a);
-    wrap.appendChild(p);
-  }
-  return wrap;
-}
-
-function createLinks(record) {
-  const p = document.createElement('p');
-  if (record.file_url) {
-    const file = document.createElement('a');
-    file.href = record.file_url;
-    file.rel = 'noopener noreferrer';
-    file.textContent = 'Open source file';
-    p.appendChild(file);
-    p.appendChild(document.createTextNode(' · '));
-  }
-  const official = document.createElement('a');
-  official.href = record.official_source;
-  official.rel = 'noopener noreferrer';
-  official.textContent = 'Official PURSUE page';
-  p.appendChild(official);
-  return p;
-}
-
-function createFieldList(fields) {
-  const dl = document.createElement('dl');
-  dl.className = 'field-list';
-  fields.forEach(([label, value]) => {
-    const dt = document.createElement('dt');
-    const dd = document.createElement('dd');
-    dt.textContent = label;
-    dd.textContent = value || 'Not available';
-    dl.append(dt, dd);
-  });
-  return dl;
-}
-
-function createList(title, items) {
-  const section = document.createElement('div');
-  const h = document.createElement('h5');
-  h.textContent = title;
-  const ul = document.createElement('ul');
-  items.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = item;
-    ul.appendChild(li);
-  });
-  section.append(h, ul);
+function officialRecordSection(record, index) {
+  const section = document.createElement('section');
+  section.setAttribute('aria-labelledby', `official-${index}`);
+  const heading = document.createElement('h4');
+  heading.id = `official-${index}`;
+  heading.textContent = 'Record and source';
+  section.append(heading, createFieldList([
+    ['Incident date', record.incident_date],
+    ['Location', record.incident_location],
+    ['Record type', record.document_type],
+    ['Source type', record.provenance?.source_type],
+    ['Verification', record.provenance?.verification_status],
+    ['Transformations', arrayText(record.provenance?.transformations)]
+  ]));
+  const links = createSourceLinks(record);
+  if (links.childNodes.length) section.appendChild(links);
   return section;
+}
+
+function evidenceReadingSection(record, index) {
+  const section = document.createElement('section');
+  section.setAttribute('aria-labelledby', `reading-${index}`);
+  const heading = document.createElement('h4');
+  heading.id = `reading-${index}`;
+  heading.textContent = 'Omoluabi evidence reading';
+  const classification = document.createElement('p');
+  classification.className = 'epistemic-label';
+  classification.textContent = `Classification: ${record.epistemic_status?.classification || 'unknown'} · Confidence: ${record.epistemic_status?.confidence || 'unknown'}`;
+  section.append(
+    heading,
+    classification,
+    createList('Known', record.epistemic_status?.known),
+    createList('Missing', record.epistemic_status?.missing),
+    createList('Unresolved', record.epistemic_status?.unresolved),
+    createList('What could change the assessment', record.epistemic_status?.what_would_change_assessment)
+  );
+  return section;
+}
+
+function governanceSection(record, index) {
+  const section = document.createElement('section');
+  section.setAttribute('aria-labelledby', `governance-${index}`);
+  const heading = document.createElement('h4');
+  heading.id = `governance-${index}`;
+  heading.textContent = 'Human governance';
+  section.append(heading, createFieldList([
+    ['Publication status', publicationLabel(record.publication_status)],
+    ['Human review required', yesNo(record.human_governance?.human_review_required)],
+    ['Review status', record.human_governance?.review_status],
+    ['Reviewer role', record.human_governance?.reviewer_role],
+    ['Automated actions', arrayText(record.human_governance?.automated_actions)],
+    ['Corrections supported', yesNo(record.returnability?.corrections_supported)],
+    ['Appeal supported', yesNo(record.returnability?.human_appeal_supported)]
+  ]));
+  return section;
+}
+
+function recordRulePanel(record) {
+  const details = document.createElement('details');
+  details.className = 'record-rule-panel';
+  const summary = document.createElement('summary');
+  const counts = record.rule_evaluation?.summary || { pass: 0, warn: 0, fail: 0 };
+  summary.textContent = `SSL rule evaluation — ${counts.pass} passed, ${counts.warn} warnings, ${counts.fail} failures`;
+  details.appendChild(summary);
+
+  const note = document.createElement('p');
+  note.className = 'quiet';
+  note.textContent = 'Automated rule checks expose completeness and governance conditions. They do not determine truth or replace human editorial review.';
+  details.appendChild(note);
+
+  const list = document.createElement('ul');
+  list.className = 'rule-result-list';
+  (record.rule_evaluation?.results || []).filter(result => !result.media_id).forEach(result => {
+    const item = document.createElement('li');
+    item.className = `rule-result rule-${result.outcome}`;
+    const strong = document.createElement('strong');
+    strong.textContent = `${result.rule_id} · ${result.outcome.toUpperCase()}`;
+    item.append(strong, document.createTextNode(` — ${result.detail}`));
+    list.appendChild(item);
+  });
+  details.appendChild(list);
+  return details;
+}
+
+function renderAggregateRules(records) {
+  const totals = { pass: 0, warn: 0, fail: 0, not_applicable: 0 };
+  records.forEach(record => {
+    const summary = record.rule_evaluation?.summary;
+    if (!summary) return;
+    Object.keys(totals).forEach(key => { totals[key] += summary[key] || 0; });
+  });
+  elements.rulesSummary.replaceChildren();
+  const list = document.createElement('ul');
+  list.className = 'aggregate-rule-list';
+  [
+    ['Passed', totals.pass],
+    ['Warnings', totals.warn],
+    ['Failures', totals.fail],
+    ['Not applicable', totals.not_applicable]
+  ].forEach(([label, value]) => {
+    const item = document.createElement('li');
+    const strong = document.createElement('strong');
+    strong.textContent = String(value);
+    item.append(strong, document.createTextNode(` ${label}`));
+    list.appendChild(item);
+  });
+  elements.rulesSummary.appendChild(list);
+}
+
+function renderRuleSetStatus() {
+  const fallbackText = ruleSet.fallback ? ` Fallback rules are active because the canonical rule file could not load: ${ruleSet.load_error}` : '';
+  elements.rulesStatus.textContent = `SSL rules ${ruleSet.version} · ${ruleSet.rules.length} rules loaded.${fallbackText}`;
 }
 
 async function renderBeautifulDisclosure() {
   const items = await loadBeautifulDisclosure();
-  discourseEl.replaceChildren();
+  elements.discourse.replaceChildren();
   if (!items.length) {
     const empty = document.createElement('p');
-    empty.textContent = 'No curated public-discourse videos yet. Add verified YouTube items to ufo-connection/data/beautiful-disclosure.json.';
-    discourseEl.appendChild(empty);
+    empty.textContent = 'No public-discourse media has been approved yet. This layer remains intentionally separate from official records and from synthetic demonstrations.';
+    elements.discourse.appendChild(empty);
     return;
   }
+
   items.forEach(item => {
     const embed = extractYouTubeEmbedUrl(item.youtube || item.url || item.videoId);
     if (!embed) return;
     const article = document.createElement('article');
-    article.className = 'record-card';
-    const h = document.createElement('h3');
-    h.textContent = item.title || 'Untitled public discussion';
-    const p = document.createElement('p');
-    p.textContent = item.summary || 'Public discourse item. Not official evidence.';
+    article.className = 'discourse-card';
+    const heading = document.createElement('h3');
+    heading.textContent = item.title || 'Untitled public discussion';
+    const context = document.createElement('p');
+    context.textContent = item.summary || 'Public discourse item. Not official evidence.';
     const iframe = document.createElement('iframe');
     iframe.src = embed;
-    iframe.title = item.title || 'YouTube video';
+    iframe.title = item.title || 'Public-discourse video';
     iframe.loading = 'lazy';
-    iframe.sandbox = 'allow-scripts allow-same-origin';
-    article.append(h, p, iframe);
-    discourseEl.appendChild(article);
+    iframe.allow = 'accelerometer; encrypted-media; gyroscope; picture-in-picture';
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    iframe.sandbox = 'allow-scripts allow-same-origin allow-presentation';
+    article.append(heading, context, iframe);
+    elements.discourse.appendChild(article);
   });
+}
+
+async function loadDisclosure() {
+  try {
+    const response = await fetch('./data/disclosure.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Cache request returned ${response.status}`);
+    return response.json();
+  } catch (error) {
+    return { _fetchedAt: null, records: [], load_error: error.message };
+  }
+}
+
+function renderDatasetBanner(text) {
+  elements.banner.hidden = !text;
+  elements.banner.textContent = text;
+}
+
+function populateFilters(records) {
+  unique(records.map(record => record.release)).forEach(value => appendOption(elements.releaseFilter, value));
+  unique(records.map(record => record.document_type)).forEach(value => appendOption(elements.typeFilter, value));
+}
+
+function resetFilter(select) {
+  while (select.options.length > 1) select.remove(1);
+  select.value = 'all';
 }
 
 function appendOption(select, value) {
@@ -346,13 +396,116 @@ function appendOption(select, value) {
   select.appendChild(option);
 }
 
+function createFieldList(fields) {
+  const list = document.createElement('dl');
+  list.className = 'field-list';
+  fields.forEach(([label, value]) => {
+    const term = document.createElement('dt');
+    const definition = document.createElement('dd');
+    term.textContent = label;
+    definition.textContent = hasValue(value) ? String(value) : 'Not available';
+    list.append(term, definition);
+  });
+  return list;
+}
+
+function createList(title, values) {
+  const section = document.createElement('div');
+  const heading = document.createElement('h5');
+  heading.textContent = title;
+  const list = document.createElement('ul');
+  const items = Array.isArray(values) && values.length ? values : ['None declared.'];
+  items.forEach(value => {
+    const item = document.createElement('li');
+    item.textContent = value;
+    list.appendChild(item);
+  });
+  section.append(heading, list);
+  return section;
+}
+
+function createSourceLinks(record) {
+  const paragraph = document.createElement('p');
+  paragraph.className = 'source-links';
+  const candidates = [
+    ['Open source file', record.file_url],
+    ['Open source or provenance page', record.provenance?.source_url],
+    ['Open official PURSUE page', record.official_source]
+  ];
+  const seen = new Set();
+  candidates.forEach(([label, href]) => {
+    if (!href || seen.has(href)) return;
+    seen.add(href);
+    if (paragraph.childNodes.length) paragraph.appendChild(document.createTextNode(' · '));
+    const link = document.createElement('a');
+    link.href = href;
+    link.textContent = label;
+    setExternal(link);
+    paragraph.appendChild(link);
+  });
+  return paragraph;
+}
+
+function setExternal(link) {
+  try {
+    const url = new URL(link.href, window.location.href);
+    if (url.origin !== window.location.origin) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    }
+  } catch {
+    // Leave the link unchanged.
+  }
+}
+
+function badge(text, className) {
+  const element = document.createElement('span');
+  element.className = `status-badge ${className}`;
+  element.textContent = text;
+  return element;
+}
+
+function ruleBadge(summary = {}) {
+  const failures = summary.fail || 0;
+  const warnings = summary.warn || 0;
+  if (failures) return badge(`${failures} rule failure${failures === 1 ? '' : 's'}`, 'rule-fail');
+  if (warnings) return badge(`${warnings} rule warning${warnings === 1 ? '' : 's'}`, 'rule-warn');
+  return badge('Rules passed', 'rule-pass');
+}
+
+function datasetModeLabel(mode) {
+  return ({ official: 'Official cache', synthetic: 'Synthetic demonstration', local: 'Local CSV session' })[mode] || 'Unknown dataset';
+}
+
+function sourceStatusLabel(value) {
+  return ({ verified: 'Verified source', partially_verified: 'Partially verified', unverified: 'Unverified', disputed: 'Disputed', synthetic: 'Synthetic', fictional: 'Fictional', unknown: 'Verification unknown' })[value] || 'Verification unknown';
+}
+
+function publicationLabel(value) {
+  return String(value || 'unknown').replaceAll('_', ' ');
+}
+
+function yesNo(value) {
+  if (value === true) return 'Yes';
+  if (value === false) return 'No';
+  return hasValue(value) ? String(value) : 'Not declared';
+}
+
+function arrayText(value) {
+  return Array.isArray(value) && value.length ? value.join('; ') : '';
+}
+
 function unique(values) {
   return [...new Set(values.filter(Boolean))].sort();
 }
 
+function hasValue(value) {
+  return value !== undefined && value !== null && String(value).trim() !== '';
+}
+
 function showFatalError(error) {
-  statusEl.textContent = error.message;
-  const p = document.createElement('p');
-  p.textContent = 'Open docs/offline.html for recovery instructions or check the GitHub Action logs.';
-  recordsEl.replaceChildren(p);
+  elements.dataStatus.textContent = `The page could not initialize: ${error.message}`;
+  const message = document.createElement('p');
+  message.textContent = 'The source files remain available in the repository. Check browser console output and GitHub Pages deployment status.';
+  elements.records.replaceChildren(message);
 }

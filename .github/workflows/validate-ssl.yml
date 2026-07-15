@@ -1,0 +1,36 @@
+name: Validate SSL rules and media
+
+on:
+  push:
+    paths:
+      - 'ufo-connection/**'
+      - 'standards/**'
+      - 'schemas/**'
+      - 'rules/**'
+      - '.github/workflows/validate-ssl.yml'
+  pull_request:
+    paths:
+      - 'ufo-connection/**'
+      - 'standards/**'
+      - 'schemas/**'
+      - 'rules/**'
+      - '.github/workflows/validate-ssl.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JSON files
+        run: |
+          node -e "for (const file of ['rules/ssl-rules.v1.json','schemas/ssl-universal.schema.json','schemas/media.schema.json','schemas/rules.schema.json','ufo-connection/data/sample-records.json']) JSON.parse(require('fs').readFileSync(file, 'utf8'));"
+      - name: Run UFO Connection tests
+        working-directory: ufo-connection
+        run: npm test

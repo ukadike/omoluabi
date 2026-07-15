@@ -1,98 +1,70 @@
-// Accessible overview visualization: counts by release, type, and agency, plus a
-// decade timeline. Meaning is carried by text ("Type video — 8 records"); the
-// bar is decorative (aria-hidden), so there is no color- or length-only meaning.
-// No animation, so it is fine under reduced-motion.
-
 export function renderOverview(container, records) {
   container.replaceChildren();
-  if (!records.length) {
-    const p = document.createElement('p');
-    p.className = 'quiet';
-    p.textContent = 'Load records to see the overview: totals by release, type, agency, and a decade timeline.';
-    container.appendChild(p);
-    return;
-  }
-
   const total = document.createElement('p');
   total.className = 'overview-total';
-  total.textContent = `${records.length} records in view.`;
+  total.textContent = `${records.length} record${records.length === 1 ? '' : 's'} in the current view.`;
   container.appendChild(total);
 
+  if (!records.length) return;
   const grid = document.createElement('div');
   grid.className = 'overview-grid';
   grid.append(
-    chartBlock('By release', countBy(records, r => labelOr(r.release, 'Unspecified'))),
-    chartBlock('By type', countBy(records, r => labelOr(r.document_type, 'unknown'))),
-    chartBlock('By agency', countBy(records, r => labelOr(r.agency, 'Unknown agency'))),
-    chartBlock('By decade', countByDecade(records), { keepOrder: true })
+    chartBlock('By release', count(records, record => record.release || 'Unspecified')),
+    chartBlock('By record type', count(records, record => record.document_type || 'unknown')),
+    chartBlock('By source status', countMedia(records, item => item.source_status || 'unknown')),
+    chartBlock('By media type', countMedia(records, item => item.type || 'unknown'))
   );
   container.appendChild(grid);
 }
 
-function chartBlock(title, counts, { keepOrder = false } = {}) {
+function chartBlock(title, entries) {
   const section = document.createElement('section');
   section.className = 'chart-block';
-
-  const h = document.createElement('h3');
-  h.textContent = title;
-  section.appendChild(h);
-
-  const entries = Object.entries(counts);
-  if (!keepOrder) entries.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-  const max = Math.max(1, ...entries.map(([, n]) => n));
-
+  const heading = document.createElement('h3');
+  heading.textContent = title;
   const list = document.createElement('ul');
   list.className = 'chart';
-  for (const [label, n] of entries) {
-    const li = document.createElement('li');
-    li.className = 'chart-row';
-
+  const max = Math.max(1, ...entries.map(([, value]) => value));
+  entries.forEach(([label, value]) => {
+    const item = document.createElement('li');
+    item.className = 'chart-row';
     const text = document.createElement('span');
     text.className = 'chart-label';
-    text.textContent = `${label} — ${n}`;
-
-    const track = document.createElement('span');
-    track.className = 'chart-bar';
-    track.setAttribute('aria-hidden', 'true');
+    text.textContent = `${label} — ${value}`;
+    const bar = document.createElement('span');
+    bar.className = 'chart-bar';
+    bar.setAttribute('aria-hidden', 'true');
     const fill = document.createElement('span');
     fill.className = 'chart-fill';
-    fill.style.width = `${Math.round((n / max) * 100)}%`;
-    track.appendChild(fill);
-
-    li.append(text, track);
-    list.appendChild(li);
-  }
-  section.appendChild(list);
+    fill.style.width = `${Math.max(4, (value / max) * 100)}%`;
+    bar.appendChild(fill);
+    item.append(text, bar);
+    list.appendChild(item);
+  });
+  section.append(heading, list);
   return section;
 }
 
-function countBy(records, keyFn) {
-  const out = {};
-  for (const r of records) {
-    const key = keyFn(r);
-    out[key] = (out[key] || 0) + 1;
-  }
-  return out;
+function count(records, getter) {
+  const map = new Map();
+  records.forEach(record => {
+    const key = getter(record);
+    map.set(key, (map.get(key) || 0) + 1);
+  });
+  return [...map.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
-function countByDecade(records) {
-  const out = {};
-  for (const r of records) {
-    const year = parseInt(String(r.incident_date).slice(0, 4), 10);
-    const key = Number.isFinite(year) ? `${Math.floor(year / 10) * 10}s` : 'Unknown';
-    out[key] = (out[key] || 0) + 1;
-  }
-  // chronological order, Unknown last
-  return Object.fromEntries(
-    Object.entries(out).sort((a, b) => {
-      if (a[0] === 'Unknown') return 1;
-      if (b[0] === 'Unknown') return -1;
-      return parseInt(a[0], 10) - parseInt(b[0], 10);
-    })
-  );
+function countMedia(records, getter) {
+  const items = records.flatMap(record => flattenMedia(record.media || []));
+  if (!items.length) return [['No media', 0]];
+  const map = new Map();
+  items.forEach(item => {
+    const key = getter(item);
+    map.set(key, (map.get(key) || 0) + 1);
+  });
+  return [...map.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
-function labelOr(value, fallback) {
-  const v = (value ?? '').toString().trim();
-  return v === '' ? fallback : v;
+function flattenMedia(items) {
+  return items.flatMap(item => [item, ...(Array.isArray(item.items) ? flattenMedia(item.items) : [])]);
 }

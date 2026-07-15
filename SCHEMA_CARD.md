@@ -94,3 +94,8 @@ Accessibility is treated as required infrastructure, not polish (`accessibility/
 - Federation trust model is unscoped (`architecture/sync-and-federation.md`); `diagrams/federation.mmd` is a stub.
 - Keyboard workflow spec (keybindings, tab order, focus-trap handling) is an open question in `accessibility/keyboard-workflow.md`.
 - `memory.schema.json`'s shape and `risk.schema.json`'s risk-level scale are first-draft judgment calls, each flagged in the schema's own `description` field.
+
+## SSL Universal Extension
+
+This Omoluabi project card extends `ssl-universal-schema@1.0.0`, uses `ssl-media-schema@1.0.0`, and evaluates governed records against `ssl-rules@1.0.0`. See [`SCHEMA_CARD-ADDENDUM.md`](SCHEMA_CARD-ADDENDUM.md) for the implementation-specific declaration.
+

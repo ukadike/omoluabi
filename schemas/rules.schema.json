@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://smallsystemslab.com/schemas/rules.schema.json",
+  "title": "Small Systems Lab Executable Rule Set",
+  "type": "object",
+  "required": ["rule_set_id", "version", "rules"],
+  "properties": {
+    "rule_set_id": {"type": "string"},
+    "version": {"type": "string"},
+    "status": {"enum": ["draft", "active", "deprecated"]},
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "level", "test", "message"],
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "level": {"enum": ["block", "warn", "inform"]},
+          "scope": {"enum": ["artifact", "media", "publication"]},
+          "test": {"type": "string"},
+          "message": {"type": "string"},
+          "remediation": {"type": "string"},
+          "references": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

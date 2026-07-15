@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative night-sky observation</title>
+  <desc id="desc">A monochrome simulated night sky with a small bright oval above a low horizon. Text states that the image is illustrative and not official evidence.</desc>
+  <rect width="1200" height="675" fill="#121212"/>
+  <g fill="#e8e4da" opacity="0.7">
+    <circle cx="90" cy="110" r="2"/><circle cx="190" cy="70" r="1.5"/><circle cx="345" cy="145" r="2"/>
+    <circle cx="505" cy="85" r="1.4"/><circle cx="680" cy="120" r="1.8"/><circle cx="830" cy="60" r="1.5"/>
+    <circle cx="990" cy="150" r="2"/><circle cx="1110" cy="95" r="1.5"/>
+  </g>
+  <path d="M0 520 C180 470 340 540 510 505 C690 470 850 535 1200 475 L1200 675 L0 675 Z" fill="#2a2a2a"/>
+  <ellipse cx="770" cy="275" rx="42" ry="17" fill="#f3f0e7"/>
+  <ellipse cx="770" cy="275" rx="90" ry="40" fill="none" stroke="#f3f0e7" stroke-opacity="0.22" stroke-width="3"/>
+  <line x1="770" y1="320" x2="770" y2="445" stroke="#f3f0e7" stroke-opacity="0.25" stroke-dasharray="10 12"/>
+  <text x="52" y="600" fill="#f3f0e7" font-family="Arial, Helvetica, sans-serif" font-size="28">ILLUSTRATIVE MEDIA — NOT OFFICIAL EVIDENCE</text>
+  <text x="52" y="638" fill="#bdb9af" font-family="Arial, Helvetica, sans-serif" font-size="20">Created to demonstrate the SSL Media Field and rules engine.</text>
+</svg>

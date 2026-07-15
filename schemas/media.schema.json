@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://smallsystemslab.com/schemas/media.schema.json",
+  "title": "Small Systems Lab Media Item",
+  "type": "object",
+  "required": ["id", "type", "title", "source_status", "format", "license", "provenance", "accessibility", "playback", "evidentiary_status"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "type": {"enum": ["image", "video", "audio", "slideshow", "gallery", "document", "map", "interactive", "sensor_visualization", "livestream", "model_3d", "unknown"]},
+    "title": {"type": "string", "minLength": 1},
+    "description": {"type": "string"},
+    "source_status": {"enum": ["source", "annotated", "transformed", "reconstructed", "synthetic", "fictional", "unknown"]},
+    "src": {"type": "string"},
+    "thumbnail": {"type": "string"},
+    "poster": {"type": "string"},
+    "alt": {"type": "string"},
+    "caption": {"type": "string"},
+    "credit": {"type": "string"},
+    "creator": {"type": "string"},
+    "publisher": {"type": "string"},
+    "source_url": {"type": "string"},
+    "duration": {"type": ["number", "string"]},
+    "dimensions": {"type": "string"},
+    "format": {"type": "string", "minLength": 1},
+    "file_size": {"type": ["integer", "string"]},
+    "license": {"type": "string", "minLength": 1},
+    "transcript": {"type": "string"},
+    "transcript_text": {"type": "string"},
+    "captions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["src", "srclang", "label"],
+        "properties": {
+          "src": {"type": "string"},
+          "kind": {"type": "string"},
+          "srclang": {"type": "string"},
+          "label": {"type": "string"},
+          "default": {"type": "boolean"}
+        }
+      }
+    },
+    "items": {"type": "array", "items": {"$ref": "#"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_name", "verification_status", "transformations"],
+      "properties": {
+        "source_name": {"type": "string"},
+        "source_url": {"type": "string"},
+        "creator": {"type": "string"},
+        "publisher": {"type": "string"},
+        "date_created": {"type": "string"},
+        "date_published": {"type": "string"},
+        "date_retrieved": {"type": "string"},
+        "original_format": {"type": "string"},
+        "current_format": {"type": "string"},
+        "transformations": {"type": "array", "items": {"type": "string"}},
+        "checksum": {"type": "string"},
+        "verification_status": {"enum": ["verified", "partially_verified", "unverified", "disputed", "synthetic", "fictional", "unknown"]}
+      },
+      "additionalProperties": true
+    },
+    "accessibility": {
+      "type": "object",
+      "required": ["keyboard_operable", "known_barriers"],
+      "properties": {
+        "keyboard_operable": {"type": ["boolean", "string"]},
+        "captions_available": {"type": ["boolean", "string"]},
+        "transcript_available": {"type": ["boolean", "string"]},
+        "audio_description_available": {"type": ["boolean", "string"]},
+        "extended_description_available": {"type": ["boolean", "string"]},
+        "screen_reader_supported": {"type": ["boolean", "string"]},
+        "reduced_motion_supported": {"type": ["boolean", "string"]},
+        "known_barriers": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "playback": {
+      "type": "object",
+      "required": ["autoplay", "controls", "looping"],
+      "properties": {
+        "autoplay": {"const": false},
+        "controls": {"const": true},
+        "looping": {"type": "boolean"},
+        "muted": {"type": "boolean"},
+        "playback_rates": {"type": "array", "items": {"type": "number"}},
+        "captions_default": {"type": "boolean"}
+      }
+    },
+    "evidentiary_status": {
+      "type": "object",
+      "required": ["classification", "known", "does_not_establish", "limitations"],
+      "properties": {
+        "classification": {"type": "string"},
+        "known": {"type": "array", "items": {"type": "string"}},
+        "does_not_establish": {"type": "array", "items": {"type": "string"}},
+        "limitations": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "analysis_layer": {
+      "type": "object",
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "renderer": {"enum": ["p5", "canvas", "svg", "dom", "none"]},
+        "annotations": {"type": "array", "items": {"type": "object"}},
+        "annotations_removable": {"type": "boolean"},
+        "source_media_remains_available": {"type": "boolean"},
+        "accessible_alternative": {"type": "string"},
+        "transformation_disclosure": {"type": "string"}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"type": {"const": "image"}}},
+      "then": {"required": ["src", "alt"]}
+    },
+    {
+      "if": {"properties": {"type": {"const": "video"}}},
+      "then": {"required": ["src", "transcript"]}
+    },
+    {
+      "if": {"properties": {"type": {"const": "audio"}}},
+      "then": {"required": ["src", "transcript"]}
+    },
+    {
+      "if": {"properties": {"type": {"const": "slideshow"}}},
+      "then": {"required": ["items"]}
+    }
+  ],
+  "additionalProperties": true
+}

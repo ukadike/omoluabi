@@ -1,117 +1,186 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An Omoluabi public-interest laboratory for reading official UAP disclosure records with visible provenance, accessibility, media, uncertainty, rules, and human review.">
+  <meta name="theme-color" content="#171717">
+  <link rel="canonical" href="https://ukadike.github.io/omoluabi/ufo-connection/">
+  <meta property="og:title" content="Omoluabi — The UFO Connection">
+  <meta property="og:description" content="A rules-based evidence-reading and universal media demonstration from Small Systems Lab.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ukadike.github.io/omoluabi/ufo-connection/">
+  <meta property="og:image" content="https://ukadike.github.io/omoluabi/ufo-connection/media/demo/illustrative-still.png">
   <title>Omoluabi — The UFO Connection</title>
-  <link rel="stylesheet" href="./css/ufo-connection.css" />
+  <link rel="stylesheet" href="./css/ufo-connection.css">
+  <script defer src="../world-layer-sandbox/p5-coastal-relay/vendor/p5.min.js"></script>
+  <script type="module" src="./js/app.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <p class="label">OMOLUABI USER CASE</p>
-    <h1>The UFO Connection</h1>
-    <p class="dek">A small public-interest demonstration of official UAP disclosure records, public discourse, and the Omoluabi evidence-reading layer.</p>
-    <blockquote>Omoluabi does not tell you what to believe. It helps you see what is there, what is missing, and what questions remain.</blockquote>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="global-header">
+    <nav class="global-nav" aria-label="Omoluabi">
+      <a class="brand" href="../">OMOLUABI</a>
+      <div class="nav-links">
+        <a href="../">Project</a>
+        <a href="../SSL-METHOD.md">SSL method</a>
+        <a href="../standards/SSL_SCHEMA_CARD.md">Universal schema</a>
+        <a href="../standards/media/SSL_MEDIA_SCHEMA_CARD.md">Media schema</a>
+        <a href="../rules/ssl-rules.v1.json">Rules</a>
+        <a href="https://github.com/ukadike/omoluabi" target="_blank" rel="noopener noreferrer">Repository</a>
+      </div>
+    </nav>
   </header>
 
-  <main id="main">
-    <div id="sample-banner" class="banner" role="status" hidden></div>
+  <div id="dataset-banner" class="dataset-banner" role="status" hidden></div>
 
-    <section aria-labelledby="status-heading" class="panel">
-      <h2 id="status-heading">Data status</h2>
-      <div id="data-status" aria-live="polite">Loading local disclosure cache…</div>
+  <header class="site-header">
+    <p class="label">OMOLUABI USER CASE · SSL RULES IMPLEMENTATION</p>
+    <p class="breadcrumb"><a href="../">Omoluabi</a> → Demonstrations → The UFO Connection</p>
+    <h1>The UFO Connection</h1>
+    <p class="dek">An Omoluabi laboratory for reading official UAP disclosure under uncertainty—now demonstrating the universal Small Systems Lab media field, executable rules, accessibility metadata, provenance, and accountable human review.</p>
+    <blockquote>
+      Omoluabi does not tell you what to believe. It helps you see what is present, what is missing, what rules apply, and what questions remain.
+    </blockquote>
+    <div class="hero-actions">
+      <a class="button-link" href="#records-heading">Explore governed records</a>
+      <a class="button-link secondary" href="#rules-heading">See how rules govern</a>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="panel status-panel" aria-labelledby="status-heading">
+      <div>
+        <p class="label">CURRENT DATASET</p>
+        <h2 id="status-heading">Data and publication status</h2>
+        <p id="data-status" aria-live="polite">Loading local disclosure cache…</p>
+        <p><span id="data-mode" class="status-badge">Loading</span></p>
+      </div>
+      <div>
+        <p class="label">GOVERNING RULE SET</p>
+        <h2 id="rules-heading">SSL rules</h2>
+        <p id="rules-status" aria-live="polite">Loading rules…</p>
+        <div id="rules-summary" aria-live="polite"></div>
+      </div>
     </section>
 
-    <section aria-labelledby="load-heading" class="panel">
-      <h2 id="load-heading">Get records</h2>
-      <p class="quiet">There are several ways to view records — with or without the internet,
-        with or without a file. The official cache populates automatically when war.gov is
-        reachable; otherwise use any option below.</p>
+    <section class="panel" aria-labelledby="demonstrates-heading">
+      <p class="label">WHAT IS IMPLEMENTED</p>
+      <h2 id="demonstrates-heading">One governed record, one universal media field</h2>
+      <div class="feature-grid">
+        <article>
+          <h3>Media</h3>
+          <p>Images, video, audio, and slideshows render through one reusable SSL component. Native semantic media remains available even when p5 adds an analysis layer.</p>
+        </article>
+        <article>
+          <h3>Rules</h3>
+          <p>Versioned SSL rules check provenance, epistemic separation, human review, alt text, transcripts, captions, autoplay, source status, and returnability.</p>
+        </article>
+        <article>
+          <h3>Human authority</h3>
+          <p>A passing rule check does not prove truth and does not publish a record. Human review and publication status remain separate decisions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="get-records-heading">
+      <p class="label">DATA OPTIONS</p>
+      <h2 id="get-records-heading">Get records</h2>
+      <p>The governed demonstration loads automatically when the official cache is empty, so the page always shows the media and rules system working. You may also load the official PURSUE CSV locally in your browser.</p>
 
       <div class="get-modes">
-        <div class="get-mode">
-          <h3>Demonstration data</h3>
-          <p class="quiet">Explore the interface and visualizations immediately, offline. Clearly
-            labelled sample data — not official records.</p>
-          <p>
-            <button id="load-sample" type="button">Load sample data</button>
-          </p>
-        </div>
+        <article class="get-mode">
+          <h3>Governed demonstration</h3>
+          <p>Load clearly labeled synthetic records containing an image, video, audio clip, and slideshow. These assets make no claims about UAP phenomena.</p>
+          <button id="load-sample" type="button">Load governed demonstration</button>
+        </article>
 
-        <div class="get-mode">
+        <article class="get-mode">
           <h3>Official PURSUE CSV</h3>
-          <p class="quiet">Download the CSV from the
-            <a href="https://www.war.gov/ufo/" rel="noopener noreferrer">official PURSUE page</a>,
-            then drop or choose it here. It is read only in your browser — nothing is uploaded,
-            and no request is made to war.gov from this page.</p>
-          <label id="dropzone">Drag a CSV here, or choose a file
-            <input id="csv-file" type="file" accept=".csv,text/csv" />
+          <p>Download the CSV from the <a href="https://www.war.gov/ufo/" target="_blank" rel="noopener noreferrer">official PURSUE page</a>, then choose or drop it here. The file is read only in this browser and is not uploaded.</p>
+          <label id="dropzone" for="csv-file">Drag a CSV here, or choose a file
+            <input id="csv-file" type="file" accept=".csv,text/csv">
           </label>
-        </div>
+        </article>
       </div>
-      <p id="load-status" aria-live="polite"></p>
-      <p>
-        <button id="download-json" type="button" hidden>Download as disclosure.json</button>
-        <button id="reset-data" type="button" hidden>Clear loaded data</button>
-      </p>
-      <p class="quiet">Download saves the records so you can put them into
-        <code>ufo-connection/data/</code> and commit them. Clear returns to the cached records.</p>
+
+      <div class="data-actions">
+        <button id="reset-data" type="button" hidden>Return to official cache</button>
+      </div>
+      <p id="load-status" class="quiet" aria-live="polite"></p>
+
+      <details class="maintainer-notes">
+        <summary>Maintainer notes</summary>
+        <p>The browser does not fetch WAR.GOV automatically. The repository cache workflow or a locally selected official CSV supplies records. Production records should preserve retrieval date, source identifiers, transformations, and checksums.</p>
+      </details>
     </section>
 
-    <section aria-labelledby="filters-heading" class="panel">
-      <h2 id="filters-heading">Explore records</h2>
+    <section class="panel" aria-labelledby="explore-heading">
+      <p class="label">FILTER AND REVIEW</p>
+      <h2 id="explore-heading">Explore records</h2>
       <div class="controls">
-        <label>Release
+        <label for="release-filter">Release
           <select id="release-filter">
             <option value="all">All releases</option>
           </select>
         </label>
-        <label>Type
+        <label for="type-filter">Record type
           <select id="type-filter">
             <option value="all">All types</option>
           </select>
         </label>
-        <label>Search
-          <input id="search-input" type="search" placeholder="agency, title, location, description" />
+        <label for="search-input">Search
+          <input id="search-input" type="search" autocomplete="off" placeholder="Source, location, media, missing field…">
         </label>
       </div>
-      <p id="record-count-message" aria-live="polite" aria-atomic="true"></p>
+      <p id="record-count-message" class="quiet" aria-live="polite"></p>
     </section>
 
-    <section aria-labelledby="overview-heading" class="panel">
+    <section class="panel" aria-labelledby="overview-heading">
+      <p class="label">ACCESSIBLE SUMMARY</p>
       <h2 id="overview-heading">Overview</h2>
-      <div id="overview" aria-label="Record counts by release, type, agency, and decade"></div>
+      <p class="quiet">Every bar is accompanied by a text count. The graphic itself is decorative and conveys no additional meaning.</p>
+      <div id="overview"></div>
     </section>
 
-    <section aria-labelledby="records-heading" class="panel">
-      <h2 id="records-heading">Records</h2>
-      <div id="records" class="records" aria-label="PURSUE records"></div>
+    <section class="panel records-section" aria-labelledby="records-heading">
+      <p class="label">GOVERNED RECORDS</p>
+      <h2 id="records-heading">Records and media</h2>
+      <div id="records" class="records"></div>
     </section>
 
-    <section aria-labelledby="discourse-heading" class="panel">
+    <section class="panel" aria-labelledby="discourse-heading">
+      <p class="label">SEPARATE INTERPRETIVE LAYER</p>
       <h2 id="discourse-heading">Beautiful Disclosure</h2>
-      <p class="quiet">Public conversation, hearings, interviews, and YouTube discussions. This layer is commentary and discourse, not official evidence.</p>
-      <div id="public-discourse" class="records"></div>
+      <p>Public conversation, hearings, interviews, and documentary or YouTube discussions belong here only after curation. This layer is commentary and discourse—not official evidence and not the synthetic media demonstration above.</p>
+      <div id="public-discourse" class="discourse-grid"></div>
     </section>
 
-    <section aria-labelledby="ontology-heading" class="panel">
-      <h2 id="ontology-heading">Ontological Realities</h2>
-      <p>This layer keeps different ways of knowing separate. It does not collapse evidence into belief or speculation into fact.</p>
-      <ul class="ontology-list">
-        <li><strong>Evidence:</strong> what the official record contains.</li>
-        <li><strong>Interpretation:</strong> what a reader or institution thinks the evidence may mean.</li>
-        <li><strong>Hypothesis:</strong> a testable explanation that needs more evidence.</li>
-        <li><strong>Belief:</strong> a meaning framework held by a community or individual.</li>
-        <li><strong>Speculation:</strong> an imaginative possibility not yet supported by the record.</li>
-      </ul>
+    <section class="panel" aria-labelledby="ontology-heading">
+      <p class="label">EPISTEMIC SEPARATION</p>
+      <h2 id="ontology-heading">Ontological realities</h2>
+      <p>This layer keeps different ways of knowing visible rather than collapsing them into a single confidence or truth score.</p>
+      <dl class="ontology-list">
+        <div><dt>Evidence</dt><dd>What a source record or media object contains.</dd></div>
+        <div><dt>Interpretation</dt><dd>What a reader, community, editor, or institution thinks the evidence may mean.</dd></div>
+        <div><dt>Hypothesis</dt><dd>A testable explanation requiring more evidence.</dd></div>
+        <div><dt>Belief</dt><dd>A meaning framework held by a community or individual.</dd></div>
+        <div><dt>Speculation</dt><dd>An imaginative possibility not yet supported by the record.</dd></div>
+        <div><dt>Fiction or synthetic media</dt><dd>Material intentionally created, reconstructed, simulated, or generated and labeled as such.</dd></div>
+        <div><dt>Unknown</dt><dd>Information that is missing, unresolved, inaccessible, or not yet reviewed.</dd></div>
+      </dl>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>Official source: <a href="https://www.war.gov/ufo/" rel="noopener noreferrer">PURSUE / WAR.GOV UFO</a></p>
+    <p><strong>Governing principle:</strong> Humans define the purpose. Rules constrain the system. Automation assists. Accountable people decide.</p>
+    <p>
+      <a href="https://www.war.gov/ufo/" target="_blank" rel="noopener noreferrer">Official PURSUE source</a>
+      · <a href="../standards/SSL_SCHEMA_CARD.md">SSL Universal Schema Card</a>
+      · <a href="../standards/media/SSL_MEDIA_SCHEMA_CARD.md">SSL Media Schema Card</a>
+      · <a href="../rules/ssl-rules.v1.json">Executable rules</a>
+    </p>
   </footer>
-
-  <script type="module" src="./js/app.js"></script>
 </body>
 </html>

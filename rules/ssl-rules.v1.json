@@ -1,0 +1,145 @@
+{
+  "rule_set_id": "ssl-rules",
+  "version": "1.0.0",
+  "status": "active",
+  "maintainer": "Small Systems Lab",
+  "last_reviewed": "2026-07-15",
+  "outcomes": ["pass", "warn", "fail", "not_applicable"],
+  "rules": [
+    {
+      "id": "SSL-001",
+      "title": "Identity is present",
+      "level": "block",
+      "scope": "artifact",
+      "test": "artifact.identity.required",
+      "message": "The governed artifact must identify itself, its system, status, version, and maintainer.",
+      "remediation": "Add the required identity fields before publication."
+    },
+    {
+      "id": "SSL-002",
+      "title": "Provenance is visible",
+      "level": "block",
+      "scope": "artifact",
+      "test": "artifact.provenance.required",
+      "message": "Source name, source type, and verification status must be present.",
+      "remediation": "Document the source and verification state."
+    },
+    {
+      "id": "SSL-003",
+      "title": "Epistemic classification is explicit",
+      "level": "block",
+      "scope": "artifact",
+      "test": "artifact.epistemic.required",
+      "message": "Evidence, interpretation, hypothesis, belief, speculation, fiction, and unknown must not be collapsed.",
+      "remediation": "Add classification, confidence, known, missing, and unresolved information."
+    },
+    {
+      "id": "SSL-004",
+      "title": "Human review is declared",
+      "level": "block",
+      "scope": "publication",
+      "test": "artifact.human_review.declared",
+      "message": "The record must state whether human review is required and its current status.",
+      "remediation": "Assign a reviewer role and review status."
+    },
+    {
+      "id": "SSL-005",
+      "title": "Public records have an accountable review state",
+      "level": "block",
+      "scope": "publication",
+      "test": "publication.public.reviewed",
+      "message": "A public record cannot be presented as governed while its required human review remains unstarted.",
+      "remediation": "Complete review or change the publication status to internal review."
+    },
+    {
+      "id": "SSL-006",
+      "title": "Meaningful images have descriptions",
+      "level": "block",
+      "scope": "media",
+      "test": "media.image.alt",
+      "message": "Meaningful images require alt text.",
+      "remediation": "Write an image description or mark a truly decorative image with an empty alt value."
+    },
+    {
+      "id": "SSL-007",
+      "title": "Timed media have transcripts",
+      "level": "block",
+      "scope": "media",
+      "test": "media.timed.transcript",
+      "message": "Video and audio require a transcript or equivalent textual description.",
+      "remediation": "Add a transcript file and/or transcript text."
+    },
+    {
+      "id": "SSL-008",
+      "title": "Video caption status is declared",
+      "level": "warn",
+      "scope": "media",
+      "test": "media.video.captions",
+      "message": "Video caption availability must be declared; meaningful audio requires captions.",
+      "remediation": "Add WebVTT captions or explain why captions are not applicable."
+    },
+    {
+      "id": "SSL-009",
+      "title": "Media does not autoplay",
+      "level": "block",
+      "scope": "media",
+      "test": "media.no_autoplay",
+      "message": "Public SSL media must not autoplay.",
+      "remediation": "Set playback.autoplay to false."
+    },
+    {
+      "id": "SSL-010",
+      "title": "Source and annotation are distinguishable",
+      "level": "block",
+      "scope": "media",
+      "test": "media.source_status.declared",
+      "message": "Source, annotated, transformed, reconstructed, synthetic, and fictional media must be visibly distinguishable.",
+      "remediation": "Declare source_status and transformations."
+    },
+    {
+      "id": "SSL-011",
+      "title": "p5 or canvas keeps a semantic fallback",
+      "level": "block",
+      "scope": "media",
+      "test": "media.analysis.semantic_fallback",
+      "message": "An analysis canvas may not replace the original semantic media element.",
+      "remediation": "Keep the source image/video/audio available and add an accessible annotation description."
+    },
+    {
+      "id": "SSL-012",
+      "title": "Accessibility barriers are declared",
+      "level": "warn",
+      "scope": "artifact",
+      "test": "artifact.accessibility.declared",
+      "message": "Accessibility status and known barriers must be visible, including unknown status.",
+      "remediation": "Add the accessibility object and list known or untested barriers."
+    },
+    {
+      "id": "SSL-013",
+      "title": "Official-source labeling is domain-constrained",
+      "level": "block",
+      "scope": "media",
+      "test": "media.official.domain",
+      "message": "Media labeled official must resolve to an approved official domain or be locally cached with preserved provenance.",
+      "remediation": "Correct the source label, use an approved domain, or document the local cache provenance."
+    },
+    {
+      "id": "SSL-014",
+      "title": "Returnability is declared",
+      "level": "warn",
+      "scope": "artifact",
+      "test": "artifact.returnability.declared",
+      "message": "Correction, appeal, deletion, and version recovery capabilities should be visible.",
+      "remediation": "Add a returnability object and explain irreversible limitations."
+    },
+    {
+      "id": "SSL-015",
+      "title": "AI assistance is disclosed",
+      "level": "block",
+      "scope": "artifact",
+      "test": "artifact.ai.disclosed",
+      "message": "When AI assistance is present, its task and human verification state must be disclosed.",
+      "remediation": "Add an ai_assist disclosure with task, provider or method, and human verification state."
+    }
+  ]
+}

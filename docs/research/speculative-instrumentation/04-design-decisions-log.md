@@ -50,7 +50,7 @@ files_changed:
   - cards/media-provenance.card.md
   - cards/observer-perception.card.md
   - docs/mvp/interface/photographic-witness-interface.md
-commit: this branch (claude/new-session-twd6l5); see CHANGELOG.md [Unreleased] for the grouped commit list
+commit: 3cfd257 (claude/new-session-twd6l5) — "Add Photographic Witness Layer schemas, cards, and interface docs (DR-0001)"
 validation_needed: >
   Kemi's review of all three schemas and cards (consistent with the existing "nine of ten
   schemas awaiting review" status noted in SCHEMA_CARD.md); field validation of whether
@@ -107,7 +107,7 @@ files_changed:
   - schemas/location-protection.schema.json
   - six matching cards in cards/
   - docs/mvp/interface/cartographic-witness-interface.md
-commit: this branch (claude/new-session-twd6l5); see CHANGELOG.md [Unreleased] for the grouped commit list
+commit: 14fab67 (claude/new-session-twd6l5) — "Add Cartographic Witness Layer schemas, cards, and interface docs (DR-0002)"
 validation_needed: >
   Kemi's review of all six schemas and cards; field validation of GNSS/magnetometer
   accuracy under real enclosure conditions (docs/mvp/hardware/instrumentation-revision-v0.02.md);

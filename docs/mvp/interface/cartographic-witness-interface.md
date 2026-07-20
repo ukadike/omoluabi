@@ -1,6 +1,6 @@
 # Cartographic Witness Layer — Interface Components
 
-Design documentation only. Nothing described here is implemented; the web engine's running prototype (`web-engine/app/`) does not yet include map views. See `web-engine/screens.md` for the currently implemented review screens.
+Design documentation only. Nothing described here is implemented; the web engine's running prototype (the [Omoluabi-News repository](https://github.com/ukadike/omoluabi-news)'s `engine/`) does not yet include map views. See `web-engine/screens.md` for the currently implemented review screens.
 
 ## Governing rule
 

@@ -77,3 +77,14 @@ footer.site-footer {
   border-top: var(--border-thick);
   padding: var(--space-xl) 0 var(--space-2xl);
 }
+
+/* Accessibility fix (WCAG 1.4.3 contrast): variables.css's --color-muted
+   (#6f6f6f) is only ~4.25:1 against --color-paper, below the 4.5:1 AA
+   minimum for normal-size text. That token is shared/locked across SSL
+   projects, so it is not edited here — this darkens .text-meta/.text-muted
+   at the point of use instead, which reaches ~5.7:1 on paper and stays
+   comfortably above 4.5:1 on the lighter card/soft backgrounds too. */
+.text-meta,
+.text-muted {
+  color: #5c5c5c;
+}

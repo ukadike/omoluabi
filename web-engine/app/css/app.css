@@ -289,3 +289,27 @@ table.archive-table th {
     scroll-behavior: auto !important;
   }
 }
+
+/* ==========================================================================
+   Accessibility fixes — point-of-use only; variables.css tokens are shared
+   and locked across SSL projects, so they are not edited here.
+   ========================================================================== */
+
+/* WCAG 1.4.3: --color-muted (#6f6f6f) is only ~4.25:1 against --color-paper,
+   below the 4.5:1 AA minimum for normal-size text. .help-text and the locked
+   stepper label sit directly on the paper background, so darken them here
+   (reaches ~5.7:1). */
+.help-text,
+.stepper span.locked {
+  color: #5c5c5c;
+}
+
+/* WCAG 1.4.11: --border-thin (#d0cdc6) is only ~1.5:1 against the form
+   fields' --color-soft background, below the 3:1 minimum for UI component
+   boundaries. Darken the border on text/textarea/select at the point of
+   use so the field boundary is perceivable. */
+form.review-form input[type="text"],
+form.review-form textarea,
+form.review-form select {
+  border-color: #5c5c5c;
+}

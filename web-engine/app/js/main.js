@@ -23,10 +23,17 @@ async function seedIfEmpty() {
 function initBlindEditorMode() {
   const toggle = document.querySelector("[data-blind-editor-toggle]");
   if (!toggle) return;
-  toggle.addEventListener("click", (event) => {
+  const activate = (event) => {
     event.preventDefault();
     const active = document.body.classList.toggle("blind-editor-mode");
     toggle.setAttribute("aria-pressed", String(active));
+  };
+  toggle.addEventListener("click", activate);
+  // The toggle is an <a role="button">: native anchors fire "click" on
+  // Enter but not on Space, while ARIA's button pattern expects both
+  // (WCAG 4.1.2 / 2.1.1). Add Space explicitly; Enter already works.
+  toggle.addEventListener("keydown", (event) => {
+    if (event.code === "Space" || event.key === " ") activate(event);
   });
 }
 

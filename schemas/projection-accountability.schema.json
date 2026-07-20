@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/projection-accountability.schema.json",
+  "title": "Projection Accountability",
+  "description": "Discloses the projection, purpose, preserved properties, and known distortions of a map rendering, so a projected view is never presented without a visible source, projection, date, scale, and uncertainty state. Governs any map view; does not itself store coordinates (see schemas/location-evidence.schema.json). First draft, not yet reviewed by Kemi.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["projection_accountability_id", "projection", "recorded_at"],
+  "properties": {
+    "projection_accountability_id": {"type": "string"},
+    "map_view_id": {"type": "string", "description": "Identifier for the specific rendered map view this record accounts for."},
+    "projection": {"type": "string", "description": "e.g. Web Mercator, Equal Earth, Africa-centered azimuthal."},
+    "projection_purpose": {"type": "string"},
+    "properties_preserved": {"type": "array", "items": {"type": "string", "enum": ["area", "shape", "distance", "direction", "none"]}},
+    "known_distortions": {"type": "array", "items": {"type": "string"}},
+    "source_dataset": {"type": "string"},
+    "source_resolution": {"type": "string"},
+    "interpolation_status": {"type": "string", "enum": ["none", "partial", "significant", "unknown"]},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  },
+  "examples": [
+    {
+      "projection_accountability_id": "proj-acc-0001",
+      "projection": "Web Mercator",
+      "projection_purpose": "General-purpose local high-accuracy view",
+      "properties_preserved": ["shape", "direction"],
+      "known_distortions": ["area distortion increases with latitude"],
+      "recorded_at": "2026-06-25T19:30:00-04:00"
+    }
+  ]
+}

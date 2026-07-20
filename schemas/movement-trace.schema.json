@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/movement-trace.schema.json",
+  "title": "Movement Trace",
+  "description": "A time-indexed track of positions, for recording measurable movement through a geographic field (e.g. an observer's route, or a described movement such as weather or debris). Each point is evidence in the same sense as schemas/location-evidence.schema.json; this schema does not interpolate or smooth points beyond what interpolation_status discloses. First draft, not yet reviewed by Kemi.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["movement_trace_id", "recorded_at", "points"],
+  "properties": {
+    "movement_trace_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "route_name": {"type": "string"},
+    "before_after_state": {"type": "string", "enum": ["before", "after", "during", "not_applicable"]},
+    "interpolation_status": {"type": "string", "enum": ["measured_only", "partially_interpolated", "fully_interpolated", "unknown"]},
+    "points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": {"type": "string", "format": "date-time"},
+          "latitude": {"type": "number"},
+          "longitude": {"type": "number"},
+          "elevation_m": {"type": "number"},
+          "heading_deg": {"type": "number"},
+          "accuracy_m": {"type": "number"}
+        }
+      }
+    },
+    "recorded_at": {"type": "string", "format": "date-time"}
+  },
+  "examples": [
+    {
+      "movement_trace_id": "movement-trace-0001",
+      "observation_id": "om-obs-0001",
+      "interpolation_status": "measured_only",
+      "points": [
+        {"timestamp": "2026-06-25T19:30:00-04:00", "latitude": 40.0, "longitude": -73.0}
+      ],
+      "recorded_at": "2026-06-25T19:30:00-04:00"
+    }
+  ]
+}

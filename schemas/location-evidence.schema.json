@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/location-evidence.schema.json",
+  "title": "Location Evidence",
+  "description": "Canonical geographic measurement, stored independently of any later map projection or rendering. Central rule: coordinates are measured evidence; a map projection is an interpretation of that evidence (see schemas/projection-accountability.schema.json). Extends, and does not replace, the simpler `location` object on schemas/observation.schema.json — this schema is the full evidentiary record; observation.location remains a lightweight summary. First draft, not yet reviewed by Kemi. Does not claim centimeter accuracy as a default: horizontal_accuracy_m and vertical_accuracy_m depend on receiver quality, antenna placement, environment, corrections, and processing conditions.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["location_evidence_id", "observation_id", "latitude", "longitude", "recorded_at"],
+  "properties": {
+    "location_evidence_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "device_id": {"type": "string"},
+    "latitude": {"type": "number"},
+    "longitude": {"type": "number"},
+    "ellipsoidal_height_m": {"type": "number"},
+    "orthometric_height_m": {"type": "number"},
+    "horizontal_accuracy_m": {"type": "number"},
+    "vertical_accuracy_m": {"type": "number"},
+    "coordinate_reference_system": {"type": "string", "description": "e.g. EPSG:4326. Required whenever latitude/longitude are present so downstream consumers never assume a default CRS."},
+    "datum": {"type": "string"},
+    "coordinate_epoch": {"type": "string"},
+    "fix_type": {"type": "string", "enum": ["no_fix", "2d", "3d", "dgps", "rtk_fixed", "rtk_float", "unknown"]},
+    "satellite_count": {"type": "integer"},
+    "signal_quality": {"type": "string"},
+    "correction_source": {"type": "string"},
+    "measurement_method": {"type": "string", "enum": ["gnss_receiver", "paired_device", "manual_entry", "map_estimate", "unknown"]},
+    "raw_observation_file": {"type": "string", "description": "Reference to a raw GNSS observation file where the receiver and storage support it. Optional; most MVP hardware configurations will not populate this field — see docs/mvp/hardware/instrumentation-revision-v0.02.md."},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  },
+  "examples": [
+    {
+      "location_evidence_id": "loc-ev-0001",
+      "observation_id": "om-obs-0001",
+      "latitude": 40.0,
+      "longitude": -73.0,
+      "horizontal_accuracy_m": 5.0,
+      "coordinate_reference_system": "EPSG:4326",
+      "datum": "WGS84",
+      "fix_type": "2d",
+      "measurement_method": "gnss_receiver",
+      "recorded_at": "2026-06-25T19:30:00-04:00"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/map-missingness.schema.json",
+  "title": "Map Missingness",
+  "description": "Records gaps, low resolution, redaction, or disputed coverage in a map dataset itself — distinct from schemas/landscape-memory.schema.json's erased_features, which records physical landscape features reported as destroyed or removed. A map can be missing data about a place that still physically exists, and a place can be erased while its map data remains accurate; this schema and landscape-memory track those two failure modes separately. First draft, not yet reviewed by Kemi.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["map_missingness_id", "area_description", "recorded_at"],
+  "properties": {
+    "map_missingness_id": {"type": "string"},
+    "location_evidence_id": {"type": "string"},
+    "map_view_id": {"type": "string"},
+    "area_description": {"type": "string"},
+    "missingness_type": {"type": "string", "enum": ["no_coverage", "low_resolution", "redacted", "outdated", "disputed_boundary", "unknown"]},
+    "known_since": {"type": "string", "format": "date-time"},
+    "community_testimony_reference": {"type": "string"},
+    "notes": {"type": "string"},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  },
+  "examples": [
+    {
+      "map_missingness_id": "map-miss-0001",
+      "area_description": "Coastal segment near a disputed settlement boundary",
+      "missingness_type": "low_resolution",
+      "recorded_at": "2026-06-25T19:30:00-04:00"
+    }
+  ]
+}

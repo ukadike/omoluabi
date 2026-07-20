@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/location-protection.schema.json",
+  "title": "Location Protection",
+  "description": "Governs whether a location's exact coordinates are exposed publicly, generalized, or withheld — for protected, sacred, ecological, or witness-sensitive locations. Consent facet here is narrower than, and does not replace, schemas/consent.schema.json. First draft, not yet reviewed by Kemi.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["location_protection_id", "location_evidence_id", "public_location_precision", "recorded_at"],
+  "properties": {
+    "location_protection_id": {"type": "string"},
+    "location_evidence_id": {"type": "string"},
+    "exact_location_access": {"type": "string", "enum": ["restricted", "internal_review_only", "unrestricted"]},
+    "public_location_precision": {"type": "string", "enum": ["exact", "generalized_locality", "generalized_region", "withheld"]},
+    "reason_for_restriction": {"type": "string"},
+    "consent_status": {"type": "string"},
+    "ecological_risk": {"type": "string"},
+    "witness_risk": {"type": "string"},
+    "recorded_by": {"type": "string"},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  },
+  "examples": [
+    {
+      "location_protection_id": "loc-prot-0001",
+      "location_evidence_id": "loc-ev-0001",
+      "exact_location_access": "restricted",
+      "public_location_precision": "generalized_region",
+      "reason_for_restriction": "witness-sensitive site",
+      "recorded_at": "2026-06-25T19:30:00-04:00"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/landscape-memory.schema.json",
+  "title": "Landscape Memory",
+  "description": "Local, historical, administrative, and disputed place names, plus natural/built/erased features, for a location. Lets community and historical naming coexist with administrative naming rather than one silently overwriting the other. First draft, not yet reviewed by Kemi. Each array preserves multiple simultaneous entries by design — this schema does not pick a single 'correct' name.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["landscape_memory_id", "location_evidence_id", "recorded_at"],
+  "properties": {
+    "landscape_memory_id": {"type": "string"},
+    "location_evidence_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "local_names": {"type": "array", "items": {"type": "string"}},
+    "historical_names": {"type": "array", "items": {"type": "string"}},
+    "administrative_names": {"type": "array", "items": {"type": "string"}},
+    "disputed_names": {"type": "array", "items": {"type": "string"}},
+    "witness_descriptions": {"type": "array", "items": {"type": "string"}},
+    "natural_features": {"type": "array", "items": {"type": "string"}},
+    "built_features": {"type": "array", "items": {"type": "string"}},
+    "erased_features": {"type": "array", "items": {"type": "string"}, "description": "Features reported as destroyed, renamed, concealed, or removed from the record, per witness testimony or documented before/after comparison. Distinct from schemas/map-missingness.schema.json, which describes gaps in the map dataset itself rather than the physical landscape."},
+    "recorded_at": {"type": "string", "format": "date-time"}
+  },
+  "examples": [
+    {
+      "landscape_memory_id": "landscape-mem-0001",
+      "location_evidence_id": "loc-ev-0001",
+      "observation_id": "om-obs-0001",
+      "local_names": [],
+      "historical_names": [],
+      "administrative_names": [],
+      "disputed_names": [],
+      "erased_features": [],
+      "recorded_at": "2026-06-25T19:30:00-04:00"
+    }
+  ]
+}

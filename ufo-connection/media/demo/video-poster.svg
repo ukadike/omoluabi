@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Poster for illustrative moving-light video</title>
+  <desc id="desc">A black field with a white moving-light marker and text identifying the video as a demonstration, not official evidence.</desc>
+  <rect width="640" height="360" fill="#111"/>
+  <circle cx="320" cy="165" r="18" fill="#f4f0e7"/>
+  <circle cx="320" cy="165" r="42" fill="none" stroke="#aaa" stroke-width="2"/>
+  <text x="32" y="310" fill="#f4f0e7" font-family="Arial" font-size="24">DEMONSTRATION VIDEO</text>
+  <text x="32" y="338" fill="#aaa" font-family="Arial" font-size="15">Illustrative media — not official evidence</text>
+</svg>

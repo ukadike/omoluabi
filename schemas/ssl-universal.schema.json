@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://smallsystemslab.com/schemas/ssl-universal.schema.json",
+  "title": "Small Systems Lab Universal Governed Artifact",
+  "type": "object",
+  "required": ["identity", "provenance", "epistemic_status", "accessibility", "human_governance", "publication_status"],
+  "properties": {
+    "identity": {
+      "type": "object",
+      "required": ["id", "system", "title", "artifact_type", "version", "status", "maintainer"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "system": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "artifact_type": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "status": {"enum": ["concept", "draft", "prototype", "experimental", "active", "stable", "deprecated", "archived"]},
+        "maintainer": {"type": "string", "minLength": 1},
+        "created_at": {"type": "string"},
+        "updated_at": {"type": "string"},
+        "canonical_url": {"type": "string"},
+        "license": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_name", "source_type", "verification_status"],
+      "properties": {
+        "source_name": {"type": "string", "minLength": 1},
+        "source_type": {"type": "string", "minLength": 1},
+        "source_url": {"type": "string"},
+        "source_identifier": {"type": "string"},
+        "creator": {"type": "string"},
+        "publisher": {"type": "string"},
+        "date_created": {"type": "string"},
+        "date_published": {"type": "string"},
+        "date_retrieved": {"type": "string"},
+        "retrieval_method": {"type": "string"},
+        "original_format": {"type": "string"},
+        "current_format": {"type": "string"},
+        "transformations": {"type": "array", "items": {"type": "string"}},
+        "checksum": {"type": "string"},
+        "verification_status": {"enum": ["verified", "partially_verified", "unverified", "disputed", "synthetic", "fictional", "unknown"]},
+        "verification_notes": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "epistemic_status": {
+      "type": "object",
+      "required": ["classification", "confidence"],
+      "properties": {
+        "classification": {"enum": ["observation", "evidence", "testimony", "metadata", "institutional_claim", "interpretation", "hypothesis", "belief", "speculation", "fiction", "unknown"]},
+        "confidence": {"enum": ["high", "moderate", "low", "indeterminate", "not_applicable"]},
+        "known": {"type": "array", "items": {"type": "string"}},
+        "missing": {"type": "array", "items": {"type": "string"}},
+        "unresolved": {"type": "array", "items": {"type": "string"}},
+        "supporting_evidence": {"type": "array", "items": {"type": "string"}},
+        "contradicting_evidence": {"type": "array", "items": {"type": "string"}},
+        "alternative_interpretations": {"type": "array", "items": {"type": "string"}},
+        "what_would_change_assessment": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "accessibility": {
+      "type": "object",
+      "required": ["keyboard_operable", "reduced_motion_supported", "known_barriers"],
+      "properties": {
+        "keyboard_operable": {"type": ["boolean", "string"]},
+        "screen_reader_tested": {"type": ["boolean", "string"]},
+        "captions_available": {"type": ["boolean", "string"]},
+        "transcript_available": {"type": ["boolean", "string"]},
+        "audio_description_available": {"type": ["boolean", "string"]},
+        "image_descriptions_available": {"type": ["boolean", "string"]},
+        "color_independent": {"type": ["boolean", "string"]},
+        "reduced_motion_supported": {"type": ["boolean", "string"]},
+        "high_contrast_supported": {"type": ["boolean", "string"]},
+        "text_resize_tested": {"type": ["boolean", "string"]},
+        "plain_language_summary": {"type": "string"},
+        "known_barriers": {"type": "array", "items": {"type": "string"}},
+        "testing_date": {"type": "string"},
+        "testing_method": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "human_governance": {
+      "type": "object",
+      "required": ["human_review_required", "review_status", "override_available"],
+      "properties": {
+        "automated_actions": {"type": "array", "items": {"type": "string"}},
+        "human_review_required": {"type": "boolean"},
+        "reviewer_role": {"type": "string"},
+        "review_status": {"enum": ["not_started", "pending", "reviewed", "approved", "rejected", "not_required"]},
+        "reviewed_by": {"type": "string"},
+        "reviewed_at": {"type": "string"},
+        "override_available": {"type": "boolean"},
+        "appeal_route": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "consent": {"type": "object", "additionalProperties": true},
+    "risk": {"type": "object", "additionalProperties": true},
+    "returnability": {"type": "object", "additionalProperties": true},
+    "maintenance": {"type": "object", "additionalProperties": true},
+    "media": {"type": "array", "items": {"$ref": "media.schema.json"}},
+    "publication_status": {"enum": ["private", "internal_review", "public", "embargoed", "withdrawn", "deprecated", "archived"]}
+  },
+  "additionalProperties": true
+}

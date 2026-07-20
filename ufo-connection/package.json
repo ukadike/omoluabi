@@ -1,9 +1,10 @@
 {
   "name": "omoluabi-ufo-connection",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "cache:pursue": "node scripts/cache-pursue.mjs"
+    "cache:pursue": "node scripts/cache-pursue.mjs",
+    "test": "node tests/rules-engine.test.mjs && node tests/media-data.test.mjs && node tests/static-page.test.mjs"
   }
 }

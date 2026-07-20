@@ -44,6 +44,11 @@ Observation → Consent → Source → Risk → Accessibility → Human Review �
 - [`ROADMAP.md`](ROADMAP.md) — what's built, in progress, and planned
 - [`SSL-METHOD.md`](SSL-METHOD.md) — the Small Systems Lab method this project applies
 
+
+## SSL Rules and Universal Media
+
+Omoluabi now applies the [Small Systems Lab Universal Schema Card](standards/SSL_SCHEMA_CARD.md), the [SSL Universal Media Schema Card](standards/media/SSL_MEDIA_SCHEMA_CARD.md), and the versioned [SSL rules](rules/ssl-rules.v1.json). The UFO Connection is the first browser implementation: governed records, image/video/audio/slideshow media, visible rule outcomes, optional p5 analysis, and human review kept separate from automated checks.
+
 ## Demonstrations
 
 - [`ufo-connection/`](ufo-connection/) — **The UFO Connection**, an Omoluabi user case that

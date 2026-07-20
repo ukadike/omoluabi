@@ -1,0 +1,16 @@
+flowchart LR
+  RecordButton[Record Button] -->|digital input| UNO[Arduino UNO Q]
+  ConsentSwitch[Consent Switch] -->|digital input| UNO
+  MarkButton[Mark Button] -->|digital input| UNO
+  Power[Power: USB-C / regulated battery] --> UNO
+
+  UNO -->|digital output| StatusLED[Status LED]
+  UNO -->|PWM output| Buzzer[Buzzer]
+  UNO -->|transistor-controlled output| Vibration[Vibration Motor]
+  UNO <-->|I2C or SPI| Display[OLED / e-paper Display]
+
+  Nicla[Nicla Vision: camera / audio / onboard IMU] <-->|Wi-Fi / BLE / serial bridge| UNO
+  GNSS[Multi-constellation GNSS receiver] -->|UART| UNO
+  RTC[RTC module] -->|I2C| UNO
+  Magnetometer[Magnetometer] -->|I2C| UNO
+  Pressure[Pressure sensor] -->|I2C| UNO

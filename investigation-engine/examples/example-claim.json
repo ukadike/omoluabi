@@ -1,0 +1,27 @@
+{
+  "claim_id": "ie-claim-0001",
+  "statement": "Illustrative claim: the example sensor reading indicates an anomaly at Example Site (schema demonstration only, not a real finding).",
+  "domain": "climate",
+  "research_state": "possible",
+  "supporting_evidence_ids": ["ie-ev-0001"],
+  "contradicting_claim_ids": ["ie-claim-0002"],
+  "minority_hypothesis_ids": ["ie-claim-0002"],
+  "reasoning_step_ids": ["ie-rs-0001"],
+  "confidence_id": "ie-conf-0001",
+  "assumptions": [
+    "The sensor was correctly calibrated at time of reading (unverified)"
+  ],
+  "inferences": [
+    "If calibration holds, the reading is above the site's typical baseline"
+  ],
+  "unknowns": [
+    "Whether a second independent sensor would reproduce this reading"
+  ],
+  "missing_evidence": [
+    "A corroborating reading from an independent instrument (ie-ev-0002, unfiled)"
+  ],
+  "human_reviewed": false,
+  "publication_status": "internal_review",
+  "created_at": "2026-07-01T09:15:00Z",
+  "updated_at": "2026-07-01T09:15:00Z"
+}

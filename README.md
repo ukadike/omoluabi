@@ -58,6 +58,11 @@ Omoluabi now applies the [Small Systems Lab Universal Schema Card](standards/SSL
 - [`world-layer-sandbox/`](world-layer-sandbox/) — exploratory **Umada world-layer** visuals
   (e.g. the *Coastal Relay* p5 sketch), kept deliberately separate from the archival layer:
   non-canon, reduced-motion aware, offline.
+- [`investigation-engine/`](investigation-engine/) — the **Investigation Engine**, a
+  domain-agnostic evidence, reasoning, and knowledge-graph architecture for turning
+  evidence into inspectable, reversible, human-governed conclusions in any research
+  domain. Scaffolded (schemas, cards, architecture, governance); no reasoning code
+  runs yet.
 
 ## Status
 
@@ -67,8 +72,8 @@ Prototype development and architectural documentation in progress. This reposito
 
 This repository uses two licenses, split by content type:
 
-- **Code, JSON Schemas, and firmware** — `schemas/`, `device/`, `web-engine/` code, `api/` — are licensed under [Apache License 2.0](LICENSE).
-- **Documentation, governance, research, and narrative materials** — everything else, including `governance/`, `cards/`, `architecture/`, `research/`, `docs/`, `funding/`, `umada-sandbox/`, `earth-sensors-lab-bridge/`, `diagrams/`, and this README — are licensed under [CC BY 4.0](LICENSE-DOCS.md).
+- **Code, JSON Schemas, and firmware** — `schemas/`, `device/`, `web-engine/` code, `api/`, `investigation-engine/schemas/` — are licensed under [Apache License 2.0](LICENSE).
+- **Documentation, governance, research, and narrative materials** — everything else, including `governance/`, `cards/`, `architecture/`, `research/`, `docs/`, `funding/`, `umada-sandbox/`, `earth-sensors-lab-bridge/`, `diagrams/`, `investigation-engine/` (excluding its `schemas/`), and this README — are licensed under [CC BY 4.0](LICENSE-DOCS.md).
 
 The demonstration directories follow the same split (code under Apache-2.0, docs under CC BY 4.0). One exception: `world-layer-sandbox/p5-coastal-relay/vendor/p5.min.js` is third-party software (p5.js) under its own LGPL-2.1 license, included verbatim as `vendor/p5-LICENSE.txt`.
 

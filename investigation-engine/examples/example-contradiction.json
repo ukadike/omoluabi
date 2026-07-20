@@ -1,0 +1,10 @@
+{
+  "contradiction_id": "ie-contra-0001",
+  "subject_ids": ["ie-claim-0001", "ie-claim-0002"],
+  "description": "ie-claim-0001 proposes an anomaly reading; ie-claim-0002 (unfiled minority hypothesis) proposes ordinary sensor drift explains the same reading. Both remain open pending corroboration.",
+  "severity": "moderate",
+  "resolution_status": "unresolved",
+  "resolution_notes": "Awaiting a second, independent sensor reading (see missing_evidence on ie-claim-0001).",
+  "identified_at": "2026-07-01T09:20:00Z",
+  "identified_by": "ai"
+}

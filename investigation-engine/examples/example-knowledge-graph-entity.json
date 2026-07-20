@@ -1,0 +1,24 @@
+{
+  "entity_id": "ie-kge-0001",
+  "entity_type": "organization",
+  "name": "Example Org",
+  "description": "Illustrative organization associated with the example sensor site, for schema demonstration only.",
+  "domain": "climate",
+  "related_entity_ids": [
+    {
+      "entity_id": "ie-claim-0001",
+      "relationship_type": "subject_of",
+      "description": "Example Org operates the site the claim concerns."
+    }
+  ],
+  "geographic_location": {
+    "lat": 0.0,
+    "lng": 0.0,
+    "place_name": "Example Site",
+    "precision": "approximate"
+  },
+  "source_evidence_ids": ["ie-ev-0001"],
+  "research_state": "possible",
+  "created_at": "2026-07-01T09:30:00Z",
+  "updated_at": "2026-07-01T09:30:00Z"
+}

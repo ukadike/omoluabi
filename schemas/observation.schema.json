@@ -6,6 +6,7 @@
   "required": ["observation_id", "created_at", "system", "publication_status"],
   "properties": {
     "observation_id": {"type": "string"},
+    "title": {"type": "string", "description": "Headline. Added per Kemi's direction of 2026-07-08 (every story needs a headline); required by the Omoluabi News editorial engine's authoring form, optional here so device-era and pre-headline records remain valid."},
     "created_at": {"type": "string", "format": "date-time"},
     "updated_at": {"type": "string", "format": "date-time"},
     "system": {"type": "string", "enum": ["omoluabi", "earth-sensors-lab", "echo", "ounje", "accessible-by-design", "umada"]},

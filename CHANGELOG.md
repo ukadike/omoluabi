@@ -44,6 +44,32 @@ The build stages left open below were subsequently completed; see `ROADMAP.md` f
 - `docs/vision/omoluabi-origin-storyboard.md` — origin storyboard and vision documentation
 - This restoration pass: `docs/REPO_AUDIT.md`, `SCHEMA_CARD.md`, `INDEX.md`, and cross-references from `accessibility/baseline.md` to Accessible by Design and from `earth-sensors-lab-bridge/README.md` to Earth Sensors Lab
 
+### Added (Investigation Engine scaffold)
+
+- `investigation-engine/` — domain-agnostic evidence, reasoning, and knowledge-graph architecture: `README.md`; `architecture/` (system overview, evidence model, 34 reasoning layers, 10 research states, 13-stage workflow, knowledge graph, 12 intelligence modes); `governance/` (constitutional rules IE-001..IE-005, human-governance model); `schemas/` and `cards/` (evidence object, claim, reasoning step, contradiction, confidence score, knowledge graph entity, investigation case); `docs/` (research domains, output formats, transparency rules, accessibility); `examples/` (one linked example case across all seven schemas)
+- `research/design-decisions/ADR-0005-investigation-engine-reuses-governed-record-model.md`
+- Cross-references from root `README.md`, `INDEX.md`, `ROADMAP.md`, and `SCHEMA_CARD.md` to the new subsystem
+
+Source: synthesizes the "Omoluabi Investigation Engine — Complete Claude Code Package (Master Specification)" delivered by Kemi on 2026-07-07.
+
+### Added (manual observation entry)
+
+- `web-engine/app/`: a "New observation" form (`#/new`) that creates an observation plus its linked consent, source, risk, and accessibility records by hand — no field device required, recorded with `source.origin_type: "web-form"` (an enum value the schema already defined). The new record enters the same gated pipeline as any other; authoring it does not mark any stage reviewed.
+- Verified end to end in a browser: created an observation manually, reviewed source/consent/risk/accessibility, recorded human review, set publication status to `public`, and confirmed it appears as exportable in the Archive screen — the full MVP governance loop now runs without a device.
+- Updated `web-engine/README.md`, `web-engine/app/README.md`, `web-engine/screens.md`, and `web-engine/app/index.html`'s header copy (previously "Not a CMS," reflecting a review-only scope that predated this form) to describe the new authoring path.
+
+### Added (news feed)
+
+- `web-engine/app/`: a News feed (`#/news`) — the public reader view completing the loop from authoring to reading. Only records with an explicit human publication decision of `public` appear (canonical gate is the publication decision record, per ADR-0004); embargoed, withdrawn, and undecided records are excluded. Verified in a browser: a published story appears with headline, provenance, and a link to its full governed record; an embargoed record and the undecided seed record never surface.
+
+### Changed (web engine moved to Omoluabi-News; headlines)
+
+- `web-engine/app/` moved to the [Omoluabi-News repository](https://github.com/ukadike/omoluabi-news)'s `engine/`, per Kemi's direction (2026-07-08) that Omoluabi-News is where the web engine lives. `web-engine/` here keeps the planning documentation the engine implements, with pointers updated in `web-engine/README.md` and `web-engine/screens.md`.
+- `schemas/observation.schema.json`: added optional `title` (headline) property — every story needs a headline. Required by the editorial engine's authoring form; optional at the schema level so device-era and pre-headline records remain valid. Noted in `schemas/README.md` (the schema is no longer strictly verbatim from the packet).
+
 ### Open
 
-- First running implementation of any layer (device firmware, web engine, or API) — see `ROADMAP.md`
+- First running implementation of device firmware or the API — see `ROADMAP.md`
+- Web engine still has no backend, sync, or production storage — the "New observation" form is local-only like the rest of the prototype
+- Bridge from the editorial engine's published records to Omoluabi-News's `_data/news.json` (today an editor copies stories across by hand)
+- First running implementation of any Investigation Engine reasoning layer, output-format generator, or knowledge-graph renderer — see `investigation-engine/architecture/reasoning-layers.md`

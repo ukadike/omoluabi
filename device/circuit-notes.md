@@ -24,7 +24,7 @@ Nicla Vision   -> Wi-Fi / BLE / serial bridge
 Power          -> USB-C / regulated battery
 ```
 
-These are circuit *directions*, not a finished schematic — no pin numbers or component part numbers are specified yet.
+These are circuit *directions*, not a finished schematic — no pin numbers or component part numbers are specified yet. `docs/mvp/hardware/instrumentation-revision-v0.02.md` adds a magnetometer and pressure sensor to this direction list, both I2C-class sensors consistent with the existing "Display -> I2C or SPI" pattern; exact pin assignment is not yet specified for them either.
 
 ## Source
 

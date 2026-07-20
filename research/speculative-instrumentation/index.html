@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Speculative Futures to Better Instruments — Omoluabi</title>
+<meta name="description" content="How UMADA scenarios expose failures in present-day observation systems and generate new photographic and cartographic evidence requirements for Omoluabi.">
+<link rel="stylesheet" href="../../variables.css">
+<link rel="stylesheet" href="../../site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="header">
+  <div class="wrap">
+    <p class="text-meta"><a href="../../index.html">Omoluabi</a> · Research</p>
+    <h1 class="text-h1">From Speculative Futures to Better Instruments</h1>
+    <p class="text-body">How UMADA scenarios expose failures in present-day observation systems and generate
+      new requirements for Omoluabi.</p>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <section aria-labelledby="claim-h">
+    <h2 id="claim-h" class="text-h2">Not lore. A research method.</h2>
+    <p class="text-body">UMADA is not marketing or worldbuilding surrounding Omoluabi. Within Omoluabi, it
+      functions as a speculative research environment: future historical crises are built with enough
+      material detail — dates, locations, described mechanisms of harm — that they can expose weaknesses in
+      present-day observation instruments the same way a real case study would.</p>
+    <p class="text-body">UMADA produces a traceable proof of method showing how speculative futures can
+      expose weaknesses in present-day instruments and lead to actionable technical design requirements.</p>
+  </section>
+
+  <hr class="divider">
+
+  <section aria-labelledby="process-h">
+    <h2 id="process-h" class="text-h2">The process</h2>
+    <p class="text-body">Six steps, each one producing a document or artifact a reviewer can inspect
+      directly — not a claim asked to be taken on faith.</p>
+    <ol class="text-body">
+      <li>UMADA scenario</li>
+      <li>Observational failure becomes visible</li>
+      <li>Research question</li>
+      <li>Technical requirement</li>
+      <li>Omoluabi MVP change</li>
+      <li>Documented design evidence</li>
+    </ol>
+    <p class="text-meta">Text-form process diagram (no image); see <a
+      href="../../docs/research/speculative-instrumentation/00-method-overview.md">the full method
+      overview</a> for the reasoning behind each step.</p>
+  </section>
+
+  <hr class="divider">
+
+  <section aria-labelledby="case1-h">
+    <h2 id="case1-h" class="text-h2">Case Study One: Photography</h2>
+    <div class="card">
+      <h3 class="text-h3">Future problem</h3>
+      <p class="text-body">A time traveler records an extraordinary event, but the image cannot prove what
+        was seen.</p>
+      <h3 class="text-h3">Present-day question</h3>
+      <p class="text-body">What must a trustworthy field camera preserve beyond the image itself?</p>
+      <h3 class="text-h3">Omoluabi result</h3>
+      <p class="text-body">Original-file integrity, observer-versus-sensor distinction, orientation, capture
+        conditions, alteration history, provenance, accessibility description, and confidence reporting —
+        formalized as the Photographic Witness Layer.</p>
+      <p class="text-meta"><a
+        href="../../docs/research/speculative-instrumentation/01-photographic-witness-case-study.md">Read the
+        full case study</a></p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section aria-labelledby="case2-h">
+    <h2 id="case2-h" class="text-h2">Case Study Two: Cartography</h2>
+    <div class="card">
+      <h3 class="text-h3">Future problem</h3>
+      <p class="text-body">A place is destroyed, renamed, or erased, while winds and contamination move
+        across oceans.</p>
+      <h3 class="text-h3">Present-day question</h3>
+      <p class="text-body">What must a trustworthy mapping instrument preserve beyond a visual map?</p>
+      <h3 class="text-h3">Omoluabi result</h3>
+      <p class="text-body">Canonical coordinates, datum, epoch, uncertainty, landscape memory, projection
+        disclosure, movement traces, missingness, local naming, and protected-location governance —
+        formalized as the Cartographic Witness Layer.</p>
+      <p class="text-meta"><a
+        href="../../docs/research/speculative-instrumentation/02-cartographic-witness-case-study.md">Read the
+        full case study</a></p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section aria-labelledby="links-h">
+    <h2 id="links-h" class="text-h2">Read the evidence directly</h2>
+    <ul class="text-body">
+      <li><a href="../../docs/research/instrumentation/current-state-audit.md">Repository audit</a> — what
+        existed before this research pass, and what was missing.</li>
+      <li><a href="../../docs/research/speculative-instrumentation/03-speculative-to-technical-traceability-matrix.md">Traceability
+        matrix</a> — scenario, failure, requirement, and MVP change in one table.</li>
+      <li><a href="../../docs/research/speculative-instrumentation/04-design-decisions-log.md">Design decisions
+        log</a> — DR-0001 and DR-0002, with rationale and risks.</li>
+      <li><a href="../../schemas/README.md">Schemas</a> — including
+        <a href="../../schemas/photographic-witness.schema.json">photographic-witness</a>,
+        <a href="../../schemas/media-provenance.schema.json">media-provenance</a>,
+        <a href="../../schemas/observer-perception.schema.json">observer-perception</a>,
+        <a href="../../schemas/location-evidence.schema.json">location-evidence</a>,
+        <a href="../../schemas/landscape-memory.schema.json">landscape-memory</a>,
+        <a href="../../schemas/movement-trace.schema.json">movement-trace</a>,
+        <a href="../../schemas/projection-accountability.schema.json">projection-accountability</a>,
+        <a href="../../schemas/map-missingness.schema.json">map-missingness</a>, and
+        <a href="../../schemas/location-protection.schema.json">location-protection</a>.</li>
+      <li><a href="../../docs/mvp-plan.md">MVP architecture</a> and
+        <a href="../../docs/mvp/hardware/instrumentation-revision-v0.02.md">hardware revision v0.02</a>.</li>
+      <li><a href="../../device/field-companion-workflow.md">Field Companion workflow</a> — Rapid Capture and
+        Deep Documentation modes.</li>
+      <li><a href="../../CHANGELOG.md">Changelog</a>.</li>
+      <li><a href="https://github.com/ukadike/Umada">UMADA source repository</a> — the narrative project this
+        research method draws from; governed separately by its own no-fabrication canon rules.</li>
+      <li><a href="../../accessibility/baseline.md">Accessibility statement</a>.</li>
+      <li><a href="../../governance/rule-library.md">Provenance and governance rule library</a> (SSL-002,
+        provenance required).</li>
+    </ul>
+  </section>
+
+  <hr class="divider">
+
+  <section aria-labelledby="status-h">
+    <h2 id="status-h" class="text-h2">Status</h2>
+    <p class="text-body">This page documents a research method and its first two completed case studies.
+      The schemas and hardware/interface documents it links to are drafts and design documentation, not
+      running code — consistent with the rest of Omoluabi's current build status (see
+      <a href="../../ROADMAP.md">ROADMAP.md</a>).</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="text-body">Part of <a href="../../index.html">Omoluabi</a>, the lead project of <a
+      href="https://ukadike.github.io/small-systems-lab/">Small Systems Lab</a>.</p>
+    <p class="text-meta">Copyright Adekemi (Kemi) Sijuwade Ukadike. All rights reserved unless otherwise
+      stated. · <a href="https://github.com/ukadike/omoluabi">github.com/ukadike/omoluabi</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

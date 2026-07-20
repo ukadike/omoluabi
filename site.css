@@ -77,3 +77,101 @@ footer.site-footer {
   border-top: var(--border-thick);
   padding: var(--space-xl) 0 var(--space-2xl);
 }
+
+/* === SSL canonical global navigation === */
+.ssl-header {
+  border-bottom: var(--border-thin);
+  background-color: var(--color-paper);
+}
+.ssl-header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+}
+.ssl-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-h4);
+  text-decoration: none;
+}
+.nav-toggle {
+  display: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  border: var(--border-thin);
+  padding: var(--space-xs) var(--space-sm);
+  cursor: pointer;
+}
+.ssl-global-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--space-lg) var(--space-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-md);
+}
+.ssl-global-nav a {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-wide);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  padding: var(--space-xs) 0;
+  display: inline-block;
+}
+.ssl-global-nav a[aria-current="page"] {
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: var(--border-thick);
+}
+.ssl-global-nav a:focus,
+.nav-toggle:focus,
+.local-nav a:focus,
+.footer-links a:focus {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+@media (max-width: 720px) {
+  .nav-toggle { display: inline-block; }
+  .ssl-global-nav[hidden] { display: none; }
+  .ssl-global-nav ul { flex-direction: column; gap: var(--space-sm); padding-bottom: var(--space-lg); }
+}
+
+.local-nav {
+  border-bottom: var(--border-thin);
+}
+.local-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-sm) var(--space-lg);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-md);
+}
+.local-nav a {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-decoration: none;
+  padding: var(--space-xs) 0;
+}
+.local-nav a[aria-current="page"] {
+  border-bottom: var(--border-thick);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding: 0;
+  margin: var(--space-sm) 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-wide);
+}

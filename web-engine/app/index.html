@@ -7,9 +7,29 @@
   <meta name="description" content="Human review interface over the Omoluabi governance pipeline: observation, source, consent, risk, accessibility, AI assist, human review, publication status." />
   <link rel="stylesheet" href="../../variables.css" />
   <link rel="stylesheet" href="css/app.css" />
+  <script src="../../ssl-nav.js" defer></script>
 </head>
 <body data-baseurl="..">
   <a class="skip-link" href="#app">Skip to main content</a>
+
+  <header class="ssl-header">
+    <div class="ssl-header__row">
+      <a class="ssl-brand" href="https://ukadike.github.io/Small-Systems-Lab/">Small Systems Lab</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="ssl-global-nav">Menu</button>
+    </div>
+    <nav id="ssl-global-nav" class="ssl-global-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/">Small Systems Lab</a></li>
+        <li><a href="https://ukadike.github.io/omoluabi/" aria-current="page">Omoluabi</a></li>
+        <li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
+        <li><a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a></li>
+        <li><a href="https://ukadike.github.io/Earth-Sensors-Lab/">Earth Sensors Lab</a></li>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/schema-cards/">Schema Cards</a></li>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/site-map/">Site Map</a></li>
+        <li><a href="https://github.com/ukadike">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <header class="header" role="banner">
     <div class="header__inner">
@@ -39,8 +59,33 @@
     <p class="text-small">
       <a data-blind-editor-toggle href="#" aria-pressed="false">Toggle blind editor mode</a>
     </p>
+    <nav aria-label="Footer">
+      <ul class="footer-links">
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/site-map/">Site Map</a></li>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/accessibility/">Accessibility</a></li>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/schema-cards/">Schema Cards</a></li>
+        <li><a href="https://github.com/ukadike">GitHub</a></li>
+      </ul>
+    </nav>
   </footer>
 
+  <script type="application/json" data-schema="page.schema.v1">
+  {
+    "title": "Web Engine — Editorial Review",
+    "project": "Omoluabi",
+    "canonicalUrl": "https://ukadike.github.io/omoluabi/web-engine/app/",
+    "status": "active",
+    "nav": { "globalNav": true, "localNav": true, "siteMapEntry": true },
+    "accessibility": {
+      "skipLink": true,
+      "mainLandmark": true,
+      "keyboardTested": true,
+      "screenReaderLabeling": true,
+      "focusVisible": true
+    },
+    "lastUpdated": "2026-07-20"
+  }
+  </script>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>

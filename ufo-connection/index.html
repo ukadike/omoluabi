@@ -15,9 +15,44 @@
   <link rel="stylesheet" href="./css/ufo-connection.css">
   <script defer src="../world-layer-sandbox/p5-coastal-relay/vendor/p5.min.js"></script>
   <script type="module" src="./js/app.js"></script>
+  <script src="../ssl-nav.js" defer></script>
+  <style>
+    .ssl-header { border-bottom: 1px solid var(--line); background: var(--paper); }
+    .ssl-header__row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.75rem 1.5rem; }
+    .ssl-brand { font-weight: 700; text-decoration: none; }
+    .ssl-header .nav-toggle { display: none; font-weight: 700; background: var(--paper); color: var(--ink); border: 1px solid var(--line); padding: 0.35rem 0.6rem; cursor: pointer; }
+    .ssl-global-nav ul { list-style: none; margin: 0; padding: 0 1.5rem 0.75rem; display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; }
+    .ssl-global-nav a { font-family: "Courier Prime", monospace; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: underline; text-underline-offset: 0.18em; padding: 0.2rem 0; display: inline-block; }
+    .ssl-global-nav a[aria-current="page"] { font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--ink); }
+    @media (max-width: 720px) {
+      .ssl-header .nav-toggle { display: inline-block; }
+      .ssl-global-nav[hidden] { display: none; }
+      .ssl-global-nav ul { flex-direction: column; gap: 0.5rem; padding-bottom: 1rem; }
+    }
+    .footer-links { list-style: none; display: flex; flex-wrap: wrap; gap: 1rem; padding: 0; margin: 0.5rem 0 0; font-family: "Courier Prime", monospace; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="ssl-header">
+    <div class="ssl-header__row">
+      <a class="ssl-brand" href="https://ukadike.github.io/Small-Systems-Lab/">Small Systems Lab</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="ssl-global-nav">Menu</button>
+    </div>
+    <nav id="ssl-global-nav" class="ssl-global-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/">Small Systems Lab</a></li>
+        <li><a href="https://ukadike.github.io/omoluabi/" aria-current="page">Omoluabi</a></li>
+        <li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
+        <li><a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a></li>
+        <li><a href="https://ukadike.github.io/Earth-Sensors-Lab/">Earth Sensors Lab</a></li>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/schema-cards/">Schema Cards</a></li>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/site-map/">Site Map</a></li>
+        <li><a href="https://github.com/ukadike">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <header class="global-header">
     <nav class="global-nav" aria-label="Omoluabi">
@@ -181,6 +216,32 @@
       · <a href="../standards/media/SSL_MEDIA_SCHEMA_CARD.md">SSL Media Schema Card</a>
       · <a href="../rules/ssl-rules.v1.json">Executable rules</a>
     </p>
+    <nav aria-label="Footer">
+      <ul class="footer-links">
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/site-map/">Site Map</a></li>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/accessibility/">Accessibility</a></li>
+        <li><a href="https://ukadike.github.io/Small-Systems-Lab/schema-cards/">Schema Cards</a></li>
+        <li><a href="https://github.com/ukadike">GitHub</a></li>
+      </ul>
+    </nav>
   </footer>
+
+  <script type="application/json" data-schema="page.schema.v1">
+  {
+    "title": "The UFO Connection",
+    "project": "Omoluabi",
+    "canonicalUrl": "https://ukadike.github.io/omoluabi/ufo-connection/",
+    "status": "active",
+    "nav": { "globalNav": true, "localNav": true, "siteMapEntry": true },
+    "accessibility": {
+      "skipLink": true,
+      "mainLandmark": true,
+      "keyboardTested": true,
+      "screenReaderLabeling": true,
+      "focusVisible": true
+    },
+    "lastUpdated": "2026-07-20"
+  }
+  </script>
 </body>
 </html>

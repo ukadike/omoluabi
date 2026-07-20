@@ -1,6 +1,8 @@
 # Hardware MVP Instrumentation Revision — v0.02
 
-Revises `device/parts-list.md` and `device/circuit-notes.md` by formalizing what those documents already implied (a camera-capable module, an "optional GPS module") and adding the new requirements the Photographic and Cartographic Witness Layers need. This document does not replace `device/parts-list.md` or `device/circuit-notes.md`; it is the instrumentation-specific companion referenced from both.
+Revises `device/parts-list.md` and `device/circuit-notes.md` by formalizing what those documents already implied (a camera-capable module, an "optional GPS module") and adding the new requirements the Photographic and Cartographic Witness Layers need. This document does not replace `device/parts-list.md` or `device/circuit-notes.md`; it is the instrumentation-specific companion referenced from both. `diagrams/device-architecture.mmd` is updated alongside this document to show the new GNSS receiver, magnetometer, and pressure sensor as inputs to the Arduino UNO Q, and the observation package now branching into Photographic Witness and Cartographic Witness records.
+
+**No wired circuit schematic accompanies this revision.** `device/circuit-notes.md` already discloses that no MVP component — old or new — has a pin-level schematic yet; adding one only for the new sensors would overstate their readiness relative to the rest of the device plan. The new sensors are added to `circuit-notes.md`'s existing text-only circuit-direction list (I2C, consistent with the Display line) and to the Mermaid architecture diagram below, at the same level of detail as everything else in that file.
 
 **Nothing in this document is built or tested hardware.** Per `ROADMAP.md`, device firmware remains a plan, not running code. Accuracy figures below are illustrative of what each component class can support under good conditions, not a specification the current MVP parts list has been validated against.
 

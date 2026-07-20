@@ -1,7 +1,12 @@
 flowchart LR
   Buttons[Buttons + Switches] --> UNO[Arduino UNO Q]
-  Nicla[Nicla Vision] --> UNO
-  Sensors[GPS / RTC / Display / Haptics] --> UNO
+  Nicla[Nicla Vision: camera / audio / onboard IMU] --> UNO
+  Sensors[RTC / Display / Haptics] --> UNO
+  GNSS[Multi-constellation GNSS receiver + antenna] --> UNO
+  Mag[Magnetometer] --> UNO
+  Baro[Pressure sensor] --> UNO
   UNO --> Package[Observation Package]
+  Package --> Photo[Photographic Witness records]
+  Package --> Geo[Cartographic Witness records]
   Package --> Sync[Sync]
   Sync --> Web[Omoluabi Web Engine]

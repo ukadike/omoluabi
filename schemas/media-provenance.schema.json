@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/media-provenance.schema.json",
+  "title": "Media Provenance",
+  "description": "Separates original media from derivatives, and records hashes, processing operations, and alteration history, so an enhanced or AI-assisted image is never silently substituted for the original. First draft, not yet reviewed by Kemi. Carries fields for a hash and a custody chain; does not itself implement hashing, signing, or third-party attestation.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["media_provenance_id", "original_file", "original_hash", "recorded_at"],
+  "properties": {
+    "media_provenance_id": {"type": "string"},
+    "capture_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "original_file": {"type": "string"},
+    "original_hash": {
+      "type": "object",
+      "properties": {
+        "algorithm": {"type": "string", "enum": ["sha256", "sha512", "unknown"]},
+        "value": {"type": "string"}
+      }
+    },
+    "derivative_files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "file": {"type": "string"},
+          "derivation": {"type": "string"},
+          "hash": {"type": "string"}
+        }
+      }
+    },
+    "processing_operations": {"type": "array", "items": {"type": "string"}},
+    "model_assistance": {"type": "string", "description": "Name/version of any AI model involved in a derivative, per SSL-005 — advisory only, never authoritative."},
+    "enhancement_status": {"type": "string", "enum": ["none", "ai_enhanced", "manually_edited", "unknown"]},
+    "reconstruction_status": {"type": "string", "enum": ["optical_only", "partially_reconstructed", "fully_reconstructed", "unknown"]},
+    "alteration_history": {"type": "array", "items": {"type": "string"}, "description": "Append-only log of changes. Corrections to this log itself should use schemas/correction.schema.json (SSL-007), not silent edits."},
+    "chain_of_custody": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "holder": {"type": "string"},
+          "event": {"type": "string"},
+          "at": {"type": "string", "format": "date-time"}
+        }
+      }
+    },
+    "recorded_at": {"type": "string", "format": "date-time"}
+  },
+  "examples": [
+    {
+      "media_provenance_id": "media-prov-0001",
+      "capture_id": "photo-capture-0001",
+      "observation_id": "om-obs-0001",
+      "original_file": "media/image.jpg",
+      "original_hash": {"algorithm": "sha256", "value": "unknown-pending-implementation"},
+      "derivative_files": [],
+      "enhancement_status": "none",
+      "reconstruction_status": "optical_only",
+      "alteration_history": [],
+      "recorded_at": "2026-06-25T19:30:00-04:00"
+    }
+  ]
+}

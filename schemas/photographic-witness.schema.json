@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/photographic-witness.schema.json",
+  "title": "Photographic Witness",
+  "description": "Capture-level evidentiary record for a single photograph, video frame, or burst, preserving what the sensor recorded, capture conditions, and orientation, separately from the media-provenance and observer-perception records it links to. Extends, and does not replace, the `location`/`media` objects on `observation.schema.json`. First draft, not yet reviewed by Kemi; capture_mode and calibration_status enums are judgment calls pending field validation.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": ["capture_id", "observation_id", "timestamp", "timestamp_source"],
+  "properties": {
+    "capture_id": {"type": "string"},
+    "observation_id": {"type": "string"},
+    "media_provenance_id": {"type": "string", "description": "Links to schemas/media-provenance.schema.json for this capture's original/derivative files, hashes, and alteration history."},
+    "observer_perception_id": {"type": "string", "description": "Links to schemas/observer-perception.schema.json for what the human observer reports seeing."},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "timestamp_source": {"type": "string", "enum": ["device_clock", "gnss_time", "ntp_sync", "manual_entry", "unknown"]},
+    "timestamp_confidence": {"type": "string", "enum": ["high", "moderate", "low", "unknown"]},
+    "camera": {
+      "type": "object",
+      "properties": {
+        "device_id": {"type": "string"},
+        "sensor": {"type": "string"},
+        "lens": {"type": "string"},
+        "focal_length_mm": {"type": "number"},
+        "exposure": {"type": "string"},
+        "focus_distance_m": {"type": "number"},
+        "stabilization": {"type": "string", "enum": ["none", "optical", "electronic", "unknown"]},
+        "calibration_status": {"type": "string", "enum": ["calibrated", "uncalibrated", "unknown"]}
+      }
+    },
+    "position": {
+      "type": "object",
+      "description": "Capture-time position summary. The full evidentiary record for this position lives in schemas/location-evidence.schema.json, linked by location_evidence_id.",
+      "properties": {
+        "location_evidence_id": {"type": "string"},
+        "latitude": {"type": "number"},
+        "longitude": {"type": "number"},
+        "elevation_m": {"type": "number"},
+        "horizontal_accuracy_m": {"type": "number"},
+        "vertical_accuracy_m": {"type": "number"},
+        "coordinate_reference_system": {"type": "string"}
+      }
+    },
+    "orientation": {
+      "type": "object",
+      "properties": {
+        "heading_deg": {"type": "number"},
+        "pitch_deg": {"type": "number"},
+        "roll_deg": {"type": "number"},
+        "motion_state": {"type": "string", "enum": ["static", "handheld", "in_motion", "unknown"]}
+      }
+    },
+    "frame_sequence": {
+      "type": "object",
+      "properties": {
+        "burst_id": {"type": "string"},
+        "frame_index": {"type": "integer"},
+        "frame_count": {"type": "integer"}
+      }
+    },
+    "environmental_conditions": {"type": "string"},
+    "capture_mode": {"type": "string", "enum": ["optical", "computational_reconstruction", "mixed"], "description": "Distinguishes what the sensor optically recorded from any computational reconstruction. Never silently defaults to optical."},
+    "low_light_or_obstruction_warning": {"type": "string"},
+    "rights_and_risk": {
+      "type": "object",
+      "properties": {
+        "consent_status": {"type": "string", "description": "Media-specific consent facet, narrower than and subordinate to schemas/consent.schema.json; does not replace it."},
+        "publication_scope": {"type": "string"},
+        "sensitive_subjects": {"type": "array", "items": {"type": "string"}},
+        "location_protection_applied": {"type": "boolean", "description": "True if schemas/location-protection.schema.json governs this capture's coordinates."}
+      }
+    }
+  },
+  "examples": [
+    {
+      "capture_id": "photo-capture-0001",
+      "observation_id": "om-obs-0001",
+      "media_provenance_id": "media-prov-0001",
+      "observer_perception_id": "observer-perc-0001",
+      "timestamp": "2026-06-25T19:30:00-04:00",
+      "timestamp_source": "device_clock",
+      "timestamp_confidence": "moderate",
+      "camera": {
+        "device_id": "om-device-prototype-001",
+        "sensor": "Nicla Vision onboard camera",
+        "calibration_status": "uncalibrated"
+      },
+      "capture_mode": "optical",
+      "rights_and_risk": {
+        "consent_status": "pending",
+        "publication_scope": "internal_review",
+        "sensitive_subjects": [],
+        "location_protection_applied": false
+      }
+    }
+  ]
+}

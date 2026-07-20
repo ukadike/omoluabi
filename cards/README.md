@@ -49,9 +49,24 @@ Human-readable companion documents to the JSON Schemas in `schemas/`. Each card 
 9. `federation.card.md`
 10. `memory.card.md`
 
+### Photographic Witness Layer
+
+11. `photographic-witness.card.md`
+12. `media-provenance.card.md`
+13. `observer-perception.card.md`
+
+### Cartographic Witness Layer
+
+14. `location-evidence.card.md`
+15. `landscape-memory.card.md`
+16. `movement-trace.card.md`
+17. `projection-accountability.card.md`
+18. `map-missingness.card.md`
+19. `location-protection.card.md`
+
 ## Status
 
-`observation.card.md` synthesizes `OBSERVATION_CARD.md` from the packet into the Shared Card Template. The remaining nine were authored to pair with the schemas in `schemas/` and carry the same draft/status caveats noted there.
+`observation.card.md` synthesizes `OBSERVATION_CARD.md` from the packet into the Shared Card Template. Cards 2–10 were authored to pair with the schemas in `schemas/` and carry the same draft/status caveats noted there. Cards 11–19 were authored per the Omoluabi MVP Instrumentation and Research-Evidence Directive (v0.02); see `docs/research/speculative-instrumentation/` for the research case studies behind them.
 
 ## Source
 

@@ -33,7 +33,7 @@ The governance loop: **Observation → Consent → Source → Risk → Accessibi
 
 ## Data Structures
 
-Ten JSON Schemas (draft 2020-12) in `schemas/`, each with a human-readable companion card in `cards/` following the Shared Card Template (System, Purpose, Who is affected, Consent required, Evidence required, Accessibility required, Risk level, What AI may/may not do, Human decision required, Archive/Publication/Federation status, Version):
+Sixteen JSON Schemas (draft 2020-12) in `schemas/`, each with a human-readable companion card in `cards/` following the Shared Card Template (System, Purpose, Who is affected, Consent required, Evidence required, Accessibility required, Risk level, What AI may/may not do, Human decision required, Archive/Publication/Federation status, Version):
 
 | Schema | Required fields | Notes |
 |---|---|---|
@@ -47,8 +47,17 @@ Ten JSON Schemas (draft 2020-12) in `schemas/`, each with a human-readable compa
 | `ai-permission.schema.json` | `ai_permission_id`, `task`, `human_verified` | |
 | `federation.schema.json` | `federation_id`, `observation_id`, `exposed_fields` | Draft placeholder |
 | `memory.schema.json` | `memory_id`, `recorded_at` | Draft; shape is a judgment call, flagged in the schema's own `description` |
+| `photographic-witness.schema.json` | `capture_id`, `observation_id`, `timestamp`, `timestamp_source` | Photographic Witness Layer; extends `observation.schema.json`'s `media` object, does not replace it |
+| `media-provenance.schema.json` | `media_provenance_id`, `original_file`, `original_hash`, `recorded_at` | Original vs. derivative separation, hashing, alteration history |
+| `observer-perception.schema.json` | `observer_perception_id`, `capture_id`, `description` | Observer's own account, distinct from sensor output |
+| `location-evidence.schema.json` | `location_evidence_id`, `observation_id`, `latitude`, `longitude`, `recorded_at` | Cartographic Witness Layer; extends `observation.schema.json`'s `location` object. Never claims centimeter accuracy as a default |
+| `landscape-memory.schema.json` | `landscape_memory_id`, `location_evidence_id`, `recorded_at` | Local/historical/administrative/disputed names coexist by design |
+| `movement-trace.schema.json` | `movement_trace_id`, `recorded_at`, `points` | Time-indexed track; `interpolation_status` required whenever a point is not directly measured |
+| `projection-accountability.schema.json` | `projection_accountability_id`, `projection`, `recorded_at` | No map view should render without a linked record |
+| `map-missingness.schema.json` | `map_missingness_id`, `area_description`, `recorded_at` | Map-dataset gaps, distinct from `landscape-memory`'s `erased_features` |
+| `location-protection.schema.json` | `location_protection_id`, `location_evidence_id`, `public_location_precision`, `recorded_at` | Exact/generalized/withheld coordinate precision for sensitive locations |
 
-Except `observation.schema.json` (verbatim from the source packet), all schemas are first drafts, internally consistent with `governance/` but not yet reviewed by Kemi (per `schemas/README.md`).
+Except `observation.schema.json` (verbatim from the source packet), all schemas are first drafts, internally consistent with `governance/` but not yet reviewed by Kemi (per `schemas/README.md`). The Photographic and Cartographic Witness Layer schemas (rows 11–19 in `cards/README.md`) were added per the Omoluabi MVP Instrumentation and Research-Evidence Directive (v0.02) — see `docs/research/speculative-instrumentation/`.
 
 ### Example records (`examples/`)
 
@@ -90,7 +99,8 @@ Accessibility is treated as required infrastructure, not polish (`accessibility/
 ## Future Implementation Notes
 
 - Nothing here is running code yet: device firmware, web engine, and API are plans and drafts only (`ROADMAP.md`).
-- Nine of ten schemas need Kemi's review before being treated as stable.
+- Fifteen of sixteen schemas need Kemi's review before being treated as stable.
 - Federation trust model is unscoped (`architecture/sync-and-federation.md`); `diagrams/federation.mmd` is a stub.
 - Keyboard workflow spec (keybindings, tab order, focus-trap handling) is an open question in `accessibility/keyboard-workflow.md`.
 - `memory.schema.json`'s shape and `risk.schema.json`'s risk-level scale are first-draft judgment calls, each flagged in the schema's own `description` field.
+- The Photographic and Cartographic Witness Layers (`docs/mvp/interface/`, `docs/mvp/hardware/instrumentation-revision-v0.02.md`) are design documentation only; no camera-calibration workflow, offline map format, or RTK/post-processed positioning workflow has been chosen yet — see that hardware document's "post-MVP" column.

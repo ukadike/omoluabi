@@ -26,6 +26,7 @@ All directories from the original packet have been scaffolded with documentation
 
 - [In Progress] Web engine prototype — `web-engine/app/` is the first running implementation of any layer: a browser-only human review interface over the governance pipeline, gated in the order of `architecture/governance-pipeline.md`. Local-only (IndexedDB), no backend, no production framework decision, AI assist is a labeled stub. See `web-engine/app/README.md` for exact scope and `web-engine/local-first-plan.md` for what remains open (sync, production storage, encryption-at-rest).
 - [Planned] Device firmware and API implementation. Neither exists yet; `device/` and `api/` content remains planning documentation, not code.
+- [Planned] Photographic Witness Layer and Cartographic Witness Layer — nine new schemas/cards, two interface design documents, a hardware revision, and a Field Companion workflow document exist (`schemas/photographic-witness.schema.json` onward, `docs/mvp/`, `device/field-companion-workflow.md`), documented and cross-referenced but not implemented. See `docs/research/speculative-instrumentation/` for the research method behind this addition.
 
 ## Source
 

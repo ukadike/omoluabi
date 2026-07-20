@@ -24,6 +24,11 @@ A sitemap of this repository. Start with `000_START_HERE.md` if you haven't alre
 - [`docs/glossary.md`](docs/glossary.md)
 - [`docs/public-benefit.md`](docs/public-benefit.md)
 - [`docs/funding-brief.md`](docs/funding-brief.md)
+- [`docs/mvp/hardware/instrumentation-revision-v0.02.md`](docs/mvp/hardware/instrumentation-revision-v0.02.md) — Photographic/Cartographic Witness Layer hardware revision
+- [`docs/mvp/interface/photographic-witness-interface.md`](docs/mvp/interface/photographic-witness-interface.md) · [`docs/mvp/interface/cartographic-witness-interface.md`](docs/mvp/interface/cartographic-witness-interface.md) — interface design documentation
+- [`docs/research/instrumentation/current-state-audit.md`](docs/research/instrumentation/current-state-audit.md) — pre-work audit for the instrumentation directive
+- [`docs/research/speculative-instrumentation/`](docs/research/speculative-instrumentation/README.md) — the speculative-to-technical research method, method overview, two case studies, traceability matrix, decision log, and future-questions backlog
+- [`docs/portfolio/omoluabi-proof-of-method.md`](docs/portfolio/omoluabi-proof-of-method.md) — external-evaluator-facing proof of method
 
 ## Governance
 
@@ -52,12 +57,12 @@ A sitemap of this repository. Start with `000_START_HERE.md` if you haven't alre
 
 ## Schemas & Cards
 
-- [`schemas/README.md`](schemas/README.md) — ten JSON Schemas (draft 2020-12): observation, consent, source, risk, accessibility, publication, correction, ai-permission, federation, memory
+- [`schemas/README.md`](schemas/README.md) — sixteen JSON Schemas (draft 2020-12): observation, consent, source, risk, accessibility, publication, correction, ai-permission, federation, memory, photographic-witness, media-provenance, observer-perception, location-evidence, landscape-memory, movement-trace, projection-accountability, map-missingness, location-protection
 - [`cards/README.md`](cards/README.md) — one human-readable card per schema, shared template
 
 ## Device, Web Engine, API
 
-- [`device/README.md`](device/README.md) · [`device/parts-list.md`](device/parts-list.md) · [`device/circuit-notes.md`](device/circuit-notes.md) · [`device/enclosure-notes.md`](device/enclosure-notes.md) · [`device/firmware-plan.md`](device/firmware-plan.md) · [`device/accessibility-hardware.md`](device/accessibility-hardware.md)
+- [`device/README.md`](device/README.md) · [`device/parts-list.md`](device/parts-list.md) · [`device/circuit-notes.md`](device/circuit-notes.md) · [`device/enclosure-notes.md`](device/enclosure-notes.md) · [`device/firmware-plan.md`](device/firmware-plan.md) · [`device/accessibility-hardware.md`](device/accessibility-hardware.md) · [`device/field-companion-workflow.md`](device/field-companion-workflow.md)
 - [`web-engine/README.md`](web-engine/README.md) · [`web-engine/architecture.md`](web-engine/architecture.md) · [`web-engine/screens.md`](web-engine/screens.md) · [`web-engine/local-first-plan.md`](web-engine/local-first-plan.md) · [`web-engine/p5-ml5-prototype-plan.md`](web-engine/p5-ml5-prototype-plan.md)
 - [`api/api-principles.md`](api/api-principles.md) · [`api/endpoints-draft.md`](api/endpoints-draft.md) · [`api/openapi-draft.yaml`](api/openapi-draft.yaml) · [`api/versioning.md`](api/versioning.md)
 
@@ -99,3 +104,4 @@ A sitemap of this repository. Start with `000_START_HERE.md` if you haven't alre
 ## Site
 
 - [`index.html`](index.html) — public landing page (paired with [`site.css`](site.css) and [`variables.css`](variables.css))
+- [`research/speculative-instrumentation/index.html`](research/speculative-instrumentation/index.html) — "From Speculative Futures to Better Instruments," the public proof-of-method page

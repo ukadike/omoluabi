@@ -4,6 +4,20 @@ All notable changes to this repository are documented here. Format loosely follo
 
 ## [Unreleased]
 
+### Added — v0.02: Photographic and Cartographic Witness Layers
+
+Formalizes photography and cartography as first-class evidentiary subsystems, per the Omoluabi MVP Instrumentation and Research-Evidence Directive. No existing schema, card, governance rule, or accessibility commitment was weakened or replaced; all additions extend `schemas/observation.schema.json`'s existing `media`/`location` objects.
+
+- `docs/research/instrumentation/current-state-audit.md` — pre-work audit
+- Nine new schemas + cards: `photographic-witness`, `media-provenance`, `observer-perception`, `location-evidence`, `landscape-memory`, `movement-trace`, `projection-accountability`, `map-missingness`, `location-protection`
+- `docs/mvp/interface/photographic-witness-interface.md`, `docs/mvp/interface/cartographic-witness-interface.md` — interface design documentation
+- `docs/mvp/hardware/instrumentation-revision-v0.02.md` — hardware revision (multi-constellation GNSS, magnetometer, pressure sensor, clock-confidence reporting); explicitly does not claim centimeter accuracy as a default
+- `device/field-companion-workflow.md` — Rapid Capture and Deep Documentation modes
+- `docs/research/speculative-instrumentation/` — method overview, two case studies (`DR-0001` photography, `DR-0002` cartography), traceability matrix, design decisions log, future-questions backlog
+- `docs/portfolio/omoluabi-proof-of-method.md` — external-evaluator-facing proof of method
+- `research/speculative-instrumentation/index.html` — public proof-of-method page, linked from `index.html`
+- Updated `schemas/README.md`, `cards/README.md`, `SCHEMA_CARD.md` (10 → 16 schemas), `INDEX.md`, `ROADMAP.md`, `device/README.md`, `device/parts-list.md`, `device/circuit-notes.md` for cross-references
+
 ### Added
 
 - `000_START_HERE.md` orientation document

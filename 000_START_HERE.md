@@ -37,7 +37,7 @@ AI assists. Rules govern. Humans publish.
 
 ## Repository Map
 
-- `docs/` — vision, MVP plan, glossary, public-benefit and funding framing
+- `docs/` — vision, MVP plan, glossary, public-benefit and funding framing; `docs/mvp/` (hardware/interface revisions), `docs/research/` (instrumentation audit and speculative-instrumentation method), `docs/portfolio/` (external-evaluator-facing proof of method)
 - `governance/` — principles, rule library, AI permissions, publication status, consent and correction models
 - `architecture/` — system overview, observation and governance pipelines, data lifecycle, sync/federation
 - `research/` — research questions, literature review, standards, design decisions (ADRs)

@@ -24,26 +24,30 @@ The web engine never bypasses the governance pipeline. It surfaces consent, sour
 
 Sync design, conflict resolution across devices, and the production framework choice are not yet scoped. See `local-first-plan.md`. The storage layer question is answered for the prototype only (browser IndexedDB) — that is a prototype decision, not a production ruling.
 
-## Status: prototype running — in the Omoluabi-News repository
+## Status: prototype RETIRED (2026-08-16) — new plan designated, AWAITING FRAGMENT
 
-The running implementation of this directory's plans lives in the
+The browser-only prototype that implemented this directory's plans is retired,
+per Kemi's direction (2026-08-16) that a new web engine plan supersedes it. It
+is preserved intact — and still runs — in the
 [Omoluabi-News repository](https://github.com/ukadike/omoluabi-news) at
-`engine/`, per Kemi's direction (2026-07-08) that Omoluabi-News is where the
-web engine lives. It was first built here as `web-engine/app/` and moved there
-intact: a browser-only human review interface over the ten screens in
-`screens.md`, gated in the exact order of `architecture/governance-pipeline.md`,
-plus a manual "New observation" form (`source.origin_type: "web-form"`, required
-headline) and a news preview of records with a human `public` decision.
+`archive/engine-browser-prototype/` (see its `ARCHIVED.md` for full
+provenance: built here as `web-engine/app/`, moved there as `engine/` per
+Kemi's 2026-07-08 direction, then archived).
 
-It is not the production web engine: no framework decision has been made, there
-is no sync/backend, and AI assist is a labeled stub (no model wired in). This
-directory remains the planning documentation and source of truth the engine
-implements.
+The new plan's specification documents are not yet physically present in any
+repository; they are indexed in Omoluabi-News's `engine/README.md` as
+`AWAITING FRAGMENT` only — contents not described, summarized, or inferred.
+The web engine's home remains Omoluabi-News.
+
+This directory keeps the prototype-era planning documentation as provenance.
+What carries over to any future engine regardless of stack is the governance,
+not the prototype: the pipeline order, human-only publication decisions,
+advisory-only AI assist, and accessibility as infrastructure.
 
 ## Directory Index
 
 - `architecture.md` — stack and MVP user flow
-- `screens.md` — first screens list (implemented — see the Omoluabi-News repo's `engine/`)
+- `screens.md` — first screens list (implemented by the retired prototype — see the Omoluabi-News repo's `archive/engine-browser-prototype/`)
 - `local-first-plan.md` — local-first storage; prototype decision recorded, production still research
 - `p5-ml5-prototype-plan.md` — role of p5.js/ml5.js prototyping, and what it must not be used for
 

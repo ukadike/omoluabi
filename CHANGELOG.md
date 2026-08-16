@@ -4,6 +4,19 @@ All notable changes to this repository are documented here. Format loosely follo
 
 ## [Unreleased]
 
+### Changed — Web engine prototype retired (2026-08-16)
+
+Per Kemi's direction (2026-08-16), a new web engine plan supersedes the
+browser-only prototype. The prototype is preserved intact in the
+[Omoluabi-News repository](https://github.com/ukadike/omoluabi-news) at
+`archive/engine-browser-prototype/` (moved from its `engine/`, with an
+`ARCHIVED.md` provenance record); it still runs from there. The new plan's
+specification documents are not yet physically present in any repository and
+are indexed in Omoluabi-News's `engine/README.md` as `AWAITING FRAGMENT`
+only. `web-engine/` here keeps the prototype-era planning documentation as
+provenance, with its README status updated and pointers repointed to the
+archive path.
+
 ### Added — v0.02: Photographic and Cartographic Witness Layers
 
 Formalizes photography and cartography as first-class evidentiary subsystems, per the Omoluabi MVP Instrumentation and Research-Evidence Directive. No existing schema, card, governance rule, or accessibility commitment was weakened or replaced; all additions extend `schemas/observation.schema.json`'s existing `media`/`location` objects.

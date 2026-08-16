@@ -1,6 +1,6 @@
 # Photographic Witness Layer — Interface Components
 
-Design documentation only. Nothing described here is implemented; the web engine's running prototype (the [Omoluabi-News repository](https://github.com/ukadike/omoluabi-news)'s `engine/`) does not yet include these screens. See `web-engine/screens.md` for the currently implemented review screens and `architecture/governance-pipeline.md` for the review order any future implementation must respect.
+Design documentation only. Nothing described here is implemented. The web engine's browser prototype (retired 2026-08-16, preserved in the [Omoluabi-News repository](https://github.com/ukadike/omoluabi-news) at `archive/engine-browser-prototype/`) never included these screens, and the successor engine's specification is `AWAITING FRAGMENT` (see that repo's `engine/README.md`). See `web-engine/screens.md` for the prototype-era review screens and `architecture/governance-pipeline.md` for the review order any future implementation must respect.
 
 ## Governing rule
 

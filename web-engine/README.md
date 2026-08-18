@@ -34,10 +34,13 @@ is preserved intact — and still runs — in the
 provenance: built here as `web-engine/app/`, moved there as `engine/` per
 Kemi's 2026-07-08 direction, then archived).
 
-The new plan's specification documents are not yet physically present in any
-repository; they are indexed in Omoluabi-News's `engine/README.md` as
-`AWAITING FRAGMENT` only — contents not described, summarized, or inferred.
-The web engine's home remains Omoluabi-News.
+The new plan is documented in Omoluabi-News's `engine/`: Kemi's planning
+conversation is preserved at `engine/sources/planning-conversation-2026-08.md`,
+with draft spec documents reconstructed from it (per-section provenance
+markers) in `engine/docs/` and `engine/tasks/`. The two original files Kemi
+uploaded to that conversation remain `AWAITING FRAGMENT` — see that repo's
+`engine/README.md` for the index and open questions. The web engine's home
+remains Omoluabi-News.
 
 This directory keeps the prototype-era planning documentation as provenance.
 What carries over to any future engine regardless of stack is the governance,

@@ -1,76 +1,113 @@
-# Iron Nation–Indiana: Following Public Money Through an Opaque Investment Network
+# Iron Nation–Indiana Research Dossier
 
-**Omoluabi proof of concept / open case file**
+**A living Omoluabi source desk for journalists, researchers, and public-interest investigators**
 
-Status: **OPEN — evidence is still developing**  
+Status: **OPEN / DEVELOPING**  
 Last substantive review: **2026-08-31**
 
-## Research question
+## Purpose
 
-What can the public record establish about Indiana's $15 million commitment to the Iron Nation–Indiana initiative and Iron Nation II, the intermediaries involved, the investment structure, and any defense or dual-use portfolio activity — without converting inference into fact?
+This is not an article and it does not begin from a conclusion. It is a structured research resource for reporters investigating Indiana's $15 million commitment to the Iron Nation–Indiana initiative, the relationship to Iron Nation II, associated intermediaries, and any defense or dual-use investment activity.
 
-This case is designed to demonstrate Omoluabi's evidence discipline in a live investigation. It is not an advocacy page and it does not begin from a conclusion.
+The dossier is designed to help a journalist answer four questions quickly:
 
-## Why this is an Omoluabi case
+1. **What is confirmed by primary records?**
+2. **What is only reported, alleged, or inferred?**
+3. **Which document proves each factual edge?**
+4. **What should be requested or investigated next?**
 
-The public record contains several different kinds of evidence: state announcements, budget-committee minutes, SEC filings, fund statements, portfolio and competition materials, intermediary statements, and journalism. These sources do not all prove the same thing.
+## Current evidence map
 
-Omoluabi therefore treats each factual edge separately:
+| Claim edge | Status | Reporter note |
+|---|---|---|
+| State of Indiana → $15M → Iron Nation–Indiana initiative | **CONFIRMED** | Indiana's own April 13, 2026 announcement states this directly. |
+| Indiana $15M → Twenty-First Century Research Fund | **REPORTED** | Indiana Capital Chronicle reports this source of funds; underlying transaction document still needed. |
+| Iron Nation II → Israeli venture-capital limited partnership | **CONFIRMED** | SEC Form D identifies the entity as an Israel-organized pooled investment / venture capital fund. |
+| Indiana $15M → Iron Nation II specifically | **NOT YET DOCUMENTED HERE** | Public descriptions connect the initiative and fund ecosystem, but the executed agreement / investment instrument is still the decisive record. |
+| Iron Nation ecosystem → defense / dual-use activity | **CONFIRMED WHERE EXPLICITLY DOCUMENTED** | Sector or portfolio evidence must be attached company-by-company or program-by-program. |
+| Indiana's specific $15M → named defense company | **NOT ESTABLISHED** | Do not infer portfolio-level attribution from fund-level participation. |
+| Indiana taxpayer money → weapons production | **NOT ESTABLISHED** | Requires documentary proof of capital path and use. |
 
-| Claim edge | Current status |
-|---|---|
-| Indiana → $15M commitment → Iron Nation–Indiana initiative | **Confirmed** |
-| Iron Nation II → Israeli venture-capital limited partnership | **Confirmed** |
-| Indiana public commitment → Iron Nation II specifically | **Strongly indicated / requires underlying agreement for full traceability** |
-| Iron Nation ecosystem → defense / dual-use interest | **Confirmed where explicitly documented** |
-| Indiana's specific $15M → any named defense company | **Not established** |
-| Indiana taxpayer money → weapons production | **Not established** |
+## Primary records already located
 
-The purpose of the case is to preserve those distinctions as new records appear.
+### Indiana Economic Development Corporation — April 13, 2026
 
-## Confirmed public-record baseline
+Indiana announced **Iron Nation–Indiana**, described as a $60+ million investment and commercialization initiative, "anchored by a $15 million investment from the State of Indiana" and more than $30 million from the Iron Nation partnership.
 
-1. On April 13, 2026, the Indiana Economic Development Corporation announced Iron Nation–Indiana as a $60+ million investment and commercialization initiative, describing it as anchored by a **$15 million investment from the State of Indiana** and more than $30 million from the Iron Nation partnership.
-2. Indiana reporting identified the state's Twenty-First Century Research Fund as the source of the $15 million commitment.
-3. Indiana State Budget Committee minutes record legislators questioning IEDC officials about a $15 million Iron Nation investment and the timeline for returns to taxpayers.
-4. A January 16, 2025 SEC Form D identifies **Iron Nation II, Limited Partnership**, organized in Israel, as a pooled investment fund and venture-capital fund. The filing reports an offering amount of up to $100 million.
-5. Iron Nation's public 2026 startup competition advertises a **$1.5 million investment** for the selected company.
+Primary source:  
+https://iedc.in.gov/events/news/details/2026/04/13/governor-braun-announces-launch-of-iron-nation-indiana-to-drive-innovation-investment-and-economic-growth
 
-## Important unresolved questions
+### Indiana State Budget Committee — April 16, 2026
 
-- What is the executed legal instrument for Indiana's $15 million commitment?
-- Is Indiana a limited partner in Iron Nation II, participating through another vehicle, providing incentives, or using a mixed structure?
-- What rights, return expectations, reporting obligations, geographic requirements, or side letters attach to Indiana's capital?
-- Which Iron Nation II portfolio investments, if any, are attributable to capital supplied by Indiana?
-- Are defense or dual-use investments financed on a pooled basis that makes capital attribution impossible or contractually non-specific?
-- What Indiana-specific performance obligations apply to portfolio companies?
-- What public reporting will disclose distributions, losses, exits, fees, or carried interest?
+The official meeting minutes record Senator Fady Qaddoura asking whether a previously approved $15 million Innovation Capital Program investment was the same $15 million Iron Nation investment announced by the governor. IEDC President Josh Richardson said it was possible but he was not sure without more information in front of him. The minutes also record questions about when taxpayers could expect a timeline for dollars to return to the state.
 
-## Omoluabi reasoning layers used
+Primary source:  
+https://www.in.gov/sba/files/April-2026-Minutes.pdf
 
-- **Source Ladder** — official records outrank repetition or commentary.
-- **Contradiction** — conflicting descriptions of the $15 million structure remain visible rather than being silently reconciled.
-- **Timeline** — commitments, filings, approvals, announcements, competitions, and investments are ordered by event date.
-- **Returnability** — every publishable factual claim should return to the source that establishes it.
-- **Legal / Ethical Caution** — defense-sector interest is not equivalent to proof that Indiana funded weapons production.
-- **Narrative Probability** — plausible interpretations are kept distinct from documented facts.
-- **Unrecoverable Loss Register** — pages and disclosures that may later change should be preserved where lawful and practical.
-- **Human editorial control** — evidence status changes only after review.
+This is significant because the minutes document **uncertainty inside the public record itself**. They do not resolve the legal structure of the investment.
 
-## Editorial rule for this case
+### U.S. Securities and Exchange Commission — January 16, 2025
 
-A claim may move from **unresolved** or **inference** to **confirmed** only when a source proves the relevant edge. A source proving A→B and another proving B→C does not automatically prove that funds from A financed C when pooled-fund structure or legal restrictions make attribution uncertain.
+A Form D filing identifies **Iron Nation II, Limited Partnership** as organized in Israel and categorized as a pooled investment fund / venture capital fund.
 
-## Source ledger
+Primary source:  
+https://www.sec.gov/Archives/edgar/data/2052189/000121390025003994/xslFormDX08/primary_doc.xml
 
-See [`SOURCE_NOTES.md`](SOURCE_NOTES.md).
+SEC caution: Form D is a notice filing; the SEC states it has not necessarily reviewed the information for accuracy or completeness.
 
-Machine-readable claim states are in [`data/claims.json`](data/claims.json).
+### Iron Nation — 2026 startup competition
 
-## Corrections
+Iron Nation's public application page advertises a **$1.5 million investment** for the winner of its 2026 startup competition.
 
-This is a version-controlled open investigation. Corrections and stronger primary sources should be submitted through the repository's GitHub issues. When evidence changes a claim state, the prior state should remain recoverable through commit history.
+First-party source:  
+https://www.ironnation.org/application-form
 
-## Method note
+Do not assume Indiana's $15 million funds this award unless an agreement, capital-call record, or other documentary source establishes that link.
 
-This case extends the repository's existing proof-of-method work from observation and speculative instrumentation into public-money tracing and civic financial evidence. The experiment is whether Omoluabi can make an evolving, politically sensitive investigation more legible by preserving provenance, uncertainty, contradictions, and human review rather than optimizing for a single headline.
+## Reporting already located
+
+Indiana Capital Chronicle reported on April 13, 2026 that Indiana would invest $15 million from the **Twenty-First Century Research Fund** toward the initiative.
+
+https://indianacapitalchronicle.com/2026/04/13/iron-nation-indiana-to-bring-israeli-tech-startups-to-indiana/
+
+This is useful reporting, but for transaction tracing Omoluabi still marks the underlying state authorization, executed investment agreement, and fund-flow records as priority documents.
+
+## Priority documents for journalists
+
+The strongest next records would be:
+
+- executed investment agreement, LP subscription agreement, or other instrument governing Indiana's $15 million;
+- IEDC board materials and March 18, 2026 approval records referenced in the April Budget Committee minutes;
+- Twenty-First Century Research Fund award / investment documentation;
+- side letters, reporting requirements, return expectations, fees, carry, or geographic-performance conditions;
+- capital-call and distribution records, where public;
+- Iron Nation II portfolio disclosures and dates of investment;
+- documents identifying which vehicle funds the 2026 $1.5 million competition investment;
+- Indiana conflict-of-interest, procurement, ethics, lobbying, consultant, or intermediary records connected to the transaction;
+- public records showing whether defense / dual-use companies received capital after Indiana's commitment.
+
+## How to use this dossier
+
+Every major proposition should be treated as an individual evidence edge. A journalist should be able to move from a claim to the exact source that supports it, see whether the source is primary or secondary, and see what remains missing.
+
+Omoluabi does **not** collapse these statements into one headline:
+
+```text
+Indiana committed $15M to Iron Nation–Indiana.          CONFIRMED
+Iron Nation II is a venture-capital fund in Israel.    CONFIRMED
+Iron Nation engages with dual-use / defense sectors.   VERIFY PER SOURCE
+Indiana's $15M financed Company X.                      NOT ESTABLISHED
+Indiana financed weapons production.                   NOT ESTABLISHED
+```
+
+That separation is the method.
+
+## Files in this research desk
+
+- [`SOURCE_NOTES.md`](SOURCE_NOTES.md) — source ledger with evidentiary notes.
+- [`data/claims.json`](data/claims.json) — machine-readable claim-status register.
+- [`index.html`](index.html) — public journalist-facing research page.
+
+## Corrections and additions
+
+This is a version-controlled research resource. Stronger primary sources, corrections, and document leads can be submitted through GitHub issues. A claim should move from unresolved or reported to confirmed only when the relevant documentary edge is established.

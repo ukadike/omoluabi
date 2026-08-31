@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Omoluabi — Documentation</title>
+<meta name="description" content="Omoluabi public documentation.">
+<link rel="stylesheet" href="variables.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  .doc-shell{max-width:900px;margin:0 auto;padding:2rem 1rem 4rem}
+  .doc-top{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+  .doc-source{font:700 .78rem/1.4 monospace;text-transform:uppercase;letter-spacing:.05em}
+  .doc-content{line-height:1.7}
+  .doc-content h1,.doc-content h2,.doc-content h3{line-height:1.2;margin-top:2rem}
+  .doc-content img{max-width:100%;height:auto}
+  .doc-content pre{overflow:auto;padding:1rem;background:#111;color:#f5f5f2}
+  .doc-content code{overflow-wrap:anywhere}
+  .doc-content table{width:100%;border-collapse:collapse;display:block;overflow:auto}
+  .doc-content th,.doc-content td{border:1px solid #999;padding:.6rem;text-align:left;vertical-align:top}
+  .doc-error{border:2px solid currentColor;padding:1rem}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="header"><div class="wrap">
+  <p class="text-meta"><a href="./">Omoluabi</a> · Documentation</p>
+  <h1 class="text-h1" id="page-title">Documentation</h1>
+</div></header>
+<main id="main" class="doc-shell">
+  <div class="doc-top">
+    <a class="btn" href="./">← Back to Omoluabi</a>
+    <span class="doc-source" id="source-label">Loading document…</span>
+  </div>
+  <article class="doc-content" id="doc" aria-live="polite"><p>Loading documentation…</p></article>
+</main>
+<footer class="site-footer"><div class="wrap"><p>Omoluabi · <a href="https://github.com/ukadike/omoluabi">Repository</a></p></div></footer>
+<script>
+(function(){
+  const params=new URLSearchParams(location.search);
+  const path=params.get('path')||'';
+  const doc=document.getElementById('doc');
+  const label=document.getElementById('source-label');
+  const title=document.getElementById('page-title');
+  const valid=/^[A-Za-z0-9_./-]+$/.test(path)&&!path.includes('..')&&!path.startsWith('/');
+  if(!valid){doc.innerHTML='<div class="doc-error"><h2>Document not found</h2><p>Please return to the Omoluabi homepage and choose a document from there.</p></div>';label.textContent='Invalid document path';return;}
+  const mdPath=path+'.md';
+  const sourceDir=path.includes('/')?path.slice(0,path.lastIndexOf('/')+1):'';
+  label.textContent=path.split('/').pop().replace(/[-_]/g,' ');
+  fetch(mdPath).then(r=>{if(!r.ok)throw new Error('not found');return r.text();}).then(md=>{
+    marked.setOptions({gfm:true,breaks:false});
+    doc.innerHTML=marked.parse(md);
+    const h1=doc.querySelector('h1');
+    if(h1){title.textContent=h1.textContent;document.title=h1.textContent+' — Omoluabi';}
+    const normalize=p=>{const out=[];p.split('/').forEach(part=>{if(!part||part==='.')return;if(part==='..')out.pop();else out.push(part);});return out.join('/');};
+    doc.querySelectorAll('a[href]').forEach(a=>{
+      const raw=a.getAttribute('href');
+      if(!raw||/^(https?:|mailto:|tel:|#)/i.test(raw))return;
+      const hash=raw.includes('#')?raw.slice(raw.indexOf('#')):'';
+      const clean=hash?raw.slice(0,raw.indexOf('#')):raw;
+      if(/\.md$/i.test(clean)){
+        const target=normalize(sourceDir+clean.replace(/\.md$/i,''));
+        a.setAttribute('href','document.html?path='+encodeURIComponent(target)+hash);
+      }else{
+        a.setAttribute('href',normalize(sourceDir+clean)+hash);
+      }
+    });
+    doc.querySelectorAll('img[src]').forEach(img=>{const raw=img.getAttribute('src');if(raw&&!/^(https?:|data:|\/)/i.test(raw))img.setAttribute('src',normalize(sourceDir+raw));});
+    if(location.hash){requestAnimationFrame(()=>{const el=document.getElementById(location.hash.slice(1));if(el)el.scrollIntoView();});}
+  }).catch(()=>{doc.innerHTML='<div class="doc-error"><h2>Document unavailable</h2><p>This document could not be loaded. You can return to the <a href="./">Omoluabi homepage</a> or open the repository.</p></div>';label.textContent='Unavailable';});
+})();
+</script>
+</body>
+</html>

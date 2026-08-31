@@ -1,0 +1,75 @@
+{
+  "dossier": "Iron Nation–Indiana",
+  "updated": "2026-08-31",
+  "audience": ["journalists", "researchers", "public-interest investigators"],
+  "status_legend": {
+    "confirmed": "Supported directly by a primary or official record.",
+    "reported": "Supported by credible reporting but underlying primary documentation is still sought.",
+    "not_yet_documented": "Plausible or publicly implied, but the decisive documentary edge is not yet in this dossier.",
+    "not_established": "The available evidence does not establish the claim."
+  },
+  "claims": [
+    {
+      "id": "INI-001",
+      "claim": "The State of Indiana committed $15 million to the Iron Nation–Indiana initiative.",
+      "status": "confirmed",
+      "source_type": "official_state_announcement",
+      "source": "Indiana Economic Development Corporation, 2026-04-13",
+      "url": "https://iedc.in.gov/events/news/details/2026/04/13/governor-braun-announces-launch-of-iron-nation-indiana-to-drive-innovation-investment-and-economic-growth"
+    },
+    {
+      "id": "INI-002",
+      "claim": "Indiana's $15 million commitment comes from the Twenty-First Century Research Fund.",
+      "status": "reported",
+      "source_type": "credible_reporting",
+      "source": "Indiana Capital Chronicle, 2026-04-13",
+      "url": "https://indianacapitalchronicle.com/2026/04/13/iron-nation-indiana-to-bring-israeli-tech-startups-to-indiana/",
+      "next_evidence_needed": "Underlying Twenty-First Century Research Fund award, approval, transfer, or investment record."
+    },
+    {
+      "id": "INI-003",
+      "claim": "Iron Nation II, Limited Partnership is an Israel-organized pooled investment fund / venture capital fund.",
+      "status": "confirmed",
+      "source_type": "regulatory_filing",
+      "source": "U.S. SEC Form D filed 2025-01-16",
+      "url": "https://www.sec.gov/Archives/edgar/data/2052189/000121390025003994/xslFormDX08/primary_doc.xml",
+      "caution": "Form D is issuer-submitted notice data; the SEC states it has not necessarily reviewed the information for accuracy or completeness."
+    },
+    {
+      "id": "INI-004",
+      "claim": "Indiana's $15 million commitment was made directly into Iron Nation II, Limited Partnership.",
+      "status": "not_yet_documented",
+      "next_evidence_needed": "Executed investment instrument, LP subscription agreement, side letter, or equivalent state record."
+    },
+    {
+      "id": "INI-005",
+      "claim": "A March 18, 2026 $15 million Innovation Capital Program approval referenced by the Indiana State Budget Committee was the same transaction as the announced Iron Nation investment.",
+      "status": "not_yet_documented",
+      "source_type": "official_meeting_minutes",
+      "source": "Indiana State Budget Committee minutes, 2026-04-16",
+      "url": "https://www.in.gov/sba/files/April-2026-Minutes.pdf",
+      "note": "The minutes record IEDC President Josh Richardson saying the connection was possible but that he was not sure without more information.",
+      "next_evidence_needed": "March 18 approval materials and recipient documentation."
+    },
+    {
+      "id": "INI-006",
+      "claim": "Iron Nation's 2026 startup competition advertises a $1.5 million investment for the winner.",
+      "status": "confirmed",
+      "source_type": "first_party_fund_material",
+      "source": "Iron Nation application page",
+      "url": "https://www.ironnation.org/application-form"
+    },
+    {
+      "id": "INI-007",
+      "claim": "Indiana's specific $15 million financed a named defense or dual-use company.",
+      "status": "not_established",
+      "next_evidence_needed": "Portfolio-level investment record plus evidence of capital attribution to Indiana's commitment."
+    },
+    {
+      "id": "INI-008",
+      "claim": "Indiana taxpayer money financed weapons production.",
+      "status": "not_established",
+      "next_evidence_needed": "Documented capital path and documented use of funds."
+    }
+  ]
+}

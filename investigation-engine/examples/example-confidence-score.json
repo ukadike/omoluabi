@@ -1,0 +1,27 @@
+{
+  "confidence_id": "ie-conf-0001",
+  "subject_type": "claim",
+  "subject_id": "ie-claim-0001",
+  "score": 0.45,
+  "method": "Single-factor weighting (illustrative only; no closed scoring rubric exists yet, see architecture/reasoning-layers.md).",
+  "factors": [
+    {
+      "factor_name": "source_corroboration",
+      "weight": -0.2,
+      "note": "Only one sensor reading available; no independent corroboration yet."
+    },
+    {
+      "factor_name": "instrument_reliability",
+      "weight": 0.1,
+      "note": "Sensor type has an acceptable but unverified calibration history."
+    }
+  ],
+  "known": ["The sensor logged this reading at the stated time."],
+  "assumed": ["The sensor was correctly calibrated."],
+  "inferred": ["The reading is above baseline if calibration holds."],
+  "unknown": ["Whether a second sensor would reproduce the reading."],
+  "missing_evidence": ["A corroborating reading from an independent instrument."],
+  "scored_at": "2026-07-01T09:25:00Z",
+  "scored_by": "ai",
+  "human_verified": false
+}

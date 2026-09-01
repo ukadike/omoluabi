@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/investigation-engine/confidence-score.schema.json",
+  "title": "Confidence Score",
+  "description": "A scored confidence value with a required rationale, satisfying docs/transparency-rules.md's 'why confidence received its score' requirement. First draft, not yet reviewed by Kemi.",
+  "type": "object",
+  "required": ["confidence_id", "subject_type", "subject_id", "score", "factors", "scored_at", "scored_by"],
+  "properties": {
+    "confidence_id": {"type": "string"},
+    "subject_type": {"type": "string", "enum": ["claim", "evidence", "reasoning_step"]},
+    "subject_id": {"type": "string"},
+    "score": {"type": "number", "minimum": 0, "maximum": 1},
+    "method": {"type": "string", "description": "The scoring rubric or method used. A closed, versioned scoring rubric is [Research] — see architecture/reasoning-layers.md."},
+    "factors": {
+      "type": "array",
+      "description": "Required, not optional — a bare score with no factors is an incomplete record.",
+      "items": {
+        "type": "object",
+        "required": ["factor_name"],
+        "properties": {
+          "factor_name": {"type": "string"},
+          "weight": {"type": "number"},
+          "note": {"type": "string"}
+        }
+      }
+    },
+    "known": {"type": "array", "items": {"type": "string"}},
+    "assumed": {"type": "array", "items": {"type": "string"}},
+    "inferred": {"type": "array", "items": {"type": "string"}},
+    "unknown": {"type": "array", "items": {"type": "string"}},
+    "missing_evidence": {"type": "array", "items": {"type": "string"}},
+    "scored_at": {"type": "string", "format": "date-time"},
+    "scored_by": {"type": "string", "enum": ["ai", "human", "hybrid"]},
+    "human_verified": {"type": "boolean", "default": false}
+  }
+}

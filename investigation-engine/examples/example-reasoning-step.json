@@ -1,0 +1,16 @@
+{
+  "reasoning_step_id": "ie-rs-0001",
+  "subject_type": "claim",
+  "subject_id": "ie-claim-0001",
+  "layer": "source_ladder",
+  "layer_category": "source_and_evidence_quality",
+  "method": "Single-source, single-sensor reading; ranked low on the source ladder pending corroboration.",
+  "input_ids": ["ie-ev-0001"],
+  "output_summary": "Evidence is direct but uncorroborated; research_state capped at possible until a second source is available.",
+  "confidence_delta": 0.0,
+  "status": "implemented",
+  "performed_by": "ai",
+  "human_verified": false,
+  "performed_at": "2026-07-01T09:10:00Z",
+  "notes": "Illustrative reasoning step for schema demonstration only."
+}

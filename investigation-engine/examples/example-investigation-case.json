@@ -1,0 +1,27 @@
+{
+  "case_id": "ie-case-0001",
+  "title": "Example Site sensor anomaly (illustrative case)",
+  "domain": "climate",
+  "intelligence_mode": "research",
+  "workflow_stage": "challenge",
+  "evidence_ids": ["ie-ev-0001"],
+  "claim_ids": ["ie-claim-0001", "ie-claim-0002"],
+  "reasoning_step_ids": ["ie-rs-0001"],
+  "contradiction_ids": ["ie-contra-0001"],
+  "knowledge_graph_entity_ids": ["ie-kge-0001"],
+  "output_formats_produced": ["machine_readable_schema"],
+  "human_governance": {
+    "proposed_by": "ai",
+    "approval_status": "human_review",
+    "decision_notes": "Awaiting corroborating evidence before a human reviewer can move this to approved or rejected."
+  },
+  "accessibility_id": "access-ie-example-0001",
+  "publication_status": "internal_review",
+  "monitor_status": {
+    "active": true,
+    "last_checked_at": "2026-07-01T09:30:00Z",
+    "update_notes": "Watching for a second, independent sensor reading."
+  },
+  "created_at": "2026-07-01T09:00:00Z",
+  "updated_at": "2026-07-01T09:30:00Z"
+}

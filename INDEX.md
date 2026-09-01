@@ -53,7 +53,7 @@ A sitemap of this repository. Start with `000_START_HERE.md` if you haven't alre
 - [`research/literature-review.md`](research/literature-review.md)
 - [`research/standards.md`](research/standards.md)
 - [`research/references.md`](research/references.md)
-- ADRs: [`ADR-0001`](research/design-decisions/ADR-0001-schema-first.md) (schema-first) · [`ADR-0002`](research/design-decisions/ADR-0002-governance-before-ai.md) (governance before AI) · [`ADR-0003`](research/design-decisions/ADR-0003-device-as-observation-instrument.md) (device as observation instrument) · [`ADR-0004`](research/design-decisions/ADR-0004-consent-and-publication-status-are-distinct.md) (consent vs. publication status)
+- ADRs: [`ADR-0001`](research/design-decisions/ADR-0001-schema-first.md) (schema-first) · [`ADR-0002`](research/design-decisions/ADR-0002-governance-before-ai.md) (governance before AI) · [`ADR-0003`](research/design-decisions/ADR-0003-device-as-observation-instrument.md) (device as observation instrument) · [`ADR-0004`](research/design-decisions/ADR-0004-consent-and-publication-status-are-distinct.md) (consent vs. publication status) · [`ADR-0005`](research/design-decisions/ADR-0005-investigation-engine-reuses-governed-record-model.md) (investigation engine reuses governed-record model)
 
 ## Schemas & Cards
 
@@ -100,6 +100,15 @@ A sitemap of this repository. Start with `000_START_HERE.md` if you haven't alre
 
 - [`ufo-connection/README.md`](ufo-connection/README.md) — The UFO Connection: a self-contained GitHub Pages demo reading official PURSUE UAP/UFO disclosure records ([live page](ufo-connection/index.html), [`ufo-connection/PROJECT_BRIEF.md`](ufo-connection/PROJECT_BRIEF.md), [`ufo-connection/SOURCE_NOTES.md`](ufo-connection/SOURCE_NOTES.md))
 - [`world-layer-sandbox/README.md`](world-layer-sandbox/README.md) — Coastal Relay: an exploratory, non-canon Umada world-layer p5.js sketch ([`world-layer-sandbox/p5-coastal-relay/`](world-layer-sandbox/p5-coastal-relay/))
+
+## Investigation Engine
+
+- [`investigation-engine/README.md`](investigation-engine/README.md) — domain-agnostic evidence, reasoning, and knowledge-graph architecture
+- [`investigation-engine/architecture/`](investigation-engine/architecture/) — system overview, evidence model, reasoning layers (34), research states, workflow, knowledge graph, intelligence modes
+- [`investigation-engine/governance/`](investigation-engine/governance/) — constitutional rules (IE-001..IE-005), human-governance model
+- [`investigation-engine/schemas/`](investigation-engine/schemas/) · [`investigation-engine/cards/`](investigation-engine/cards/) — seven JSON Schemas (evidence object, claim, reasoning step, contradiction, confidence score, knowledge graph entity, investigation case) and their companion cards
+- [`investigation-engine/docs/`](investigation-engine/docs/) — universal research domains, output formats, transparency rules, accessibility
+- [`investigation-engine/examples/`](investigation-engine/examples/) — one linked example case across all seven schemas
 
 ## Site
 

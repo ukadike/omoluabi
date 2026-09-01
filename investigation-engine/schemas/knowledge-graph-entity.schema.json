@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/investigation-engine/knowledge-graph-entity.schema.json",
+  "title": "Knowledge Graph Entity",
+  "description": "A node in the investigation knowledge graph (architecture/knowledge-graph.md). First draft, not yet reviewed by Kemi.",
+  "type": "object",
+  "required": ["entity_id", "entity_type", "name"],
+  "properties": {
+    "entity_id": {"type": "string"},
+    "entity_type": {
+      "type": "string",
+      "enum": [
+        "person", "place", "organization", "event", "technology", "document", "media",
+        "scientific_concept", "policy", "project", "object", "claim", "evidence"
+      ]
+    },
+    "name": {"type": "string"},
+    "description": {"type": "string"},
+    "domain": {"type": "string"},
+    "related_entity_ids": {
+      "type": "array",
+      "description": "Edges. relationship_type is free-text in this first draft; a closed enum is [Research] per architecture/knowledge-graph.md.",
+      "items": {
+        "type": "object",
+        "required": ["entity_id", "relationship_type"],
+        "properties": {
+          "entity_id": {"type": "string"},
+          "relationship_type": {"type": "string"},
+          "description": {"type": "string"}
+        }
+      }
+    },
+    "timeline_position": {
+      "type": "object",
+      "properties": {
+        "event_date": {"type": "string", "format": "date-time"},
+        "date_precision": {"type": "string", "enum": ["exact", "approximate", "estimated", "unknown"]},
+        "note": {"type": "string"}
+      }
+    },
+    "geographic_location": {
+      "type": "object",
+      "properties": {
+        "lat": {"type": "number"},
+        "lng": {"type": "number"},
+        "place_name": {"type": "string"},
+        "precision": {"type": "string", "enum": ["exact", "approximate", "withheld", "unknown"]}
+      }
+    },
+    "source_evidence_ids": {"type": "array", "items": {"type": "string"}},
+    "research_state": {
+      "type": "string",
+      "enum": ["known", "supported", "likely", "possible", "disputed", "unverified", "unknown", "contradicted", "retracted", "archived"]
+    },
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  }
+}

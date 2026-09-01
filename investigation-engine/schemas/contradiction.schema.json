@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/investigation-engine/contradiction.schema.json",
+  "title": "Contradiction",
+  "description": "A recorded conflict between two or more claims or evidence objects. First draft, not yet reviewed by Kemi.",
+  "type": "object",
+  "required": ["contradiction_id", "subject_ids", "description", "resolution_status", "identified_at"],
+  "properties": {
+    "contradiction_id": {"type": "string"},
+    "subject_ids": {"type": "array", "items": {"type": "string"}, "minItems": 2, "description": "IDs of the conflicting claims and/or evidence objects."},
+    "description": {"type": "string"},
+    "severity": {"type": "string", "enum": ["minor", "moderate", "major", "unresolved_critical"]},
+    "resolution_status": {
+      "type": "string",
+      "enum": ["unresolved", "partially_resolved", "resolved", "resolved_by_retraction"]
+    },
+    "resolution_notes": {"type": "string"},
+    "identified_at": {"type": "string", "format": "date-time"},
+    "identified_by": {"type": "string", "enum": ["ai", "human", "hybrid"]}
+  }
+}

@@ -47,7 +47,7 @@ Each schema is intended to be:
 
 ## Status
 
-`observation.schema.json` is verbatim from the source packet. The remaining fifteen were authored to satisfy `SCHEMA_INDEX.md`'s "Core Schemas to Implement" list and the Omoluabi MVP Instrumentation and Research-Evidence Directive (v0.02), and are first drafts — minimal, internally consistent with `governance/` and cross-referenced to it, but not yet reviewed by Kemi. Where a schema makes a judgment call beyond what the packet specified (e.g., `risk.schema.json`'s risk-level scale, `memory.schema.json`'s shape, or any of the nine Photographic/Cartographic Witness Layer schemas' enums), its `description` field says so.
+`observation.schema.json` is verbatim from the source packet, with one addition: an optional `title` (headline) property, added per Kemi's direction of 2026-07-08 that every story needs a headline (flagged in the property's own `description`). The remaining fifteen were authored to satisfy `SCHEMA_INDEX.md`'s "Core Schemas to Implement" list and the Omoluabi MVP Instrumentation and Research-Evidence Directive (v0.02), and are first drafts — minimal, internally consistent with `governance/` and cross-referenced to it, but not yet reviewed by Kemi. Where a schema makes a judgment call beyond what the packet specified (e.g., `risk.schema.json`'s risk-level scale, `memory.schema.json`'s shape, or any of the nine Photographic/Cartographic Witness Layer schemas' enums), its `description` field says so.
 
 Companion human-readable documents live in `cards/`, one per schema, following the Shared Card Template from `STABLE_SCHEMA_CARDS.md`.
 

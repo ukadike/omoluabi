@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gary Energy Reliability + Flock Infrastructure · Omoluabi</title>
-<meta name="description" content="An Omoluabi investigation of Gary, Indiana's August 2026 power crisis, disaster resilience, RTCC and Flock infrastructure, and the evidence needed to compare which civic systems remain operational under stress.">
+<title>Gary Civic Infrastructure Reliability · Omoluabi</title>
+<meta name="description" content="An Omoluabi investigation of Gary, Indiana's August 2026 storm as a civic infrastructure stress test across power, roads, traffic, fuel, communications, water, medical support, schools, emergency resources, public safety, and surveillance.">
 <link rel="stylesheet" href="../variables.css">
 <link rel="stylesheet" href="../site.css">
 </head>
@@ -12,86 +12,147 @@
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="header"><div class="wrap">
 <p class="text-meta"><a href="../">Omoluabi</a> · Research Desk</p>
-<h1 class="text-h1">Gary, Indiana: Energy Reliability + Flock Infrastructure</h1>
-<p class="text-body">A source-led investigation of disaster resilience: which systems failed, which systems may have independent power and communications, and what evidence is required before comparing them.</p>
+<h1 class="text-h1">Gary, Indiana: Civic Infrastructure Reliability</h1>
+<p class="text-body">A source-led stress test of the systems a city depends on — and the dependencies those systems hide.</p>
 </div></header>
 <main id="main" class="wrap">
+
 <section aria-labelledby="need-h">
 <h2 id="need-h" class="text-h2">What you need to know</h2>
-<p class="text-body">Gary experienced a severe and prolonged power disruption after the August 11, 2026 storm. Gary also operates a Real-Time Crime Center using surveillance and license-plate recognition, and official Lake County records document Gary Police Department's use of an extensive Flock camera array.</p>
-<p class="text-body"><strong>What is not yet known:</strong> whether Gary's Flock cameras or RTCC remained operational during the same outage period. Flock describes solar/battery and cellular capability, but product capability is not deployment-specific uptime evidence.</p>
+<p class="text-body">The August 11, 2026 storm did not produce only an electrical outage. The prolonged loss of power exposed dependencies across traffic signals, road access, fuel pumping, food and medication storage, home medical devices, schools, charging, communications, and emergency support.</p>
+<p class="text-body">Gary's Flock cameras and Real-Time Crime Center remain part of the investigation, but they are now <strong>one subsystem among many</strong>. Omoluabi's question is broader: <strong>which civic systems were resilient, which failed, how did failures cascade, and what redundancy existed for residents as well as institutions?</strong></p>
 </section>
+
 <hr class="divider">
 <section aria-labelledby="action-h">
 <h2 id="action-h" class="text-h2">Next action</h2>
 <div class="grid-2">
-<article class="card"><h3 class="text-h3">Get the device record</h3><p class="text-body">Request Flock inventory, model, power configuration, connectivity configuration, device-health / heartbeat telemetry, maintenance events, and RTCC system logs for August 11–25, 2026.</p></article>
-<article class="card"><h3 class="text-h3">Build the outage timeline</h3><p class="text-body">Align NIPSCO feeder/circuit restoration with traffic signals, cellular service, emergency charging sites, the RTCC, and camera infrastructure. Compare like-for-like timestamps instead of general restoration percentages.</p></article>
+<article class="card"><h3 class="text-h3">Build one shared timeline</h3><p class="text-body">Align feeder restoration, signal outages, road closures, fuel access, carrier/network conditions, water notices, hospital/911 continuity, school closures, shelters, transit, public-safety systems, and resident testimony on the same August 11–27 clock.</p></article>
+<article class="card"><h3 class="text-h3">Map dependencies, not just outages</h3><p class="text-body">For each system record its power source, backup power, communications path, fuel dependence, physical-access dependence, failure time, restoration time, and who could still use it.</p></article>
 </div>
 </section>
+
 <hr class="divider">
-<section aria-labelledby="why-h">
-<h2 id="why-h" class="text-h2">Why</h2>
-<p class="text-body">Normal electric reliability and disaster resilience are different questions. A subsystem can survive a grid failure because it has a different power source, battery, generator, communications path, or restoration priority. Omoluabi therefore tests infrastructure asymmetry rather than assuming it.</p>
-<blockquote class="text-body"><strong>Investigation question:</strong> Did any public-safety surveillance nodes maintain autonomous power and communications while nearby residential or civic systems were unavailable — and, if so, what design and policy choices explain the difference?</blockquote>
-</section>
-<hr class="divider">
-<section aria-labelledby="evidence-h">
-<h2 id="evidence-h" class="text-h2">Evidence state</h2>
+<section aria-labelledby="known-h">
+<h2 id="known-h" class="text-h2">What the public record already shows</h2>
 <div class="grid-2">
-<article class="card"><h3 class="text-h3">Confirmed</h3><p class="text-body">The August 11 storm caused widespread Gary power disruption and prolonged recovery.</p></article>
-<article class="card"><h3 class="text-h3">Confirmed</h3><p class="text-body">Gary's RTCC uses surveillance cameras and fixed/mobile license-plate recognition.</p></article>
-<article class="card"><h3 class="text-h3">Confirmed</h3><p class="text-body">Official Lake County minutes document Gary PD as having an “extensive array” of Flock cameras.</p></article>
-<article class="card"><h3 class="text-h3">Vendor capability</h3><p class="text-body">Flock describes solar/battery power and cellular connectivity for its camera architecture.</p></article>
-<article class="card"><h3 class="text-h3">Not established</h3><p class="text-body">Gary's Flock cameras remained operational during the August 2026 outage.</p></article>
-<article class="card"><h3 class="text-h3">Not established</h3><p class="text-body">Gary deliberately prioritized surveillance power over residential service.</p></article>
+<article class="card"><h3 class="text-h3">Electricity</h3><p class="text-body">A major, prolonged outage affected Gary; some homes and businesses waited nearly two weeks for restoration.</p></article>
+<article class="card"><h3 class="text-h3">Traffic + roads</h3><p class="text-body">Large areas were reported without working traffic signals. The city documented extensive tree damage and blocked roads, with recovery still underway on August 18.</p></article>
+<article class="card"><h3 class="text-h3">Fuel</h3><p class="text-body">CBS documented a Gary gas station whose pumps did not work; a generator kept part of the business alive, but the generator itself required fuel obtained elsewhere.</p></article>
+<article class="card"><h3 class="text-h3">Medical continuity</h3><p class="text-body">Reporting documented difficulty managing medications and powered medical devices. Gary opened an oxygen-cylinder refill station for home-use patients affected by the outage.</p></article>
+<article class="card"><h3 class="text-h3">Connectivity</h3><p class="text-body">AT&amp;T/ITDRC and Verizon deployed charging/Wi-Fi resources. FirstNet deployed satellite communications support to the NIPSCO facility in Gary for utility recovery.</p></article>
+<article class="card"><h3 class="text-h3">Schools</h3><p class="text-body">Gary public schools remained closed more than a week after the storm because of ongoing storm-related issues.</p></article>
+<article class="card"><h3 class="text-h3">Water</h3><p class="text-body">Indiana American Water issued multiple Gary main-break/boil-advisory notices during the recovery period. The breaks are documented; storm causation is <strong>not established</strong>.</p></article>
+<article class="card"><h3 class="text-h3">Shelter + charging</h3><p class="text-body">The Gary YWCA was listed as a 24/7 shelter and charging site; other food and emergency resources were distributed.</p></article>
 </div>
-<p class="text-meta"><a href="data/claims.json">Open the machine-readable claim register</a></p>
 </section>
+
 <hr class="divider">
-<section aria-labelledby="map-h">
-<h2 id="map-h" class="text-h2">Investigation matrix</h2>
+<section aria-labelledby="cascade-h">
+<h2 id="cascade-h" class="text-h2">The cascade</h2>
+<p class="text-body">Omoluabi treats infrastructure as a dependency graph. A failure can travel through systems that look unrelated:</p>
+<pre class="text-body" style="white-space:pre-wrap;">ELECTRICITY
+  → traffic signals → intersection safety / mobility
+  → gas pumps → fuel → generators / vehicles / recovery
+  → refrigeration → food + medication safety
+  → home medical equipment → oxygen / mobility / health continuity
+
+CELL-SITE POWER + BACKHAUL
+  → mobile connectivity → emergency information / coordination
+
+UTILITY COMMUNICATIONS
+  → crew coordination → electric restoration
+
+ROAD ACCESS
+  → fuel / shelter / medical care / repair crews / transit</pre>
+<p class="text-body"><strong>A generator without fuel access is not independent. A charged phone without network service is not connected. A shelter is not fully accessible if residents cannot physically reach it.</strong></p>
+</section>
+
+<hr class="divider">
+<section aria-labelledby="matrix-h">
+<h2 id="matrix-h" class="text-h2">Civic resilience matrix</h2>
 <div style="overflow-x:auto;">
 <table class="text-body">
-<thead><tr><th scope="col">System</th><th scope="col">Power architecture</th><th scope="col">Communications</th><th scope="col">Outage state</th><th scope="col">Evidence needed</th></tr></thead>
+<thead><tr><th scope="col">System</th><th scope="col">Primary dependency</th><th scope="col">August evidence state</th><th scope="col">Next record</th></tr></thead>
 <tbody>
-<tr><th scope="row">Residential electricity</th><td>Grid</td><td>Household-specific</td><td>Major outage confirmed</td><td>NIPSCO feeder/circuit restoration data</td></tr>
-<tr><th scope="row">Traffic signals</th><td>Location-specific</td><td>Control-network specific</td><td>To document</td><td>City/INDOT outage and restoration logs</td></tr>
-<tr><th scope="row">Cellular service</th><td>Site + backup dependent</td><td>Cellular network</td><td>To document</td><td>Carrier/FCC outage records</td></tr>
-<tr><th scope="row">Gary RTCC</th><td>Facility-specific</td><td>Multiple possible links</td><td>To document</td><td>UPS/generator + system-health + dispatch-access logs</td></tr>
-<tr><th scope="row">Flock LPR nodes</th><td>Deployment-specific; vendor supports solar/battery</td><td>Deployment-specific; vendor supports cellular</td><td><strong>Not established</strong></td><td>Inventory + configuration + device telemetry</td></tr>
-<tr><th scope="row">Emergency resilience sites</th><td>Site-specific</td><td>Site-specific</td><td>To document</td><td>Charging/cooling/shelter/communications records</td></tr>
+<tr><th scope="row">Residential electricity</th><td>NIPSCO grid</td><td>Major prolonged outage confirmed/reported</td><td>Feeder/circuit restoration timeline</td></tr>
+<tr><th scope="row">Traffic signals</th><td>Power + controllers</td><td>Failures reported in large areas</td><td>Intersection outage/restoration logs</td></tr>
+<tr><th scope="row">Road access</th><td>Physical clearance</td><td>Extensive blocked roads confirmed</td><td>GIS closure/reopening timeline</td></tr>
+<tr><th scope="row">Fuel stations</th><td>Electric pumps/payment + fuel supply</td><td>At least one pump failure reported</td><td>Station survey + fuel logistics</td></tr>
+<tr><th scope="row">Cellular / Wi-Fi</th><td>Site power + backhaul</td><td>Supplemental connectivity deployed</td><td>Carrier/FCC outage/degradation data</td></tr>
+<tr><th scope="row">Utility field communications</th><td>Network + field equipment</td><td>FirstNet satellite support confirmed</td><td>NIPSCO/FirstNet deployment logs</td></tr>
+<tr><th scope="row">911 / CAD / radio</th><td>Facility + network + power</td><td><strong>Not established</strong></td><td>Uptime/failover/generator logs</td></tr>
+<tr><th scope="row">Drinking water</th><td>Mains + pumps + pressure</td><td>Main-break/boil notices confirmed; cause unresolved</td><td>Pressure/pump/work-order records</td></tr>
+<tr><th scope="row">Wastewater</th><td>Pumps + treatment + power</td><td><strong>Not established</strong></td><td>SCADA/overflow/generator logs</td></tr>
+<tr><th scope="row">Hospital / ED</th><td>Grid + emergency generation</td><td><strong>Not established</strong></td><td>Northlake emergency-power/incident records</td></tr>
+<tr><th scope="row">Home medical support</th><td>Household electricity + supplies</td><td>Vulnerability reported; oxygen support confirmed</td><td>Aggregate support/demand records</td></tr>
+<tr><th scope="row">Schools</th><td>Facility power + access</td><td>Closures reported</td><td>District facility/reopening records</td></tr>
+<tr><th scope="row">Transit / paratransit</th><td>Roads + fuel + dispatch + facility power</td><td><strong>Not established</strong></td><td>GPTC service/dispatch/fuel logs</td></tr>
+<tr><th scope="row">Shelter / charging</th><td>Facility power + supplies</td><td>YWCA support confirmed</td><td>Power source/capacity/usage records</td></tr>
+<tr><th scope="row">Gary RTCC</th><td>Facility power + network</td><td><strong>Not established</strong></td><td>System-health/UPS/generator logs</td></tr>
+<tr><th scope="row">Flock LPR</th><td>Deployment-specific power/network</td><td><strong>Not established</strong></td><td>Configuration + device telemetry</td></tr>
 </tbody>
 </table>
 </div>
 </section>
+
 <hr class="divider">
-<section aria-labelledby="sources-h">
-<h2 id="sources-h" class="text-h2">Evidence</h2>
-<ul class="text-body">
-<li><a href="https://www.gary.gov/news-updates/mayor-melton-provides-storm-recovery-update">City of Gary storm recovery update — August 18, 2026</a></li>
-<li><a href="https://www.in.gov/dhs/emergency-management-and-preparedness/august-2026-disaster/">Indiana Department of Homeland Security — August 2026 disaster</a></li>
-<li><a href="https://www.gary.gov/police/real-time-crime-center">Gary Police Department — Real-Time Crime Center</a></li>
-<li><a href="https://lakecountyin.gov/departments/commissioners/minutes-c/2024-commissioners-minutes/2024%2007-17-2024.pdf">Lake County commissioners' minutes — July 17, 2024</a></li>
-<li><a href="https://www.flocksafety.com/faq">Flock Safety technical FAQ — vendor source</a></li>
-<li><a href="https://chicago.suntimes.com/news/2026/08/20/gary-power-outage-storms-indiana">Chicago Sun-Times — August 20, 2026 outage reporting</a></li>
-<li><a href="https://indianapolisrecorder.com/gary-power-outage-why-lasting/">Indianapolis Recorder / Capital B Gary — August 24, 2026 outage reporting</a></li>
-</ul>
-<p class="text-meta"><a href="SOURCE_NOTES.md">Read the annotated source ledger</a></p>
+<section aria-labelledby="why-h">
+<h2 id="why-h" class="text-h2">Infrastructure asymmetry — broadened</h2>
+<p class="text-body">The investigation is no longer "did cameras stay on while homes went dark?" The stronger question is:</p>
+<blockquote class="text-body"><strong>Which Gary systems had batteries, generators, satellite links, stored fuel, alternate routing, independent communications, or priority restoration — and which essential resident-facing systems did not?</strong></blockquote>
+<p class="text-body">Flock remains useful as one test case because the vendor describes solar/battery/cellular configurations. But the same analysis belongs on hospitals, utility communications, water/wastewater, police/fire facilities, traffic systems, cellular sites, transit, shelters, and other critical infrastructure.</p>
 </section>
+
+<hr class="divider">
+<section aria-labelledby="unknown-h">
+<h2 id="unknown-h" class="text-h2">Do not fill these gaps with assumptions</h2>
+<ul class="text-body">
+<li>It is <strong>not established</strong> that the August storm caused the documented water-main breaks.</li>
+<li>It is <strong>not established</strong> that Gary's wastewater treatment failed.</li>
+<li>It is <strong>not established</strong> that Methodist Northlake lost power or clinical services.</li>
+<li>It is <strong>not established</strong> that 911, CAD, police radio, or fire communications failed.</li>
+<li>It is <strong>not established</strong> that GPTC fixed-route or paratransit service failed.</li>
+<li>It is <strong>not established</strong> that Gary's Flock cameras or RTCC stayed online.</li>
+<li>It is <strong>not established</strong> that government intentionally prioritized surveillance over residents.</li>
+</ul>
+</section>
+
 <hr class="divider">
 <section aria-labelledby="design-h">
-<h2 id="design-h" class="text-h2">Design question</h2>
-<p class="text-body">If independently powered and connected sensing nodes prove more resilient than surrounding civic infrastructure, that architecture becomes a design precedent — not an endorsement of surveillance.</p>
-<p class="text-body">A resident-governed resilience node could adapt solar/battery power and independent communications for emergency information, accessible alerts, phone and assistive-device charging, environmental sensing, outage observations, and local communications, with transparent ownership, data minimization, and community governance.</p>
+<h2 id="design-h" class="text-h2">Design question: civic redundancy</h2>
+<p class="text-body">The Omoluabi design lesson is not simply to copy the power architecture of a surveillance camera. It is to design resident-facing redundancy as a network: neighborhood charging, medical-device support, accessible alerts, local/mesh communications, environmental sensing, outage and road observations, refrigeration for medications, and low-bandwidth/offline information.</p>
+<p class="text-body">A resilience node only works when it is connected to a plan for <strong>power + communications + mobility + water + medical access + food/fuel</strong>.</p>
 </section>
+
+<hr class="divider">
+<section aria-labelledby="sources-h">
+<h2 id="sources-h" class="text-h2">Core evidence</h2>
+<ul class="text-body">
+<li><a href="https://www.gary.gov/news-updates/mayor-melton-provides-storm-recovery-update">City of Gary — storm recovery update</a></li>
+<li><a href="https://www.gary.gov/stormrecovery">City of Gary — storm recovery resources, shelter, charging, oxygen refill</a></li>
+<li><a href="https://www.gary.gov/news-updates/mayor-melton-provides-storm-recovery-updates-with-congressman-mrvan-and-announces-partnership-with-at-t">City of Gary — connectivity, FirstNet, roads update</a></li>
+<li><a href="https://about.att.com/pages/disaster-updates">AT&amp;T — disaster connectivity deployments</a></li>
+<li><a href="https://www.in.gov/dhs/emergency-management-and-preparedness/august-2026-disaster/">Indiana Department of Homeland Security — August 2026 disaster</a></li>
+<li><a href="https://www.wfyi.org/statewide/2026-08-22/parts-of-gary-are-still-without-power-residents-blame-nipsco">Free Press Indiana / WFYI — traffic, food, medication, fuel impacts</a></li>
+<li><a href="https://www.cbsnews.com/chicago/news/buildings-homes-still-without-power-northwest-indiana/">CBS Chicago — schools, gas pumps, outage scale</a></li>
+<li><a href="https://alertsdetail.awapps.com/alert/134354">Indiana American Water — August 18 Gary main-break/boil advisory</a></li>
+<li><a href="https://alertsdetail.awapps.com/alert/134648">Indiana American Water — August 20 Gary main-break/boil advisory</a></li>
+<li><a href="https://alertsdetail.awapps.com/alert/135265">Indiana American Water — August 26 Gary main-break/boil advisory</a></li>
+<li><a href="https://www.gary.gov/police/real-time-crime-center">Gary Police — Real-Time Crime Center</a></li>
+<li><a href="https://lakecountyin.gov/departments/commissioners/minutes-c/2024-commissioners-minutes/2024%2007-17-2024.pdf">Lake County — Gary Flock deployment evidence</a></li>
+</ul>
+<p class="text-meta"><a href="SOURCE_NOTES.md">Annotated source ledger</a> · <a href="data/claims.json">Machine-readable claim register</a></p>
+</section>
+
 <hr class="divider">
 <section aria-labelledby="method-h">
 <h2 id="method-h" class="text-h2">Omoluabi rule</h2>
-<p class="text-body">A powered camera is not necessarily connected. A connected camera is not necessarily accessible to the RTCC. A vendor capability is not a deployment fact. And the survival of one subsystem does not prove another was intentionally deprived.</p>
+<p class="text-body">Document the failure. Document the dependency. Document the redundancy. Document who could access it. Then compare systems on the same timeline.</p>
 <p class="text-body"><strong>When evidence is insufficient, request another reading.</strong></p>
-<p class="text-meta"><a href="README.md">Full research notes</a> · <a href="data/claims.json">Claim register</a> · <a href="https://github.com/ukadike/omoluabi/issues">Submit a correction or document lead</a></p>
+<p class="text-meta"><a href="README.md">Full research notes</a> · <a href="https://github.com/ukadike/omoluabi/issues">Submit a correction or document lead</a></p>
 </section>
+
 </main>
 <footer class="site-footer"><div class="wrap"><p class="text-body">Part of Omoluabi, a Small Systems Lab public-interest research project.</p></div></footer>
 </body>

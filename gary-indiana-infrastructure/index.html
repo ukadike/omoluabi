@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gary Energy Reliability + Flock Infrastructure · Omoluabi</title>
+<meta name="description" content="An Omoluabi investigation of Gary, Indiana's August 2026 power crisis, disaster resilience, RTCC and Flock infrastructure, and the evidence needed to compare which civic systems remain operational under stress.">
+<link rel="stylesheet" href="../variables.css">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="header"><div class="wrap">
+<p class="text-meta"><a href="../">Omoluabi</a> · Research Desk</p>
+<h1 class="text-h1">Gary, Indiana: Energy Reliability + Flock Infrastructure</h1>
+<p class="text-body">A source-led investigation of disaster resilience: which systems failed, which systems may have independent power and communications, and what evidence is required before comparing them.</p>
+</div></header>
+<main id="main" class="wrap">
+<section aria-labelledby="need-h">
+<h2 id="need-h" class="text-h2">What you need to know</h2>
+<p class="text-body">Gary experienced a severe and prolonged power disruption after the August 11, 2026 storm. Gary also operates a Real-Time Crime Center using surveillance and license-plate recognition, and official Lake County records document Gary Police Department's use of an extensive Flock camera array.</p>
+<p class="text-body"><strong>What is not yet known:</strong> whether Gary's Flock cameras or RTCC remained operational during the same outage period. Flock describes solar/battery and cellular capability, but product capability is not deployment-specific uptime evidence.</p>
+</section>
+<hr class="divider">
+<section aria-labelledby="action-h">
+<h2 id="action-h" class="text-h2">Next action</h2>
+<div class="grid-2">
+<article class="card"><h3 class="text-h3">Get the device record</h3><p class="text-body">Request Flock inventory, model, power configuration, connectivity configuration, device-health / heartbeat telemetry, maintenance events, and RTCC system logs for August 11–25, 2026.</p></article>
+<article class="card"><h3 class="text-h3">Build the outage timeline</h3><p class="text-body">Align NIPSCO feeder/circuit restoration with traffic signals, cellular service, emergency charging sites, the RTCC, and camera infrastructure. Compare like-for-like timestamps instead of general restoration percentages.</p></article>
+</div>
+</section>
+<hr class="divider">
+<section aria-labelledby="why-h">
+<h2 id="why-h" class="text-h2">Why</h2>
+<p class="text-body">Normal electric reliability and disaster resilience are different questions. A subsystem can survive a grid failure because it has a different power source, battery, generator, communications path, or restoration priority. Omoluabi therefore tests infrastructure asymmetry rather than assuming it.</p>
+<blockquote class="text-body"><strong>Investigation question:</strong> Did any public-safety surveillance nodes maintain autonomous power and communications while nearby residential or civic systems were unavailable — and, if so, what design and policy choices explain the difference?</blockquote>
+</section>
+<hr class="divider">
+<section aria-labelledby="evidence-h">
+<h2 id="evidence-h" class="text-h2">Evidence state</h2>
+<div class="grid-2">
+<article class="card"><h3 class="text-h3">Confirmed</h3><p class="text-body">The August 11 storm caused widespread Gary power disruption and prolonged recovery.</p></article>
+<article class="card"><h3 class="text-h3">Confirmed</h3><p class="text-body">Gary's RTCC uses surveillance cameras and fixed/mobile license-plate recognition.</p></article>
+<article class="card"><h3 class="text-h3">Confirmed</h3><p class="text-body">Official Lake County minutes document Gary PD as having an “extensive array” of Flock cameras.</p></article>
+<article class="card"><h3 class="text-h3">Vendor capability</h3><p class="text-body">Flock describes solar/battery power and cellular connectivity for its camera architecture.</p></article>
+<article class="card"><h3 class="text-h3">Not established</h3><p class="text-body">Gary's Flock cameras remained operational during the August 2026 outage.</p></article>
+<article class="card"><h3 class="text-h3">Not established</h3><p class="text-body">Gary deliberately prioritized surveillance power over residential service.</p></article>
+</div>
+<p class="text-meta"><a href="data/claims.json">Open the machine-readable claim register</a></p>
+</section>
+<hr class="divider">
+<section aria-labelledby="map-h">
+<h2 id="map-h" class="text-h2">Investigation matrix</h2>
+<div style="overflow-x:auto;">
+<table class="text-body">
+<thead><tr><th scope="col">System</th><th scope="col">Power architecture</th><th scope="col">Communications</th><th scope="col">Outage state</th><th scope="col">Evidence needed</th></tr></thead>
+<tbody>
+<tr><th scope="row">Residential electricity</th><td>Grid</td><td>Household-specific</td><td>Major outage confirmed</td><td>NIPSCO feeder/circuit restoration data</td></tr>
+<tr><th scope="row">Traffic signals</th><td>Location-specific</td><td>Control-network specific</td><td>To document</td><td>City/INDOT outage and restoration logs</td></tr>
+<tr><th scope="row">Cellular service</th><td>Site + backup dependent</td><td>Cellular network</td><td>To document</td><td>Carrier/FCC outage records</td></tr>
+<tr><th scope="row">Gary RTCC</th><td>Facility-specific</td><td>Multiple possible links</td><td>To document</td><td>UPS/generator + system-health + dispatch-access logs</td></tr>
+<tr><th scope="row">Flock LPR nodes</th><td>Deployment-specific; vendor supports solar/battery</td><td>Deployment-specific; vendor supports cellular</td><td><strong>Not established</strong></td><td>Inventory + configuration + device telemetry</td></tr>
+<tr><th scope="row">Emergency resilience sites</th><td>Site-specific</td><td>Site-specific</td><td>To document</td><td>Charging/cooling/shelter/communications records</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="divider">
+<section aria-labelledby="sources-h">
+<h2 id="sources-h" class="text-h2">Evidence</h2>
+<ul class="text-body">
+<li><a href="https://www.gary.gov/news-updates/mayor-melton-provides-storm-recovery-update">City of Gary storm recovery update — August 18, 2026</a></li>
+<li><a href="https://www.in.gov/dhs/emergency-management-and-preparedness/august-2026-disaster/">Indiana Department of Homeland Security — August 2026 disaster</a></li>
+<li><a href="https://www.gary.gov/police/real-time-crime-center">Gary Police Department — Real-Time Crime Center</a></li>
+<li><a href="https://lakecountyin.gov/departments/commissioners/minutes-c/2024-commissioners-minutes/2024%2007-17-2024.pdf">Lake County commissioners' minutes — July 17, 2024</a></li>
+<li><a href="https://www.flocksafety.com/faq">Flock Safety technical FAQ — vendor source</a></li>
+<li><a href="https://chicago.suntimes.com/news/2026/08/20/gary-power-outage-storms-indiana">Chicago Sun-Times — August 20, 2026 outage reporting</a></li>
+<li><a href="https://indianapolisrecorder.com/gary-power-outage-why-lasting/">Indianapolis Recorder / Capital B Gary — August 24, 2026 outage reporting</a></li>
+</ul>
+<p class="text-meta"><a href="SOURCE_NOTES.md">Read the annotated source ledger</a></p>
+</section>
+<hr class="divider">
+<section aria-labelledby="design-h">
+<h2 id="design-h" class="text-h2">Design question</h2>
+<p class="text-body">If independently powered and connected sensing nodes prove more resilient than surrounding civic infrastructure, that architecture becomes a design precedent — not an endorsement of surveillance.</p>
+<p class="text-body">A resident-governed resilience node could adapt solar/battery power and independent communications for emergency information, accessible alerts, phone and assistive-device charging, environmental sensing, outage observations, and local communications, with transparent ownership, data minimization, and community governance.</p>
+</section>
+<hr class="divider">
+<section aria-labelledby="method-h">
+<h2 id="method-h" class="text-h2">Omoluabi rule</h2>
+<p class="text-body">A powered camera is not necessarily connected. A connected camera is not necessarily accessible to the RTCC. A vendor capability is not a deployment fact. And the survival of one subsystem does not prove another was intentionally deprived.</p>
+<p class="text-body"><strong>When evidence is insufficient, request another reading.</strong></p>
+<p class="text-meta"><a href="README.md">Full research notes</a> · <a href="data/claims.json">Claim register</a> · <a href="https://github.com/ukadike/omoluabi/issues">Submit a correction or document lead</a></p>
+</section>
+</main>
+<footer class="site-footer"><div class="wrap"><p class="text-body">Part of Omoluabi, a Small Systems Lab public-interest research project.</p></div></footer>
+</body>
+</html>

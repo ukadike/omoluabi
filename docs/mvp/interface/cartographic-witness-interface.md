@@ -1,6 +1,6 @@
 # Cartographic Witness Layer — Interface Components
 
-Design documentation only. Nothing described here is implemented; the web engine's running prototype (`web-engine/app/`) does not yet include map views. See `web-engine/screens.md` for the currently implemented review screens.
+Design documentation for the target Cartographic Witness Layer. The core web engine (`web-engine/app/`) does not yet include these map views. A limited research POC now implements two map views for real-world evidence case `RW-001` at `research/williston-floating-island/`; it demonstrates precision disclosure, projection disclosure, non-visual coordinate tables, and the refusal to draw an undocumented movement path. It is not the full interface described below.
 
 ## Governing rule
 
@@ -68,11 +68,24 @@ Two separate, independently toggleable overlays over the same `landscape-memory`
 - Every map-bearing view has a Coordinate table view equivalent reachable without using the map.
 - Uncertainty and missingness are always disclosed as text, never only as visual absence.
 
+## Real-world POC note — RW-001
+
+The Williston floating-island case page (`research/williston-floating-island/`) currently implements:
+
+- a documented-area reference map using Finlay Bay and Ospika River mouth as official geographic anchors, explicitly **not** as island coordinates;
+- a wider infrastructure-context map including W.A.C. Bennett Dam;
+- Web Mercator / OpenStreetMap projection disclosure;
+- WGS84 coordinate tables as non-visual equivalents;
+- no trajectory line between the two areas because the public evidence does not establish the path;
+- machine-readable map anchors in `research/williston-floating-island/data/location-anchors.geojson` with `is_island_coordinate: false` metadata.
+
+This is evidence that the disclosure rules are implementable in a public research page, not evidence that the full Cartographic Witness Layer or field hardware is complete.
+
 ## Open questions
 
 - Whether overlays compose (e.g. Erased-place + Uncertainty simultaneously) or are mutually exclusive is undecided.
-- Exact tile/basemap source for any rendered map is not yet chosen; whatever is chosen must itself have a `projection-accountability` record.
+- Exact tile/basemap source for the eventual core interface is not yet chosen. The RW-001 research POC uses OpenStreetMap tiles in Web Mercator for orientation only; that choice does not lock the production system.
 
 ## Source
 
-Authored per Workstream 3 ("Required cartographic interface components") of the Omoluabi MVP Instrumentation and Research-Evidence Directive (v0.02).
+Authored per Workstream 3 ("Required cartographic interface components") of the Omoluabi MVP Instrumentation and Research-Evidence Directive (v0.02). RW-001 implementation note added 2026-09-03.

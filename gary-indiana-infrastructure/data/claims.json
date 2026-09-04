@@ -1,0 +1,108 @@
+{
+  "dossier": "Gary, Indiana — Energy Reliability + Flock Infrastructure",
+  "updated": "2026-09-03",
+  "audience": ["journalists", "researchers", "public-interest investigators", "civic technologists"],
+  "purpose": "Evidence graph comparing disaster energy resilience with surveillance and public-safety subsystem resilience without inferring device uptime or policy prioritization from product capability alone.",
+  "status_legend": {
+    "confirmed": "Supported directly by a primary or official record.",
+    "reported": "Supported by credible reporting but underlying primary documentation is still sought.",
+    "vendor_capability": "A technical capability described by the vendor; not proof that a particular deployment used the capability or remained operational.",
+    "not_established": "The available evidence does not establish the claim.",
+    "investigate": "A comparison or operational question that requires additional records, telemetry, or field evidence."
+  },
+  "claims": [
+    {
+      "id": "GARY-001",
+      "from": "August 11, 2026 severe weather",
+      "to": "Gary civic infrastructure",
+      "claim": "The August 11 severe storm caused widespread power outages and infrastructure disruption in Gary.",
+      "status": "confirmed",
+      "source_type": "official_city_record",
+      "source": "City of Gary storm recovery update, 2026-08-18",
+      "url": "https://www.gary.gov/news-updates/mayor-melton-provides-storm-recovery-update",
+      "limitation": "The city update does not provide a complete neighborhood- or circuit-level restoration history.",
+      "next_evidence_needed": "NIPSCO feeder, circuit, substation, outage, and restoration data for Gary.",
+      "request_target": "NIPSCO; City of Gary emergency management"
+    },
+    {
+      "id": "GARY-002",
+      "from": "August 2026 storm",
+      "to": "Gary electric customers",
+      "claim": "A very large share of Gary customers remained without power more than a week after the storm.",
+      "status": "reported",
+      "source_type": "credible_reporting",
+      "source": "Chicago Sun-Times, 2026-08-20",
+      "url": "https://chicago.suntimes.com/news/2026/08/20/gary-power-outage-storms-indiana",
+      "note": "The report said more than 22,000 of approximately 35,800 Gary customers remained without power on August 20, or about 61%.",
+      "limitation": "Utility-source data should be obtained directly for a granular restoration analysis.",
+      "next_evidence_needed": "Time-stamped Gary outage counts plus feeder/circuit restoration records.",
+      "request_target": "NIPSCO"
+    },
+    {
+      "id": "GARY-003",
+      "from": "Gary Police Department",
+      "to": "Real-Time Crime Center surveillance and LPR systems",
+      "claim": "Gary's RTCC uses surveillance cameras and fixed/mobile license-plate recognition integrated with other public-safety systems.",
+      "status": "confirmed",
+      "source_type": "official_city_record",
+      "source": "Gary Police Department Real-Time Crime Center",
+      "url": "https://www.gary.gov/police/real-time-crime-center",
+      "limitation": "The page does not identify every vendor, camera model, power source, location, or August 2026 operational state."
+    },
+    {
+      "id": "GARY-004",
+      "from": "Gary Police Department",
+      "to": "Flock camera network",
+      "claim": "Gary Police Department had an extensive array of Flock cameras by July 2024.",
+      "status": "confirmed",
+      "source_type": "official_county_meeting_minutes",
+      "source": "Lake County Board of Commissioners minutes, 2024-07-17",
+      "url": "https://lakecountyin.gov/departments/commissioners/minutes-c/2024-commissioners-minutes/2024%2007-17-2024.pdf",
+      "note": "The official minutes record Chief Balbo stating that Gary PD had an 'extensive array' of Flock cameras.",
+      "limitation": "This does not establish the current 2026 inventory, exact locations, device models, configuration, or uptime.",
+      "next_evidence_needed": "Current inventory, contracts, deployment records, model numbers, locations, and maintenance records.",
+      "request_target": "Gary Police Department / City of Gary"
+    },
+    {
+      "id": "GARY-005",
+      "from": "Flock camera architecture",
+      "to": "grid-independent power and communications capability",
+      "claim": "Flock describes camera deployments that can use solar/battery power and cellular connectivity.",
+      "status": "vendor_capability",
+      "source_type": "vendor_technical_material",
+      "source": "Flock Safety FAQ",
+      "url": "https://www.flocksafety.com/faq",
+      "limitation": "Vendor-described capability is not evidence that Gary's units use the same configuration or remained functional during the August 2026 outage.",
+      "next_evidence_needed": "Gary-specific hardware/configuration records and device telemetry."
+    },
+    {
+      "id": "GARY-006",
+      "from": "Gary Flock cameras",
+      "to": "August 2026 blackout operation",
+      "claim": "Gary's Flock cameras remained operational during the August 2026 power outage.",
+      "status": "not_established",
+      "limitation": "No device-specific uptime, heartbeat, battery, solar, cellular, maintenance, or RTCC access records are currently in this dossier.",
+      "next_evidence_needed": "Flock device-health telemetry, RTCC logs, maintenance logs, and cellular-network records for August 11–25, 2026.",
+      "request_target": "Gary Police Department / City of Gary; Flock-held records obtainable by the city; relevant network providers"
+    },
+    {
+      "id": "GARY-007",
+      "from": "Gary government",
+      "to": "surveillance infrastructure",
+      "claim": "Gary deliberately prioritized surveillance power over residential electricity during the August 2026 outage.",
+      "status": "not_established",
+      "limitation": "Different systems can have independent solar, battery, UPS, generator, cellular, or grid dependencies. Persistence of one subsystem would not by itself establish a governmental power-prioritization decision.",
+      "next_evidence_needed": "Power architecture, restoration-priority policy, circuit priority records, emergency plans, and operational logs.",
+      "reporting_question": "Were surveillance systems resilient because of autonomous design, critical-facility restoration, or another mechanism, and how did that compare with public survival infrastructure?"
+    },
+    {
+      "id": "GARY-008",
+      "from": "Gary outage response",
+      "to": "comparative civic resilience",
+      "claim": "A valid infrastructure-asymmetry analysis requires comparing power source, backup power, communications, observed outage, restoration time, and evidence quality across residential service, traffic signals, cellular service, RTCC systems, Flock nodes, and emergency resilience sites.",
+      "status": "investigate",
+      "next_evidence_needed": "Aligned timelines and system architecture records for all compared systems.",
+      "reporting_question": "Which systems were engineered for continuity, which failed, how long did recovery take, and what public values governed those resilience investments?"
+    }
+  ]
+}

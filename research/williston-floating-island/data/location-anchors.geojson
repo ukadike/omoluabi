@@ -1,0 +1,60 @@
+{
+  "type": "FeatureCollection",
+  "name": "williston-floating-island-reference-anchors",
+  "metadata": {
+    "case_id": "RW-001",
+    "crs": "WGS84 / EPSG:4326",
+    "warning": "These are official geographic reference anchors, not exact island observation coordinates. BC Hydro's public release describes the island as west of Finlay Bay and later along the Ospika Arm but does not publish exact island coordinates.",
+    "updated": "2026-09-03"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-123.787778, 55.991111]
+      },
+      "properties": {
+        "name": "Finlay Bay",
+        "role": "reference anchor for first documented area",
+        "coordinate_status": "official approximate feature centre",
+        "is_island_coordinate": false,
+        "case_description": "BC Hydro describes the earliest known satellite observation as west of Finlay Bay.",
+        "source": "BC Geographical Names Office",
+        "source_url": "https://apps.gov.bc.ca/pub/bcgnws/names/12007.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-123.956944, 56.319444]
+      },
+      "properties": {
+        "name": "Ospika River mouth",
+        "role": "reference anchor for Ospika Arm relocation area",
+        "coordinate_status": "official approximate river mouth",
+        "is_island_coordinate": false,
+        "case_description": "BC Hydro says the floating mass came to rest along the shoreline of the Ospika Arm. The Ospika River mouth is used only as a public geographic anchor for that arm.",
+        "source": "BC Geographical Names Office",
+        "source_url": "https://apps.gov.bc.ca/pub/bcgnws/names/18793.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-122.203889, 56.017500]
+      },
+      "properties": {
+        "name": "W.A.C. Bennett Dam",
+        "role": "infrastructure context",
+        "coordinate_status": "official approximate feature centre",
+        "is_island_coordinate": false,
+        "case_description": "BC Hydro says the island moved farther away from the dam.",
+        "source": "BC Geographical Names Office",
+        "source_url": "https://apps.gov.bc.ca/pub/bcgnws/names/15843.html"
+      }
+    }
+  ]
+}

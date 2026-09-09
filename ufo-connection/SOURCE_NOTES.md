@@ -1,16 +1,49 @@
-# Source Notes
+# The Unseen Record — source notes and update protocol
 
-Official source page:
-https://www.war.gov/ufo/
+## What Omoluabi publishes
 
-The official page describes PURSUE as the Presidential Unsealing and Reporting System for UAP Encounters. It states that records are released on a rolling basis, with Release 01 on May 8, 2026; Release 02 on May 22, 2026; and Release 03 on June 12, 2026.
+This is a curated editorial investigation, not a comprehensive sightings index.
+Every published case pairs:
 
-The page states that the materials are unresolved cases, meaning the government is unable to make a definitive determination on the nature of the observed phenomena, sometimes because of insufficient data.
+1. an official AARO/DVIDS public-media release;
+2. a direct DVIDS embed or source link;
+3. Omoluabi's distinct evidence reading; and
+4. an explicit account of what the public release does not establish.
 
-The page also says users can search, filter, sort, view, and download available PURSUE records.
+The original public record and the Omoluabi reading are separate layers. AARO's
+assessment is preserved as the source institution's assessment; Omoluabi does
+not replace it with an automated truth score or a claim about origin.
 
-Important engineering note:
-The previous package guessed a per-release CSV pattern. Claude review flagged that as wrong and identified a single CSV endpoint candidate:
-https://www.war.gov/Portals/1/Interactive/2026/UFO/uap-csv.csv
+## Current official sources
 
-Before final build, verify this endpoint through network inspection or Action logs.
+- AARO official imagery catalogue: <https://www.aaro.mil/UAP-Cases/Official-UAP-Imagery/>
+- DVIDS public media API: <https://api.dvidshub.net/docs>
+- DVIDS terms: <https://api.dvidshub.net/docs/tos>
+
+Current case-source identifiers are held in `data/curated-cases.json`:
+
+| Case | DVIDS video ID |
+|---|---:|
+| PR-017, Europe 2024 | 988675 |
+| PR-001, Africa 2022 | 973045 |
+| Middle East Red Balloon 2024 | 964843 |
+| PR-002, Africa 2024 | 973048 |
+
+## Refresh and removal rule
+
+The public page embeds the originating DVIDS player. It does not download or
+store a replacement copy of the video.
+
+The GitHub Action `Refresh curated DVIDS UAP metadata` uses the DVIDS API only
+from the repository workflow. A `DVIDS_API_KEY` repository secret is required;
+the browser never receives that key. The workflow refreshes source availability
+and official metadata for the already selected cases. It does not automatically
+publish a new case or generate an Omoluabi reading.
+
+If DVIDS reports that a selected asset is no longer public, the workflow marks
+the source unavailable. The public case page then removes the embed and directs
+the audience to the source record rather than retaining a stale media copy.
+
+Any newly selected event requires human editorial review of its source,
+publication status, context, accessibility record, and Omoluabi reading before
+it is added to this sequence.

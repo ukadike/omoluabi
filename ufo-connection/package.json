@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "cache:pursue": "node scripts/cache-pursue.mjs",
+    "refresh:dvids": "node scripts/refresh-dvids-cases.mjs",
     "test": "node tests/rules-engine.test.mjs && node tests/media-data.test.mjs && node tests/static-page.test.mjs"
   }
 }

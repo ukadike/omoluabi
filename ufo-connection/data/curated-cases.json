@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "The Unseen Record — curated official UAP case readings",
+  "updatedAt": "2026-09-09T00:00:00Z",
+  "cases": [
+    {
+      "id": "pr-017-europe-2024",
+      "sequence": "01",
+      "lens": "CAMERA-ONLY",
+      "shortTitle": "Europe, 2024",
+      "dek": "A short recording from a consumer phone camera. The public video exists; the public material is insufficient for a determination.",
+      "status": "Unresolved in public release",
+      "statusType": "unresolved",
+      "sensor": "Rear-facing phone camera",
+      "duration": "00:30 source description",
+      "mediaCaption": "The official DVIDS release is embedded without alteration. The public description identifies a commercially available cellular device’s rear-facing digital camera.",
+      "source": {
+        "publisher": "All-domain Anomaly Resolution Office (AARO) via DVIDS",
+        "recordId": "PR-017 · DVIDS video 988675 · VIRIN 240101-D-D0360-6202",
+        "published": "December 4, 2025",
+        "dvidsVideoId": "988675",
+        "dvidsUrl": "https://www.dvidshub.net/video/988675/pr-017-unresolved-uap-report-europe-2024",
+        "aaroUrl": "https://www.aaro.mil/UAP-Cases/Official-UAP-Imagery/",
+        "available": true
+      },
+      "reading": {
+        "title": "A visual trace without a world around it.",
+        "introduction": "The release makes a necessary distinction: a video can be authentic public media and still be insufficient to establish what its subject is. Omoluabi does not turn that insufficiency into either proof or dismissal.",
+        "cards": [
+          { "label": "WHAT THE RECORD SHOWS", "title": "A brief visible-light recording exists.", "body": "The public record names a rear-facing phone camera and places the report within United States European Command in 2024." },
+          { "label": "WHAT IT DOES NOT ESTABLISH", "title": "The image alone cannot settle its subject matter.", "body": "AARO says that the available video is insufficient to make a determination. Appearance in a frame does not establish distance, scale, material, trajectory, origin, or explanation." },
+          { "label": "MISSING MODALITIES", "title": "The public account does not supply a multimodal event record.", "tone": "missing", "items": ["No corroborating telemetry is described in the public release.", "No witness audio, environmental conditions, or independent synchronized observation is described.", "The public summary does not tell us whether other data were never collected, were unavailable, or were not released."] },
+          { "label": "PROTECTED UNCERTAINTY", "title": "“Unresolved” is not an empty category.", "tone": "protected", "body": "It means the responsible public record does not currently support a conclusion. Omoluabi keeps that boundary visible rather than asking a viewer to complete the story with belief." }
+        ]
+      },
+      "ledger": [
+        { "state": "Present", "mode": "Video / visible light", "detail": "A short rear-facing cellular-camera recording is publicly released." },
+        { "state": "Not described", "mode": "Witness speech", "detail": "The release summary does not provide a witness account alongside the clip." },
+        { "state": "Not described", "mode": "Sound", "detail": "The public case description does not identify event audio as evidence." },
+        { "state": "Not described", "mode": "Environmental conditions", "detail": "Weather, wind, atmospheric, and nearby-activity context are not described in the public summary." },
+        { "state": "Not described", "mode": "Additional instrumentation", "detail": "The public summary does not identify corroborating sensors or explain whether other records are unavailable or unreleased." },
+        { "state": "Protected uncertainty", "mode": "Interpretation", "detail": "AARO reports that the video is insufficient to determine its subject matter." }
+      ],
+      "methodNote": "Omoluabi’s reading separates what is named in the official release from what the release does not describe. It does not infer an explanation from the absence of public context."
+    },
+    {
+      "id": "pr-001-africa-2022",
+      "sequence": "02",
+      "lens": "THERMAL TRACE",
+      "shortTitle": "Africa, 2022",
+      "dek": "An infrared recording of apparent thermal contrast. The official description cannot determine whether the trace has a physical, environmental, reflective, or display-related source.",
+      "status": "Unresolved in public release",
+      "statusType": "unresolved",
+      "sensor": "Infrared sensor / U.S. military platform",
+      "duration": "00:31",
+      "mediaCaption": "The public DVIDS release identifies infrared footage from a U.S. military platform. It describes an apparent heat signature, not a resolved object.",
+      "source": {
+        "publisher": "All-domain Anomaly Resolution Office (AARO) via DVIDS",
+        "recordId": "PR-001 · DVIDS video 973045 · VIRIN 220101-A-D0360-7287",
+        "published": "August 7, 2025",
+        "dvidsVideoId": "973045",
+        "dvidsUrl": "https://www.dvidshub.net/video/973045/pr-001-unresolved-uap-report-africa-2022",
+        "aaroUrl": "https://www.aaro.mil/UAP-Cases/Official-UAP-Imagery/",
+        "available": true
+      },
+      "reading": {
+        "title": "A thermal image is not a material object.",
+        "introduction": "Infrared imagery translates a particular thermal relationship into an image. It is evidence of a measured contrast within a sensor system. It is not, on its own, evidence of the object a viewer thinks they see.",
+        "cards": [
+          { "label": "WHAT THE RECORD SHOWS", "title": "An apparent thermal signature appears in an infrared field of view.", "body": "The official account says the signature has characteristics consistent with a physical object. That is a description of the observed trace, not a conclusive identification." },
+          { "label": "WHAT IT DOES NOT ESTABLISH", "title": "The image does not settle the source of the contrast.", "body": "AARO says the released material cannot distinguish a physical source from thermal emission, reflection, environmental difference, or sensor-display error." },
+          { "label": "MISSING MODALITIES", "title": "The public clip does not carry the whole sensor environment.", "tone": "missing", "items": ["No corroborating public telemetry accompanies the clip.", "No public account of ambient weather, optical conditions, or independent observing systems accompanies the summary.", "No public witness-sensory account is attached to the released record."] },
+          { "label": "PROTECTED UNCERTAINTY", "title": "The source of the signal remains open.", "tone": "protected", "body": "The important finding is not that the record proves an unknown object. It is that the public record describes a signal whose source cannot be resolved from the released evidence." }
+        ]
+      },
+      "ledger": [
+        { "state": "Present", "mode": "Thermal trace", "detail": "Infrared video records an apparent heat contrast within the sensor display." },
+        { "state": "Not described", "mode": "Visible-light comparison", "detail": "The public case summary does not supply a synchronized visible-light record." },
+        { "state": "Not described", "mode": "Sound and witness perception", "detail": "The public release does not describe sound, smell, vibration, speech, or bodily perception at the event." },
+        { "state": "Not described", "mode": "Environmental sensor context", "detail": "The summary does not describe weather, particulate conditions, wind, or other environmental readings." },
+        { "state": "Not released", "mode": "Corroborating telemetry", "detail": "AARO says the available data are insufficient; the public release does not provide corroborating telemetry." },
+        { "state": "Protected uncertainty", "mode": "Source of the trace", "detail": "Physical source, reflection, environmental difference, and sensor-display error remain distinct possibilities in the public account." }
+      ],
+      "methodNote": "Omoluabi treats the infrared image as a translation made by a device with known and unknown conditions—not as transparent access to the event itself."
+    },
+    {
+      "id": "middle-east-red-balloon-2024",
+      "sequence": "03",
+      "lens": "CONTEXT CHANGES THE IMAGE",
+      "shortTitle": "Middle East, 2024",
+      "dek": "A red object in full-motion video. In the official reading, wind speed and direction move from background information to evidentiary context.",
+      "status": "Resolved as reflective foil balloon",
+      "statusType": "resolved",
+      "sensor": "Camera / U.S. military platform",
+      "duration": "01:36",
+      "mediaCaption": "The original public DVIDS video is shown through the source player. The official assessment identifies a consumer-grade reflective foil balloon.",
+      "source": {
+        "publisher": "All-domain Anomaly Resolution Office (AARO) via DVIDS",
+        "recordId": "Middle East Red Balloon 2024 · DVIDS video 964843",
+        "published": "2025 public release",
+        "dvidsVideoId": "964843",
+        "dvidsUrl": "https://www.dvidshub.net/video/964843/middle-east-red-balloon-2024",
+        "aaroUrl": "https://www.aaro.mil/UAP-Cases/Official-UAP-Imagery/",
+        "available": true
+      },
+      "reading": {
+        "title": "The relevant evidence was not only inside the frame.",
+        "introduction": "This case demonstrates why an image should never be made to carry an event alone. The official assessment pairs observed morphology with behavior correlated to recorded wind speed and direction.",
+        "cards": [
+          { "label": "WHAT THE RECORD SHOWS", "title": "A slow-moving, red, spheroidal-looking object is recorded.", "body": "The original reporting service described a slow-moving object. The public release gives the video a visible object to examine." },
+          { "label": "CONTEXT THAT MATTERS", "title": "Wind turns the surrounding atmosphere into evidence.", "body": "AARO’s public explanation relies not only on resemblance to a foil balloon, but also on behavior correlated with recorded wind speed and direction." },
+          { "label": "WHAT IS STILL LIMITED", "title": "A sound conclusion is not total access.", "tone": "missing", "items": ["The public release does not provide the complete underlying weather record, instrument settings, or all analytic steps.", "The public viewer sees the source’s conclusion and high-level rationale, not a full reproducible sensor package.", "This page distinguishes a publicly stated explanation from private certainty about every detail of the event."] },
+          { "label": "ACCESSIBLE INSIGHT", "title": "Context is a modality, not background decoration.", "tone": "protected", "body": "The event became more legible when movement was read against wind. An accessibility-first record makes such relationships explicit rather than asking a viewer to intuit them visually." }
+        ]
+      },
+      "ledger": [
+        { "state": "Present", "mode": "Visible video", "detail": "A public full-motion recording shows the object as captured by the source platform." },
+        { "state": "Present", "mode": "Motion context", "detail": "The official analysis cites the object’s behavior in relation to recorded wind speed and direction." },
+        { "state": "Not described", "mode": "Event audio", "detail": "The public summary does not identify audio as evidence for the assessment." },
+        { "state": "Not described", "mode": "Witness account", "detail": "The official release does not include a first-person sensory testimony alongside the media." },
+        { "state": "Not released", "mode": "Full analytic dataset", "detail": "The public release provides a conclusion and rationale, not all underlying analytic inputs." },
+        { "state": "Protected uncertainty", "mode": "Scope of official finding", "detail": "The official conclusion is preserved without treating it as total access to every aspect of the event." }
+      ],
+      "methodNote": "Omoluabi preserves the official explanation and also makes its evidentiary structure visible: visual morphology plus environmental correlation."
+    },
+    {
+      "id": "pr-002-africa-2024",
+      "sequence": "04",
+      "lens": "SIGNAL AND BEHAVIOR",
+      "shortTitle": "Africa, 2024",
+      "dek": "Infrared footage is read with observed behavior, known migration patterns, and concurrence from another institutional partner.",
+      "status": "Resolved as migratory birds",
+      "statusType": "resolved",
+      "sensor": "Infrared sensor / U.S. military platform",
+      "duration": "01:18",
+      "mediaCaption": "This public DVIDS release presents infrared footage. AARO’s stated assessment draws on morphology, flight behavior, migration routes, and an external Intelligence Community partner’s concurrence.",
+      "source": {
+        "publisher": "All-domain Anomaly Resolution Office (AARO) via DVIDS",
+        "recordId": "PR-002 · DVIDS video 973048 · VIRIN 240101-A-D0360-3316",
+        "published": "August 7, 2025",
+        "dvidsVideoId": "973048",
+        "dvidsUrl": "https://www.dvidshub.net/video/973048/pr-002-resolved-migratory-birds-africa-2024",
+        "aaroUrl": "https://www.aaro.mil/UAP-Cases/Official-UAP-Imagery/",
+        "available": true
+      },
+      "reading": {
+        "title": "A stronger reading is a relationship among signals.",
+        "introduction": "The value of this case is not that an unexplained record became ordinary. It is that the public assessment names multiple lines of context: morphology, thermal rhythm, group behavior, migration routes, and another analytic institution’s concurrence.",
+        "cards": [
+          { "label": "WHAT THE RECORD SHOWS", "title": "Infrared returns appear as multiple moving objects.", "body": "The source describes an infrared recording from a U.S. military platform and identifies a group of objects in motion." },
+          { "label": "CONTEXT THAT MATTERS", "title": "Pattern changes meaning.", "body": "AARO’s account connects morphological consistency, positioning behavior, and pulsating infrared return to bird flight. It also refers to known migration routes." },
+          { "label": "WHAT REMAINS OUTSIDE THE RELEASE", "title": "A public explanation is not a complete event archive.", "tone": "missing", "items": ["The complete analytical dataset and technical reconstruction are not contained in the short public release.", "No witness account, environmental audio, or full operational context is released with the clip.", "The public record identifies a conclusion and reasons; it does not expose every institutional method or dataset."] },
+          { "label": "ACCESSIBLE INSIGHT", "title": "Meaning becomes shareable when relationships are named.", "tone": "protected", "body": "A good account does not ask someone to “see” a conclusion. It states the pattern, the comparison, and the contextual source so the reasoning can be followed across visual, textual, sonic, and tactile representations." }
+        ]
+      },
+      "ledger": [
+        { "state": "Present", "mode": "Thermal video", "detail": "Infrared footage records multiple moving objects as thermal returns." },
+        { "state": "Present", "mode": "Behavioral pattern", "detail": "The official account cites relative positioning and pulsating infrared return consistent with wing beats." },
+        { "state": "Present", "mode": "Ecological context", "detail": "The assessment cites flight behavior corresponding to known migration routes." },
+        { "state": "Present", "mode": "Independent institutional review", "detail": "An external Intelligence Community partner concurred with AARO’s assessment, according to the release." },
+        { "state": "Not described", "mode": "Human and environmental sensing", "detail": "The public release does not include witness speech, sound, smell, vibration, or a complete environmental sensor packet." },
+        { "state": "Protected uncertainty", "mode": "Scope of the conclusion", "detail": "The public release supports an attribution for this footage; it does not authorize general claims about all UAP reports." }
+      ],
+      "methodNote": "Omoluabi treats this as a model of contextual reasoning: neither raw imagery nor institutional conclusion stands alone; the stated relationships between them are what make the reading inspectable."
+    }
+  ]
+}

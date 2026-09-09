@@ -1,0 +1,39 @@
+name: Refresh curated DVIDS UAP metadata
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 9 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Refresh official source metadata
+        working-directory: ufo-connection
+        env:
+          DVIDS_API_KEY: ${{ secrets.DVIDS_API_KEY }}
+        run: npm run refresh:dvids
+
+      - name: Commit a source-status update when needed
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add ufo-connection/data/curated-cases.json
+          if git diff --staged --quiet; then
+            echo "No source metadata changes"
+          else
+            git commit -m "chore: refresh curated DVIDS UAP metadata [skip ci]"
+            git push
+          fi

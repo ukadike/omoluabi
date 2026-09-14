@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Correct the Map · Omoluabi</title>
+<meta name="description" content="An Omoluabi Map-Data case study of the United Nations' 2026 Correct the Map resolution and how map projections shape perceived scale, power, and public understanding.">
+<link rel="stylesheet" href="../variables.css">
+<link rel="stylesheet" href="../site.css">
+<script src="../document-links.js" defer></script>
+<style>
+  .desk-mark { border: var(--border-thick); padding: var(--space-sm) var(--space-md); display: inline-block; font-family: var(--font-mono); font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--letter-wide); }
+  .metric { border-top: var(--border-thick); padding-top: var(--space-md); }
+  .metric-number { font-family: var(--font-display); font-size: 2rem; font-weight: 700; line-height: 1.1; margin: 0 0 var(--space-sm); }
+  .comparison-table th, .comparison-table td, .ledger-table th, .ledger-table td { border: var(--border-thin); padding: var(--space-sm); text-align: left; vertical-align: top; }
+  .comparison-table, .ledger-table { border-collapse: collapse; width: 100%; }
+  .comparison-table th, .ledger-table th { font-family: var(--font-mono); font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--letter-wide); }
+  .status { font-family: var(--font-mono); font-size: var(--text-small); text-transform: uppercase; letter-spacing: var(--letter-wide); }
+  .status-confirmed { color: #165b33; }
+  .status-limit { color: #6f4500; }
+  .status-inference { color: #4a357b; }
+  .method-note { border-left: var(--border-thick); padding-left: var(--space-lg); }
+  .table-scroll { overflow-x: auto; }
+  figure { margin: 0; }
+  figure img { width: 100%; height: auto; border: var(--border-thin); background: var(--color-paper); }
+  figcaption { margin-top: var(--space-sm); }
+  @media (max-width: 40rem) { .comparison-table, .ledger-table { min-width: 38rem; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="header"><div class="wrap">
+<p class="text-meta"><a href="../">Omoluabi</a> · Map-Data case study</p>
+<p class="desk-mark">Published proof of concept · 2026-09-14</p>
+<h1 class="text-h1">Correct the Map</h1>
+<p class="text-body">Africa did not shrink. A dominant world-map projection made it look smaller.</p>
+</div></header>
+
+<main id="main" class="wrap">
+<section aria-labelledby="finding-h">
+<h2 id="finding-h" class="text-h2">The finding</h2>
+<p class="text-body">On 4 September 2026, the United Nations General Assembly adopted <em>Correct the Map</em>, an African Union–backed resolution encouraging governments, schools, international organizations, and technology companies to use equal-area projections when comparative size matters—particularly the Equal Earth projection. The vote was 164 in favour, 1 against, and 6 abstentions.</p>
+<p class="text-body"><strong>The resolution does not enlarge Africa.</strong> It acknowledges that the familiar Mercator world map makes equatorial landmasses look smaller while enlarging high-latitude landmasses. Equal Earth preserves relative area, so it presents Africa’s area in its proper relationship to the rest of the world.</p>
+<p class="method-note text-body"><strong>Editorial precision:</strong> the UN action is a non-binding recommendation, not a universal ban on Mercator and not an adjudication of borders. Mercator remains useful for navigation because it preserves compass bearing. Equal Earth is the stronger choice when the question is comparative size.</p>
+</section>
+
+<hr class="divider">
+<section aria-labelledby="map-h">
+<h2 id="map-h" class="text-h2">One world, two projection choices</h2>
+<figure>
+  <img src="assets/projection-comparison.svg" alt="Two black-and-white world maps made from the same Natural Earth country-boundary dataset. The upper Mercator map stretches Greenland, Canada, Europe, and Russia; Africa appears visually much smaller than its real relative area. The lower Equal Earth map preserves relative area: Africa occupies substantially more visual space than Greenland and appears proportionate to the Americas, Europe, and Asia. Dashed horizontal lines mark the equator on both maps.">
+  <figcaption class="text-meta">Static comparison generated from Natural Earth 1:110m country boundaries. Top: Web Mercator. Bottom: Equal Earth. Boundary lines are illustrative and do not represent Omoluabi’s position on sovereignty or disputed borders. <a href="map-data.yml">Read the complete Map-Data card</a>.</figcaption>
+</figure>
+</section>
+
+<hr class="divider">
+<section aria-labelledby="scale-h">
+<h2 id="scale-h" class="text-h2">The scale that disappears on Mercator</h2>
+<div class="grid-2">
+<article class="metric"><p class="metric-number">30.37M km²</p><h3 class="text-h3">Africa’s area</h3><p class="text-body">Africa is the world’s second-largest continent. Its land area is about 14 times Greenland’s.</p></article>
+<article class="metric"><p class="metric-number">2.17M km²</p><h3 class="text-h3">Greenland’s area</h3><p class="text-body">On Mercator, Greenland can look comparable to Africa. It is not.</p></article>
+<article class="metric"><p class="metric-number">14×</p><h3 class="text-h3">Africa compared with Greenland</h3><p class="text-body">The contrast is a direct demonstration of why an area-preserving map matters for public scale comparisons.</p></article>
+<article class="metric"><p class="metric-number">0</p><h3 class="text-h3">Perfect flat maps</h3><p class="text-body">A sphere cannot be flattened without distortion. A responsible map says which property it protects and what it sacrifices.</p></article>
+</div>
+</section>
+
+<hr class="divider">
+<section aria-labelledby="compare-h">
+<h2 id="compare-h" class="text-h2">What the projections do—and do not do</h2>
+<div class="table-scroll">
+<table class="comparison-table text-body">
+<thead><tr><th scope="col">Question</th><th scope="col">Mercator</th><th scope="col">Equal Earth</th><th scope="col">Omoluabi editorial rule</th></tr></thead>
+<tbody>
+<tr><th scope="row">Relative land area</th><td>Distorted, increasingly toward the poles.</td><td>Preserved.</td><td>Use Equal Earth or another equal-area projection when comparing the scale of countries, regions, climate impact, resources, population, or land.</td></tr>
+<tr><th scope="row">Compass bearing</th><td>Preserved along rhumb lines; designed for navigation.</td><td>Not preserved.</td><td>Do not call Mercator “wrong” for a navigational task. Name its purpose.</td></tr>
+<tr><th scope="row">Shape and distance</th><td>Shape is locally preserved, but scale grows sharply away from the equator; distances are not globally reliable.</td><td>Area is preserved, while shape and distance are distorted, especially toward the poles.</td><td>Never describe a flat map as the whole truth. Declare the projection and its trade-off.</td></tr>
+<tr><th scope="row">Political consequence</th><td>Can make the Global South appear physically smaller in a map culture used in schools, media, and platforms.</td><td>Corrects the area relationship but does not itself repair unequal representation or historical injustice.</td><td>Mark this as an evidence-based interpretation, not a measurable causal claim about every policy outcome.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<hr class="divider">
+<section aria-labelledby="timeline-h">
+<h2 id="timeline-h" class="text-h2">From campaign to UN decision</h2>
+<ol class="text-body">
+<li><strong>Map problem:</strong> Mercator, developed for maritime navigation in 1569, becomes a common default in schools, atlases, public media, and digital mapping.</li>
+<li><strong>Continental advocacy:</strong> Africa No Filter and Speak Up Africa organize the <em>Correct the Map</em> campaign; the African Union endorses an equal-area correction and tasks Togo with advancing it internationally.</li>
+<li><strong>UN action:</strong> On 4 September 2026, the General Assembly adopts <em>Correct the Map</em> by recorded vote.</li>
+<li><strong>Implementation question:</strong> The resolution’s effect depends on what public institutions, publishers, educators, and map platforms actually change—and whether they clearly state a map’s purpose and projection.</li>
+</ol>
+</section>
+
+<hr class="divider">
+<section aria-labelledby="mapdata-h">
+<h2 id="mapdata-h" class="text-h2">Map-Data card: the map is evidence</h2>
+<p class="text-body">This is not a decorative before-and-after. Each map is treated as a documented claim with a projection, boundary source, coordinate system, provenance, accessibility description, and limits.</p>
+<div class="grid-2">
+<article class="card"><h3 class="text-h3">Present in this proof of concept</h3><ul class="text-body"><li>Source-led resolution and vote record.</li><li>Identical boundary data in both map panels.</li><li>Explicit projection labels.</li><li>Nonvisual description of the visual difference.</li><li>Boundary and sovereignty caution.</li></ul></article>
+<article class="card"><h3 class="text-h3">Still to investigate</h3><ul class="text-body"><li>Which curricula, publishers, public agencies, and platforms change their defaults.</li><li>Whether implementation includes accessible tactile, auditory, and plain-language map forms.</li><li>How place names, languages, boundaries, and disputed territories are governed in each published map.</li><li>Whether a symbolic cartographic change alters material decision-making.</li></ul></article>
+</div>
+</section>
+
+<hr class="divider">
+<section aria-labelledby="ledger-h">
+<h2 id="ledger-h" class="text-h2">Evidence ledger</h2>
+<div class="table-scroll">
+<table class="ledger-table text-body">
+<thead><tr><th scope="col">Claim</th><th scope="col">Status</th><th scope="col">What the evidence establishes</th><th scope="col">What it does not establish</th></tr></thead>
+<tbody>
+<tr><th scope="row">The UN adopted <em>Correct the Map</em> on 4 September 2026.</th><td><span class="status status-confirmed">Confirmed</span></td><td>The General Assembly adopted the text by recorded vote.</td><td>A binding mandate that eliminates Mercator everywhere.</td></tr>
+<tr><th scope="row">Equal Earth shows Africa’s relative area more accurately than Mercator.</th><td><span class="status status-confirmed">Confirmed</span></td><td>Equal Earth is an equal-area projection; Mercator is not.</td><td>That Equal Earth preserves every cartographic property.</td></tr>
+<tr><th scope="row">Mercator’s dominance has materially caused Africa’s political marginalization.</th><td><span class="status status-inference">Interpretation</span></td><td>Maps shape visual perception; the resolution and campaign identify cognitive, educational, cultural, geopolitical, and socioeconomic stakes.</td><td>A single measurable causal pathway from a classroom map to any particular political outcome.</td></tr>
+<tr><th scope="row">The UN agreed Africa’s “actual dimensions.”</th><td><span class="status status-limit">Clarified</span></td><td>The UN endorsed using equal-area projection where relative size matters.</td><td>A claim that a flat map can show all dimensions—area, shape, distance, and direction—perfectly at once.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="text-meta"><a href="SOURCE_NOTES.md">Read the source ledger</a> · <a href="data/claims.json">Read the machine-readable claim register</a> · <a href="map-data.yml">Read the Map-Data card</a> · <a href="README.md">Read the desk method</a> · <a href="https://github.com/ukadike/omoluabi/issues">Submit a correction or document lead</a></p>
+</section>
+
+<hr class="divider">
+<section aria-labelledby="rule-h">
+<h2 id="rule-h" class="text-h2">Omoluabi rule</h2>
+<p class="text-body">Before publishing a map, state what it preserves, what it distorts, whose names and boundaries it uses, and what it is being asked to prove.</p>
+<p class="text-body"><strong>A map is never just a picture of power. It is part of the evidence by which power is seen.</strong></p>
+<p class="text-meta">Last reviewed: 2026-09-14 · Status: active proof of concept</p>
+</section>
+</main>
+<footer class="site-footer"><div class="wrap"><p class="text-body">Part of Omoluabi, a Small Systems Lab public-interest research project.</p></div></footer>
+</body>
+</html>

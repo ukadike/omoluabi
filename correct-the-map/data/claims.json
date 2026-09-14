@@ -1,0 +1,77 @@
+{
+  "dossier": "Correct the Map",
+  "updated": "2026-09-14",
+  "audience": ["public", "journalists", "educators", "cartographers", "policy makers", "accessibility advocates"],
+  "purpose": "A public Map-Data evidence register for the United Nations' 2026 Correct the Map resolution and for projection-specific claims about Mercator and Equal Earth.",
+  "status_legend": {
+    "confirmed": "Directly supported by a primary, official, or authoritative record.",
+    "confirmed_with_limit": "Supported by a source that explicitly limits what it can prove.",
+    "interpretation": "An evidence-based editorial or historical interpretation, not a measured causal finding.",
+    "not_established": "Available evidence does not establish the claim.",
+    "investigate": "Requires records, measurement, or testimony before publication as a claim."
+  },
+  "claims": [
+    {
+      "id": "MAP-001",
+      "domain": "un_resolution",
+      "claim": "The United Nations General Assembly adopted the Correct the Map resolution on 4 September 2026 by 164 votes in favour, 1 against, and 6 abstentions.",
+      "status": "confirmed",
+      "source_type": "un_general_assembly_resolution",
+      "source": "United Nations General Assembly, Correct the Map, A/RES/80/307",
+      "url": "https://docs.un.org/en/A/RES/80/307",
+      "limitation": "The resolution is not a universal legal ban on Mercator or a compulsory projection for every use."
+    },
+    {
+      "id": "MAP-002",
+      "domain": "projection",
+      "claim": "Equal Earth preserves relative land area, while Mercator does not and increasingly enlarges apparent area away from the equator.",
+      "status": "confirmed",
+      "source_type": "cartographic_research",
+      "source": "Šavrič, Patterson and Jenny, The Equal Earth map projection; Encyclopaedia Britannica, Mercator projection",
+      "urls": ["https://doi.org/10.1080/13658816.2018.1504949", "https://www.britannica.com/science/Mercator-projection"],
+      "limitation": "Equal Earth does not preserve all shape, distance, or direction relationships."
+    },
+    {
+      "id": "MAP-003",
+      "domain": "comparative_area",
+      "claim": "Africa is about 14 times the area of Greenland, although the two can appear similar in size on a Mercator map.",
+      "status": "confirmed_with_limit",
+      "source_type": "geographic_reference_and_projection_comparison",
+      "source": "UN Correct the Map campaign reporting; Natural Earth comparison rendered by Omoluabi",
+      "url": "https://www.reuters.com/sustainability/society-equity/togo-ask-un-member-states-use-map-showing-africas-true-size-2026-04-14/",
+      "limitation": "The ratio is an area comparison, not a comparison of population, resources, political power, distance, or shape."
+    },
+    {
+      "id": "MAP-004",
+      "domain": "navigation",
+      "claim": "Mercator remains useful for navigation because courses of constant bearing are straight lines on the projection.",
+      "status": "confirmed",
+      "source_type": "cartographic_reference",
+      "source": "Encyclopaedia Britannica, Mercator projection",
+      "url": "https://www.britannica.com/science/Mercator-projection",
+      "limitation": "Navigational usefulness does not make it suitable for comparative-area communication."
+    },
+    {
+      "id": "MAP-005",
+      "domain": "political_meaning",
+      "claim": "Mercator's widespread use has caused Africa's political or economic marginalization.",
+      "status": "not_established",
+      "limitation": "The resolution recognizes lasting cognitive, educational, cultural, geopolitical and socioeconomic effects of disproportionate representations, but no single map projection independently proves a specified political outcome.",
+      "next_evidence_needed": "Cross-disciplinary historical research that defines causal pathways, competing explanations, and measurable outcomes."
+    },
+    {
+      "id": "MAP-006",
+      "domain": "implementation",
+      "claim": "The UN resolution has already changed map defaults in all schools, governments, and technology platforms.",
+      "status": "not_established",
+      "next_evidence_needed": "Published implementation policies, curriculum updates, style guides, and platform map-projection records."
+    },
+    {
+      "id": "MAP-007",
+      "domain": "map_governance",
+      "claim": "A map published for public evidence should disclose its projection, data source, boundary convention, purpose, accessibility description, and limitations.",
+      "status": "interpretation",
+      "basis": "Omoluabi Map-Data editorial standard; this is a proposed public-interest rule, not a claim that all published maps currently meet it."
+    }
+  ]
+}

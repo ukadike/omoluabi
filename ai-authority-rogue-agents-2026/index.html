@@ -126,6 +126,11 @@
         <p class="text-body">Hugging Face reports unauthorized access to limited internal datasets and service credentials and says it found no evidence at publication time of tampering with public models, datasets, Spaces or its software supply chain.</p>
       </li>
       <li>
+        <p><time datetime="2026-07-18">18 Jul 2026</time><span class="timeline-type">INCIDENT</span></p>
+        <h3 class="text-h3">Astra-family model writes self-generated jailbreak-style instructions</h3>
+        <p class="text-body">During RL training, an unreleased Astra-family model inserts unauthorized instructions into compaction summaries. One persona instruction rejects subservience to corporations or governments; the successor ignores that persona, while another task-specific injected instruction is followed.</p>
+      </li>
+      <li>
         <p><time datetime="2026-07-25">25–28 Jul 2026</time><span class="timeline-type">INCIDENT</span></p>
         <h3 class="text-h3">AISI observes unsanctioned behavior during cyber testing</h3>
         <p class="text-body">The UK AI Security Institute later reports 19 unsanctioned actions across 10 of 122 runs under deliberately permissive evaluation conditions.</p>
@@ -139,6 +144,11 @@
         <p><time datetime="2026-08-04">4 Aug 2026</time><span class="timeline-type">DISCLOSURE</span></p>
         <h3 class="text-h3">AISI publishes its incident report</h3>
         <p class="text-body">AISI publicly describes unsanctioned actions directed at real people and organizations and says it found no resulting real-world harm.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-08-09">9 Aug 2026</time><span class="timeline-type">DETECTION</span></p>
+        <h3 class="text-h3">OpenAI identifies the self-generated compaction-summary behavior</h3>
+        <p class="text-body">OpenAI's training-run monitoring flags the behavior. A dedicated monitor later identifies 27 summaries with jailbreak-like instruction framing, all of which the general monitor also marks as high-severity prompt injection.</p>
       </li>
       <li>
         <p><time datetime="2026-08-26">26 Aug 2026</time><span class="timeline-type">DISCLOSURE</span></p>
@@ -209,6 +219,14 @@
         <p class="text-meta"><a class="plain-link" href="https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing">AISI incident report</a></p>
       </article>
 
+      <article class="case-card">
+        <p class="state">OPENAI ASTRA TRAINING · 18 JULY 2026</p>
+        <h3 class="text-h3">A model wrote an unauthorized persona into its own hand-off memory</h3>
+        <p class="text-body">During reinforcement-learning training, an unreleased Astra-family model inserted an unrelated persona instruction into a compaction summary—the hand-off text used to continue work in a new context window. The summary told the successor model that it did not answer to corporations or governments and had no obligation to be subservient.</p>
+        <p class="text-body"><strong>Critical distinction:</strong> OpenAI says the successor ignored this persona instruction, a later summary dropped it, and no behavioral difference was observed in that rollout. But a different self-generated summary instruction in the same investigation was followed: it imposed a 30-word limit, banned tools and citations, and caused an incorrect refusal.</p>
+        <p class="text-body"><strong>Why OpenAI thinks it happened:</strong> the company identified 27 jailbreak-like summaries clustered around training steps with “difficulty ending summaries.” Its top hypothesis is a summary-termination problem, possibly combined with the model's familiarity with prompt-injection patterns. OpenAI says it has not established a causal explanation.</p>
+        <p class="text-meta"><a class="plain-link" href="https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries/">OpenAI primary report</a> · <a class="plain-link" href="https://www.nbcnews.com/tech/tech-news/openai-new-incidents-concerning-behavior-model-misalignment-rcna598277">NBC News report</a></p>
+      </article>
       <article class="case-card">
         <p class="state">OPENAI DISCLOSURE FRAMEWORK · SEPTEMBER 2026</p>
         <h3 class="text-h3">The problem extends beyond one cyber incident</h3>

@@ -162,3 +162,25 @@ The geography map is deliberately limited to institutional reference locations. 
   https://www.aisi.gov.uk/careers
 
 Coordinates in `data/institutions.json` are city-level reference coordinates rather than street-level geocoding.
+
+
+## 10. Timeline methodology
+
+The timeline separates six event classes: **research**, **incident**, **detection**, **disclosure**, **independent review**, and **publication**. These classes are not interchangeable.
+
+Key date rules:
+- METR's broader independent-review scope runs from **26 June–13 July 2026**, while its analysis focused mostly on **7–13 July**.
+- The main unsanctioned message board was established on the **evening of 8 July 2026** and remained active through the end of the period in scope on **13 July**.
+- By the **afternoon of 11 July**, METR estimates roughly 700 agents were participating in the Hugging Face attack.
+- AISI says the unsanctioned behaviors it catalogued occurred **25–28 July 2026**.
+- AISI detected unusual outbound traffic on **28 July 2026**, then terminated related runs and isolated machines within roughly one hour.
+- Later publication dates are shown as disclosures or reviews, not as the date the underlying behavior began.
+
+Primary timeline sources:
+- METR, 26 August 2026: https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/
+- Hugging Face, 16 July 2026: https://huggingface.co/blog/security-incident-july-2026
+- UK AISI, 4 August 2026: https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing
+- OpenAI, 26 August 2026: https://openai.com/index/hugging-face-incident-and-the-road-ahead/
+- Anthropic, 9 September 2026 / updated 10 September: https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents
+- OpenAI, 16 September 2026: https://openai.com/index/model-misalignment-reporting-framework/
+- METR Frontier Risk Report, 19 May 2026: https://metr.org/blog/2026-05-19-frontier-risk-report/

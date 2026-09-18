@@ -85,3 +85,12 @@ Omoluabi distinguishes:
 8. consciousness or subjective will.
 
 The first five are directly observable. Six is a supported systems interpretation. Seven remains an open empirical hypothesis. Eight is not established by these sources.
+
+## Reporter reproducibility resources
+
+For a source-first reading order, explicit source roles, limitations, investigative methodology and follow-up questions, see:
+
+- `REPORTER_SOURCE_PACK.md`
+- `data/sources.json`
+
+The reporter pack includes the direct OpenAI technical-report PDF, OpenAI's initial and final disclosures, Hugging Face's affected-party disclosure, METR's independent investigation and Frontier Risk Report, METR's independent-investigation methodology, OpenAI's compaction-summary and disclosure-framework reports, UK AISI, Anthropic, NBC News secondary reporting, and additional policy context.

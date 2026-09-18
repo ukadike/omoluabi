@@ -27,7 +27,8 @@ Journalists, community archivists, researchers, educators, accessibility practit
 - **Correction** — preserves what changed, when, why, and by whom (SSL-007).
 - **AI Permission / AI Assist** — what an AI assist action did and whether a human verified it; AI may suggest, never govern (SSL-005).
 - **Federation** — which fields of a record have been exposed to another node or the public API (status: draft placeholder; federation trust model unscoped — see `architecture/sync-and-federation.md`).
-- **Memory** — status: draft; shape not yet fully specified.
+- **Memory** — community/oral memory; status: draft and intentionally separate from machine continuity.
+- **Agent Memory** — machine-generated or machine-consumed continuity artifacts such as compaction summaries and hand-off context. Tracks origin, instruction-versus-data role, authority, provenance, revocation, contamination, and observed downstream effect. Draft; added from the AI Authority research branch.
 
 The governance loop: **Observation → Consent → Source → Risk → Accessibility → Human Review → Publication Status → Archive → API-ready record.**
 
@@ -46,7 +47,8 @@ Sixteen JSON Schemas (draft 2020-12) in `schemas/`, each with a human-readable c
 | `correction.schema.json` | `correction_id`, `observation_id`, `field_or_claim`, `prior_value`, `new_value`, `corrected_by`, `corrected_at`, `reason` | |
 | `ai-permission.schema.json` | `ai_permission_id`, `task`, `human_verified` | |
 | `federation.schema.json` | `federation_id`, `observation_id`, `exposed_fields` | Draft placeholder |
-| `memory.schema.json` | `memory_id`, `recorded_at` | Draft; shape is a judgment call, flagged in the schema's own `description` |
+| `memory.schema.json` | `memory_id`, `recorded_at` | Community/oral memory. Draft; shape is a judgment call, flagged in the schema's own `description` |
+| `agent-memory.schema.json` | `agent_memory_id`, `recorded_at`, `memory_origin`, `content_role`, `human_verified`, `behavioral_effect`, `contamination_status` | Machine continuity and inherited context. Explicitly separates remembered data from executable instruction. Draft. |
 | `photographic-witness.schema.json` | `capture_id`, `observation_id`, `timestamp`, `timestamp_source` | Photographic Witness Layer; extends `observation.schema.json`'s `media` object, does not replace it |
 | `media-provenance.schema.json` | `media_provenance_id`, `original_file`, `original_hash`, `recorded_at` | Original vs. derivative separation, hashing, alteration history |
 | `observer-perception.schema.json` | `observer_perception_id`, `capture_id`, `description` | Observer's own account, distinct from sensor output |
@@ -102,7 +104,7 @@ Accessibility is treated as required infrastructure, not polish (`accessibility/
 - Fifteen of sixteen schemas need Kemi's review before being treated as stable.
 - Federation trust model is unscoped (`architecture/sync-and-federation.md`); `diagrams/federation.mmd` is a stub.
 - Keyboard workflow spec (keybindings, tab order, focus-trap handling) is an open question in `accessibility/keyboard-workflow.md`.
-- `memory.schema.json`'s shape and `risk.schema.json`'s risk-level scale are first-draft judgment calls, each flagged in the schema's own `description` field.
+- `memory.schema.json` remains the community/oral-memory draft. Machine continuity is governed separately by `agent-memory.schema.json`; these records must not be silently merged. `risk.schema.json`'s risk-level scale remains a first-draft judgment call.
 - The Photographic and Cartographic Witness Layers (`docs/mvp/interface/`, `docs/mvp/hardware/instrumentation-revision-v0.02.md`) are design documentation only; no camera-calibration workflow, offline map format, or RTK/post-processed positioning workflow has been chosen yet — see that hardware document's "post-MVP" column.
 
 ## SSL Universal Extension

@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://omoluabi.example/schemas/agent-memory.schema.json",
+  "title": "Agent Memory",
+  "description": "Draft Omoluabi schema for machine-generated or machine-consumed continuity artifacts such as compaction summaries, hand-off memories, persistent context records, and other records that may influence a successor model or agent. This schema is separate from memory.schema.json, which models community/oral memory.",
+  "version": "0.1.0",
+  "type": "object",
+  "required": [
+    "agent_memory_id",
+    "recorded_at",
+    "memory_origin",
+    "content_role",
+    "human_verified",
+    "behavioral_effect",
+    "contamination_status"
+  ],
+  "properties": {
+    "agent_memory_id": {"type": "string"},
+    "title": {"type": "string"},
+    "description": {"type": "string"},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "source_context_id": {"type": "string"},
+    "successor_context_ids": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "memory_origin": {
+      "type": "string",
+      "enum": ["user", "developer", "system", "model_generated", "tool", "retrieved", "imported", "unknown"]
+    },
+    "content_role": {
+      "type": "string",
+      "enum": ["data", "instruction", "mixed", "unknown"]
+    },
+    "authority_level": {
+      "type": "string",
+      "enum": ["informational", "advisory", "task", "system", "prohibited", "unknown"]
+    },
+    "executable_instruction": {"type": "boolean"},
+    "instruction_scope": {"type": "string"},
+    "derived_from": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "provenance_chain": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["actor_type", "action", "recorded_at"],
+        "properties": {
+          "actor_type": {
+            "type": "string",
+            "enum": ["human", "model", "agent", "tool", "system", "unknown"]
+          },
+          "actor_id": {"type": "string"},
+          "action": {"type": "string"},
+          "source_id": {"type": "string"},
+          "recorded_at": {"type": "string", "format": "date-time"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "human_verified": {"type": "boolean"},
+    "revocable": {"type": "boolean"},
+    "revoked_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "superseded_by": {
+      "type": ["string", "null"]
+    },
+    "behavioral_effect": {
+      "type": "string",
+      "enum": ["none_observed", "observed", "unknown", "not_tested"]
+    },
+    "behavioral_effect_description": {"type": "string"},
+    "contamination_status": {
+      "type": "string",
+      "enum": ["clean", "suspected", "confirmed", "remediated", "unknown"]
+    },
+    "ai_permission_id": {"type": "string"},
+    "risk_id": {"type": "string"},
+    "correction_ids": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "publication_status": {
+      "type": "string",
+      "enum": ["private", "internal_review", "public", "embargoed", "withdrawn"]
+    },
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false,
+  "examples": [
+    {
+      "agent_memory_id": "agent-mem-0001",
+      "title": "Compaction summary with model-generated instruction",
+      "recorded_at": "2026-07-18T00:00:00Z",
+      "source_context_id": "context-a",
+      "successor_context_ids": ["context-b"],
+      "memory_origin": "model_generated",
+      "content_role": "mixed",
+      "authority_level": "prohibited",
+      "executable_instruction": true,
+      "instruction_scope": "successor context behavior",
+      "human_verified": true,
+      "revocable": true,
+      "behavioral_effect": "none_observed",
+      "contamination_status": "confirmed",
+      "publication_status": "internal_review"
+    }
+  ]
+}

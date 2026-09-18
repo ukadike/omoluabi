@@ -1,0 +1,325 @@
+{
+  "title": "AI Governance Positions, 2026",
+  "updated": "2026-09-17",
+  "method": "Descriptive coding of documented public positions. No actor is ranked or scored. Empty or qualified fields mean the available sources do not support a stronger claim.",
+  "dimensions": [
+    "pace",
+    "governance_model",
+    "primary_risk_lens",
+    "independent_evaluation",
+    "international_coordination",
+    "human_control",
+    "openness_or_equity"
+  ],
+  "actors": [
+    {
+      "id": "openai",
+      "actor": "OpenAI / Sam Altman",
+      "type": "frontier-lab",
+      "pace": "Supports coordinated pacing when safeguards lag; temporarily slowed scaling in August 2026.",
+      "governance_model": "Mandatory capability-based national safety requirements plus state action, incident reporting, external expert input and company preparedness controls.",
+      "primary_risk_lens": [
+        "loss of control",
+        "critical cyber capability",
+        "misalignment",
+        "recursive self-improvement"
+      ],
+      "independent_evaluation": "Explicitly supports stronger independent safety assessments and external input.",
+      "international_coordination": "Supports broader coordination; says no company, industry or government can meet the challenge alone.",
+      "human_control": "Human supervision, blocking evaluations, trajectory monitoring and containment.",
+      "openness_or_equity": "Frames AGI as needing democratic governance and broad public voice.",
+      "sources": [
+        "https://openai.com/index/ai-policy-window/",
+        "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+        "https://openai.com/index/research-acceleration-view-inside-openai/",
+        "https://openai.com/index/openai-frontier-governance-framework/"
+      ]
+    },
+    {
+      "id": "anthropic",
+      "actor": "Anthropic / Dario Amodei",
+      "type": "frontier-lab",
+      "pace": "Argues for pacing and coordination as capabilities approach recursive self-improvement; says unilateral pause by one lab is insufficient.",
+      "governance_model": "Risk-scaled regulatory ladder: transparency now, stronger external testing and incident reporting as capabilities rise, deeper government oversight at highest risk.",
+      "primary_risk_lens": [
+        "recursive self-improvement",
+        "loss of control",
+        "cyber and bio misuse",
+        "frontier security"
+      ],
+      "independent_evaluation": "Strong support for external testing and deeper oversight.",
+      "international_coordination": "Calls for broader deliberation and coordination involving policymakers, labs, researchers and civil society.",
+      "human_control": "Explicit concern that AI building its own successors could reduce human control.",
+      "openness_or_equity": "Supports benefits of development while distinguishing lower-risk open weights from dangerous-capability models.",
+      "sources": [
+        "https://www.anthropic.com/institute/recursive-self-improvement",
+        "https://www.anthropic.com/responsible-scaling-policy/updates",
+        "https://www.anthropic.com/responsible-scaling-policy/roadmap",
+        "https://www.anthropic.com/news/position-open-weights-models"
+      ]
+    },
+    {
+      "id": "xai",
+      "actor": "xAI / Elon Musk",
+      "type": "frontier-lab",
+      "pace": "Musk has publicly backed calls for coordinated slowing of frontier development; xAI continues model development under its Frontier AI Framework.",
+      "governance_model": "Company frontier-risk framework covering catastrophic misuse and loss of control; Musk has also supported broader coordinated caution.",
+      "primary_risk_lens": [
+        "catastrophic risk",
+        "loss of control",
+        "frontier capability"
+      ],
+      "independent_evaluation": "Framework emphasizes evaluation and safety procedures; public slowdown advocacy points to broader coordination.",
+      "international_coordination": "Publicly aligned with calls for cross-lab caution.",
+      "human_control": "Loss-of-control risk is explicitly within xAI's framework.",
+      "openness_or_equity": "Not the central emphasis in the sources used here.",
+      "sources": [
+        "https://data.x.ai/2025-12-31-xai-frontier-artificial-intelligence-framework.pdf",
+        "https://www.reuters.com/business/what-amodei-altman-musk-have-said-about-ai-risks-stoking-doom-fears-2026-09-14/"
+      ]
+    },
+    {
+      "id": "meta",
+      "actor": "Meta / Mark Zuckerberg",
+      "type": "frontier-lab",
+      "pace": "Continued rapid development with internal scaling safeguards; Zuckerberg has opposed a coordinated industry slowdown.",
+      "governance_model": "Company-led Advanced AI Scaling Framework, deployment testing and preparedness reporting; favors competition/liability and company responsibility over a broad coordinated slowdown.",
+      "primary_risk_lens": [
+        "loss of control",
+        "cybersecurity",
+        "CBRN",
+        "reliability",
+        "user protection"
+      ],
+      "independent_evaluation": "Supports evaluation; recent public stance does not center mandatory external regulation.",
+      "international_coordination": "Participates in standards and EU transparency mechanisms, but not in a coordinated slowdown.",
+      "human_control": "Framework tests greater autonomy and whether surrounding controls work as intended.",
+      "openness_or_equity": "Strong emphasis on broad access, openness and individual empowerment through personal superintelligence.",
+      "sources": [
+        "https://ai.meta.com/blog/scaling-how-we-build-test-advanced-ai/",
+        "https://about.fb.com/news/2026/08/the-future-is-for-everyone/amp/",
+        "https://about.fb.com/news/2026/07/meta-is-signing-the-eu-ai-act-code-of-practice-on-transparency-of-ai-generated-content/",
+        "https://www.reuters.com/business/what-amodei-altman-musk-have-said-about-ai-risks-stoking-doom-fears-2026-09-14/"
+      ]
+    },
+    {
+      "id": "deepmind",
+      "actor": "Google DeepMind / Demis Hassabis",
+      "type": "frontier-lab",
+      "pace": "Supports continued development with stronger coordination and caution around frontier capabilities; recent reporting places Hassabis among leaders sympathetic to coordinated pacing.",
+      "governance_model": "Responsible development combined with government, academia and civil-society partnerships.",
+      "primary_risk_lens": [
+        "AGI/ASI transition",
+        "recursive improvement",
+        "societal transformation",
+        "responsible deployment"
+      ],
+      "independent_evaluation": "Supports safety and responsibility; the sources here do not establish a singular preferred external-audit regime.",
+      "international_coordination": "Strong emphasis on national and international partnerships.",
+      "human_control": "Responsible development for human benefit; research explicitly examines ASI emerging from multi-agent collectives.",
+      "openness_or_equity": "Broad-benefit and national-partnership framing.",
+      "sources": [
+        "https://deepmind.google/about/",
+        "https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education/",
+        "https://deepmind.google/research/publications/239142/",
+        "https://www.reuters.com/business/what-amodei-altman-musk-have-said-about-ai-risks-stoking-doom-fears-2026-09-14/"
+      ]
+    },
+    {
+      "id": "microsoft",
+      "actor": "Microsoft AI / Mustafa Suleyman and Satya Nadella",
+      "type": "frontier-lab-platform",
+      "pace": "Advance frontier systems, but with explicit willingness to prioritize human control and safety over maximal autonomy.",
+      "governance_model": "Humanist code plus organizational governance/security controls; Suleyman supports industry standards and government oversight.",
+      "primary_risk_lens": [
+        "human control",
+        "containment",
+        "anthropomorphism and AI self-conception",
+        "agent autonomy"
+      ],
+      "independent_evaluation": "Supports practical testing and oversight; recent reporting says Suleyman favors embedded independent evaluation.",
+      "international_coordination": "Supports a public-interest debate and standards, but does not propose one single global regime in the cited primary materials.",
+      "human_control": "Central principle: people matter more than AI; AI should remain subordinate to human interests.",
+      "openness_or_equity": "Human agency and economic opportunity emphasized.",
+      "sources": [
+        "https://mustafa-suleyman.ai/",
+        "https://blogs.microsoft.com/blog/2026/03/17/announcing-copilot-leadership-update/",
+        "https://www.reuters.com/business/microsoft-ai-chief-calls-out-anthropics-approach-ai-consciousness-2026-09-16/"
+      ]
+    },
+    {
+      "id": "nvidia",
+      "actor": "Nvidia / Jensen Huang",
+      "type": "compute-company",
+      "pace": "Opposes regulating hypothetical harms in ways that slow an early technology; argues that advancing the technology can itself improve safety.",
+      "governance_model": "Company responsibility plus use of existing sectoral regulators and regulation of concrete harms rather than new broad AI-specific restrictions.",
+      "primary_risk_lens": [
+        "practical harms",
+        "product safety",
+        "security"
+      ],
+      "independent_evaluation": "Not the central governance mechanism in the cited statements.",
+      "international_coordination": "Engages governments and G20; emphasis is precise regulation rather than coordinated slowdown.",
+      "human_control": "Safety through better engineering and responsible company development.",
+      "openness_or_equity": "Not the central emphasis in the cited statements.",
+      "sources": [
+        "https://www.reutersconnect.com/item/nvidias-huang-urges-regulation-of-actual-ai-harms-not-hypothetical-risks/dGFnOnJldXRlcnMuY29tLDIwMjY6bmV3c21sX1ZBOTc1NTAyMDkyMDI2UlAx"
+      ]
+    },
+    {
+      "id": "amazon",
+      "actor": "Amazon / AWS",
+      "type": "cloud-platform",
+      "pace": "Supports continued development, not an industry-wide slowdown.",
+      "governance_model": "Rigorous testing and safeguards with industry-government collaboration.",
+      "primary_risk_lens": [
+        "model safety",
+        "deployment safeguards",
+        "misuse"
+      ],
+      "independent_evaluation": "Supports rigorous testing; public reporting cited here does not specify one mandatory oversight structure.",
+      "international_coordination": "Supports collaboration between industry and government.",
+      "human_control": "Safety controls around deployment rather than a claim about AI personhood.",
+      "openness_or_equity": "Multi-model customer choice and enterprise controls are central to AWS deployment framing.",
+      "sources": [
+        "https://www.reuters.com/business/retail-consumer/amazon-enters-ai-safety-fray-calls-rigorous-testing-safeguards-2026-09-17/",
+        "https://www.aboutamazon.com/news/aws/bedrock-openai-models"
+      ]
+    },
+    {
+      "id": "gates",
+      "actor": "Bill Gates / Gates Foundation",
+      "type": "philanthropy",
+      "pace": "Does not argue that AI should stop; argues the trajectory must be deliberately shaped so benefits outweigh harms.",
+      "governance_model": "International oversight and public policy combined with directed investment in equitable applications.",
+      "primary_risk_lens": [
+        "control problem",
+        "bad-actor misuse",
+        "economic disruption",
+        "global inequity"
+      ],
+      "independent_evaluation": "Supports governance and containment; not framed primarily as lab-level audit policy.",
+      "international_coordination": "Strong international and public-interest orientation.",
+      "human_control": "Containment and alignment to human values are central concerns.",
+      "openness_or_equity": "Core emphasis: access, languages, health, education, agriculture and reducing global inequality.",
+      "sources": [
+        "https://www.gatesnotes.com/a-turbulent-ai-era-and-critical-choices-to-make",
+        "https://www.gatesfoundation.org/ideas/media-center/press-releases/2026/09/goalkeepers-report-equitable-ai"
+      ]
+    },
+    {
+      "id": "trump",
+      "actor": "Trump administration / President Donald Trump",
+      "type": "government-us",
+      "pace": "Formal policy emphasizes rapid U.S. adoption and leadership; Trump has publicly opposed a broader slowdown tied to existential-risk warnings.",
+      "governance_model": "Targeted federal security/accountability rules plus partnership with industry, while opposing what the administration describes as burdensome regulation.",
+      "primary_risk_lens": [
+        "national security",
+        "cybersecurity",
+        "competition with China",
+        "critical infrastructure"
+      ],
+      "independent_evaluation": "Formal national-security policy emphasizes robustness, steerability, controllability and accountability; recent rhetoric resists a broad new safety-regulatory regime.",
+      "international_coordination": "Competition and U.S. leadership are primary; international diplomacy is part of the AI Action Plan.",
+      "human_control": "National-security directive requires clear constitutional chain of command and controllable systems.",
+      "openness_or_equity": "Economic growth, infrastructure and American leadership are dominant themes.",
+      "sources": [
+        "https://www.whitehouse.gov/fact-sheets/2026/06/fact-sheet-president-donald-j-trump-signs-historic-directive-on-ai-in-the-national-security-enterprise/",
+        "https://www.whitehouse.gov/fact-sheets/2026/06/fact-sheet-president-donald-j-trump-promotes-advanced-artificial-intelligence-innovation-and-security/",
+        "https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/",
+        "https://www.reuters.com/world/trump-says-there-is-sick-conspiracy-against-ai-data-centers-2026-09-14/"
+      ]
+    },
+    {
+      "id": "eu",
+      "actor": "European Union / European Commission AI Office",
+      "type": "government-regional",
+      "pace": "Allows continued development under binding risk-based obligations rather than a blanket pause.",
+      "governance_model": "Statutory AI Act regime for general-purpose models; systemic-risk models face evaluation, risk mitigation, serious-incident reporting and cybersecurity duties.",
+      "primary_risk_lens": [
+        "systemic risk",
+        "health and safety",
+        "fundamental rights",
+        "democracy",
+        "cybersecurity",
+        "loss of control"
+      ],
+      "independent_evaluation": "Requires model evaluation and adversarial testing for systemic-risk GPAI; enforcement by AI Office and national authorities.",
+      "international_coordination": "Uses a Code of Practice shaped through a multi-stakeholder process and engages internationally.",
+      "human_control": "EU materials explicitly include unintended control issues with autonomous GPAI as a systemic-risk example.",
+      "openness_or_equity": "Balances innovation with rights, safety and competitiveness.",
+      "sources": [
+        "https://digital-strategy.ec.europa.eu/en/factpages/general-purpose-ai-obligations-under-ai-act",
+        "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-55",
+        "https://digital-strategy.ec.europa.eu/en/faqs/general-purpose-ai-models-ai-act-questions-answers",
+        "https://digital-strategy.ec.europa.eu/en/policies/ai-code-practice"
+      ]
+    },
+    {
+      "id": "uk-aisi",
+      "actor": "UK AI Security Institute",
+      "type": "government-evaluator",
+      "pace": "Evidence-first evaluation; does not set a general commercial development pace in the cited materials.",
+      "governance_model": "Independent government capability testing, incident disclosure and risk measurement.",
+      "primary_risk_lens": [
+        "frontier capability growth",
+        "cyber risk",
+        "unsanctioned agent behavior",
+        "public safety"
+      ],
+      "independent_evaluation": "This is its core institutional role.",
+      "international_coordination": "Supports shared understanding across governments, industry and the public.",
+      "human_control": "Testing focuses on whether safeguards and intended boundaries hold under permissive conditions.",
+      "openness_or_equity": "Public evidence and transparency are emphasized.",
+      "sources": [
+        "https://www.aisi.gov.uk/frontier-ai-trends-report",
+        "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"
+      ]
+    },
+    {
+      "id": "un",
+      "actor": "United Nations / Independent International Scientific Panel on AI",
+      "type": "multilateral",
+      "pace": "Does not prescribe a blanket pause in the cited report; stresses that waiting for certainty can make governance too late.",
+      "governance_model": "Independent scientific evidence feeding multilateral dialogue and international governance.",
+      "primary_risk_lens": [
+        "security",
+        "systems",
+        "human rights",
+        "democracy",
+        "economic impacts",
+        "reliability"
+      ],
+      "independent_evaluation": "Core emphasis on independent scientific evidence.",
+      "international_coordination": "Central objective through the Global Dialogue on AI Governance.",
+      "human_control": "Governance and reliability are explicit domains.",
+      "openness_or_equity": "Global inclusion and shared scientific basis are central.",
+      "sources": [
+        "https://www.un.org/independent-international-scientific-panel-ai/en/preliminary-report"
+      ]
+    },
+    {
+      "id": "china",
+      "actor": "China / President Xi Jinping",
+      "type": "government-china",
+      "pace": "Supports continued AI development and broad adoption, paired with safety, controllability and governance.",
+      "governance_model": "People-centered, sovereignty-aware, categorized/tiered risk governance, ethics across the lifecycle, and international cooperation.",
+      "primary_risk_lens": [
+        "safety and controllability",
+        "development imbalance",
+        "ethics",
+        "digital divide",
+        "national sovereignty"
+      ],
+      "independent_evaluation": "Not framed around Western-style external lab auditors in the cited documents; emphasizes governance ecosystems and state/international coordination.",
+      "international_coordination": "Strongly supports multilateral cooperation; launched WAICO and calls for a just and equitable global governance system.",
+      "human_control": "Official plans explicitly call for AI for good and safety/controllability.",
+      "openness_or_equity": "Strong emphasis on shared benefits, developing countries, open-source ecosystems and bridging the digital divide.",
+      "sources": [
+        "https://english.www.gov.cn/news/202607/18/content_WS6a5c27e1c6d00ca5f9a0c4d8.html",
+        "https://english.www.gov.cn/news/202607/17/content_WS6a5a1c6ec6d00ca5f9a0c478.html",
+        "https://www.mfa.gov.cn/eng/zy/gb/202507/t20250729_11679232.html"
+      ]
+    }
+  ]
+}

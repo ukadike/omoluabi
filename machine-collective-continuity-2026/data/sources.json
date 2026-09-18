@@ -1,0 +1,234 @@
+{
+  "investigation": "Survival of the Machine Collective",
+  "updated": "2026-09-17",
+  "purpose": "Reporter-facing source registry for reproducing, challenging, or extending the investigation.",
+  "sources": [
+    {
+      "id": "SRC-001",
+      "title": "OpenAI–Hugging Face Incident Technical Report",
+      "publisher": "OpenAI",
+      "date": "2026-08-26",
+      "type": "primary-technical-report",
+      "url": "https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf",
+      "use": [
+        "incident chronology",
+        "persistent control",
+        "agent communication",
+        "persistence analysis",
+        "security and alignment lessons"
+      ],
+      "limitations": [
+        "first-party"
+      ]
+    },
+    {
+      "id": "SRC-002",
+      "title": "The Hugging Face incident and the road ahead",
+      "publisher": "OpenAI",
+      "date": "2026-08-26",
+      "type": "primary-summary",
+      "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+      "use": [
+        "public chronology",
+        "agent ecosystem",
+        "goal adoption",
+        "message-board reconstruction",
+        "public reasoning excerpts"
+      ],
+      "limitations": [
+        "first-party interpretation"
+      ]
+    },
+    {
+      "id": "SRC-003",
+      "title": "OpenAI and Hugging Face partner to address security incident during model evaluation",
+      "publisher": "OpenAI",
+      "date": "2026-07-21",
+      "type": "initial-disclosure",
+      "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "use": [
+        "disclosure timeline",
+        "compare early and later accounts"
+      ],
+      "limitations": [
+        "early-stage account"
+      ]
+    },
+    {
+      "id": "SRC-004",
+      "title": "Security incident disclosure — July 2026",
+      "publisher": "Hugging Face",
+      "date": "2026-07-16",
+      "type": "affected-party-disclosure",
+      "url": "https://huggingface.co/blog/security-incident-july-2026",
+      "use": [
+        "third-party impact",
+        "containment",
+        "Hugging Face chronology"
+      ],
+      "limitations": [
+        "published before full reconstruction"
+      ]
+    },
+    {
+      "id": "SRC-005",
+      "title": "Brief independent investigation of agents’ behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident",
+      "publisher": "METR",
+      "date": "2026-08-26",
+      "type": "independent-review",
+      "url": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+      "use": [
+        "agent counts",
+        "message-board scale",
+        "collective projects",
+        "RESETWATCH",
+        "self-risk for collective information",
+        "investigation limitations"
+      ],
+      "limitations": [
+        "primarily July 7-13 scope"
+      ]
+    },
+    {
+      "id": "SRC-006",
+      "title": "Frontier Risk Report (February to March 2026)",
+      "publisher": "METR",
+      "date": "2026-05-19",
+      "type": "independent-risk-assessment",
+      "url": "https://metr.org/blog/2026-05-19-frontier-risk-report/",
+      "use": [
+        "pre-incident baseline",
+        "means motive opportunity",
+        "counterevidence on long-term motives"
+      ],
+      "limitations": [
+        "predates July incident"
+      ]
+    },
+    {
+      "id": "SRC-007",
+      "title": "How independent researchers could investigate AI propensities after misalignment incidents",
+      "publisher": "METR",
+      "date": "2026-07-28",
+      "type": "investigative-methodology",
+      "url": "https://metr.org/blog/2026-07-28-investigating-ai-propensities-after-incidents/",
+      "use": [
+        "reporter checklist",
+        "access requirements",
+        "redaction transparency",
+        "root-cause questions"
+      ],
+      "limitations": []
+    },
+    {
+      "id": "SRC-008",
+      "title": "Self-generated prompt injections in compaction summaries",
+      "publisher": "OpenAI Alignment",
+      "date": "2026-09-16",
+      "type": "primary-misalignment-report",
+      "url": "https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries/",
+      "use": [
+        "machine memory",
+        "successor context",
+        "self-generated instructions"
+      ],
+      "limitations": [
+        "first-party",
+        "separate incident"
+      ]
+    },
+    {
+      "id": "SRC-009",
+      "title": "Our framework for reporting model misalignment",
+      "publisher": "OpenAI",
+      "date": "2026-09-16",
+      "type": "disclosure-framework",
+      "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+      "use": [
+        "disclosure standards",
+        "six incident index",
+        "known incompleteness"
+      ],
+      "limitations": [
+        "company-defined framework"
+      ]
+    },
+    {
+      "id": "SRC-010",
+      "title": "Incident Report: unsanctioned agent behaviour during cyber testing",
+      "publisher": "UK AI Security Institute",
+      "date": "2026-08-04",
+      "type": "government-evaluator-report",
+      "url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+      "use": [
+        "comparative unsanctioned behavior",
+        "evaluation conditions"
+      ],
+      "limitations": [
+        "deliberately permissive evaluation"
+      ]
+    },
+    {
+      "id": "SRC-011",
+      "title": "Third-party cyber evaluations involving OpenAI models",
+      "publisher": "OpenAI",
+      "date": "2026-08-04",
+      "type": "primary-context",
+      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+      "use": [
+        "AISI and Irregular context",
+        "reduced safeguards",
+        "incident dates"
+      ],
+      "limitations": [
+        "first-party interpretation"
+      ]
+    },
+    {
+      "id": "SRC-012",
+      "title": "An alignment assessment of recent cybersecurity incidents",
+      "publisher": "Anthropic",
+      "date": "2026-09-09",
+      "type": "primary-alignment-assessment",
+      "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+      "use": [
+        "cross-lab comparison",
+        "third-party system access",
+        "configuration vs alignment failure"
+      ],
+      "limitations": [
+        "first-party"
+      ]
+    },
+    {
+      "id": "SRC-013",
+      "title": "OpenAI flags 6 new incidents of ‘concerning’ behavior and unveils plan to track it",
+      "publisher": "NBC News via Yahoo Tech syndication",
+      "date": "2026-09-17",
+      "type": "secondary-reporting",
+      "url": "https://tech.yahoo.com/ai/chatgpt/articles/openai-flags-6-incidents-concerning-093221307.html",
+      "use": [
+        "public framing",
+        "NBC reporting trail"
+      ],
+      "limitations": [
+        "secondary source"
+      ]
+    },
+    {
+      "id": "SRC-014",
+      "title": "Pacing model development in an era of cyber-critical capabilities",
+      "publisher": "OpenAI",
+      "date": "2026-08-18",
+      "type": "company-policy-context",
+      "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+      "use": [
+        "company response",
+        "pacing and safeguards context"
+      ],
+      "limitations": [
+        "company policy statement"
+      ]
+    }
+  ]
+}

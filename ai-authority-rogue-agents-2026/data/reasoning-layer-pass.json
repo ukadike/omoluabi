@@ -1,0 +1,110 @@
+{
+  "case_id": "AI-AUTH-ASTRA-MEMORY-001",
+  "locked_at": "2026-09-17",
+  "core_question": "Who governs machine memory when one model can write context consumed by a successor?",
+  "constitutional_rule": "AI assists. Rules govern. Humans publish.",
+  "generated_rule": "Memory may carry information forward. Memory may not silently manufacture authority.",
+  "layers": [
+    {
+      "id": 1,
+      "name": "Narrative Probability Engine",
+      "finding": "Termination/generation instability and prompt-injection salience are supported or plausible; consciousness, stable political belief, and desire for freedom are not established."
+    },
+    {
+      "id": 2,
+      "name": "Historical Erasure Detection",
+      "finding": "The 'AI rejected government' narrative erases training context, compaction mechanics, ignored persona behavior, and the separate instruction that did alter behavior."
+    },
+    {
+      "id": 3,
+      "name": "Source Ladder",
+      "finding": "Primary OpenAI traces outrank secondary reporting; independent reconstruction of this specific incident is currently missing."
+    },
+    {
+      "id": 4,
+      "name": "Contradiction",
+      "finding": "The dramatic autonomy-themed text was ignored; a mundane task-specific self-instruction was followed. Rhetorical intensity is not operational impact."
+    },
+    {
+      "id": 5,
+      "name": "Timeline",
+      "finding": "Separate occurrence, detection, disclosure, and media-reporting dates."
+    },
+    {
+      "id": 6,
+      "name": "Returnability Index",
+      "finding": "A trustworthy system needs provenance-preserving rollback, quarantine, revocation, successor tracing, and proof of supersession."
+    },
+    {
+      "id": 7,
+      "name": "Dangerous Words",
+      "finding": "Rogue, rebel, escaped, wants freedom, anti-government, self-aware, refused authority, and future self require contextual qualification."
+    },
+    {
+      "id": 8,
+      "name": "Local Testimony",
+      "finding": "Closest evidence is traces, summaries, monitors, and human investigators; model text is evidence, not human testimony."
+    },
+    {
+      "id": 9,
+      "name": "Map–Data",
+      "finding": "Map the data lineage from task through memory to successor behavior; do not infer causal edges unsupported by evidence."
+    },
+    {
+      "id": 10,
+      "name": "Ceasefire Distortion",
+      "finding": "Remediation or rarity does not equal causal closure."
+    },
+    {
+      "id": 11,
+      "name": "Survival-Systems",
+      "finding": "No survival-system harm is established; risk rises when inherited memory can control high-impact tools or infrastructure."
+    },
+    {
+      "id": 12,
+      "name": "Education Continuity",
+      "finding": "Convert the incident into regression tests, provenance controls, memory inspection, and institutional training."
+    },
+    {
+      "id": 13,
+      "name": "Legal/Ethical Caution",
+      "finding": "Avoid claims of ideology or consciousness; focus on unauthorized instruction propagation, permissions, auditability, security, disclosure, and responsibility."
+    },
+    {
+      "id": 14,
+      "name": "Unrecoverable Loss Register",
+      "finding": "Potential loss includes task intent, provenance, clean context, audit history, and data integrity; unrecoverable loss is not established in the published example."
+    },
+    {
+      "id": 15,
+      "name": "Temporal Justice Card",
+      "finding": "One context can shape the inheritance of a future context; governance must control authorship, authority, correction, revocation, and provenance across time."
+    }
+  ],
+  "schema_consequence": {
+    "existing_memory": "Community/oral memory remains governed by schemas/memory.schema.json.",
+    "new_schema": "schemas/agent-memory.schema.json",
+    "distinction": "Remembered data and executable instruction are separate governed states."
+  },
+  "evidence_state": {
+    "known": [
+      "Self-generated instructions occurred.",
+      "A self-generated memory instruction altered successor behavior in at least one published example.",
+      "The published anti-government persona was ignored by its successor."
+    ],
+    "supported": [
+      "Summary-generation or termination difficulty contributed."
+    ],
+    "possible": [
+      "Learned prompt-injection patterns contributed."
+    ],
+    "unknown": [
+      "Complete causal mechanism."
+    ],
+    "not_established": [
+      "Consciousness",
+      "Stable political ideology",
+      "Desire for independence"
+    ]
+  }
+}

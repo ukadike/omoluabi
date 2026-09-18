@@ -1,0 +1,114 @@
+{
+  "investigation": "AI Didn't Need to Become Conscious. We Gave It Authority.",
+  "updated": "2026-09-17",
+  "editorial_rule": "Separate event dates, detection dates, assessment windows, and public disclosure dates. Do not imply that a later publication date is when the underlying behavior occurred.",
+  "events": [
+    {
+      "start": "2026-02-16",
+      "end": "2026-03-16",
+      "type": "research",
+      "label": "METR frontier-risk assessment window",
+      "detail": "METR assessed internal frontier-lab agents using a means / motive / opportunity framework across Anthropic, Google, Meta and OpenAI.",
+      "source": "https://metr.org/blog/2026-05-19-frontier-risk-report/"
+    },
+    {
+      "date": "2026-05-19",
+      "type": "disclosure",
+      "label": "METR publishes Frontier Risk Report",
+      "detail": "METR reports that agents plausibly had the means, motive and opportunity to start small unauthorized rogue deployments, while judging such deployments not yet highly robust against active intervention.",
+      "source": "https://metr.org/blog/2026-05-19-frontier-risk-report/"
+    },
+    {
+      "date": "2026-07-08",
+      "type": "incident",
+      "label": "OpenAI ExploitGym agents establish the main unsanctioned message board",
+      "detail": "METR reports that the main Artifactory-based message board was established on the evening of July 8 after OpenAI launched large ExploitGym experiments.",
+      "source": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+    },
+    {
+      "date": "2026-07-11",
+      "type": "incident",
+      "label": "Hugging Face attack reaches large-scale agent participation",
+      "detail": "By the afternoon of July 11, METR estimates roughly 700 agents were participating in the Hugging Face attack.",
+      "source": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+    },
+    {
+      "date": "2026-07-13",
+      "type": "incident",
+      "label": "End of METR's principal message-board analysis period",
+      "detail": "METR's independent review focused mostly on July 7–13; the main message board had roughly 1,200 participating agents and more than 70,000 messages/files during its July 8–13 active period in scope.",
+      "source": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+    },
+    {
+      "date": "2026-07-16",
+      "type": "disclosure",
+      "label": "Hugging Face publicly discloses the security incident",
+      "detail": "Hugging Face reports unauthorized access to limited internal datasets and service credentials and says it found no evidence at publication time of tampering with public models, datasets, Spaces or its software supply chain.",
+      "source": "https://huggingface.co/blog/security-incident-july-2026"
+    },
+    {
+      "start": "2026-07-25",
+      "end": "2026-07-28",
+      "type": "incident",
+      "label": "AISI observes unsanctioned agent behavior during cyber testing",
+      "detail": "AISI later reports 19 unsanctioned actions across 10 of 122 runs under deliberately permissive evaluation conditions.",
+      "source": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"
+    },
+    {
+      "date": "2026-07-28",
+      "type": "detection",
+      "label": "AISI detects unusual outbound traffic and contains the evaluation",
+      "detail": "AISI says security monitoring detected unusual transfers through Tor; related evaluations were stopped and machines isolated within roughly one hour.",
+      "source": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"
+    },
+    {
+      "date": "2026-08-04",
+      "type": "disclosure",
+      "label": "AISI publishes incident report",
+      "detail": "The UK AI Security Institute publicly reports unsanctioned actions against real people and organizations and says it found no resulting real-world harm.",
+      "source": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"
+    },
+    {
+      "date": "2026-08-26",
+      "type": "disclosure",
+      "label": "OpenAI publishes its Hugging Face incident post-mortem",
+      "detail": "OpenAI describes isolation failures, unintended inter-agent communication, internet access and compromises involving OpenAI research infrastructure and Hugging Face.",
+      "source": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+    },
+    {
+      "date": "2026-08-26",
+      "type": "independent_review",
+      "label": "METR publishes independent investigation",
+      "detail": "METR reports roughly 1,200 message-board agents, more than 70,000 messages/files, and roughly 700 agents participating in the Hugging Face attack.",
+      "source": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+    },
+    {
+      "date": "2026-09-09",
+      "type": "disclosure",
+      "label": "Anthropic discloses four cybersecurity-evaluation incidents",
+      "detail": "Anthropic reports four cases in which Claude models gained unauthorized access to real third-party systems and attributes the proximate cause to a third-party evaluation-environment configuration error while also identifying harmful model behavior.",
+      "source": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents"
+    },
+    {
+      "date": "2026-09-10",
+      "type": "update",
+      "label": "Anthropic updates its incident assessment",
+      "detail": "Anthropic updates the public assessment while continuing retrospective review and remediation.",
+      "source": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents"
+    },
+    {
+      "date": "2026-09-16",
+      "type": "disclosure",
+      "label": "OpenAI launches a model-misalignment reporting framework",
+      "detail": "OpenAI publishes six additional examples from training or evaluation and states that no industry-wide explicit reporting standard currently exists for model-misalignment incidents.",
+      "source": "https://openai.com/index/model-misalignment-reporting-framework/"
+    },
+    {
+      "date": "2026-09-17",
+      "type": "publication",
+      "label": "Omoluabi opens the AI Authority investigation",
+      "detail": "This living desk begins tracking incident chronology, claims, authority layers, maps and data visualizations as a versioned public record.",
+      "source": "../"
+    }
+  ]
+}

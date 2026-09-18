@@ -49,10 +49,6 @@ Human-readable companion documents to the JSON Schemas in `schemas/`. Each card 
 9. `federation.card.md`
 10. `memory.card.md`
 
-### Agent Memory Layer
-
-20. `agent-memory.card.md` — machine continuity, persistent context, hand-off memory, instruction/data separation, provenance, revocation, and contamination state. This is separate from community/oral memory.
-
 ### Photographic Witness Layer
 
 11. `photographic-witness.card.md`
@@ -67,6 +63,10 @@ Human-readable companion documents to the JSON Schemas in `schemas/`. Each card 
 17. `projection-accountability.card.md`
 18. `map-missingness.card.md`
 19. `location-protection.card.md`
+
+### Agent Memory Layer
+
+20. `agent-memory.card.md` — machine continuity, persistent context, hand-off memory, instruction/data separation, provenance, revocation, and contamination state. This is separate from community/oral memory.
 
 ## Status
 

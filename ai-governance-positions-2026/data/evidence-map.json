@@ -1,0 +1,251 @@
+{
+  "title": "Evidence map — AI governance positions, 2026",
+  "updated": "2026-09-17",
+  "note": "Edges indicate documented support, emphasis, opposition, or institutional implementation. They are not scores or rankings.",
+  "mechanisms": [
+    {
+      "id": "mandatory-regulation",
+      "label": "Mandatory / statutory safety requirements"
+    },
+    {
+      "id": "coordinated-pacing",
+      "label": "Coordinated pacing or slowdown"
+    },
+    {
+      "id": "independent-testing",
+      "label": "Independent / external testing"
+    },
+    {
+      "id": "company-led",
+      "label": "Company-led engineering safeguards"
+    },
+    {
+      "id": "national-competition",
+      "label": "National competition / sovereignty"
+    },
+    {
+      "id": "international",
+      "label": "International / multilateral governance"
+    },
+    {
+      "id": "human-control",
+      "label": "Human control / containment"
+    },
+    {
+      "id": "equity-access",
+      "label": "Equity / broad access / public benefit"
+    }
+  ],
+  "edges": [
+    {
+      "actor": "OpenAI / Sam Altman",
+      "mechanism": "mandatory-regulation",
+      "relation": "supports",
+      "source": "https://openai.com/index/ai-policy-window/"
+    },
+    {
+      "actor": "OpenAI / Sam Altman",
+      "mechanism": "coordinated-pacing",
+      "relation": "supports when safeguards lag",
+      "source": "https://openai.com/index/pacing-model-development-cyber-capabilities/"
+    },
+    {
+      "actor": "OpenAI / Sam Altman",
+      "mechanism": "independent-testing",
+      "relation": "supports",
+      "source": "https://openai.com/index/ai-policy-window/"
+    },
+    {
+      "actor": "OpenAI / Sam Altman",
+      "mechanism": "human-control",
+      "relation": "emphasizes monitoring and containment",
+      "source": "https://openai.com/index/safety-overview-gpt-6-astra/"
+    },
+    {
+      "actor": "Anthropic / Dario Amodei",
+      "mechanism": "mandatory-regulation",
+      "relation": "supports risk-scaled regulation",
+      "source": "https://www.anthropic.com/responsible-scaling-policy/updates"
+    },
+    {
+      "actor": "Anthropic / Dario Amodei",
+      "mechanism": "coordinated-pacing",
+      "relation": "supports broader coordination",
+      "source": "https://www.anthropic.com/institute/recursive-self-improvement"
+    },
+    {
+      "actor": "Anthropic / Dario Amodei",
+      "mechanism": "independent-testing",
+      "relation": "supports stronger external testing",
+      "source": "https://www.anthropic.com/responsible-scaling-policy/updates"
+    },
+    {
+      "actor": "Anthropic / Dario Amodei",
+      "mechanism": "human-control",
+      "relation": "concerned about loss of control under recursive self-improvement",
+      "source": "https://www.anthropic.com/institute/recursive-self-improvement"
+    },
+    {
+      "actor": "xAI / Elon Musk",
+      "mechanism": "coordinated-pacing",
+      "relation": "publicly supports",
+      "source": "https://www.reuters.com/business/what-amodei-altman-musk-have-said-about-ai-risks-stoking-doom-fears-2026-09-14/"
+    },
+    {
+      "actor": "xAI / Elon Musk",
+      "mechanism": "company-led",
+      "relation": "implements frontier framework",
+      "source": "https://data.x.ai/2025-12-31-xai-frontier-artificial-intelligence-framework.pdf"
+    },
+    {
+      "actor": "xAI / Elon Musk",
+      "mechanism": "human-control",
+      "relation": "loss-of-control risk in framework",
+      "source": "https://data.x.ai/2025-12-31-xai-frontier-artificial-intelligence-framework.pdf"
+    },
+    {
+      "actor": "Meta / Mark Zuckerberg",
+      "mechanism": "company-led",
+      "relation": "strong emphasis",
+      "source": "https://ai.meta.com/blog/scaling-how-we-build-test-advanced-ai/"
+    },
+    {
+      "actor": "Meta / Mark Zuckerberg",
+      "mechanism": "coordinated-pacing",
+      "relation": "opposes coordinated slowdown",
+      "source": "https://www.reuters.com/business/what-amodei-altman-musk-have-said-about-ai-risks-stoking-doom-fears-2026-09-14/"
+    },
+    {
+      "actor": "Meta / Mark Zuckerberg",
+      "mechanism": "equity-access",
+      "relation": "emphasizes individual empowerment and broad access",
+      "source": "https://about.fb.com/news/2026/08/the-future-is-for-everyone/amp/"
+    },
+    {
+      "actor": "Google DeepMind / Demis Hassabis",
+      "mechanism": "international",
+      "relation": "supports government and civil-society partnership",
+      "source": "https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education/"
+    },
+    {
+      "actor": "Google DeepMind / Demis Hassabis",
+      "mechanism": "coordinated-pacing",
+      "relation": "reported support for caution",
+      "source": "https://www.reuters.com/business/what-amodei-altman-musk-have-said-about-ai-risks-stoking-doom-fears-2026-09-14/"
+    },
+    {
+      "actor": "Microsoft AI / Mustafa Suleyman",
+      "mechanism": "human-control",
+      "relation": "central principle",
+      "source": "https://mustafa-suleyman.ai/"
+    },
+    {
+      "actor": "Microsoft AI / Mustafa Suleyman",
+      "mechanism": "independent-testing",
+      "relation": "supports practical oversight",
+      "source": "https://www.reuters.com/business/microsoft-ai-chief-calls-out-anthropics-approach-ai-consciousness-2026-09-16/"
+    },
+    {
+      "actor": "Nvidia / Jensen Huang",
+      "mechanism": "company-led",
+      "relation": "emphasizes company responsibility and engineering",
+      "source": "https://www.reutersconnect.com/item/nvidias-huang-urges-regulation-of-actual-ai-harms-not-hypothetical-risks/dGFnOnJldXRlcnMuY29tLDIwMjY6bmV3c21sX1ZBOTc1NTAyMDkyMDI2UlAx"
+    },
+    {
+      "actor": "Nvidia / Jensen Huang",
+      "mechanism": "mandatory-regulation",
+      "relation": "opposes broad rules based on hypothetical harms; favors regulation of actual harms",
+      "source": "https://www.reutersconnect.com/item/nvidias-huang-urges-regulation-of-actual-ai-harms-not-hypothetical-risks/dGFnOnJldXRlcnMuY29tLDIwMjY6bmV3c21sX1ZBOTc1NTAyMDkyMDI2UlAx"
+    },
+    {
+      "actor": "Amazon / AWS",
+      "mechanism": "company-led",
+      "relation": "supports testing and safeguards without industry-wide slowdown",
+      "source": "https://www.reuters.com/business/retail-consumer/amazon-enters-ai-safety-fray-calls-rigorous-testing-safeguards-2026-09-17/"
+    },
+    {
+      "actor": "Bill Gates / Gates Foundation",
+      "mechanism": "international",
+      "relation": "supports international oversight",
+      "source": "https://www.gatesnotes.com/a-turbulent-ai-era-and-critical-choices-to-make"
+    },
+    {
+      "actor": "Bill Gates / Gates Foundation",
+      "mechanism": "equity-access",
+      "relation": "central emphasis",
+      "source": "https://www.gatesfoundation.org/ideas/media-center/press-releases/2026/09/goalkeepers-report-equitable-ai"
+    },
+    {
+      "actor": "Trump administration",
+      "mechanism": "national-competition",
+      "relation": "central emphasis",
+      "source": "https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/"
+    },
+    {
+      "actor": "Trump administration",
+      "mechanism": "human-control",
+      "relation": "requires controllability and chain-of-command accountability in national-security AI",
+      "source": "https://www.whitehouse.gov/fact-sheets/2026/06/fact-sheet-president-donald-j-trump-signs-historic-directive-on-ai-in-the-national-security-enterprise/"
+    },
+    {
+      "actor": "Trump administration",
+      "mechanism": "mandatory-regulation",
+      "relation": "resists broader new regulation while using targeted security rules",
+      "source": "https://www.reuters.com/world/trump-says-there-is-sick-conspiracy-against-ai-data-centers-2026-09-14/"
+    },
+    {
+      "actor": "European Union",
+      "mechanism": "mandatory-regulation",
+      "relation": "implements statutory systemic-risk obligations",
+      "source": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-55"
+    },
+    {
+      "actor": "European Union",
+      "mechanism": "independent-testing",
+      "relation": "requires model evaluation and adversarial testing",
+      "source": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-55"
+    },
+    {
+      "actor": "European Union",
+      "mechanism": "human-control",
+      "relation": "treats unintended control issues in autonomous GPAI as systemic-risk example",
+      "source": "https://digital-strategy.ec.europa.eu/en/faqs/general-purpose-ai-models-ai-act-questions-answers"
+    },
+    {
+      "actor": "UK AI Security Institute",
+      "mechanism": "independent-testing",
+      "relation": "institutional core function",
+      "source": "https://www.aisi.gov.uk/frontier-ai-trends-report"
+    },
+    {
+      "actor": "United Nations",
+      "mechanism": "international",
+      "relation": "core mechanism",
+      "source": "https://www.un.org/independent-international-scientific-panel-ai/en/preliminary-report"
+    },
+    {
+      "actor": "United Nations",
+      "mechanism": "independent-testing",
+      "relation": "emphasizes independent scientific evidence",
+      "source": "https://www.un.org/independent-international-scientific-panel-ai/en/preliminary-report"
+    },
+    {
+      "actor": "China / Xi Jinping",
+      "mechanism": "international",
+      "relation": "supports multilateral AI governance and WAICO",
+      "source": "https://english.www.gov.cn/news/202607/18/content_WS6a5c27e1c6d00ca5f9a0c4d8.html"
+    },
+    {
+      "actor": "China / Xi Jinping",
+      "mechanism": "national-competition",
+      "relation": "combines sovereignty with global cooperation",
+      "source": "https://www.mfa.gov.cn/eng/zy/gb/202507/t20250729_11679232.html"
+    },
+    {
+      "actor": "China / Xi Jinping",
+      "mechanism": "equity-access",
+      "relation": "emphasizes developing countries, shared benefits and digital divide",
+      "source": "https://english.www.gov.cn/news/202607/17/content_WS6a5a1c6ec6d00ca5f9a0c478.html"
+    }
+  ]
+}

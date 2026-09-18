@@ -10,6 +10,7 @@ Omoluabi proof-of-concept investigation into 2026 frontier-AI agent incidents an
 - `data/visualizations.json` — source values used in the METR and AISI visualizations.
 - `data/institutions.json` — city-level institutional reference points used by the geography map.
 - `data/map-manifest.json` — map purpose, type and interpretive limits.
+- `data/timeline.json` — machine-readable chronology separating research, incident, detection, review, disclosure and publication dates.
 
 ## Editorial rules
 
@@ -23,6 +24,7 @@ Omoluabi proof-of-concept investigation into 2026 frontier-AI agent incidents an
 - Every map and visualization requires a nonvisual table or text equivalent.
 - Organizational reference locations must never be presented as attack, server or incident locations.
 - Metrics from unlike evaluations must not be collapsed into a league table or model ranking.
+- Timeline entries must distinguish event time from detection and disclosure time; publication date must never substitute for incident date.
 
 ## Working thesis
 

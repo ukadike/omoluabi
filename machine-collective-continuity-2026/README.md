@@ -9,6 +9,8 @@ Separate Omoluabi proof-of-concept investigation into collective persistence, em
 - `SOURCE_NOTES.md` — annotated source ledger.
 - `data/claims.json` — machine-readable claim register.
 - `data/reasoning.json` — machine-readable 15-layer Omoluabi reasoning pass.
+- `REPORTER_SOURCE_PACK.md` — reproducible reading order, source roles, limitations, investigative questions and reporter resources.
+- `data/sources.json` — machine-readable source registry.
 
 ## Status
 

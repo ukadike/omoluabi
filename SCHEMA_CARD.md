@@ -34,7 +34,7 @@ The governance loop: **Observation → Consent → Source → Risk → Accessibi
 
 ## Data Structures
 
-Sixteen JSON Schemas (draft 2020-12) in `schemas/`, each with a human-readable companion card in `cards/` following the Shared Card Template (System, Purpose, Who is affected, Consent required, Evidence required, Accessibility required, Risk level, What AI may/may not do, Human decision required, Archive/Publication/Federation status, Version):
+JSON Schemas (draft 2020-12) in `schemas/`, with human-readable companion cards in `cards/` where applicable, following the Shared Card Template (System, Purpose, Who is affected, Consent required, Evidence required, Accessibility required, Risk level, What AI may/may not do, Human decision required, Archive/Publication/Federation status, Version):
 
 | Schema | Required fields | Notes |
 |---|---|---|

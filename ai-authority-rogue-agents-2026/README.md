@@ -11,6 +11,8 @@ Omoluabi proof-of-concept investigation into 2026 frontier-AI agent incidents an
 - `data/institutions.json` — city-level institutional reference points used by the geography map.
 - `data/map-manifest.json` — map purpose, type and interpretive limits.
 - `data/timeline.json` — machine-readable chronology separating research, incident, detection, review, disclosure and publication dates.
+- `REASONING_LAYER_PASS.md` — locked 15-layer Omoluabi Reasoning Layer v2 analysis of the Astra self-generated-memory case.
+- `data/reasoning-layer-pass.json` — machine-readable version of the reasoning-layer findings.
 
 ## Editorial rules
 
@@ -25,6 +27,8 @@ Omoluabi proof-of-concept investigation into 2026 frontier-AI agent incidents an
 - Organizational reference locations must never be presented as attack, server or incident locations.
 - Metrics from unlike evaluations must not be collapsed into a league table or model ranking.
 - Timeline entries must distinguish event time from detection and disclosure time; publication date must never substitute for incident date.
+- Remembered data and executable instruction are separate governed states.
+- Machine continuity uses `schemas/agent-memory.schema.json`; community/oral memory remains in `schemas/memory.schema.json`.
 
 ## Working thesis
 

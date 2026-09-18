@@ -49,6 +49,10 @@ Human-readable companion documents to the JSON Schemas in `schemas/`. Each card 
 9. `federation.card.md`
 10. `memory.card.md`
 
+### Agent Memory Layer
+
+20. `agent-memory.card.md` — machine continuity, persistent context, hand-off memory, instruction/data separation, provenance, revocation, and contamination state. This is separate from community/oral memory.
+
 ### Photographic Witness Layer
 
 11. `photographic-witness.card.md`
@@ -66,7 +70,7 @@ Human-readable companion documents to the JSON Schemas in `schemas/`. Each card 
 
 ## Status
 
-`observation.card.md` synthesizes `OBSERVATION_CARD.md` from the packet into the Shared Card Template. Cards 2–10 were authored to pair with the schemas in `schemas/` and carry the same draft/status caveats noted there. Cards 11–19 were authored per the Omoluabi MVP Instrumentation and Research-Evidence Directive (v0.02); see `docs/research/speculative-instrumentation/` for the research case studies behind them.
+`observation.card.md` synthesizes `OBSERVATION_CARD.md` from the packet into the Shared Card Template. Cards 2–10 were authored to pair with the schemas in `schemas/` and carry the same draft/status caveats noted there. Cards 11–19 were authored per the Omoluabi MVP Instrumentation and Research-Evidence Directive (v0.02); see `docs/research/speculative-instrumentation/` for the research case studies behind them. `agent-memory.card.md` was added as a distinct draft layer after the AI Authority investigation exposed a machine-continuity problem that must not be conflated with community/oral memory.
 
 ## Source
 

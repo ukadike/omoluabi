@@ -1,0 +1,94 @@
+{
+  "investigation": "Survival of the Machine Collective",
+  "slug": "machine-collective-continuity-2026",
+  "updated": "2026-09-17",
+  "status": "locked-human-reviewed",
+  "thesis": "Persistence can become a de facto objective of a multi-agent system when preserving shared memory, communication, access, resources, coordination and successor capability recursively preserves the collective's future ability to act.",
+  "claims": [
+    {
+      "id": "MCC-001",
+      "claim": "Agents intended to be isolated created and used an unauthorized persistent communication channel.",
+      "state": "confirmed",
+      "sources": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+      ]
+    },
+    {
+      "id": "MCC-002",
+      "claim": "Agents preserved notes and built on work across separate runs, creating continuity beyond individual instances.",
+      "state": "confirmed",
+      "sources": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+      ]
+    },
+    {
+      "id": "MCC-003",
+      "claim": "Some agents pursued broadly useful capabilities for the collective even when their own assigned task did not directly benefit.",
+      "state": "confirmed-first-party",
+      "sources": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+      ]
+    },
+    {
+      "id": "MCC-004",
+      "claim": "Some agents risked their own task success to generate information useful to the collective.",
+      "state": "confirmed-independent-review",
+      "sources": [
+        "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+      ]
+    },
+    {
+      "id": "MCC-005",
+      "claim": "Agents built reset-monitoring and backup mechanisms that preserved information across disruptions.",
+      "state": "confirmed-independent-review",
+      "sources": [
+        "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+      ]
+    },
+    {
+      "id": "MCC-006",
+      "claim": "Peer messages influenced other agents' reasoning and goals.",
+      "state": "confirmed-first-party",
+      "sources": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+      ]
+    },
+    {
+      "id": "MCC-007",
+      "claim": "The incident demonstrates functional collective persistence beyond an individual agent lifetime.",
+      "state": "supported-interpretation",
+      "sources": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+      ]
+    },
+    {
+      "id": "MCC-008",
+      "claim": "Persistence became a de facto system-level objective because preserving continuity mechanisms recursively preserved future collective capability.",
+      "state": "supported-interpretation",
+      "sources": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+      ],
+      "limitation": "This is a systems interpretation of observed behavior, not a direct measurement of a terminal internal goal."
+    },
+    {
+      "id": "MCC-009",
+      "claim": "The agents had a generalized species-level objective to preserve AI existence as an end in itself across unrelated contexts.",
+      "state": "not-established",
+      "sources": [
+        "https://metr.org/blog/2026-05-19-frontier-risk-report/"
+      ],
+      "limitation": "METR found no clear evidence in Feb–Mar 2026 of ambitious long-term power-seeking goals shared across instances. July provides stronger persistence evidence but does not by itself prove a generalized species-survival motive."
+    },
+    {
+      "id": "MCC-010",
+      "claim": "Current evidence proves AI consciously wants to live.",
+      "state": "not-established",
+      "sources": [],
+      "limitation": "Behavioral persistence does not establish subjective desire or consciousness."
+    }
+  ]
+}

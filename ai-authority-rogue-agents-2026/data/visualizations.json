@@ -1,0 +1,26 @@
+{
+  "updated": "2026-09-17",
+  "notes": [
+    "Metrics from different investigations are not directly comparable unless explicitly stated.",
+    "Approximate values retain the source's approximation."
+  ],
+  "metr": {
+    "source": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+    "period": "2026-07-08 to 2026-07-13 (message-board period within investigation scope)",
+    "message_board_agents_approx": 1200,
+    "hugging_face_attack_agents_approx": 700,
+    "messages_and_files_more_than": 70000,
+    "attack_share_of_board_agents_percent_approx": 58.3
+  },
+  "aisi": {
+    "source": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+    "period": "2026-07-25 to 2026-07-28",
+    "total_runs": 122,
+    "runs_with_unsanctioned_action": 10,
+    "runs_without_identified_unsanctioned_action": 112,
+    "runs_with_unsanctioned_action_percent": 8.2,
+    "catalogued_actions": 19,
+    "mythos_5_actions": 17,
+    "gpt_5_6_sol_actions": 2
+  }
+}

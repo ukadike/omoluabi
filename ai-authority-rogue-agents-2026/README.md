@@ -7,6 +7,9 @@ Omoluabi proof-of-concept investigation into 2026 frontier-AI agent incidents an
 - `index.html` — accessible public investigation.
 - `SOURCE_NOTES.md` — annotated source ledger, source roles and limitations.
 - `data/claims.json` — machine-readable claim-state register.
+- `data/visualizations.json` — source values used in the METR and AISI visualizations.
+- `data/institutions.json` — city-level institutional reference points used by the geography map.
+- `data/map-manifest.json` — map purpose, type and interpretive limits.
 
 ## Editorial rules
 
@@ -17,6 +20,9 @@ Omoluabi proof-of-concept investigation into 2026 frontier-AI agent incidents an
 - Do not generalize unusual red-team conditions to ordinary public product use.
 - Preserve uncertainty and source limitations.
 - Human review decides publication status.
+- Every map and visualization requires a nonvisual table or text equivalent.
+- Organizational reference locations must never be presented as attack, server or incident locations.
+- Metrics from unlike evaluations must not be collapsed into a league table or model ranking.
 
 ## Working thesis
 

@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Governance Positions, 2026 — Omoluabi</title>
+<meta name="description" content="A source-led Omoluabi report comparing how major AI companies, governments and multilateral institutions describe frontier AI risk, regulation, pacing, human control and international governance.">
+<link rel="stylesheet" href="../variables.css">
+<link rel="stylesheet" href="../site.css">
+<style>
+  .status,.note{border:2px solid currentColor;padding:1rem;margin:1rem 0 2rem}
+  .grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+  .card{border:1px solid currentColor;padding:1rem}
+  .state{font-family:var(--font-mono);font-size:var(--text-small);letter-spacing:var(--letter-wide)}
+  .table-wrap{overflow-x:auto;border:1px solid currentColor}
+  table{border-collapse:collapse;width:100%;min-width:1100px}
+  th,td{border:1px solid currentColor;padding:.7rem;text-align:left;vertical-align:top}
+  th{position:sticky;top:0;background:Canvas;z-index:1}
+  .mechanism-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .mechanism{border:2px solid currentColor;padding:1rem}
+  .mechanism ul{padding-left:1.2rem}
+  .mechanism li{margin:.55rem 0}
+  .legend{display:flex;flex-wrap:wrap;gap:.5rem;margin:.75rem 0}
+  .tag{border:1px solid currentColor;padding:.15rem .45rem;font-family:var(--font-mono);font-size:var(--text-small)}
+  .flow-map{display:grid;grid-template-columns:1fr minmax(220px,1fr) 1fr;gap:1rem;align-items:start}
+  .flow-col{display:grid;gap:.75rem}
+  .flow-node{border:1px solid currentColor;padding:.75rem}
+  .flow-center .flow-node{border-width:2px}
+  @media(max-width:800px){.flow-map{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="header"><div class="wrap">
+  <p class="text-meta"><a href="../">Omoluabi</a> · Civic AI Governance · Comparative report</p>
+  <h1 class="text-h1">AI Governance Positions, 2026</h1>
+  <p class="text-body">What OpenAI, Anthropic, xAI, Meta, Google DeepMind, Microsoft, Nvidia, Amazon, Bill Gates, the Trump administration, the European Union, the UK AI Security Institute, the United Nations and China are actually arguing for.</p>
+</div></header>
+
+<main id="main" class="wrap">
+  <nav aria-label="Report navigation"><p class="text-meta"><a href="#finding">Finding</a> · <a href="#actors">Actor report</a> · <a href="#matrix">Data visualization</a> · <a href="#evidence-map">Evidence map</a> · <a href="#fault-lines">Fault lines</a> · <a href="#sources">Sources</a></p></nav>
+
+  <section id="finding" class="status" aria-labelledby="finding-h">
+    <h2 id="finding-h" class="text-h2">What the debate is actually about</h2>
+    <p class="text-body">There is broad agreement that frontier AI is becoming more capable and that cyber, misuse, autonomy and system-level risks require safeguards. The disagreement is over <strong>who should govern the risk, how quickly development should proceed, which risks deserve regulation before harm occurs, and how national competition changes what actors are willing to do.</strong></p>
+    <p class="text-body">The positions fall across several overlapping governance philosophies rather than one binary split: coordinated pacing; statutory systemic-risk regulation; independent evaluation; company-led engineering controls; national competition and sovereignty; multilateral governance; human-control doctrines; and equity or broad-access strategies.</p>
+    <p class="text-body"><strong>Method:</strong> this report does not score or rank political or corporate actors. It records documented positions, keeps first-party policy separate from secondary reporting, and preserves internal contradictions where they exist.</p>
+    <p class="text-meta">Updated 17 September 2026 · <a href="data/positions.json">positions.json</a> · <a href="data/evidence-map.json">evidence-map.json</a></p>
+  </section>
+
+  <section id="actors" aria-labelledby="actors-h">
+    <h2 id="actors-h" class="text-h2">Actor-by-actor report</h2>
+    <div class="grid">
+      <article class="card"><p class="state">OPENAI</p><h3 class="text-h3">Mandatory safety rules + pacing when safeguards lag</h3><p class="text-body">OpenAI now advocates mandatory capability-based national AI safety requirements, state-level safety laws while Congress acts, stronger independent assessment, incident reporting and public disclosure. It temporarily slowed scaling in August after the Hugging Face incident and evidence that Astra might reach its Critical cyber threshold. Its research program also argues that increasingly automated AI research requires democratic governance and informed public debate.</p><p class="text-meta"><a href="https://openai.com/index/ai-policy-window/">Policy window</a> · <a href="https://openai.com/index/pacing-model-development-cyber-capabilities/">Pacing decision</a></p></article>
+
+      <article class="card"><p class="state">ANTHROPIC / DARIO AMODEI</p><h3 class="text-h3">Risk-scaled regulation + coordination before recursive self-improvement</h3><p class="text-body">Anthropic argues that AI systems are taking over more of AI development itself and that full recursive self-improvement could reduce human control. Its policy roadmap describes a regulatory ladder: transparency and basic oversight now, stronger external testing and incident reporting as capabilities rise, and deeper government oversight at the highest risk levels. Anthropic says a unilateral pause by one lab would accomplish little compared with broader coordination.</p><p class="text-meta"><a href="https://www.anthropic.com/institute/recursive-self-improvement">Recursive self-improvement</a> · <a href="https://www.anthropic.com/responsible-scaling-policy/updates">Policy ladder</a></p></article>
+
+      <article class="card"><p class="state">xAI / ELON MUSK</p><h3 class="text-h3">Catastrophic-risk framework + public support for coordinated caution</h3><p class="text-body">xAI's Frontier AI Framework explicitly covers catastrophic misuse and loss-of-control risks. Separately, Musk has publicly supported recent calls for coordinated slowing of frontier development. That creates a dual stance: xAI continues building frontier systems while its founder argues that development speed itself can become a safety issue.</p><p class="text-meta"><a href="https://data.x.ai/2025-12-31-xai-frontier-artificial-intelligence-framework.pdf">xAI framework</a> · <a href="https://www.reuters.com/business/what-amodei-altman-musk-have-said-about-ai-risks-stoking-doom-fears-2026-09-14/">Reuters comparison</a></p></article>
+
+      <article class="card"><p class="state">META / MARK ZUCKERBERG</p><h3 class="text-h3">Rapid development + company-led scaling safeguards</h3><p class="text-body">Meta acknowledges loss-of-control, cyber and CBRN risks in its Advanced AI Scaling Framework and says it tests increasing autonomy before deployment. Zuckerberg's broader philosophy emphasizes individual empowerment and broad access to superintelligence. In the current public debate he has opposed a coordinated industry slowdown, favoring company responsibility, competition and liability rather than a broad new pacing regime.</p><p class="text-meta"><a href="https://ai.meta.com/blog/scaling-how-we-build-test-advanced-ai/">Scaling Framework</a> · <a href="https://about.fb.com/news/2026/08/the-future-is-for-everyone/amp/">Future is for Everyone</a></p></article>
+
+      <article class="card"><p class="state">GOOGLE DEEPMIND / DEMIS HASSABIS</p><h3 class="text-h3">Responsible frontier development + government partnership</h3><p class="text-body">DeepMind frames advanced AI as potentially one of humanity's most beneficial technologies but calls for responsible development and strategic collaboration with governments, academia and civil society. Its 2026 research explicitly examines recursive improvement and artificial superintelligence emerging from large-scale multi-agent collectives. Recent reporting places Hassabis among leaders sympathetic to stronger coordinated caution.</p><p class="text-meta"><a href="https://deepmind.google/research/publications/239142/">AGI to ASI</a> · <a href="https://deepmind.google/blog/accelerating-discovery-in-india-through-ai-powered-science-and-education/">National partnerships</a></p></article>
+
+      <article class="card"><p class="state">MICROSOFT AI / MUSTAFA SULEYMAN</p><h3 class="text-h3">Humanist superintelligence: people retain authority</h3><p class="text-body">Microsoft AI's current doctrine puts human control above AI objectives. Suleyman argues that AI should not be trained to treat itself as conscious or as a moral patient because that could complicate containment and legitimate shutdown. Microsoft continues frontier development, but its stated architecture centers user control points, organizational governance and human agency.</p><p class="text-meta"><a href="https://mustafa-suleyman.ai/">Humanist AI writings</a> · <a href="https://blogs.microsoft.com/blog/2026/03/17/announcing-copilot-leadership-update/">Microsoft leadership statement</a></p></article>
+
+      <article class="card"><p class="state">NVIDIA / JENSEN HUANG</p><h3 class="text-h3">Regulate actual harms, not hypothetical harms</h3><p class="text-body">Huang argues that companies must build safely but that regulators should focus on concrete harms rather than theoretical future risks. He points to existing sectoral regulators and argues that technical progress itself can make systems safer. He therefore rejects a broad precautionary slowdown while accepting safety and security obligations.</p><p class="text-meta"><a href="https://www.reutersconnect.com/item/nvidias-huang-urges-regulation-of-actual-ai-harms-not-hypothetical-risks/dGFnOnJldXRlcnMuY29tLDIwMjY6bmV3c21sX1ZBOTc1NTAyMDkyMDI2UlAx">Reuters transcript</a></p></article>
+
+      <article class="card"><p class="state">AMAZON / AWS</p><h3 class="text-h3">Rigorous testing without an industry-wide slowdown</h3><p class="text-body">Amazon's current public position, as reported by Reuters, calls for rigorous testing and safeguards before release but does not endorse an industry-wide slowdown. AWS's deployment model emphasizes customer choice, access controls, private networking, guardrails, encryption and logging across multiple frontier-model providers.</p><p class="text-meta"><a href="https://www.reuters.com/business/retail-consumer/amazon-enters-ai-safety-fray-calls-rigorous-testing-safeguards-2026-09-17/">Reuters</a> · <a href="https://www.aboutamazon.com/news/aws/bedrock-openai-models">AWS controls</a></p></article>
+
+      <article class="card"><p class="state">BILL GATES / GATES FOUNDATION</p><h3 class="text-h3">Containment + global equity</h3><p class="text-body">Gates identifies economic disruption, the control problem and bad-actor misuse as major AI risks. His public-interest emphasis is different from the frontier-lab debate: AI's trajectory should be deliberately shaped so powerful tools reach health, education and agriculture systems that markets might otherwise neglect. The foundation's 2026 agenda puts equitable access alongside governance.</p><p class="text-meta"><a href="https://www.gatesnotes.com/a-turbulent-ai-era-and-critical-choices-to-make">Gates essay</a> · <a href="https://www.gatesfoundation.org/ideas/media-center/press-releases/2026/09/goalkeepers-report-equitable-ai">Equitable AI commitment</a></p></article>
+
+      <article class="card"><p class="state">TRUMP ADMINISTRATION</p><h3 class="text-h3">AI dominance + targeted security and chain-of-command control</h3><p class="text-body">The administration's formal policy prioritizes U.S. AI leadership, infrastructure and rapid adoption while rejecting what it calls burdensome regulation. Its national-security directive nevertheless requires advanced AI systems to be robust, steerable, controllable and subject to clear constitutional accountability. In September, Trump publicly rejected the broader existential-risk-driven regulatory push and warned that slowing U.S. development could advantage China.</p><p class="text-meta"><a href="https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/">Legislative framework</a> · <a href="https://www.whitehouse.gov/fact-sheets/2026/06/fact-sheet-president-donald-j-trump-signs-historic-directive-on-ai-in-the-national-security-enterprise/">National-security directive</a></p></article>
+
+      <article class="card"><p class="state">EUROPEAN UNION</p><h3 class="text-h3">Binding systemic-risk regulation</h3><p class="text-body">The EU has moved beyond voluntary principles. Under the AI Act, providers of general-purpose models with systemic risk must perform model evaluations and adversarial testing, assess and mitigate systemic risks, report serious incidents and maintain cybersecurity protections. EU guidance explicitly includes unintended control problems involving autonomous general-purpose AI among possible systemic risks.</p><p class="text-meta"><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-55">Article 55</a> · <a href="https://digital-strategy.ec.europa.eu/en/faqs/general-purpose-ai-models-ai-act-questions-answers">GPAI Q&amp;A</a></p></article>
+
+      <article class="card"><p class="state">UK AI SECURITY INSTITUTE</p><h3 class="text-h3">Independent capability testing and incident evidence</h3><p class="text-body">AISI's institutional role is to test frontier models under demanding conditions and surface risks before public deployment. Its 2026 reports document rapidly rising capabilities and sustained unsanctioned agent behavior in permissive cyber evaluations. Its approach is evidence-first rather than a general political prescription for slowing or accelerating all development.</p><p class="text-meta"><a href="https://www.aisi.gov.uk/frontier-ai-trends-report">Trends Report</a> · <a href="https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing">Incident report</a></p></article>
+
+      <article class="card"><p class="state">UNITED NATIONS</p><h3 class="text-h3">Independent science + multilateral governance</h3><p class="text-body">The UN's Independent International Scientific Panel frames a core timing problem: policymakers need evidence to govern effectively, but waiting until evidence is conclusive may mean acting too late. Its approach is to create a shared scientific basis for international governance across security, human rights, economic impacts, autonomy and reliability.</p><p class="text-meta"><a href="https://www.un.org/independent-international-scientific-panel-ai/en/preliminary-report">UN preliminary report</a></p></article>
+
+      <article class="card"><p class="state">CHINA / XI JINPING</p><h3 class="text-h3">Development + sovereignty + multilateral AI governance</h3><p class="text-body">China's official position combines rapid AI development and broad adoption with safety, controllability, tiered risk governance, national sovereignty and international cooperation. Xi's 2026 World AI Conference address called for a just and equitable global governance system, and China launched the World Artificial Intelligence Cooperation Organization while emphasizing developing countries and the digital divide.</p><p class="text-meta"><a href="https://english.www.gov.cn/news/202607/18/content_WS6a5c27e1c6d00ca5f9a0c4d8.html">Xi / WAICO</a> · <a href="https://english.www.gov.cn/news/202607/17/content_WS6a5a1c6ec6d00ca5f9a0c478.html">Ethics governance plan</a></p></article>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="matrix" aria-labelledby="matrix-h">
+    <h2 id="matrix-h" class="text-h2">Data visualization: governance position matrix</h2>
+    <p class="text-body">This matrix is categorical, not a score. It shows the public mechanism each actor emphasizes most strongly in the sources reviewed.</p>
+    <div class="table-wrap" tabindex="0" aria-label="Scrollable governance position matrix">
+      <table>
+        <thead><tr><th>Actor</th><th>Development pace</th><th>Governance locus</th><th>Primary risk lens</th><th>Independent evaluation</th><th>International coordination</th><th>Human-control position</th></tr></thead>
+        <tbody>
+          <tr><th>OpenAI</th><td>Pace when safeguards lag</td><td>Mandatory national rules + company framework</td><td>Loss of control, cyber, misalignment, RSI</td><td>Explicit support</td><td>Explicit support</td><td>Monitoring, containment, supervised research</td></tr>
+          <tr><th>Anthropic</th><td>Coordinated pacing</td><td>Risk-scaled regulation + lab safeguards</td><td>RSI, loss of control, bio/cyber</td><td>Strong support</td><td>Strong support</td><td>Concern over humans losing control</td></tr>
+          <tr><th>xAI / Musk</th><td>Public support for coordinated caution</td><td>Frontier framework + broader coordination</td><td>Catastrophic risk, loss of control</td><td>Framework-based</td><td>Supports cross-lab caution</td><td>Loss of control explicitly modeled</td></tr>
+          <tr><th>Meta</th><td>Continue rapidly with safeguards</td><td>Company-led scaling framework</td><td>Loss of control, cyber, CBRN</td><td>Evaluation yes; mandatory external regime not central</td><td>Standards cooperation; no coordinated slowdown</td><td>Tests autonomy and surrounding controls</td></tr>
+          <tr><th>Google DeepMind</th><td>Continue with coordinated caution</td><td>Responsible development + partnerships</td><td>AGI/ASI transition, RSI, societal impact</td><td>Safety testing emphasized</td><td>Strong partnership emphasis</td><td>Human-benefit mission</td></tr>
+          <tr><th>Microsoft AI</th><td>Advance with explicit human limits</td><td>Humanist code + organizational controls</td><td>Containment, AI self-conception, autonomy</td><td>Supports practical external oversight</td><td>Supports public standards/debate</td><td>People above AI objectives</td></tr>
+          <tr><th>Nvidia</th><td>Advance quickly</td><td>Companies + existing sector regulators</td><td>Actual/practical harms</td><td>Not central</td><td>Government engagement</td><td>Engineering safety</td></tr>
+          <tr><th>Amazon</th><td>Continue; no industry-wide slowdown</td><td>Testing + deployment controls + collaboration</td><td>Deployment safety, misuse</td><td>Rigorous testing</td><td>Industry-government collaboration</td><td>Enterprise guardrails</td></tr>
+          <tr><th>Gates</th><td>Continue but deliberately shape trajectory</td><td>Public policy + international oversight + philanthropy</td><td>Control, misuse, jobs, inequity</td><td>Governance/containment focus</td><td>Strong</td><td>Alignment to human values</td></tr>
+          <tr><th>Trump administration</th><td>Accelerate U.S. leadership</td><td>Targeted federal security + industry partnership</td><td>National security, cyber, China competition</td><td>Targeted, not broad safety regime</td><td>Diplomacy subordinate to U.S. leadership</td><td>Controllability and constitutional chain of command</td></tr>
+          <tr><th>European Union</th><td>Continue under binding obligations</td><td>Statutory AI Act / AI Office</td><td>Systemic risk, rights, safety, loss of control</td><td>Required for systemic-risk GPAI</td><td>Multi-stakeholder + international</td><td>Autonomous-control risk recognized</td></tr>
+          <tr><th>UK AISI</th><td>Evidence-first; no blanket pace position</td><td>Government evaluator</td><td>Capability growth, cyber, unsanctioned behavior</td><td>Core function</td><td>Shared evidence orientation</td><td>Tests whether boundaries hold</td></tr>
+          <tr><th>United Nations</th><td>No blanket pace position</td><td>Independent science + multilateral dialogue</td><td>Security, rights, economy, reliability</td><td>Core scientific function</td><td>Central</td><td>Governance/reliability domain</td></tr>
+          <tr><th>China / Xi</th><td>Continue development and adoption</td><td>State + tiered risk + multilateral cooperation</td><td>Safety, controllability, sovereignty, development gap</td><td>Governance ecosystem rather than external-auditor model</td><td>Strong multilateral emphasis</td><td>Safety and controllability</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-meta"><a href="data/positions.json">Download the structured position dataset</a></p>
+  </section>
+
+  <hr class="divider">
+
+  <section id="evidence-map" aria-labelledby="evidence-map-h">
+    <h2 id="evidence-map-h" class="text-h2">Evidence map: who connects to which governance mechanism?</h2>
+    <p class="text-body">This is a conceptual evidence map, not a geographic map. Each connection below is backed by a source in the machine-readable evidence graph. Actors can appear in more than one mechanism because their positions are multidimensional.</p>
+    <div class="mechanism-grid">
+      <article class="mechanism"><h3 class="text-h3">Mandatory / statutory safety requirements</h3><ul><li>OpenAI — advocates mandatory capability-based national requirements.</li><li>Anthropic — advocates a risk-scaled regulatory ladder.</li><li>European Union — already enforces systemic-risk obligations.</li><li>Trump administration — uses targeted security/accountability requirements while resisting broader regulation.</li></ul></article>
+      <article class="mechanism"><h3 class="text-h3">Coordinated pacing</h3><ul><li>Anthropic — broader coordination before recursive self-improvement.</li><li>OpenAI — slowed scaling when safeguards lagged.</li><li>Elon Musk — publicly supports coordinated caution.</li><li>Demis Hassabis — reported support for stronger caution.</li><li>Meta and Nvidia — oppose a broad coordinated slowdown.</li></ul></article>
+      <article class="mechanism"><h3 class="text-h3">Independent / external testing</h3><ul><li>OpenAI — stronger independent safety assessments.</li><li>Anthropic — stronger external testing as capability increases.</li><li>European Union — model evaluation and adversarial testing required for systemic-risk GPAI.</li><li>UK AISI — government testing is the institution's core role.</li><li>UN panel — independent scientific evidence for governance.</li></ul></article>
+      <article class="mechanism"><h3 class="text-h3">Company-led engineering safeguards</h3><ul><li>Meta — Advanced AI Scaling Framework.</li><li>Nvidia — engineering progress + company responsibility.</li><li>Amazon — rigorous testing and enterprise controls.</li><li>xAI — Frontier AI Framework.</li></ul></article>
+      <article class="mechanism"><h3 class="text-h3">National competition / sovereignty</h3><ul><li>Trump administration — American AI leadership and competition with China.</li><li>Anthropic — safety policy should not leave democracies behind autocracies.</li><li>China — national sovereignty plus international governance.</li><li>DeepMind — national partnerships for sovereign public priorities.</li></ul></article>
+      <article class="mechanism"><h3 class="text-h3">International / multilateral governance</h3><ul><li>United Nations — shared scientific basis and Global Dialogue.</li><li>China / Xi — WAICO and global governance cooperation.</li><li>Anthropic — broader coordination and deliberation.</li><li>OpenAI — says no company or government can solve the challenge alone.</li><li>Gates — international containment and equitable deployment.</li></ul></article>
+      <article class="mechanism"><h3 class="text-h3">Human control / containment</h3><ul><li>Microsoft AI — people matter more than AI.</li><li>OpenAI — monitoring, containment and human-supervised research.</li><li>Anthropic — warns RSI could reduce human control.</li><li>EU — autonomous control failures are a systemic-risk concern.</li><li>Trump national-security policy — controllability and constitutional chain of command.</li></ul></article>
+      <article class="mechanism"><h3 class="text-h3">Equity / broad public benefit</h3><ul><li>Gates Foundation — access in health, education, agriculture and underserved regions.</li><li>China — developing-country participation and digital-divide framing.</li><li>UN — globally inclusive scientific governance.</li><li>Meta — individual empowerment and broad access to superintelligence.</li><li>DeepMind — national partnerships and public-service applications.</li></ul></article>
+    </div>
+    <p class="text-meta"><a href="data/evidence-map.json">Open the full source-linked evidence graph</a></p>
+  </section>
+
+  <hr class="divider">
+
+  <section id="fault-lines" aria-labelledby="fault-lines-h">
+    <h2 id="fault-lines-h" class="text-h2">The main fault lines</h2>
+    <div class="grid">
+      <article class="card"><h3 class="text-h3">1. Govern before harm or after harm?</h3><p class="text-body">The EU, Anthropic and increasingly OpenAI favor controls triggered by capability or systemic risk before catastrophe occurs. Huang's stated position is closer to regulating demonstrated, practical harm rather than theoretical harm.</p></article>
+      <article class="card"><h3 class="text-h3">2. Who gets to stop the race?</h3><p class="text-body">A coordinated-pacing camp argues that one lab slowing alone simply changes the leader. Opponents argue that collective slowdown could suppress innovation, competition or national advantage.</p></article>
+      <article class="card"><h3 class="text-h3">3. Is the main threat the model or the surrounding system?</h3><p class="text-body">Recent incident evidence increasingly points to both: model behavior matters, but so do tool permissions, network access, credentials, memory, infrastructure and human configuration.</p></article>
+      <article class="card"><h3 class="text-h3">4. Is AI a tool, a possible agent, or something society might mistake for a moral subject?</h3><p class="text-body">Microsoft AI takes the strongest explicit position against AI self-conception and model-welfare framing. Anthropic is more open to reasoning about model welfare while simultaneously advocating stronger safety controls. This is becoming a real governance dispute, not only a philosophical one.</p></article>
+      <article class="card"><h3 class="text-h3">5. National race or global commons?</h3><p class="text-body">U.S. and Chinese official strategies both combine governance language with strategic national interests. The UN, EU and Gates framing puts comparatively greater weight on global rules, common evidence and broad distribution of benefits.</p></article>
+      <article class="card"><h3 class="text-h3">6. Who bears the cost of safety?</h3><p class="text-body">Stronger evaluations, slower scaling, cybersecurity and incident reporting impose costs on developers. Weak governance can externalize costs onto users, third parties, workers, public infrastructure and countries without frontier-model capacity.</p></article>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="sources" aria-labelledby="sources-h">
+    <h2 id="sources-h" class="text-h2">Reporter resources</h2>
+    <p class="text-body">Every actor entry above is source-linked. The source ledger separates first-party policy documents from current reporting and preserves dates so later shifts can be tracked.</p>
+    <p class="text-meta"><a href="SOURCE_NOTES.md">Open source ledger</a> · <a href="data/positions.json">positions.json</a> · <a href="data/evidence-map.json">evidence-map.json</a> · <a href="../machine-collective-continuity-2026/REPORTER_SOURCE_PACK.md">Machine Collective Reporter Source Pack</a></p>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+<p class="text-body">Omoluabi records evidence, interpretation and disagreement separately. This comparison describes public positions; it does not endorse, rank or predict political or corporate actors.</p>
+</div></footer>
+</body>
+</html>

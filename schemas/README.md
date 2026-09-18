@@ -54,3 +54,16 @@ Companion human-readable documents live in `cards/`, one per schema, following t
 ## Source
 
 Synthesizes `SCHEMA_INDEX.md` from the packet delivered by Kemi on 2026-06-26.
+
+
+## Agent Memory separation — locked 17 September 2026
+
+The existing `memory.schema.json` continues to model community/oral memory.
+
+`agent-memory.schema.json` is a separate draft schema for machine continuity artifacts such as compaction summaries, persistent context and hand-off memory. It exists because a machine-generated memory record can contain content that looks like an instruction and can, in some systems, influence successor behavior.
+
+Locked rule:
+
+**Memory may carry information forward. Memory may not silently manufacture authority.**
+
+The schema therefore records origin, content role, authority level, executable-instruction status, source/successor contexts, provenance, human verification, revocation, behavioral effect and contamination state.

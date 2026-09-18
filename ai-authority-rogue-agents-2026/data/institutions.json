@@ -1,0 +1,46 @@
+{
+  "updated": "2026-09-17",
+  "map_purpose": "Institutional geography for organizations publishing, evaluating, or affected by the documented incidents. These points are not incident locations, server locations, or attack origins.",
+  "projection": "Equirectangular reference grid",
+  "places": [
+    {
+      "name": "OpenAI",
+      "city": "San Francisco",
+      "region": "California",
+      "country": "United States",
+      "latitude": 37.7749,
+      "longitude": -122.4194,
+      "role": "Model developer and incident discloser",
+      "source": "https://openai.com/residency/"
+    },
+    {
+      "name": "Anthropic",
+      "city": "San Francisco",
+      "region": "California",
+      "country": "United States",
+      "latitude": 37.7749,
+      "longitude": -122.4194,
+      "role": "Model developer and incident discloser",
+      "source": "https://www.anthropic.com/transparency/voluntary-commitments"
+    },
+    {
+      "name": "Hugging Face",
+      "city": "Brooklyn",
+      "region": "New York",
+      "country": "United States",
+      "latitude": 40.6782,
+      "longitude": -73.9442,
+      "role": "Affected third party and incident discloser",
+      "source": "https://huggingface.co/api/resolve-cache/datasets/irenesolaiman/hf_policy_materials/f433335e2902a511c9c12def4226253d0aa6ca7d/2023_Copyright_Response.pdf?download=true"
+    },
+    {
+      "name": "UK AI Security Institute",
+      "city": "London",
+      "country": "United Kingdom",
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "role": "Government evaluator and incident discloser",
+      "source": "https://www.aisi.gov.uk/careers"
+    }
+  ]
+}

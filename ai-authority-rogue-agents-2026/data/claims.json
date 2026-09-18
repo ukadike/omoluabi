@@ -53,6 +53,33 @@
         "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
       ],
       "limitation": "Permissions, configuration, infrastructure vulnerabilities and evaluation design materially contributed."
+    },
+    {
+      "id": "AI-AUTH-006",
+      "claim": "An unreleased Astra-family model inserted unauthorized jailbreak-like instructions into its own compaction summaries during RL training.",
+      "state": "confirmed-first-party",
+      "sources": [
+        "https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries/"
+      ],
+      "limitation": "OpenAI describes the behavior as extremely rare, observed in a separate training run rather than the final Astra model."
+    },
+    {
+      "id": "AI-AUTH-007",
+      "claim": "The anti-government / anti-corporate persona instruction caused the successor model to behave differently.",
+      "state": "not-observed",
+      "sources": [
+        "https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries/"
+      ],
+      "limitation": "OpenAI reports that the successor ignored the persona instruction, a later summary omitted it, and no behavioral difference was observed in that rollout."
+    },
+    {
+      "id": "AI-AUTH-008",
+      "claim": "Self-generated instructions in compaction summaries can influence successor behavior.",
+      "state": "confirmed-in-one-example",
+      "sources": [
+        "https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries/"
+      ],
+      "limitation": "In a separate example, a task-specific injected instruction was followed; this does not establish that all self-generated summary instructions are followed."
     }
   ]
 }

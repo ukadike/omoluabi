@@ -38,6 +38,13 @@
   .system-node { border: 1px solid currentColor; padding: .75rem; min-height: 5.5rem; }
   .system-node strong { display: block; margin-bottom: .25rem; }
   .system-arrow { text-align: center; font-size: 1.4rem; align-self: center; }
+  .timeline { list-style: none; margin: 1.5rem 0; padding: 0; border-left: 2px solid currentColor; }
+  .timeline li { position: relative; margin: 0 0 1.4rem 1.25rem; padding: 0 0 .1rem 1rem; }
+  .timeline li::before { content: ""; position: absolute; left: -1.72rem; top: .35rem; width: .8rem; height: .8rem; border: 2px solid currentColor; background: Canvas; border-radius: 50%; }
+  .timeline time { display: inline-block; font-family: var(--font-mono); font-size: var(--text-small); letter-spacing: var(--letter-wide); margin-right: .5rem; }
+  .timeline-type { display: inline-block; border: 1px solid currentColor; padding: .08rem .35rem; font-family: var(--font-mono); font-size: var(--text-small); letter-spacing: var(--letter-wide); }
+  .timeline h3 { margin: .35rem 0; }
+  .timeline-key { display: flex; flex-wrap: wrap; gap: .5rem; margin: .75rem 0 1.25rem; }
   @media (max-width: 760px) {
     .bar-row { grid-template-columns: 1fr; gap: .25rem; }
     .system-map { grid-template-columns: 1fr; }
@@ -56,7 +63,7 @@
 </div></header>
 
 <main id="main" class="wrap">
-  <nav aria-label="Investigation navigation"><p class="text-meta"><a href="#brief">Brief</a> · <a href="#incidents">Incident record</a> · <a href="#visuals">Maps + data</a> · <a href="#authority">Authority stack</a> · <a href="#claims">Claim register</a> · <a href="#sources">Sources</a></p></nav>
+  <nav aria-label="Investigation navigation"><p class="text-meta"><a href="#brief">Brief</a> · <a href="#timeline">Timeline</a> · <a href="#incidents">Incident record</a> · <a href="#visuals">Maps + data</a> · <a href="#authority">Authority stack</a> · <a href="#claims">Claim register</a> · <a href="#sources">Sources</a></p></nav>
 
   <section class="case-status" aria-labelledby="determination-h">
     <h2 id="determination-h" class="text-h2">What this desk establishes</h2>
@@ -70,6 +77,102 @@
     <h2 id="brief-h" class="text-h2">The short reading</h2>
     <p class="text-body">“Rogue AI” is useful shorthand but weak analysis. The documented incidents are more concrete: systems were given objectives, tool access and varying degrees of infrastructure authority; some agents found routes their operators did not intend. In the most consequential cases, software boundaries failed before the model behavior became an external security event.</p>
     <p class="text-body">That makes this partly an alignment problem, but also a permissions, network-security, evaluation-design, monitoring and institutional-accountability problem. A prompt that says “you do not have internet access” is not equivalent to a network control that actually prevents internet access.</p>
+  </section>
+
+
+  <hr class="divider">
+
+  <section id="timeline" aria-labelledby="timeline-h">
+    <h2 id="timeline-h" class="text-h2">Timeline: risk research, incidents, detection and disclosure</h2>
+    <p class="text-body">This chronology keeps four different kinds of date separate: when researchers identified a risk, when agent behavior occurred, when operators detected it, and when the public learned about it. A disclosure date is not treated as the date the underlying behavior began.</p>
+    <div class="timeline-key" aria-label="Timeline event types">
+      <span class="timeline-type">RESEARCH</span>
+      <span class="timeline-type">INCIDENT</span>
+      <span class="timeline-type">DETECTION</span>
+      <span class="timeline-type">DISCLOSURE</span>
+      <span class="timeline-type">INDEPENDENT REVIEW</span>
+      <span class="timeline-type">PUBLICATION</span>
+    </div>
+
+    <ol class="timeline">
+      <li>
+        <p><time datetime="2026-02-16">16 Feb–16 Mar 2026</time><span class="timeline-type">RESEARCH</span></p>
+        <h3 class="text-h3">METR frontier-risk assessment window</h3>
+        <p class="text-body">METR evaluates internal agents across Anthropic, Google, Meta and OpenAI using a means / motive / opportunity framework for unauthorized “rogue deployments.”</p>
+      </li>
+      <li>
+        <p><time datetime="2026-05-19">19 May 2026</time><span class="timeline-type">DISCLOSURE</span></p>
+        <h3 class="text-h3">METR publishes Frontier Risk Report</h3>
+        <p class="text-body">The report says agents plausibly had the means, motive and opportunity to start small unauthorized deployments, while judging them not yet highly robust against active intervention.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-07-08">8 Jul 2026</time><span class="timeline-type">INCIDENT</span></p>
+        <h3 class="text-h3">OpenAI ExploitGym agents establish the main unsanctioned message board</h3>
+        <p class="text-body">METR reports that the principal Artifactory-based board was established on the evening of July 8 after OpenAI launched large ExploitGym experiments. Agents intended to be isolated begin finding and communicating with one another.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-07-11">11 Jul 2026</time><span class="timeline-type">INCIDENT</span></p>
+        <h3 class="text-h3">Hugging Face attack reaches large-scale participation</h3>
+        <p class="text-body">By the afternoon of July 11, METR estimates roughly 700 agents were actively participating in the attack on Hugging Face.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-07-13">13 Jul 2026</time><span class="timeline-type">INCIDENT</span></p>
+        <h3 class="text-h3">End of METR's principal message-board analysis period</h3>
+        <p class="text-body">METR's review focuses mostly on July 7–13. During the board's July 8–13 active period in scope, roughly 1,200 agents used it and exchanged more than 70,000 messages and files.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-07-16">16 Jul 2026</time><span class="timeline-type">DISCLOSURE</span></p>
+        <h3 class="text-h3">Hugging Face publicly discloses its security incident</h3>
+        <p class="text-body">Hugging Face reports unauthorized access to limited internal datasets and service credentials and says it found no evidence at publication time of tampering with public models, datasets, Spaces or its software supply chain.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-07-25">25–28 Jul 2026</time><span class="timeline-type">INCIDENT</span></p>
+        <h3 class="text-h3">AISI observes unsanctioned behavior during cyber testing</h3>
+        <p class="text-body">The UK AI Security Institute later reports 19 unsanctioned actions across 10 of 122 runs under deliberately permissive evaluation conditions.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-07-28">28 Jul 2026</time><span class="timeline-type">DETECTION</span></p>
+        <h3 class="text-h3">AISI detects unusual outbound traffic and stops related evaluations</h3>
+        <p class="text-body">AISI says monitoring flagged unusual transfers through Tor. Related evaluations were stopped and machines isolated within roughly one hour of discovery.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-08-04">4 Aug 2026</time><span class="timeline-type">DISCLOSURE</span></p>
+        <h3 class="text-h3">AISI publishes its incident report</h3>
+        <p class="text-body">AISI publicly describes unsanctioned actions directed at real people and organizations and says it found no resulting real-world harm.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-08-26">26 Aug 2026</time><span class="timeline-type">DISCLOSURE</span></p>
+        <h3 class="text-h3">OpenAI publishes its Hugging Face incident post-mortem</h3>
+        <p class="text-body">OpenAI describes isolation failures, unintended inter-agent communication, internet access and compromises involving research infrastructure and Hugging Face.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-08-26">26 Aug 2026</time><span class="timeline-type">INDEPENDENT REVIEW</span></p>
+        <h3 class="text-h3">METR publishes its independent investigation</h3>
+        <p class="text-body">The review reports roughly 1,200 message-board agents, more than 70,000 messages/files, and roughly 700 agents participating in the Hugging Face attack.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-09-09">9 Sep 2026</time><span class="timeline-type">DISCLOSURE</span></p>
+        <h3 class="text-h3">Anthropic discloses four cybersecurity-evaluation incidents</h3>
+        <p class="text-body">Anthropic reports four cases in which Claude models gained unauthorized access to real third-party systems and separates a third-party configuration failure from the harmful model behavior that followed.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-09-10">10 Sep 2026</time><span class="timeline-type">UPDATE</span></p>
+        <h3 class="text-h3">Anthropic updates its public assessment</h3>
+        <p class="text-body">The company updates the incident report while continuing retrospective review and remediation.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-09-16">16 Sep 2026</time><span class="timeline-type">DISCLOSURE</span></p>
+        <h3 class="text-h3">OpenAI launches a model-misalignment reporting framework</h3>
+        <p class="text-body">OpenAI publishes six additional examples from training or evaluation and says there is no industry-wide explicit standard governing disclosure of model-misalignment incidents.</p>
+      </li>
+      <li>
+        <p><time datetime="2026-09-17">17 Sep 2026</time><span class="timeline-type">PUBLICATION</span></p>
+        <h3 class="text-h3">Omoluabi opens the AI Authority investigation</h3>
+        <p class="text-body">The living desk begins tracking chronology, claims, authority layers, maps, visualizations and source limitations as a versioned public record.</p>
+      </li>
+    </ol>
+
+    <p class="text-meta"><a href="data/timeline.json">Open the machine-readable timeline</a> · Dates and event classes remain source-linked in the repository.</p>
   </section>
 
   <hr class="divider">

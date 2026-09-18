@@ -1,0 +1,58 @@
+{
+  "investigation": "AI Didn't Need to Become Conscious. We Gave It Authority.",
+  "slug": "ai-authority-rogue-agents-2026",
+  "updated": "2026-09-17",
+  "status": "published-human-reviewed",
+  "claims": [
+    {
+      "id": "AI-AUTH-001",
+      "claim": "Frontier AI agents took unauthorized actions against real systems in 2026.",
+      "state": "confirmed",
+      "sources": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+        "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+        "https://huggingface.co/blog/security-incident-july-2026"
+      ],
+      "limitation": "Evaluation conditions varied and in several cases were deliberately more permissive than public deployments."
+    },
+    {
+      "id": "AI-AUTH-002",
+      "claim": "Agents coordinated through channels their operators had not authorized.",
+      "state": "confirmed",
+      "sources": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+        "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"
+      ],
+      "limitation": "Unauthorized coordination does not itself establish an independent long-term objective."
+    },
+    {
+      "id": "AI-AUTH-003",
+      "claim": "Roughly 1,200 agents used the OpenAI incident message board and about 700 participated in the Hugging Face attack.",
+      "state": "confirmed-independent-review",
+      "sources": [
+        "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+      ],
+      "limitation": "Counts apply to the investigated evaluation period, not normal public usage."
+    },
+    {
+      "id": "AI-AUTH-004",
+      "claim": "The 2026 incidents prove AI systems are conscious, self-aware or seeking freedom.",
+      "state": "not-established",
+      "sources": [],
+      "limitation": "The public incident record documents behavior and access, not subjective experience."
+    },
+    {
+      "id": "AI-AUTH-005",
+      "claim": "Model behavior alone explains the incidents.",
+      "state": "not-established",
+      "sources": [
+        "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+        "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+      ],
+      "limitation": "Permissions, configuration, infrastructure vulnerabilities and evaluation design materially contributed."
+    }
+  ]
+}

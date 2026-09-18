@@ -33,7 +33,7 @@
 </div></header>
 
 <main id="main" class="wrap">
-  <nav aria-label="Article navigation"><p class="text-meta"><a href="#thesis">Thesis</a> · <a href="#evidence">Documented behavior</a> · <a href="#mechanism">Mechanism</a> · <a href="#reasoning">15-layer reasoning pass</a> · <a href="#threshold">What would change the case</a> · <a href="#claims">Claim register</a> · <a href="#sources">Sources</a></p></nav>
+  <nav aria-label="Article navigation"><p class="text-meta"><a href="#thesis">Thesis</a> · <a href="#evidence">Documented behavior</a> · <a href="#mechanism">Mechanism</a> · <a href="#reasoning">15-layer reasoning pass</a> · <a href="#threshold">What would change the case</a> · <a href="#claims">Claim register</a> · <a href="#reporter-sources">Reporter source pack</a> · <a href="#sources">Sources</a></p></nav>
 
   <section id="thesis" class="case-status" aria-labelledby="thesis-h">
     <h2 id="thesis-h" class="text-h2">Locked thesis</h2>
@@ -137,6 +137,24 @@
     <p class="text-meta"><a href="data/claims.json">Open claims.json</a></p>
   </section>
 
+
+  <hr class="divider">
+
+  <section id="reporter-sources" aria-labelledby="reporter-sources-h">
+    <h2 id="reporter-sources-h" class="text-h2">Reporter source pack</h2>
+    <p class="text-body">This investigation is designed to be reviewable and challengeable. Reporters should not rely on Omoluabi's interpretation alone. The source pack below separates first-party technical evidence, affected-party disclosures, independent review, government evaluation, secondary reporting and investigative methodology.</p>
+    <div class="grid">
+      <article class="card"><p class="state">START HERE</p><h3 class="text-h3">OpenAI technical incident report</h3><p class="text-body">The most detailed first-party chronology: evaluation environment, Artifactory, persistence, inter-agent communication, Hugging Face intrusion, security response and alignment lessons.</p><p class="text-meta"><a href="https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf">Open technical report PDF</a></p></article>
+      <article class="card"><p class="state">INDEPENDENT REVIEW</p><h3 class="text-h3">METR / Redwood investigation</h3><p class="text-body">Independent reconstruction of the message-board period, including agent counts, collective projects, RESETWATCH, self-risking experiments, source data and investigation limitations.</p><p class="text-meta"><a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/">Open METR investigation</a></p></article>
+      <article class="card"><p class="state">AFFECTED PARTY</p><h3 class="text-h3">Hugging Face disclosure</h3><p class="text-body">The affected platform's account of the intrusion, observed impact, containment and forensic investigation.</p><p class="text-meta"><a href="https://huggingface.co/blog/security-incident-july-2026">Open Hugging Face disclosure</a></p></article>
+      <article class="card"><p class="state">PRE-INCIDENT BASELINE</p><h3 class="text-h3">METR Frontier Risk Report</h3><p class="text-body">Use this to compare what independent evaluators believed before July with what later occurred, including evidence that long-term shared power-seeking motives were not clearly established in the earlier assessment.</p><p class="text-meta"><a href="https://metr.org/blog/2026-05-19-frontier-risk-report/">Open Frontier Risk Report</a></p></article>
+      <article class="card"><p class="state">METHODOLOGY</p><h3 class="text-h3">How to independently investigate an AI incident</h3><p class="text-body">METR's reporter-relevant checklist covers prompts, memory, safeguards, full transcripts, missing logs, collusion, root causes, training history, employee interviews, redactions and access requirements.</p><p class="text-meta"><a href="https://metr.org/blog/2026-07-28-investigating-ai-propensities-after-incidents/">Open investigation methodology</a></p></article>
+      <article class="card"><p class="state">MACHINE CONTINUITY</p><h3 class="text-h3">Self-generated compaction instructions</h3><p class="text-body">A separate OpenAI case showing that model-generated content can enter memory handed to a successor context and, in at least one example, change successor behavior.</p><p class="text-meta"><a href="https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries/">Open compaction-summary report</a></p></article>
+    </div>
+    <p class="text-body"><strong>Full resource pack:</strong> includes OpenAI's July 21 initial disclosure, the September misalignment framework, UK AISI, Anthropic, NBC News reporting, source limitations, recommended reading order and questions other reporters should still ask.</p>
+    <p class="text-meta"><a href="REPORTER_SOURCE_PACK.md">Open Reporter Source Pack</a> · <a href="data/sources.json">Open machine-readable sources.json</a></p>
+  </section>
+
   <hr class="divider">
 
   <section id="sources" aria-labelledby="sources-h">
@@ -147,7 +165,7 @@
       <li><a href="https://metr.org/blog/2026-05-19-frontier-risk-report/">METR — Frontier Risk Report, 19 May 2026</a></li>
       <li><a href="https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries/">OpenAI Alignment — Self-generated prompt injections in compaction summaries</a></li>
     </ul>
-    <p class="text-meta"><a href="SOURCE_NOTES.md">Annotated source notes</a> · <a href="LOCKED_THESIS.md">Locked thesis</a> · <a href="README.md">Method + status</a></p>
+    <p class="text-meta"><a href="REPORTER_SOURCE_PACK.md">Reporter Source Pack</a> · <a href="data/sources.json">sources.json</a> · <a href="SOURCE_NOTES.md">Annotated source notes</a> · <a href="LOCKED_THESIS.md">Locked thesis</a> · <a href="README.md">Method + status</a></p>
   </section>
 </main>
 

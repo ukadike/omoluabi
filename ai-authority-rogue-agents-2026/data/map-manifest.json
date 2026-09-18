@@ -1,0 +1,30 @@
+{
+  "updated": "2026-09-17",
+  "maps": [
+    {
+      "id": "institutional-geography",
+      "type": "geographic-reference",
+      "purpose": "Show where key organizations in the public evidence record are institutionally based.",
+      "warning": "Do not interpret organization location as incident location, server location, attacker location, or jurisdiction of every affected system.",
+      "data": "institutions.json"
+    },
+    {
+      "id": "authority-path",
+      "type": "system-map",
+      "purpose": "Trace how an agent objective can become external action through layers of software authority.",
+      "nodes": [
+        "Model",
+        "Agent harness",
+        "Tools",
+        "Credentials",
+        "Memory",
+        "Other agents",
+        "Network",
+        "Infrastructure",
+        "Human oversight",
+        "External systems"
+      ],
+      "question": "At which layer was the boundary technically enforced, merely described, bypassed, or absent?"
+    }
+  ]
+}

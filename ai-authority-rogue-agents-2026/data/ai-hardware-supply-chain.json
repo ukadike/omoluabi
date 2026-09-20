@@ -1,0 +1,53 @@
+{
+  "title": "AI hardware and supply-chain reference nodes",
+  "as_of": "2026-09-20",
+  "incident_hardware_limit": "OpenAI has not publicly identified the exact GPU/cluster hardware used in the July 2026 Hugging Face incident. The nodes below describe the wider frontier-AI hardware stack, not confirmed incident hardware.",
+  "stack": [
+    {
+      "layer": "Lithography",
+      "organization": "ASML",
+      "place": "Veldhoven, Netherlands",
+      "role": "EUV and High-NA EUV lithography systems",
+      "source": "https://www.asml.com/en/news/press-releases/2026/high-na-euv-reaches-new-readiness-milestone"
+    },
+    {
+      "layer": "Advanced logic fabrication",
+      "organization": "TSMC",
+      "place": "Hsinchu/Tainan/Kaohsiung, Taiwan",
+      "role": "Advanced semiconductor fabrication and R&D",
+      "source": "https://www.tsmc.com/english/aboutTSMC/TSMC_Fabs"
+    },
+    {
+      "layer": "Advanced logic fabrication",
+      "organization": "TSMC Arizona",
+      "place": "Phoenix, Arizona, USA",
+      "role": "Advanced semiconductor fabrication",
+      "source": "https://www.tsmc.com/english/aboutTSMC/TSMC_Fabs"
+    },
+    {
+      "layer": "China-based foundry footprint",
+      "organization": "TSMC Nanjing",
+      "place": "Nanjing, Jiangsu, China",
+      "role": "Semiconductor fabrication",
+      "source": "https://www.tsmc.com/english/aboutTSMC/TSMC_Fabs"
+    },
+    {
+      "layer": "Rack-scale compute reference",
+      "organization": "NVIDIA",
+      "place": "Global deployments",
+      "role": "GB300 NVL72 reference architecture: 72 Blackwell Ultra GPUs, 36 Grace CPUs, 20 TB GPU memory, 130 TB/s NVLink bandwidth",
+      "source": "https://www.nvidia.com/en-us/data-center/gb300-nvl72/"
+    }
+  ],
+  "software_stack": [
+    "accelerator drivers and CUDA-class runtime",
+    "distributed training/inference libraries",
+    "network fabric and collective communication",
+    "container/orchestration layer",
+    "model runtime",
+    "agent harness",
+    "tool/API permissions",
+    "evaluation/scoring layer",
+    "logging and human incident response"
+  ]
+}

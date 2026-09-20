@@ -1,0 +1,27 @@
+{
+  "title": "Selected industry/governance positions",
+  "as_of": "2026-09-20",
+  "records": [
+    {
+      "actor": "OpenAI",
+      "documented_position": "Published a Frontier Governance Framework covering areas including cyber offense, CBRN risks, harmful manipulation, loss of control, incident response and external expert input.",
+      "source": "https://openai.com/index/openai-frontier-governance-framework/"
+    },
+    {
+      "actor": "Anthropic",
+      "documented_position": "Responsible Scaling Policy v3 describes a voluntary framework intended to mitigate catastrophic risks and increase transparency/accountability.",
+      "source": "https://www.anthropic.com/news/responsible-scaling-policy-v3"
+    },
+    {
+      "actor": "Mark Zuckerberg / Meta",
+      "documented_position": "Reuters reported Zuckerberg opposing a coordinated development slowdown while arguing labs have incentives and responsibility to build safely.",
+      "source": "https://www.reuters.com/business/metas-zuckerberg-says-ai-labs-have-enough-incentive-build-safely-2026-09-16/"
+    },
+    {
+      "actor": "Multiple AI leaders",
+      "documented_position": "Reuters reported a September 2026 industry debate over slowing frontier development, with disagreement among major companies and executives.",
+      "source": "https://www.reuters.com/business/media-telecom/ten-days-that-changed-course-ai-2026-09-19/"
+    }
+  ],
+  "editorial_rule": "Present positions side-by-side without ranking them or attributing unstated motives."
+}

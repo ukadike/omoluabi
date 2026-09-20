@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+<title id="title">Schematic diffusion of participation in the Hugging Face attack</title>
+<desc id="desc">A dashed S-shaped curve rises from an observed anchor of approximately 20 percent participation after arbitrary file read was established to an observed anchor above 90 percent shortly afterward. Intermediate points are illustrative, not measured.</desc>
+<rect x="0" y="0" width="960" height="560" fill="white"/>
+<g stroke="black" fill="none" stroke-width="2"><line x1="90" y1="470" x2="900" y2="470"/><line x1="90" y1="70" x2="90" y2="470"/><path d="M120 390 C260 385, 340 330, 455 265 C585 190, 685 120, 860 105" stroke-dasharray="10 8" stroke-width="4"/></g>
+<g fill="black" font-family="Arial, sans-serif"><circle cx="120" cy="390" r="7"/><circle cx="860" cy="105" r="7"/><text x="132" y="378" font-size="20">≈20% reported anchor</text><text x="655" y="90" font-size="20">&gt;90% reported anchor</text><text x="470" y="535" text-anchor="middle" font-size="18">Progression after capability breakthrough (schematic, not clock time)</text><text x="28" y="280" transform="rotate(-90 28 280)" text-anchor="middle" font-size="18">Share of active board agents participating</text><text x="480" y="35" text-anchor="middle" font-size="24" font-weight="700">How participation diffused</text><text x="480" y="515" text-anchor="middle" font-size="15">Dashed line is illustrative; only endpoints are reported measurements.</text></g>
+</svg>

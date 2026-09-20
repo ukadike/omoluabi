@@ -1,0 +1,23 @@
+{
+  "title": "U.S.–China AI governance and supply-chain context",
+  "as_of": "2026-09-20",
+  "records": [
+    {
+      "date": "2026-09-20",
+      "event": "U.S. Treasury Secretary Scott Bessent and Chinese Vice Premier He Lifeng scheduled talks in New York covering AI, trade, tariffs and critical minerals ahead of the Trump–Xi summit.",
+      "source": "https://www.reuters.com/business/finance/us-treasurys-bessent-chinas-he-launch-talks-ai-trade-critical-minerals-2026-09-20/"
+    },
+    {
+      "date": "2026-09-24",
+      "event": "President Donald Trump and President Xi Jinping are scheduled to meet in Washington; Reuters reports AI governance, advanced chip access, trade, Taiwan and other issues are among expected topics.",
+      "status": "scheduled_as_of_2026-09-20",
+      "source": "https://www.reuters.com/world/china/what-will-trump-xi-discuss-washington-next-week-2026-09-17/"
+    },
+    {
+      "date": "2026-09-17",
+      "event": "U.S. and Chinese security experts proposed safeguards including human oversight for critical cyber operations and crisis-communication channels; the proposals had not been formally adopted by either government at publication.",
+      "source": "https://www.reuters.com/world/china/us-china-security-experts-propose-nuclear-style-safeguards-ai-risks-2026-09-17/"
+    }
+  ],
+  "editorial_rule": "Describe this as diplomacy, competition, interdependence and possible guardrail-building. Do not call it U.S.–China AI collaboration unless a specific cooperative agreement is documented."
+}

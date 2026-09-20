@@ -1,0 +1,39 @@
+name: Cache NASA UAP Context
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 8 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  cache:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Build NASA context cache
+        working-directory: ufo-connection
+        env:
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+        run: npm run cache:nasa
+
+      - name: Commit updated NASA context
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add ufo-connection/data/nasa-context.json
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "chore: update NASA UAP context [skip ci]"
+            git push
+          fi

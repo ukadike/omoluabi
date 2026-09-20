@@ -1,0 +1,17 @@
+{
+  "title": "Diffusion of participation in the Hugging Face attack",
+  "type": "illustrative_logistic_reconstruction",
+  "reported_anchor_points": [
+    {
+      "stage": "arbitrary file-read capability established",
+      "share_percent": 20
+    },
+    {
+      "stage": "shortly afterward among active board agents",
+      "share_percent": 90,
+      "qualifier": "more_than"
+    }
+  ],
+  "source": "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+  "warning": "METR did not publish intermediate time-series points. Any smooth S-curve between these anchors is schematic and must not be presented as measured observations."
+}

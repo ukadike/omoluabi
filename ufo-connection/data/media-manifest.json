@@ -153,6 +153,23 @@
         "altOrMediaDescription": "Mission transcript recording Houston's request that Apollo 11 inspect the Aristarchus region after reports of transient lunar phenomena and the crew's subsequent visual observations.",
         "transcriptStatus": "native transcript; exact event extraction remains in research queue"
       }
+    },
+    {
+      "id": "doc-ap10-space-music",
+      "subject": "Apollo 10",
+      "title": "Apollo 10 Lunar Module onboard voice transcript — whistling / space-music sequence",
+      "eventDate": "1969-05",
+      "medium": "NASA onboard voice transcript with synchronized audio available through Apollo Flight Journal",
+      "evidenceRole": "primary mission transcript / audio context",
+      "publisher": "NASA",
+      "sourceUrl": "https://www.nasa.gov/wp-content/uploads/2026/01/as10-lm.pdf?emrc=1d39a1",
+      "supportingUrl": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+      "accessibility": {
+        "altOrMediaDescription": "Transcript/audio event in which the Apollo 10 crew hears an intermittent whistling tone and discusses VHF ranging and radar side-lobe explanations.",
+        "transcriptStatus": "accessible evidence note published",
+        "transcriptPath": "../transcripts/apollo-10-space-music-evidence-note.md"
+      },
+      "interpretationBoundary": "The crew hears a real anomalous sound; the record itself contains onboard radio/ranging hypotheses and no visual-craft claim."
     }
   ]
 }

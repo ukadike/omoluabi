@@ -1,0 +1,27 @@
+field,value,unit,source_tier,source_or_derivation,status
+case_number,4715,,derivative scan,BlueBookFiles cover scan,verified as derivative label
+event_date,1957-05-02,,primary archive,NARA audiovisual transfer inventory item 1003460,verified
+nara_film_item,1003460,,primary archive,NARA Project Blue Book film inventory,verified
+nara_case_naid,28970018,,NARA-hosted case scans via derivative navigator,T1206 Roll 27,verified identifier
+film_description,"two 35mm negative black-and-white filmstrips",,primary archive,NARA audiovisual transfer inventory,verified
+derivative_cover_photo_count,41,photos,derivative Blue Book scan,bluebookfiles.org/doc/800,verified on derivative cover
+possible_frame_1,609,frame,secondary,NICAP/Brad Sparks,unverified
+possible_frame_2,614,frame,secondary,NICAP/Brad Sparks,unverified
+possible_frame_3,620,frame,secondary,NICAP/Brad Sparks,unverified
+possible_frame_4,651,frame,secondary,NICAP/Brad Sparks,unverified
+reported_object_azimuth_start,10.4667,degrees,secondary,NICAP/Brad Sparks,unverified
+reported_object_elevation_start,2.4,degrees,secondary,NICAP/Brad Sparks,unverified
+reported_object_azimuth_later,40.5,degrees,secondary,NICAP/Brad Sparks,unverified
+reported_object_elevation_later,1.0,degrees,secondary,NICAP/Brad Sparks,unverified
+proposed_observer_latitude,34.891667,degrees,secondary,NICAP/Brad Sparks,unverified
+proposed_observer_longitude,-117.675000,degrees,secondary,NICAP/Brad Sparks,unverified
+proposed_balloon_launch_latitude,34.908333,degrees,secondary,later case reconstruction,unverified
+proposed_balloon_launch_longitude,-117.866667,degrees,secondary,later case reconstruction,unverified
+derived_ground_distance_launch_to_observer,17.577,km,derived from secondary inputs,haversine calculation,diagnostic only
+derived_initial_bearing_observer_to_launch,276.107,degrees true,derived from secondary inputs,great-circle initial bearing,diagnostic only
+reported_balloon_altitude_0815,39300,ft MSL,secondary,later case reconstruction,unverified
+assumed_edwards_ground_elevation,702,m MSL,reference approximation,historical station metadata,approximate
+derived_vertical_separation,11.277,km,derived from secondary/approximate inputs,39300 ft MSL minus 702 m,diagnostic only
+horizontal_distance_implied_by_2_4deg,269.052,km,derived from secondary inputs,vertical/tan(elevation),diagnostic only
+horizontal_distance_implied_by_1deg,646.038,km,derived from secondary inputs,vertical/tan(elevation),diagnostic only
+geometry_interpretation,"secondary inputs are internally inconsistent if treated as same-time same-target measurements",,analysis,Omoluabi consistency test,not an object identification

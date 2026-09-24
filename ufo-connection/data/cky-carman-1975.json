@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-09-24T20:38:00Z",
+  "case": {
+    "id": "CKY-CARMAN-1975-05-13",
+    "title": "CKY / Charlie Red Star film",
+    "eventDate": "1975-05-13",
+    "location": "Carman area, Manitoba, Canada",
+    "relationToCooper": "none; separate film-evidence chain surfaced in Grant Cameron/Jesse Michels interview"
+  },
+  "officialRecords": [
+    {
+      "agency": "Library and Archives Canada / National Research Council",
+      "recordGroup": "National Research Council",
+      "sightingDate": "1975-05-13",
+      "documentDate": "1975-05-14",
+      "recordNumber": "4688-6653-11796",
+      "parentFile": {
+        "fonds": "National Research Council of Canada",
+        "series": "Non-meteoric sighting reports gathered by the Herzberg Institute of Astrophysics",
+        "reference": "RG77",
+        "volume": 308,
+        "microfilm": "T-1742",
+        "file": "UAR/N75/001-062",
+        "lacItemId": 1765070
+      },
+      "source": "https://www.collectionscanada.gc.ca/databases/ufo/001057-110.01-e.php?q3=Carman"
+    }
+  ],
+  "mediaTrail": [
+    {
+      "medium": "motion picture",
+      "station": "CKY-TV Winnipeg",
+      "eventDate": "1975-05-13",
+      "publicDerivative": "UFOs: It Has Begun",
+      "status": "derivative footage publicly viewable"
+    },
+    {
+      "source": "Grant Cameron archive / critical review",
+      "claim": "private copies existed on film and videotape; Cameron's copy described as cleaner; CKY's own copy described as lost; Bill Kendricks possibly retained a copy",
+      "tier": "archived correspondence/secondary custody statement",
+      "url": "https://files.bluebookfiles.org/pdfs/18608.pdf"
+    }
+  ],
+  "identityConflicts": [
+    {
+      "role": "camera operator",
+      "variants": [
+        {
+          "name": "Martin Rugne",
+          "source": "Grant Cameron archive/book; CKY broadcast credit described there"
+        },
+        {
+          "name": "Alan Carr",
+          "source": "UFOs: It Has Begun narration as rendered in transcript"
+        },
+        {
+          "name": "Allen Kerr",
+          "source": "later secondary chronologies"
+        }
+      ],
+      "nextTest": "Retrieve May 14 1975 CKY broadcast, production sheet and film leader."
+    }
+  ],
+  "technicalQuestions": [
+    "film gauge/stock and camera model",
+    "actual capture frame rate",
+    "whether apparent jump is same image or second/reflected image",
+    "source of flash frame",
+    "order/splice history of film sections",
+    "generation of Cameron/private copies",
+    "exact camera and object positions"
+  ],
+  "witnessesAndCustodians": [
+    "Martin Rugne",
+    "Bill Kendricks",
+    "Ray Kormier/Cormier",
+    "Howard Bennett",
+    "Tannis Major",
+    "Dustin Hope",
+    "Anthony Britain",
+    "Grant Cameron",
+    "Chris Rutkowski"
+  ],
+  "directInterviewLeads": [
+    {
+      "title": "The CKY Film: The Man who filmed it",
+      "date": "2023-10-31"
+    },
+    {
+      "title": "The CKY Film - Interview with TV reporter key witness",
+      "date": "2023-11-04",
+      "subject": "Bill Kendricks"
+    },
+    {
+      "title": "CKY Film - Reporter Ray Kormier Ways in on Key UFO Film",
+      "date": "2023-11-05",
+      "subject": "Ray Kormier/Cormier"
+    }
+  ],
+  "nextActions": [
+    "Obtain LAC record 4688-6653-11796.",
+    "Obtain full RG77 Volume 308 / T-1742 Carman sequence.",
+    "Locate Cameron's clean film copy.",
+    "Locate private film/video copy described in archived correspondence.",
+    "Contact/locate Bill Kendricks copy.",
+    "Retrieve CKY May 14 1975 broadcast and production records.",
+    "Resolve camera operator identity.",
+    "Determine camera model, film stock and frame rate.",
+    "Digitize cleanest film copy frame-by-frame with edges/splices.",
+    "Retrieve Tannis Major original still-photo negatives."
+  ]
+}

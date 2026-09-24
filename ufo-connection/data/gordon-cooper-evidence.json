@@ -1,0 +1,236 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-09-24T17:39:00Z",
+  "investigation": "Gordon Cooper / Edwards AFB evidence dossier",
+  "method": "Separate contemporaneous records, later recollection, official interpretation, and unresolved contradictions.",
+  "entities": [
+    {
+      "name": "L. Gordon Cooper Jr.",
+      "role": "USAF test pilot; Mercury-Atlas 9 pilot; Gemini 5 command pilot",
+      "officialSource": "https://www.nasa.gov/history/mercury-seven-astronaut-biographies/"
+    },
+    {
+      "name": "James D. Bittick",
+      "role": "Askania camera operator, Edwards AFB",
+      "source": "1968 McDonald congressional statement"
+    },
+    {
+      "name": "John R. Gettys Jr.",
+      "role": "Askania camera operator, Edwards AFB",
+      "source": "1968 McDonald congressional statement"
+    },
+    {
+      "name": "Frank E. Baker",
+      "role": "Range supervisor/director named by McDonald",
+      "source": "1968 McDonald congressional statement"
+    }
+  ],
+  "timeline": [
+    {
+      "date": "1951",
+      "event": "Cooper later said he observed repeated formations of unidentified objects while serving as a fighter pilot in Europe.",
+      "evidenceClass": "later first-person testimony",
+      "caution": "No contemporaneous squadron/radar record has yet been added to this dossier.",
+      "sources": [
+        "https://s3.us-east-1.amazonaws.com/NARAprodstorage/lz/presidential-libraries/clinton/7262140/Batch0001/7262140-20060474F-001-010-2023.pdf"
+      ]
+    },
+    {
+      "date": "1957-05-02 / 1957-05-03",
+      "event": "Edwards AFB photographic case involving Bittick and Gettys. NARA's film inventory dates the material May 2; McDonald's 1968 statement dates the event May 3.",
+      "evidenceClass": "official archive + later congressional reconstruction",
+      "caution": "Date conflict must remain visible until original logs/film metadata resolve it.",
+      "sources": [
+        "https://prologue.blogs.archives.gov/wp-content/uploads/sites/9/2018/03/report.pdf",
+        "https://www.govinfo.gov/app/details/CHRG-90hhrg97818"
+      ]
+    },
+    {
+      "date": "1959",
+      "event": "Cooper selected as one of NASA's Mercury Seven.",
+      "evidenceClass": "official NASA record",
+      "sources": [
+        "https://www.nasa.gov/project-mercury/"
+      ]
+    },
+    {
+      "date": "1962-11",
+      "event": "Walter Cronkite interviews Cooper about UFO reports. Cooper says qualified observers have reported unexplained objects while also allowing that each case might eventually have an explanation.",
+      "evidenceClass": "archival audiovisual record",
+      "sources": [
+        "https://www.archives.gov/research/topics/uaps/moving-images-and-sound",
+        "https://www.dvidshub.net/video/1010337/nasa-uap-d023-interview-excerpt-with-astronaut-gordon-cooper-1962"
+      ]
+    },
+    {
+      "date": "1963-05-15",
+      "event": "During Mercury-Atlas 9, Cooper reports luminous 'fireflies' and particles. 2026 DVIDS/NASA descriptions attribute one sequence to frozen condensation and another to mission-related xenon-strobe beacons.",
+      "evidenceClass": "mission audio + later official description",
+      "sources": [
+        "https://www.dvidshub.net/video/1007874/nasa-uap-d010-mercury-atlas-9-audio-excerpt-may-15-1963",
+        "https://www.dvidshub.net/video/1007876/nasa-uap-d011-mercury-atlas-9-audio-excerpt-may-15-1963"
+      ]
+    },
+    {
+      "date": "1968-07-29",
+      "event": "James E. McDonald presents the Edwards case to the U.S. House Committee on Science and Astronautics after interviewing Bittick, Gettys and Baker.",
+      "evidenceClass": "congressional hearing record",
+      "sources": [
+        "https://www.govinfo.gov/app/details/CHRG-90hhrg97818",
+        "https://files.ncas.org/ufosymposium/mcdonald.html"
+      ]
+    },
+    {
+      "date": "1978-11-09",
+      "event": "Cooper writes Grenada's UN ambassador advocating coordinated scientific collection of UFO reports and states his belief that extraterrestrial vehicles visit Earth.",
+      "evidenceClass": "signed letter reproduced in archival collections",
+      "caution": "The letter documents Cooper's belief and claimed experiences; it does not independently establish extraterrestrial origin.",
+      "sources": [
+        "https://s3.us-east-1.amazonaws.com/NARAprodstorage/lz/presidential-libraries/clinton/7262140/Batch0001/7262140-20060474F-001-010-2023.pdf"
+      ]
+    },
+    {
+      "date": "1990s-2000s",
+      "event": "Cooper's later interviews describe the Edwards event as a landed craft with landing gear, a stronger claim than the earlier Bittick/Gettys reconstruction published by McDonald.",
+      "evidenceClass": "late recollection/interview",
+      "caution": "Treat as a separate testimony layer, not as contemporaneous 1957 documentation."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "GC-001",
+      "title": "Walter Cronkite and Gordon Cooper on UFOs",
+      "type": "video/audio",
+      "date": "1962-11",
+      "publisher": "NASA record via NARA / AARO-DVIDS",
+      "recordIds": [
+        "NARA 86027191",
+        "NASA-UAP-D023",
+        "DVIDS 1010337"
+      ],
+      "status": "primary archival audiovisual record",
+      "url": "https://www.dvidshub.net/video/1010337/nasa-uap-d023-interview-excerpt-with-astronaut-gordon-cooper-1962",
+      "accessibility": {
+        "alt": "Archival television interview in which Walter Cronkite asks astronaut Gordon Cooper about unidentified flying objects.",
+        "transcript": "Accessible transcript summary published in ../transcripts/gordon-cooper-1962-selected-transcript.md"
+      }
+    },
+    {
+      "id": "GC-002",
+      "title": "Edwards AFB Gettys & Bittick film inventory entry",
+      "type": "film inventory",
+      "date": "1957-05-02",
+      "publisher": "U.S. National Archives",
+      "recordIds": [
+        "NARA item 1003460"
+      ],
+      "status": "primary archival catalog record",
+      "url": "https://prologue.blogs.archives.gov/wp-content/uploads/sites/9/2018/03/report.pdf",
+      "accessibility": {
+        "alt": "National Archives inventory table listing Edwards AFB, Gettys and Bittick, and two 35mm black-and-white negative filmstrips."
+      }
+    },
+    {
+      "id": "GC-003",
+      "title": "Project Blue Book case file — Edwards AFB",
+      "type": "document",
+      "date": "1957-05",
+      "publisher": "U.S. Air Force / National Archives",
+      "recordIds": [
+        "Project Blue Book case 4715 (commonly cited)",
+        "T1206 Roll 27"
+      ],
+      "status": "official case record; full document review in progress",
+      "url": "https://www.archives.gov/research/topics/uaps/rg-collections",
+      "accessibility": {
+        "alt": "National Archives research guide entry for Project Blue Book case-file and photographic collections."
+      }
+    },
+    {
+      "id": "GC-004",
+      "title": "McDonald statement to House Committee on Science and Astronautics",
+      "type": "congressional document",
+      "date": "1968-07-29",
+      "publisher": "U.S. Government Printing Office",
+      "recordIds": [
+        "CHRG-90hhrg97818"
+      ],
+      "status": "primary public congressional record",
+      "url": "https://www.govinfo.gov/app/details/CHRG-90hhrg97818",
+      "accessibility": {
+        "alt": "Congressional hearing record for the July 29, 1968 symposium on unidentified flying objects."
+      }
+    },
+    {
+      "id": "GC-005",
+      "title": "Mercury-Atlas 9 'fireflies' audio excerpt",
+      "type": "audio",
+      "date": "1963-05-15",
+      "publisher": "NASA / AARO via DVIDS",
+      "recordIds": [
+        "NASA-UAP-D010",
+        "DVIDS 1007874"
+      ],
+      "status": "primary mission audio; phenomenon officially attributed to condensation",
+      "url": "https://www.dvidshub.net/video/1007874/nasa-uap-d010-mercury-atlas-9-audio-excerpt-may-15-1963",
+      "accessibility": {
+        "alt": "Audio-only mission excerpt of Gordon Cooper reporting 'fireflies' during Mercury-Atlas 9.",
+        "transcript": "Source description states NASA attributed the visible particles to frozen condensation separating from the spacecraft."
+      }
+    },
+    {
+      "id": "GC-006",
+      "title": "Mercury-Atlas 9 sunrise/particle audio excerpt",
+      "type": "audio",
+      "date": "1963-05-15",
+      "publisher": "NASA / AARO via DVIDS",
+      "recordIds": [
+        "NASA-UAP-D011",
+        "DVIDS 1007876"
+      ],
+      "status": "primary mission audio with mission-equipment context",
+      "url": "https://www.dvidshub.net/video/1007876/nasa-uap-d011-mercury-atlas-9-audio-excerpt-may-15-1963",
+      "accessibility": {
+        "alt": "Audio-only mission excerpt in which Gordon Cooper describes luminous particles near Faith 7 and references deployed strobe beacons."
+      }
+    },
+    {
+      "id": "GC-007",
+      "title": "Cooper letter to Ambassador Griffith",
+      "type": "letter",
+      "date": "1978-11-09",
+      "publisher": "Cooper; scan later preserved in archival collection",
+      "status": "primary statement of Cooper's beliefs and recollections, not independent corroboration",
+      "url": "https://s3.us-east-1.amazonaws.com/NARAprodstorage/lz/presidential-libraries/clinton/7262140/Batch0001/7262140-20060474F-001-010-2023.pdf",
+      "accessibility": {
+        "alt": "Scanned signed letter from Gordon Cooper to Grenada's ambassador to the United Nations advocating coordinated scientific UFO study."
+      }
+    }
+  ],
+  "contradictions": [
+    {
+      "issue": "Edwards event date",
+      "recordA": "NARA film inventory: May 2, 1957",
+      "recordB": "McDonald congressional statement: May 3, 1957",
+      "nextTest": "Retrieve original range/camera log and film can/edge metadata."
+    },
+    {
+      "issue": "Did the object land?",
+      "recordA": "McDonald's interviews with Bittick/Gettys describe photography followed by the object moving away into the distance.",
+      "recordB": "Cooper's later interviews describe a landing, landing legs and close approach.",
+      "nextTest": "Locate contemporaneous witness statements, Cooper's 1957 report, and complete original negative sequence."
+    },
+    {
+      "issue": "Balloon identification",
+      "recordA": "Project Blue Book/ATIC reportedly identified a weather balloon.",
+      "recordB": "Bittick/Gettys later rejected that explanation in McDonald's interviews.",
+      "nextTest": "Reconstruct balloon launch, winds aloft, phototheodolite azimuth/elevation and frame timestamps."
+    },
+    {
+      "issue": "Number/quality of images",
+      "recordA": "NARA inventory lists two 35mm negative filmstrips.",
+      "recordB": "Gettys later remembered roughly 30 exposures and sharp close frames.",
+      "nextTest": "Digitize/inspect highest-generation surviving film and compare frame count and optical quality."
+    }
+  ]
+}

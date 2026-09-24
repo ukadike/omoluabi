@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-09-24T19:30:00Z",
+  "investigation": "Grant Cameron / Cooper-Cohen Edwards film lead",
+  "evidence": [
+    {
+      "date": "2001-11-27",
+      "actor": "Grant Cameron",
+      "type": "researcher email/post",
+      "title": "Gordon Cooper Talks UFOs With Defense Secretary",
+      "claim": "Cameron relays Steven Greer's account that Gordon Cooper approached Secretary of Defense William Cohen about a specific UFO landing film and that an effort was made to retrieve it.",
+      "tier": "documented researcher report; hearsay as to Cooper-Cohen interaction",
+      "source": "https://www.jamesoberg.com/effort_locate_cooper_ufo_report.pdf"
+    },
+    {
+      "date": "2006-02-23",
+      "actor": "Grant Cameron",
+      "type": "FOIA request",
+      "id": "2006-0520-F",
+      "request": "All correspondence or records of meetings between Secretary of Defense William Cohen and Astronaut Gordon Cooper.",
+      "result": "Completed 2006-03-14; records provided: No.",
+      "tier": "official NARA FOIA administration record",
+      "source": "https://www.governmentattic.org/5docs/ChmIssaNARA_2011.pdf"
+    },
+    {
+      "date": "2006-02-23",
+      "actor": "Grant Cameron",
+      "type": "FOIA request",
+      "id": "2006-0521-F",
+      "request": "All files related to UFOs, the 1947 crash in Roswell, New Mexico, or flying saucers from the files of Secretary of Defense William Cohen.",
+      "result": "Approximately 21 pages; responsive materials in NSC Cables; no relevant WHORM or White House staff-office records.",
+      "tier": "official Clinton Presidential Library finding aid",
+      "source": "https://www.clintonlibrary.gov/research/archives/finding-aids/unidentified-flying-objects-ufo-2"
+    },
+    {
+      "date": "2020",
+      "actor": "Christopher Mellon",
+      "type": "first-person interview",
+      "venue": "The Phenomenon",
+      "claim": "Cooper spoke with the President and raised the matter with Secretary Cohen; Cohen's office called Mellon and tasked him to pursue the records.",
+      "followup": "Mellon says an Air Force colonel told him records had been cleaned up or discarded to save space.",
+      "tier": "first-person testimony from the official who says he received the tasking",
+      "source": "https://www.subtitlecat.com/subs/234/The.Phenomenon.2020.1080p.WEBRip.x264-RARBG-English.html"
+    },
+    {
+      "date": "2021-05-05",
+      "actor": "Christopher Mellon",
+      "type": "first-person interview",
+      "venue": "Joe Rogan Experience #1645",
+      "claim": "A request came to Mellon, which he thought was from President Clinton, about an astronaut's Edwards UFO videotape claim and desire for the President to retrieve it.",
+      "tier": "first-person testimony; some uncertainty in routing/origin of request",
+      "source": "https://fight.fudgie.org/search/show/jr/episode/20210505_Wed_h8vjx6-ZFvI"
+    }
+  ],
+  "currentAssessment": {
+    "earlyCameronLead": "partially corroborated by later Mellon first-person testimony",
+    "cooperCohenDocumentLocated": false,
+    "cohenTaskingDocumentLocated": false,
+    "landingFilmLocatedAsSuch": false,
+    "relatedBlueBookFilmArchiveLocated": true,
+    "interpretationBoundary": "Government search activity does not establish the truth of Cooper's landing description or extraterrestrial origin."
+  }
+}

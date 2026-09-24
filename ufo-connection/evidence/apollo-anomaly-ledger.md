@@ -12,6 +12,30 @@ https://www.nasa.gov/history/mission-transcripts-mercury-gemini-and-apollo/
 NASA's Apollo journals combine transcripts with photographs, audio, video, diagrams and maps:
 https://www.nasa.gov/history/alsj-and-afj/
 
+
+
+## Apollo 10 — whistling / “space music”
+
+The Apollo 10 onboard record places the whistling inside an active
+communications and rendezvous context. Cernan draws attention to the sound,
+Stafford and Young confirm hearing it, Young proposes VHF ranging as a likely
+cause, and Stafford later suggests a side lobe. During a later recurrence,
+Stafford opens the rendezvous-radar circuit breakers and Cernan immediately
+comments that the cabin has become quiet.
+
+NASA LM onboard transcript:
+https://www.nasa.gov/wp-content/uploads/2026/01/as10-lm.pdf?emrc=1d39a1
+
+Synchronized Apollo Flight Journal:
+https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html
+
+Accessible evidence note:
+../transcripts/apollo-10-space-music-evidence-note.md
+
+**Current status:** real auditory anomaly; onboard radio/ranging explanation
+strongly suggested by the contemporaneous conversation, but a hardware-state
+reconstruction should be completed before stating a final causal mechanism.
+
 ## Apollo 11 — translunar unidentified object
 
 The July 31, 1969 technical crew debrief records Armstrong, Aldrin and Collins discussing a bright object seen during translunar flight. The crew considered the Saturn S-IVB stage, contacted the ground, and were told it was thousands of miles away. The object's range and size were not established, and the debrief does not rule out spacecraft-origin debris.

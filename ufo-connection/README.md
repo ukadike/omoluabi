@@ -110,3 +110,36 @@ ufo-connection/
 Hero / framing · Data status · Filters (release, type, search) · Official
 records · Omoluabi Reading · Beautiful Disclosure · Ontological Realities
 (evidence / interpretation / hypothesis / belief / speculation) · Source footer.
+
+
+## Living evidence archive
+
+The public archive at `archive.html` extends the curated case interface into
+source-by-source historical reconstruction. It currently includes:
+
+- Gordon Cooper / Edwards AFB chronology and contradiction map;
+- official DVIDS audiovisual records for Cooper (1962), Mercury-Atlas 9
+  (1963), and Apollo 17 (1972);
+- accessible transcript summaries and media descriptions;
+- source-of-record identifiers and direct archival links;
+- machine-readable evidence ledgers in JSON;
+- Apollo anomaly records that keep astronaut observation separate from later
+  interpretation.
+
+Additional evidence folders:
+
+```text
+ufo-connection/
+  archive.html
+  evidence/
+    gordon-cooper-dossier.md
+    apollo-anomaly-ledger.md
+  transcripts/
+    gordon-cooper-1962-selected-transcript.md
+  data/
+    gordon-cooper-evidence.json
+    apollo-anomaly-evidence.json
+```
+
+The archive is intentionally additive: new records can narrow or contradict
+earlier interpretations without erasing the earlier evidence state.

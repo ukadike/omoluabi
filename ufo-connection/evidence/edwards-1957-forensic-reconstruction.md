@@ -198,6 +198,13 @@ This page describes photographs and archival records textually so that a reader 
 - time/azimuth/elevation fields, with provenance;
 - a link to the unmodified source image.
 
+## Supporting datasets and retrieval packet
+
+- Source-tier ledger: ../data/edwards-1957-source-ledger.csv
+- Machine-readable forensic case: ../data/edwards-1957-forensic.json
+- Geometry verification inputs/derivations: ../data/edwards-1957-geometry.csv
+- NARA high-resolution retrieval request: ./nara-edwards-1957-retrieval-request.md
+
 ## Current conclusion
 
 The strongest case-supported statement is:

@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-09-24T19:11:00Z",
+  "case": {
+    "title": "Edwards AFB photographic case — forensic reconstruction",
+    "projectBlueBookCase": "4715",
+    "eventDatePrimary": "1957-05-02",
+    "dateConflict": "McDonald's 1968 reconstruction calls the event May 3, 1957",
+    "location": "Edwards Air Force Base, California"
+  },
+  "verifiedArchive": [
+    {
+      "id": "NARA-1003460",
+      "tier": "primary archive",
+      "record": "Project Blue Book audiovisual transfer inventory",
+      "date": "1957-05-02",
+      "observers": "Gettys & Bittick",
+      "description": "two 35mm negative black-and-white filmstrips",
+      "source": "https://prologue.blogs.archives.gov/wp-content/uploads/sites/9/2018/03/report.pdf"
+    },
+    {
+      "id": "NARA-NAID-28970018",
+      "tier": "NARA-hosted scans exposed through derivative navigator",
+      "record": "Project Blue Book Edwards AFB textual case file",
+      "microfilm": "T1206 Roll 27",
+      "scanCount": 106,
+      "recordCardConclusion": "Confirmed balloon / see case file",
+      "source": "https://www.govweird.com/topics/ufo/project-blue-book/edwards-afb-ca-may-1957",
+      "naraCatalog": "https://catalog.archives.gov/id/28970018"
+    },
+    {
+      "id": "PBB-4715-DERIVATIVE",
+      "tier": "derivative scan of government record",
+      "record": "Case cover",
+      "visibleText": "File 4715 / May 2, 1957 / Edwards AFB, California / 41 photos",
+      "source": "https://bluebookfiles.org/doc/800"
+    }
+  ],
+  "institutionalAssessment": {
+    "status": "official Air Force / Project Blue Book conclusion",
+    "conclusion": "weather balloon",
+    "reproductionStatus": "Record card is visible in NARA-hosted scan. A period reproduction of an Edwards information-office letter describes tracking/bearing/elevation/speed support, but the original letter page still needs direct archival matching.",
+    "testRequired": "Reproduce conclusion from original balloon track, camera angles, frame times and winds."
+  },
+  "testimonyLayers": [
+    {
+      "date": "1968-07-29",
+      "witnessLayer": "McDonald congressional statement based on interviews with Bittick, Gettys and Baker",
+      "supports": [
+        "photographed unusual object",
+        "request for second-camera triangulation",
+        "object eventually moved away"
+      ],
+      "doesNotContain": [
+        "landing gear",
+        "touchdown",
+        "camera crew approaching landed object"
+      ],
+      "source": "https://www.govinfo.gov/app/details/CHRG-90hhrg97818"
+    },
+    {
+      "date": "later decades",
+      "witnessLayer": "Gordon Cooper later account",
+      "supportsAsTestimony": [
+        "Cooper said crew reported a landing",
+        "Cooper said he saw imagery"
+      ],
+      "status": "later recollection; not contemporaneous 1957 corroboration",
+      "primary1957CooperRecordLocated": false
+    }
+  ],
+  "identifierConflicts": [
+    {
+      "issue": "4715 vs 4750",
+      "recordA": "Derivative case scan labels Edwards case 4715 and 41 photos.",
+      "recordB": "Separate Wikimedia public-domain PDF labels Edwards May 2, 1957 material as Case 4750 Photos, USA.",
+      "action": "Reconcile against NARA photograph-roll contents; do not merge."
+    },
+    {
+      "issue": "image count",
+      "recordA": "Derivative cover says 41 photos.",
+      "recordB": "NARA inventory says two 35mm negative filmstrips.",
+      "recordC": "Gettys later recalled approximately 30 exposures to McDonald.",
+      "action": "Inspect original negatives and distinguish exposure count, prints and duplicate/copy material."
+    }
+  ],
+  "secondaryGeometry": {
+    "status": "unverified research inputs only",
+    "source": "https://www.nicap.org/570502edwardsafb_dir.htm",
+    "possibleFrames": [
+      609,
+      614,
+      620,
+      651
+    ],
+    "reportedAngles": [
+      {
+        "frameContext": "start/early",
+        "azimuthDeg": 10.4667,
+        "elevationDeg": 2.4
+      },
+      {
+        "frameContext": "later",
+        "azimuthDeg": 40.5,
+        "elevationDeg": 1
+      }
+    ],
+    "proposedObserver": {
+      "lat": 34.891667,
+      "lon": -117.675
+    },
+    "proposedBalloonLaunch": {
+      "lat": 34.908333,
+      "lon": -117.866667
+    },
+    "reportedBalloonAltitudeAt0815FtMSL": 39300,
+    "derivedDiagnostic": {
+      "launchObserverGroundDistanceKm": 17.577,
+      "initialBearingObserverToLaunchDeg": 276.107,
+      "assumedGroundElevationM": 702,
+      "verticalSeparationKm": 11.277,
+      "horizontalKmImpliedAt2_4Deg": 269.052,
+      "horizontalKmImpliedAt1Deg": 646.038,
+      "interpretation": "The secondary values cannot all describe the same nearby target at the same time if taken literally. Trace each input to a primary page before drawing any conclusion."
+    }
+  },
+  "weatherRetrieval": {
+    "station": [
+      "WMO 723810",
+      "KEDW"
+    ],
+    "sources": [
+      "https://www.ncei.noaa.gov/products/weather-balloon/integrated-global-radiosonde-archive",
+      "https://mesonet.agron.iastate.edu/archive/raob/"
+    ],
+    "dates": [
+      "1957-05-02",
+      "1957-05-03"
+    ],
+    "neededFields": [
+      "launch time",
+      "pressure",
+      "geopotential height",
+      "wind direction",
+      "wind speed",
+      "bearing/range if present"
+    ]
+  },
+  "nextActions": [
+    "Acquire/digitize NARA item 1003460.",
+    "Index all 106 pages of NAID 28970018.",
+    "Recover original ATIC photo-analysis measurement table.",
+    "Recover Edwards rawinsonde track and KEDW historical sounding.",
+    "Locate period map and primary coordinates for Askania Station #4.",
+    "Reconcile case identifiers 4715 and 4750.",
+    "Reconcile 41 photos, approximately 30 exposures, and two filmstrips.",
+    "Search contemporaneous records for Gordon Cooper involvement."
+  ],
+  "conclusion": "A photographed Edwards case is firmly documented and officially classified as a balloon; later testimony disputes or expands the story. The available evidence does not yet corroborate Cooper's later landing sequence, and the secondary geometry must not be treated as primary data."
+}

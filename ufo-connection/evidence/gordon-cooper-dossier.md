@@ -53,6 +53,14 @@ Cooper matters here because his public UFO record spans multiple evidence types:
 | Was it a balloon? | Blue Book/ATIC reportedly identified a weather balloon | Witnesses later rejected balloon explanation | Balloon launch + winds + az/el + frame timing |
 | How many/what quality frames? | NARA: two 35mm negative filmstrips survive/cataloged | Gettys later remembered ~30 exposures; Cooper remembered strong imagery | High-resolution scan of original negatives |
 
+## Edwards 1957 forensic reconstruction
+
+The dedicated reconstruction now tracks the surviving film, Blue Book case identifiers, official balloon classification, witness layers, geometry verification gate, weather-data retrieval, and unresolved Cooper chain-of-custody question.
+
+- Forensic narrative: [edwards-1957-forensic-reconstruction.md](./edwards-1957-forensic-reconstruction.md)
+- Machine-readable case data: [../data/edwards-1957-forensic.json](../data/edwards-1957-forensic.json)
+- Geometry verification table: [../data/edwards-1957-geometry.csv](../data/edwards-1957-geometry.csv)
+
 ## Current finding
 
 The strongest documentary fact is not "alien landing." It is this:

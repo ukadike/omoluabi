@@ -81,6 +81,48 @@ Until the original NARA metadata and roll contents are reconciled, Omoluabi trea
 Commons derivative:
 https://commons.wikimedia.org/wiki/File:Project_Blue_Book_report_-_1957-05,_Edwards_AFB,_California.pdf
 
+## Newly located digitized photograph roll
+
+A major retrieval step is now resolved.
+
+NARA has digitized the **photograph roll that ends with case 4715**:
+
+- **NAID 446391567**
+- **Title:** *Photographs, Case File Nos. 10 - 4715, June 24, 1947-May 2, 1957*
+- **Extent online:** 577 digitized pages
+- **Project Blue Book microfilm index:** Roll 93 covers photographs for cases 10–4715.
+
+NARA catalog:
+https://catalog.archives.gov/id/446391567
+
+A separate Blue Book derivative repository exposes the Edwards case itself as:
+
+- **Case:** 7277037
+- **Blue Book file:** 4715
+- **Date:** May 2, 1957
+- **Location:** Edwards AFB, California
+- **Pages:** 17
+- **Cover notation:** “41 photos”
+
+Case page:
+https://bluebookfiles.org/doc/800
+
+The 17-page derivative PDF is:
+https://files.bluebookfiles.org/pdfs/1957.05%20-%207277037%20-%20Edwards%20AFB%2C%20California%20%28%234715%29.pdf
+
+This is materially different from merely knowing that NARA holds the film. We now have a public digitized **case-level scan** and a public NARA **photograph-roll scan** tied to case 4715.
+
+### What is still not the same thing as the original negatives
+
+The digitized roll/case scan is a reproduction layer. NARA's audiovisual inventory separately identifies **item 1003460** as **two 35mm black-and-white negative filmstrips** attributed to Gettys & Bittick.
+
+NARA also publishes the entire **Project Blue Book Motion Picture Films, 1950–1966** series as a 262.14 MB bulk ZIP. That is now the next direct retrieval route for isolating the digitized audiovisual object associated with item 1003460.
+
+Bulk-download page:
+https://www.archives.gov/research/catalog/catalog-bulk-downloads/uap-bulk-download
+
+**Important distinction:** the 17-page case PDF and 577-page photograph roll are already located online. The exact highest-generation digital surrogate of NARA item 1003460 has not yet been isolated as an individual public file in this investigation.
+
 ## Official balloon conclusion
 
 The case-file record card visibly carries a balloon conclusion. A period reproduction of a June 11, 1957 Edwards Air Force Base information-office letter likewise says the Air Force considered the object a weather balloon and referred to independent tracking, bearings, elevations, speed, and the morning weather-balloon release.

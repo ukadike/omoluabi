@@ -10,7 +10,16 @@
       "evidenceClass": "onboard transcript/audio",
       "status": "reported phenomenon; generally associated with radio/VHF interaction, no visual craft claim in the event record",
       "source": "https://www.nasa.gov/mission/apollo-10/",
-      "next": "Add exact onboard transcript/audio timestamps and RF configuration."
+      "next": "Reconstruct VHF/rendezvous-radar hardware states against the DSEA audio; do not infer external origin without that test.",
+      "missionElapsedWindow": "approximately 102:13–103:41, intermittent",
+      "crewHypotheses": [
+        "John Young: likely VHF ranging",
+        "Thomas Stafford: possible side lobe"
+      ],
+      "hardwareCorrelationLead": "At 103:38:36 Stafford opens rendezvous-radar circuit breakers; Cernan then remarks that it became quiet.",
+      "primaryTranscript": "https://www.nasa.gov/wp-content/uploads/2026/01/as10-lm.pdf?emrc=1d39a1",
+      "synchronizedJournal": "https://apollojournals.org/afj/ap10fj/as10-day5-pt20.html",
+      "transcriptNote": "../transcripts/apollo-10-space-music-evidence-note.md"
     },
     {
       "id": "AP-11-001",

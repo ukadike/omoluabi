@@ -34,6 +34,24 @@
       "record": "Case cover",
       "visibleText": "File 4715 / May 2, 1957 / Edwards AFB, California / 41 photos",
       "source": "https://bluebookfiles.org/doc/800"
+    },
+    {
+      "id": "NARA-NAID-446391567",
+      "tier": "primary NARA digitized photograph roll",
+      "title": "Photographs, Case File Nos. 10 - 4715, June 24, 1947-May 2, 1957",
+      "pageCount": 577,
+      "microfilmRoll": 93,
+      "relation": "Roll terminates with Project Blue Book case 4715",
+      "source": "https://catalog.archives.gov/id/446391567"
+    },
+    {
+      "id": "BLUEBOOKFILES-7277037",
+      "tier": "public derivative of Project Blue Book case record",
+      "title": "1957.05 - 7277037 - Edwards AFB, California (#4715)",
+      "pageCount": 17,
+      "visibleCoverText": "File 4715 / May 2, 1957 / Edwards AFB, California / 41 photos",
+      "source": "https://bluebookfiles.org/doc/800",
+      "pdf": "https://files.bluebookfiles.org/pdfs/1957.05%20-%207277037%20-%20Edwards%20AFB%2C%20California%20%28%234715%29.pdf"
     }
   ],
   "institutionalAssessment": {
@@ -156,5 +174,13 @@
     "Reconcile 41 photos, approximately 30 exposures, and two filmstrips.",
     "Search contemporaneous records for Gordon Cooper involvement."
   ],
-  "conclusion": "A photographed Edwards case is firmly documented and officially classified as a balloon; later testimony disputes or expands the story. The available evidence does not yet corroborate Cooper's later landing sequence, and the secondary geometry must not be treated as primary data."
+  "conclusion": "A photographed Edwards case is firmly documented and officially classified as a balloon; later testimony disputes or expands the story. The available evidence does not yet corroborate Cooper's later landing sequence, and the secondary geometry must not be treated as primary data.",
+  "retrievalStatus": {
+    "caseLevelScan": "located",
+    "naraPhotographRoll": "located",
+    "originalNegativeFilmstripsCataloged": true,
+    "individualDigitalSurrogateForNara1003460": "not yet isolated",
+    "naraMotionPictureSeriesBulkZip": "available, 262.14 MB",
+    "bulkDownloadPage": "https://www.archives.gov/research/catalog/catalog-bulk-downloads/uap-bulk-download"
+  }
 }

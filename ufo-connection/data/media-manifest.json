@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-09-24T18:00:00Z",
+  "updatedAt": "2026-09-24T19:11:00Z",
   "editorialRule": "Descriptions report what the source contains; they do not infer an object's origin.",
   "items": [
     {
@@ -170,6 +170,65 @@
         "transcriptPath": "../transcripts/apollo-10-space-music-evidence-note.md"
       },
       "interpretationBoundary": "The crew hears a real anomalous sound; the record itself contains onboard radio/ranging hypotheses and no visual-craft claim."
+    },
+    {
+      "id": "doc-edwards-naid-28970018",
+      "subject": "Edwards AFB / Project Blue Book 4715",
+      "title": "Edwards AFB, California, May 1957 — textual case file",
+      "eventDate": "1957-05-02",
+      "medium": "sanitized Project Blue Book case-file scans",
+      "evidenceRole": "primary government case record",
+      "publisher": "U.S. Air Force / U.S. National Archives",
+      "identifiers": [
+        "NARA NAID 28970018",
+        "T1206 Roll 27",
+        "Project Blue Book 4715"
+      ],
+      "sourceUrl": "https://catalog.archives.gov/id/28970018",
+      "accessibleDerivative": "https://www.govweird.com/topics/ufo/project-blue-book/edwards-afb-ca-may-1957",
+      "accessibility": {
+        "altOrMediaDescription": "Project Blue Book case-file scan set for an Edwards AFB sighting. The first record card describes a metallic disk-shaped object, approximately 25 minutes of observation, and carries a confirmed-balloon comment.",
+        "transcriptStatus": "NARA scan OCR is partially available through a derivative navigator; full 106-page human review remains in progress."
+      },
+      "interpretationBoundary": "The official record card records a balloon conclusion. The reconstruction still needs the original measurement tables to independently reproduce that conclusion."
+    },
+    {
+      "id": "image-edwards-4715-cover",
+      "subject": "Edwards AFB / Project Blue Book 4715",
+      "title": "File 4715 case cover — 41 photos",
+      "eventDate": "1957-05-02",
+      "medium": "derivative grayscale case-cover scan",
+      "evidenceRole": "case identification / provenance image",
+      "publisher": "Project Blue Book record; derivative hosted by BlueBookFiles.org",
+      "sourceUrl": "https://bluebookfiles.org/doc/800",
+      "imageUrl": "https://files.bluebookfiles.org/thumbs/800.webp",
+      "identifiers": [
+        "File 4715",
+        "Derivative collection ID 7277037"
+      ],
+      "accessibility": {
+        "altOrMediaDescription": "Grayscale case-file cover with centered typed text: File 4715, May 2, 1957, Edwards AFB, California, 41 photos.",
+        "transcriptStatus": "Visible cover text transcribed in alt description."
+      },
+      "interpretationBoundary": "This is a cover/provenance image, not a photograph of the reported object."
+    },
+    {
+      "id": "doc-edwards-4750-derivative",
+      "subject": "Edwards AFB / identifier reconciliation",
+      "title": "Project Blue Book report — Case 4750 Photos, USA",
+      "eventDate": "1957-05-02",
+      "medium": "public-domain derivative PDF",
+      "evidenceRole": "identifier-conflict lead",
+      "publisher": "Project Blue Book; derivative on Wikimedia Commons sourced from Internet Archive",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Project_Blue_Book_report_-_1957-05,_Edwards_AFB,_California.pdf",
+      "identifiers": [
+        "Case 4750 Photos, USA"
+      ],
+      "accessibility": {
+        "altOrMediaDescription": "Twenty-four-page public-domain Project Blue Book derivative PDF labeled as May 2, 1957 Edwards AFB and Case 4750 Photos, USA.",
+        "transcriptStatus": "Derivative metadata reviewed; relationship to case 4715 not yet established."
+      },
+      "interpretationBoundary": "Do not merge case 4750 with 4715 until NARA roll/metadata relationships are verified."
     }
   ]
 }

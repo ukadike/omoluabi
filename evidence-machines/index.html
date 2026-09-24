@@ -24,7 +24,7 @@
     <h1 class="text-h1">Evidence Machines: Investigating the Unexplained</h1>
     <p class="hero-deck">A studio about how to investigate difficult public evidence with code — without turning uncertainty into spectacle.</p>
     <p class="text-body">Students work across archives, testimony, audio, video, images, maps, metadata, APIs, transcripts, structured data, AI-assisted research, and visualization. The UAP/UFO archive is the first stress-test corpus because it makes provenance, contradiction, missingness, institutional uncertainty, and public interpretation unusually visible.</p>
-    <p class="text-meta">The subject is not “Are UFOs real?” The subject is: what does the evidence actually permit us to say?</p>
+    <p class="text-meta">The subject is not “Are UFOs real?” The subject is: what does the evidence actually permit us to say? · <a href="./README.md">Documentation index</a></p>
   </div>
 </header>
 
@@ -285,14 +285,70 @@
 
   <section aria-labelledby="weeks-h">
     <h2 id="weeks-h" class="text-h2">Seven weeks</h2>
+    <p class="text-body">Each week includes a documentation set drawn from the actual Omoluabi research system. The syllabus therefore teaches from live methods, schemas, data, transcripts, and source notes rather than from an abstract reading list alone.</p>
     <div class="week-grid">
-      <article class="week-card"><p class="text-meta">WEEK 01 · THE CLAIM</p><h3 class="text-h3">What exactly are you investigating?</h3><p class="text-body">Separate question, claim, assumption, and desired conclusion. Build the first claim ledger.</p><p class="lab"><strong>Lab:</strong> HTML + semantic evidence card.</p><p class="deliverable"><strong>Deliverable:</strong> one-page investigation brief and evidence threshold.</p></article>
-      <article class="week-card"><p class="text-meta">WEEK 02 · FIND THE ORIGINAL</p><h3 class="text-h3">Where did this come from?</h3><p class="text-body">Government archives, institutional repositories, oral history, scientific literature, APIs, FOIA, metadata, and source inheritance.</p><p class="lab"><strong>Lab:</strong> JSON / CSV source ledger; basic Python or JavaScript parsing.</p><p class="deliverable"><strong>Deliverable:</strong> source ladder with at least one primary-source retrieval.</p></article>
-      <article class="week-card"><p class="text-meta">WEEK 03 · EVIDENCE HAS A BODY</p><h3 class="text-h3">What can this medium actually record?</h3><p class="text-body">Audio, video, photography, sensor systems, maps, transcripts, compression, metadata, and the difference between signal and representation.</p><p class="lab"><strong>Lab:</strong> media metadata + synchronized transcript or image annotation.</p><p class="deliverable"><strong>Deliverable:</strong> modality audit: what is present, absent, and unknowable.</p></article>
-      <article class="week-card"><p class="text-meta">WEEK 04 · MACHINES AS INVESTIGATIVE PARTNERS</p><h3 class="text-h3">What should AI be allowed to do?</h3><p class="text-body">Search support, extraction, transcription, clustering, comparison, agent workflows, hallucination, provenance leakage, and human review.</p><p class="lab"><strong>Lab:</strong> machine-suggested vs source-supported comparison.</p><p class="deliverable"><strong>Deliverable:</strong> documented AI research protocol with failure log.</p></article>
-      <article class="week-card"><p class="text-meta">WEEK 05 · CONTRADICTION</p><h3 class="text-h3">What happens when the sources disagree?</h3><p class="text-body">Build the strongest case for competing readings. Preserve date conflicts, witness divergence, institutional interpretation, and missing evidence.</p><p class="lab"><strong>Lab:</strong> contradiction graph / provenance network.</p><p class="deliverable"><strong>Deliverable:</strong> structured contradiction set with next-test questions.</p></article>
-      <article class="week-card"><p class="text-meta">WEEK 06 · CODE THE EVIDENCE</p><h3 class="text-h3">What becomes visible when the evidence computes?</h3><p class="text-body">Turn the ledger into timelines, maps, networks, matrices, small simulations, sonifications, or other computational views.</p><p class="lab"><strong>Lab:</strong> SVG, p5.js, D3.js, or Python/pandas visualization.</p><p class="deliverable"><strong>Deliverable:</strong> one visual view + one equivalent nonvisual representation.</p></article>
-      <article class="week-card"><p class="text-meta">WEEK 07 · THE PUBLIC RECORD</p><h3 class="text-h3">Can someone else inspect your reasoning?</h3><p class="text-body">Accessibility audit, source release, interface critique, documentation, limitations, uncertainty statement, and public presentation.</p><p class="lab"><strong>Lab:</strong> GitHub Pages publishing + keyboard/screen-reader audit.</p><p class="deliverable"><strong>Deliverable:</strong> final evidence machine.</p></article>
+      <article class="week-card">
+        <p class="text-meta">WEEK 01 · THE CLAIM</p>
+        <h3 class="text-h3">What exactly are you investigating?</h3>
+        <p class="text-body">Separate question, claim, assumption, and desired conclusion. Build the first claim ledger.</p>
+        <p class="lab"><strong>Lab:</strong> HTML + semantic evidence card.</p>
+        <p class="deliverable"><strong>Deliverable:</strong> one-page investigation brief and evidence threshold.</p>
+        <p class="text-meta"><strong>Documentation:</strong> <a href="../SSL-METHOD.md">SSL method</a> · <a href="../schemas/observation.schema.json">Observation schema</a> · <a href="../schemas/source.schema.json">Source schema</a></p>
+      </article>
+
+      <article class="week-card">
+        <p class="text-meta">WEEK 02 · FIND THE ORIGINAL</p>
+        <h3 class="text-h3">Where did this come from?</h3>
+        <p class="text-body">Government archives, institutional repositories, oral history, scientific literature, APIs, FOIA, metadata, and source inheritance.</p>
+        <p class="lab"><strong>Lab:</strong> JSON / CSV source ledger; basic Python or JavaScript parsing.</p>
+        <p class="deliverable"><strong>Deliverable:</strong> source ladder with at least one primary-source retrieval.</p>
+        <p class="text-meta"><strong>Documentation:</strong> <a href="../ufo-connection/SOURCE_NOTES.md">UAP source notes</a> · <a href="../ufo-connection/data/evidence-timeline.csv">Evidence timeline CSV</a> · <a href="../ufo-connection/data/edwards-1957-source-ledger.csv">Edwards source ledger</a></p>
+      </article>
+
+      <article class="week-card">
+        <p class="text-meta">WEEK 03 · EVIDENCE HAS A BODY</p>
+        <h3 class="text-h3">What can this medium actually record?</h3>
+        <p class="text-body">Audio, video, photography, sensor systems, maps, transcripts, compression, metadata, and the difference between signal and representation.</p>
+        <p class="lab"><strong>Lab:</strong> media metadata + synchronized transcript or image annotation.</p>
+        <p class="deliverable"><strong>Deliverable:</strong> modality audit: what is present, absent, and unknowable.</p>
+        <p class="text-meta"><strong>Documentation:</strong> <a href="../schemas/media.schema.json">Media schema</a> · <a href="../schemas/media-provenance.schema.json">Media provenance schema</a> · <a href="../schemas/photographic-witness.schema.json">Photographic witness schema</a> · <a href="../ufo-connection/data/media-manifest.json">Media manifest</a></p>
+      </article>
+
+      <article class="week-card">
+        <p class="text-meta">WEEK 04 · MACHINES AS INVESTIGATIVE PARTNERS</p>
+        <h3 class="text-h3">What should AI be allowed to do?</h3>
+        <p class="text-body">Search support, extraction, transcription, clustering, comparison, agent workflows, hallucination, provenance leakage, and human review.</p>
+        <p class="lab"><strong>Lab:</strong> machine-suggested vs source-supported comparison.</p>
+        <p class="deliverable"><strong>Deliverable:</strong> documented AI research protocol with failure log.</p>
+        <p class="text-meta"><strong>Documentation:</strong> <a href="../schemas/ai-permission.schema.json">AI permission schema</a> · <a href="../docs/SSL_RULES_IMPLEMENTATION.md">SSL rules implementation</a> · <a href="../schemas/publication.schema.json">Publication schema</a></p>
+      </article>
+
+      <article class="week-card">
+        <p class="text-meta">WEEK 05 · CONTRADICTION</p>
+        <h3 class="text-h3">What happens when the sources disagree?</h3>
+        <p class="text-body">Build the strongest case for competing readings. Preserve date conflicts, witness divergence, institutional interpretation, and missing evidence.</p>
+        <p class="lab"><strong>Lab:</strong> contradiction graph / provenance network.</p>
+        <p class="deliverable"><strong>Deliverable:</strong> structured contradiction set with next-test questions.</p>
+        <p class="text-meta"><strong>Documentation:</strong> <a href="../ufo-connection/data/gordon-cooper-evidence.json">Cooper / Edwards evidence JSON</a> · <a href="../ufo-connection/data/edwards-1957-forensic.json">Edwards forensic reconstruction</a> · <a href="../ufo-connection/data/edwards-1957-geometry.csv">Geometry CSV</a></p>
+      </article>
+
+      <article class="week-card">
+        <p class="text-meta">WEEK 06 · CODE THE EVIDENCE</p>
+        <h3 class="text-h3">What becomes visible when the evidence computes?</h3>
+        <p class="text-body">Turn the ledger into timelines, maps, networks, matrices, small simulations, sonifications, or other computational views.</p>
+        <p class="lab"><strong>Lab:</strong> SVG, p5.js, D3.js, or Python/pandas visualization.</p>
+        <p class="deliverable"><strong>Deliverable:</strong> one visual view + one equivalent nonvisual representation.</p>
+        <p class="text-meta"><strong>Documentation:</strong> <a href="./viz.js">Evidence Machines interaction code</a> · <a href="../ufo-connection/data/apollo-anomaly-evidence.json">Apollo evidence JSON</a> · <a href="../schemas/location-evidence.schema.json">Location evidence schema</a> · <a href="../schemas/map-missingness.schema.json">Map missingness schema</a></p>
+      </article>
+
+      <article class="week-card">
+        <p class="text-meta">WEEK 07 · THE PUBLIC RECORD</p>
+        <h3 class="text-h3">Can someone else inspect your reasoning?</h3>
+        <p class="text-body">Accessibility audit, source release, interface critique, documentation, limitations, uncertainty statement, and public presentation.</p>
+        <p class="lab"><strong>Lab:</strong> GitHub Pages publishing + keyboard/screen-reader audit.</p>
+        <p class="deliverable"><strong>Deliverable:</strong> final evidence machine.</p>
+        <p class="text-meta"><strong>Documentation:</strong> <a href="../schemas/accessibility.schema.json">Accessibility schema</a> · <a href="../schemas/correction.schema.json">Correction schema</a> · <a href="../ufo-connection/transcripts/gordon-cooper-1962-selected-transcript.md">Cooper transcript</a> · <a href="../ufo-connection/transcripts/apollo-10-space-music-evidence-note.md">Apollo 10 evidence note</a></p>
+      </article>
     </div>
   </section>
 
@@ -425,6 +481,51 @@ const unresolved = records.filter(record =>
       <div><strong>No AI answer as evidence</strong><span>A model can help locate or organize a source. Its generated statement is not the source.</span></div>
       <div><strong>No invisible contradiction</strong><span>Material counter-evidence must remain inspectable.</span></div>
       <div><strong>No false precision</strong><span>Unknown range, missing metadata, uncertain timestamps, and disputed identities stay marked as uncertain.</span></div>
+    </div>
+  </section>
+
+
+  <hr class="divider">
+
+  <section aria-labelledby="docs-h">
+    <p class="text-meta">DOCUMENTATION</p>
+    <h2 id="docs-h" class="text-h2">Follow the course into the underlying research</h2>
+    <p class="text-body">The course page is not the end of the evidence trail. These links expose the method, schemas, data, transcripts, source notes, and code used to build the reference investigation and the visualization above.</p>
+    <div class="grid-2">
+      <article class="card">
+        <h3 class="text-h3">Course + method</h3>
+        <p class="text-meta"><a href="./README.md">Evidence Machines documentation index</a></p>
+        <p class="text-meta"><a href="../SSL-METHOD.md">Small Systems Lab method</a></p>
+        <p class="text-meta"><a href="../schemas/README.md">Omoluabi schema index</a></p>
+        <p class="text-meta"><a href="../docs/glossary.md">Glossary</a></p>
+      </article>
+      <article class="card">
+        <h3 class="text-h3">Investigation documentation</h3>
+        <p class="text-meta"><a href="../ufo-connection/README.md">UAP investigation README</a></p>
+        <p class="text-meta"><a href="../ufo-connection/PROJECT_BRIEF.md">Project brief</a></p>
+        <p class="text-meta"><a href="../ufo-connection/SOURCE_NOTES.md">Source notes + update protocol</a></p>
+        <p class="text-meta"><a href="../ufo-connection/archive.html">Primary-source archive</a></p>
+      </article>
+      <article class="card">
+        <h3 class="text-h3">Data + evidence</h3>
+        <p class="text-meta"><a href="../ufo-connection/data/evidence-timeline.csv">Evidence timeline CSV</a></p>
+        <p class="text-meta"><a href="../ufo-connection/data/gordon-cooper-evidence.json">Cooper / Edwards JSON</a></p>
+        <p class="text-meta"><a href="../ufo-connection/data/apollo-anomaly-evidence.json">Apollo evidence JSON</a></p>
+        <p class="text-meta"><a href="../ufo-connection/data/media-manifest.json">Media manifest</a></p>
+      </article>
+      <article class="card">
+        <h3 class="text-h3">Transcripts + accessibility</h3>
+        <p class="text-meta"><a href="../ufo-connection/transcripts/gordon-cooper-1962-selected-transcript.md">Gordon Cooper 1962 transcript</a></p>
+        <p class="text-meta"><a href="../ufo-connection/transcripts/mercury-atlas-9-d010-transcript-summary.md">Mercury D010 transcript summary</a></p>
+        <p class="text-meta"><a href="../ufo-connection/transcripts/apollo-10-space-music-evidence-note.md">Apollo 10 evidence note</a></p>
+        <p class="text-meta"><a href="../schemas/accessibility.schema.json">Accessibility schema</a></p>
+      </article>
+      <article class="card">
+        <h3 class="text-h3">Code</h3>
+        <p class="text-meta"><a href="./viz.js">Visualization interaction code</a></p>
+        <p class="text-meta"><a href="./evidence-machines.css">Course + visualization CSS</a></p>
+        <p class="text-meta"><a href="https://github.com/ukadike/omoluabi/tree/main/evidence-machines">Evidence Machines source folder</a></p>
+      </article>
     </div>
   </section>
 

@@ -12,6 +12,8 @@
   <title>Evidence Machines — Omoluabi</title>
   <link rel="stylesheet" href="../variables.css">
   <link rel="stylesheet" href="../site.css">
+  <link rel="stylesheet" href="./evidence-machines.css">
+  <script src="./viz.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -129,8 +131,8 @@
       </article>
       <article class="card">
         <p class="text-meta">Week 06</p>
-        <h3 class="text-h3">Make the Investigation Visible</h3>
-        <p class="text-body">Prototype an evidence interface: map, graph, timeline, archive, sonification, spatial experience, or other computational form.</p>
+        <h3 class="text-h3">Code the Evidence</h3>
+        <p class="text-body">Turn structured evidence into a working visualization, map, graph, timeline, sonification, archive interface, or small computational instrument.</p>
       </article>
       <article class="card">
         <p class="text-meta">Week 07</p>
@@ -138,6 +140,65 @@
         <p class="text-body">Publish a reproducible investigation that another person can inspect, navigate, challenge, and continue.</p>
       </article>
     </div>
+  </section>
+
+  <hr class="divider">
+
+  <section aria-labelledby="code-h">
+    <h2 id="code-h" class="text-h2">Code + data visualization lab</h2>
+    <p class="text-body">Students do not only write about evidence. They structure it, query it, and build interfaces from it. The emphasis is not on becoming a conventional software engineer; it is on learning enough code to make evidence behave visibly.</p>
+    <ul class="code-stack" aria-label="Possible technical tools">
+      <li>HTML / CSS</li>
+      <li>JavaScript</li>
+      <li>JSON / CSV</li>
+      <li>SVG</li>
+      <li>p5.js</li>
+      <li>D3.js</li>
+      <li>Python / pandas</li>
+      <li>APIs</li>
+      <li>Git / GitHub</li>
+    </ul>
+
+    <div class="course-note">
+      <p class="text-body"><strong>Example exercise:</strong> take a source ledger and code two views of the same evidence — one visual and one nonvisual — then test whether both communicate the same uncertainty, provenance, and contradictions.</p>
+    </div>
+
+    <h3 class="text-h3">Live example: Apollo evidence ledger</h3>
+    <p class="text-body">This visualization is generated in the browser from Omoluabi’s current <a href="../ufo-connection/data/apollo-anomaly-evidence.json">Apollo anomaly evidence JSON</a>. It is deliberately simple: the point is to expose the relationship between source data and interface rather than hide it behind a visualization platform.</p>
+
+    <div class="viz-shell">
+      <p id="viz-summary" class="text-meta" aria-live="polite">Loading structured evidence…</p>
+      <div id="mission-controls" class="viz-controls" aria-label="Filter evidence by mission"></div>
+      <div id="evidence-chart" aria-busy="true"></div>
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption class="text-meta">Accessible tabular view of the same evidence records</caption>
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Mission</th>
+              <th scope="col">Event</th>
+              <th scope="col">Evidence class</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody id="evidence-table-body">
+            <tr><td colspan="5">Loading evidence data…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="text-meta"><a href="./viz.js">Read the visualization code</a> · <a href="./evidence-machines.css">Read the local CSS</a> · <a href="../ufo-connection/data/apollo-anomaly-evidence.json">Inspect the source JSON</a></p>
+
+    <h3 class="text-h3">The coding pattern</h3>
+    <pre class="code-example"><code>fetch('../ufo-connection/data/apollo-anomaly-evidence.json')
+  .then(response =&gt; response.json())
+  .then(data =&gt; {
+    const records = data.records;
+    // filter → compare → visualize → preserve a table equivalent
+  });</code></pre>
+    <p class="text-body">That pattern can expand into timeline reconstruction, geospatial work, sensor comparison, network graphs, source provenance, image metadata, audio analysis, or interfaces that reveal where the evidence stops.</p>
   </section>
 
   <hr class="divider">
@@ -199,7 +260,7 @@
   <section aria-labelledby="status-h">
     <h2 id="status-h" class="text-h2">Proposal status</h2>
     <p class="text-body">Working course concept for discussion with NYU ITP / IMA. The page is a public research artifact, not a statement that the course has been approved or scheduled.</p>
-    <p class="text-meta">Version 0.1 · September 24, 2026 · Small Systems Lab / Omoluabi</p>
+    <p class="text-meta">Version 0.2 · September 24, 2026 · Small Systems Lab / Omoluabi</p>
   </section>
 
 </main>

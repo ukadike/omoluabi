@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "updatedAt": "2026-09-24T17:39:00Z",
+  "updatedAt": "2026-09-24T19:11:00Z",
   "investigation": "Gordon Cooper / Edwards AFB evidence dossier",
   "method": "Separate contemporaneous records, later recollection, official interpretation, and unresolved contradictions.",
   "entities": [
@@ -256,5 +256,18 @@
       ],
       "requiredVerification": "Match frame numbers and geometry to original 35mm edge data, camera log, or official Blue Book pages."
     }
-  ]
+  ],
+  "forensicPackage": {
+    "narrative": "../evidence/edwards-1957-forensic-reconstruction.md",
+    "data": "./edwards-1957-forensic.json",
+    "geometry": "./edwards-1957-geometry.csv",
+    "verifiedIdentifiers": [
+      "Project Blue Book 4715",
+      "NARA item 1003460",
+      "NARA NAID 28970018",
+      "T1206 Roll 27"
+    ],
+    "currentInstitutionalConclusion": "weather balloon",
+    "caution": "Official conclusion is preserved; Omoluabi has not yet independently reproduced it from original balloon/camera measurement tables."
+  }
 }

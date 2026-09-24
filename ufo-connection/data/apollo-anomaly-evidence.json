@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-09-24T17:39:00Z",
+  "investigation": "Apollo anomaly evidence ledger",
+  "records": [
+    {
+      "id": "AP-10-001",
+      "mission": "Apollo 10",
+      "event": "Unusual 'outer-space-type music' / whistling while in lunar orbit",
+      "evidenceClass": "onboard transcript/audio",
+      "status": "reported phenomenon; generally associated with radio/VHF interaction, no visual craft claim in the event record",
+      "source": "https://www.nasa.gov/mission/apollo-10/",
+      "next": "Add exact onboard transcript/audio timestamps and RF configuration."
+    },
+    {
+      "id": "AP-11-001",
+      "mission": "Apollo 11",
+      "event": "Bright unidentified object during translunar coast",
+      "evidenceClass": "postflight technical debrief; multiple crew observers",
+      "status": "unidentified in crew debrief; S-IVB rejected by reported distance; spacecraft-origin debris not ruled out",
+      "source": "https://sma.nasa.gov/SignificantIncidents/assets/a11_tcdb.pdf",
+      "notes": [
+        "Aldrin described an L-like appearance through the monocular.",
+        "Armstrong compared the appearance to an open suitcase.",
+        "Armstrong emphasized the object was near the visual resolution limit and size/range were not established."
+      ]
+    },
+    {
+      "id": "AP-11-002",
+      "mission": "Apollo 11",
+      "event": "Aristarchus transient-lunar-phenomenon observation request and bright-area report",
+      "evidenceClass": "air-to-ground transcript",
+      "status": "real observation of unusual brightness; interpretation remains tied to lunar illumination/geometry questions",
+      "source": "https://www.nasa.gov/wp-content/uploads/2026/01/as11-tec.pdf?emrc=340ba7"
+    },
+    {
+      "id": "AP-11-003",
+      "mission": "Apollo 11",
+      "event": "Mission evidence corpus",
+      "evidenceClass": "NASA transcript/audio/photo/map archive",
+      "status": "source infrastructure",
+      "source": "https://www.nasa.gov/wp-content/uploads/static/history/alsj/a11/a11.html",
+      "assets": [
+        "technical air-to-ground transcript",
+        "command-module onboard transcript",
+        "mission audio",
+        "trajectory analysis",
+        "descent/ascent photomaps",
+        "image/video libraries"
+      ]
+    },
+    {
+      "id": "AP-17-001",
+      "mission": "Apollo 17",
+      "event": "Bright jagged/angular fragments during cislunar transit",
+      "evidenceClass": "mission audio released as NASA-UAP-D009",
+      "status": "crew speculated paint or ice chips; official release preserves that spacecraft-debris context",
+      "source": "https://www.dvidshub.net/video/1007872/nasa-uap-d009-apollo-17-audio-excerpt-december-7-1972",
+      "recordIds": [
+        "NASA-UAP-D009",
+        "DVIDS 1007872"
+      ]
+    },
+    {
+      "id": "AP-ARCHIVE-001",
+      "mission": "Apollo program",
+      "event": "NASA mission transcript corpus",
+      "evidenceClass": "official NASA research collection",
+      "status": "primary research backbone",
+      "source": "https://www.nasa.gov/history/mission-transcripts-mercury-gemini-and-apollo/"
+    }
+  ]
+}

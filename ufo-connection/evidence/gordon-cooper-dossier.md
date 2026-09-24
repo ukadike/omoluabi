@@ -72,6 +72,29 @@ That makes it testable.
 - Exact source and date of Cooper's later landing-account interviews.
 - 1951 USAF squadron records capable of testing Cooper's European formation recollection.
 
+
+
+## Secondary research leads — not yet promoted to primary evidence
+
+The following details are useful for retrieval but remain **secondary-source leads**
+until matched against the original Project Blue Book file and surviving film:
+
+- NICAP/Brad Sparks identifies possible phototheodolite frames **609, 614, 620,
+  and 651**.
+- The same secondary reconstruction reports frame geometry beginning near
+  azimuth **10°28′ / elevation 2°24′** and later near azimuth **40°30′ /
+  elevation 1°00′**.
+- A later Sparks catalog proposes frame-rate/time details around the 600-series
+  exposures.
+
+Secondary lead pages:
+- https://www.nicap.org/570502edwardsafb_dir.htm
+- https://www.nicap.org/bb/BB_Unknowns.pdf
+
+**Publication rule:** these values may guide a search or simulation, but they
+must not be presented as verified instrument data until the original film edge
+data, camera log, or official case-file pages are inspected.
+
 ## Accessibility commitments
 
 Every media item added to this dossier should include:

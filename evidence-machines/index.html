@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Evidence Machines is an Omoluabi teaching studio concept: investigate strange, contested phenomena through computation, public archives, multimodal evidence, provenance, accessibility, and protected uncertainty.">
+  <meta name="description" content="Evidence Machines is a completed working course proposal inside Omoluabi: a seven-week computational investigation studio using contested public evidence, archives, coding, data visualization, provenance, accessibility, and protected uncertainty.">
   <link rel="canonical" href="https://ukadike.github.io/omoluabi/evidence-machines/">
   <meta property="og:title" content="Evidence Machines — Omoluabi">
-  <meta property="og:description" content="A computational investigation studio using the UAP archive as a first case study in evidence, provenance, uncertainty, and public interface design.">
+  <meta property="og:description" content="A seven-week computational investigation studio using UAP archives as a first stress-test corpus for evidence, code, provenance, contradiction, accessibility, and public interface design.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ukadike.github.io/omoluabi/evidence-machines/">
   <title>Evidence Machines — Omoluabi</title>
@@ -18,135 +18,289 @@
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<header class="header">
+<header class="header course-hero">
   <div class="wrap">
-    <p class="text-meta"><a href="../">Omoluabi</a> · Teaching / Research Studio · Working Course Concept</p>
+    <p class="text-meta"><a href="../">Omoluabi</a> · Teaching / Research Studio · Course Proposal v1.0</p>
     <h1 class="text-h1">Evidence Machines: Investigating the Unexplained</h1>
-    <p class="text-body">How do we investigate something when the evidence is fragmented, multimodal, contested, incomplete, classified, badly described, or contradictory?</p>
-    <p class="text-meta">UAP / UFO records are the first stress-test corpus. They are not the conclusion.</p>
+    <p class="hero-deck">A studio about how to investigate difficult public evidence with code — without turning uncertainty into spectacle.</p>
+    <p class="text-body">Students work across archives, testimony, audio, video, images, maps, metadata, APIs, transcripts, structured data, AI-assisted research, and visualization. The UAP/UFO archive is the first stress-test corpus because it makes provenance, contradiction, missingness, institutional uncertainty, and public interpretation unusually visible.</p>
+    <p class="text-meta">The subject is not “Are UFOs real?” The subject is: what does the evidence actually permit us to say?</p>
   </div>
 </header>
 
 <main id="main" class="wrap">
 
-  <section aria-labelledby="premise-h">
-    <h2 id="premise-h" class="text-h2">The premise</h2>
-    <p class="text-body">Evidence Machines is a computational investigation studio built from the process used to create Omoluabi. Students begin with a difficult claim and build a public, inspectable path through its evidence rather than beginning with a predetermined answer.</p>
-    <p class="text-body">The course treats computation as an investigative instrument: a way to search archives, align media, reconstruct timelines, expose contradictions, visualize uncertainty, and make a research process legible to other people.</p>
-    <div class="card">
-      <p class="text-meta">Governing question</p>
-      <p class="text-h3">How do we know what we think we know when machines increasingly mediate the evidence?</p>
+  <section aria-labelledby="viz-h" class="final-viz">
+    <div class="section-heading-row">
+      <div>
+        <p class="text-meta">FINAL VISUALIZATION · WORKING PROTOTYPE</p>
+        <h2 id="viz-h" class="text-h2">The evidence does not arrive as one story</h2>
+      </div>
+      <p class="text-body section-intro">This visualization uses records already structured inside the Omoluabi UAP archive. It separates event, surviving record, later interpretation, and the next test required before a stronger claim can be made.</p>
+    </div>
+
+    <div class="viz-toolbar" aria-label="Evidence visualization filters">
+      <button type="button" data-filter="all" aria-pressed="true">All records</button>
+      <button type="button" data-filter="cooper" aria-pressed="false">Gordon Cooper</button>
+      <button type="button" data-filter="edwards" aria-pressed="false">Edwards AFB</button>
+      <button type="button" data-filter="mercury" aria-pressed="false">Mercury</button>
+      <button type="button" data-filter="apollo" aria-pressed="false">Apollo</button>
+    </div>
+
+    <div class="viz-panel" id="timeline-panel">
+      <div class="viz-heading">
+        <div>
+          <p class="text-meta">VIEW 01 · CHRONOLOGY</p>
+          <h3 class="text-h3">Evidence timeline, 1951–1978</h3>
+        </div>
+        <p class="text-meta" id="timeline-summary" aria-live="polite">11 structured events shown</p>
+      </div>
+
+      <div class="timeline-scroll" role="region" aria-label="Scrollable evidence timeline" tabindex="0">
+        <svg class="evidence-timeline" viewBox="0 0 920 390" role="img" aria-labelledby="timeline-title timeline-desc">
+          <title id="timeline-title">Timeline of selected Gordon Cooper, Edwards Air Force Base, Mercury, and Apollo evidence records</title>
+          <desc id="timeline-desc">Four horizontal lanes show selected records from 1951 to 1978. Gordon Cooper appears in 1951, 1962, and 1978; Edwards Air Force Base in 1957 and 1968; Mercury in 1963; Apollo in 1969 and 1972.</desc>
+
+          <g class="timeline-grid" aria-hidden="true">
+            <line x1="150" y1="54" x2="150" y2="340"></line>
+            <line x1="282" y1="54" x2="282" y2="340"></line>
+            <line x1="392" y1="54" x2="392" y2="340"></line>
+            <line x1="414" y1="54" x2="414" y2="340"></line>
+            <line x1="524" y1="54" x2="524" y2="340"></line>
+            <line x1="546" y1="54" x2="546" y2="340"></line>
+            <line x1="612" y1="54" x2="612" y2="340"></line>
+            <line x1="744" y1="54" x2="744" y2="340"></line>
+          </g>
+
+          <g class="year-labels" aria-hidden="true">
+            <text x="150" y="34">1951</text>
+            <text x="282" y="34">1957</text>
+            <text x="392" y="34">1962</text>
+            <text x="414" y="34">1963</text>
+            <text x="524" y="34">1968</text>
+            <text x="546" y="34">1969</text>
+            <text x="612" y="34">1972</text>
+            <text x="744" y="34">1978</text>
+          </g>
+
+          <g class="lane-labels" aria-hidden="true">
+            <text x="18" y="96">GORDON COOPER</text>
+            <text x="18" y="166">EDWARDS AFB</text>
+            <text x="18" y="236">MERCURY</text>
+            <text x="18" y="306">APOLLO</text>
+          </g>
+
+          <g class="lane-lines" aria-hidden="true">
+            <line x1="150" y1="90" x2="820" y2="90"></line>
+            <line x1="150" y1="160" x2="820" y2="160"></line>
+            <line x1="150" y1="230" x2="820" y2="230"></line>
+            <line x1="150" y1="300" x2="820" y2="300"></line>
+          </g>
+
+          <g class="event-mark" data-group="cooper" tabindex="0" role="img" aria-label="1951: Cooper later recalled repeated formation sightings while serving as a fighter pilot in Europe. No contemporaneous squadron or radar record is yet attached.">
+            <circle cx="150" cy="90" r="10"></circle>
+            <text x="150" y="72" text-anchor="middle">later testimony</text>
+          </g>
+
+          <g class="event-mark" data-group="edwards" tabindex="0" role="img" aria-label="May 1957: Edwards Air Force Base photographic case involving camera operators Bittick and Gettys. Surviving archive material exists, while identity and event details remain contested.">
+            <rect x="272" y="150" width="20" height="20"></rect>
+            <text x="282" y="142" text-anchor="middle">film + case file</text>
+          </g>
+
+          <g class="event-mark" data-group="cooper" tabindex="0" role="img" aria-label="November 1962: Walter Cronkite interviews Gordon Cooper about UFO reports. This is a primary audiovisual record of Cooper's public position.">
+            <circle cx="392" cy="90" r="10"></circle>
+            <text x="392" y="72" text-anchor="middle">archival interview</text>
+          </g>
+
+          <g class="event-mark" data-group="mercury" tabindex="0" role="img" aria-label="May 15, 1963: Two Mercury-Atlas 9 mission-audio records describe luminous particles and mission beacon context.">
+            <circle cx="406" cy="230" r="8"></circle>
+            <circle cx="422" cy="230" r="8"></circle>
+            <text x="414" y="212" text-anchor="middle">2 mission-audio records</text>
+          </g>
+
+          <g class="event-mark" data-group="edwards" tabindex="0" role="img" aria-label="July 1968: James E. McDonald presents a reconstruction of the Edwards case to a U.S. House committee after interviewing camera operators and a supervisor.">
+            <rect x="514" y="150" width="20" height="20"></rect>
+            <text x="524" y="142" text-anchor="middle">Congressional reconstruction</text>
+          </g>
+
+          <g class="event-mark" data-group="apollo" tabindex="0" role="img" aria-label="1969: Apollo 10 unusual audio, Apollo 11 bright unidentified object, and Apollo 11 Aristarchus brightness observation are preserved as three distinct evidence events.">
+            <circle cx="532" cy="300" r="7"></circle>
+            <circle cx="546" cy="300" r="7"></circle>
+            <circle cx="560" cy="300" r="7"></circle>
+            <text x="546" y="282" text-anchor="middle">3 distinct records</text>
+          </g>
+
+          <g class="event-mark" data-group="apollo" tabindex="0" role="img" aria-label="December 1972: Apollo 17 mission audio records bright angular or jagged fragments; the crew discusses paint, ice, and spacecraft debris as possible sources.">
+            <circle cx="612" cy="300" r="10"></circle>
+            <text x="612" y="322" text-anchor="middle">mission audio</text>
+          </g>
+
+          <g class="event-mark" data-group="cooper" tabindex="0" role="img" aria-label="November 1978: Gordon Cooper writes to Grenada's United Nations ambassador advocating coordinated scientific collection of UFO reports and stating his personal belief.">
+            <circle cx="744" cy="90" r="10"></circle>
+            <text x="744" y="72" text-anchor="middle">signed letter</text>
+          </g>
+
+          <g class="timeline-legend" aria-hidden="true">
+            <circle cx="170" cy="364" r="7"></circle>
+            <text x="184" y="368">audio / testimony / mission record</text>
+            <rect x="430" y="357" width="14" height="14"></rect>
+            <text x="450" y="368">archive / document reconstruction</text>
+          </g>
+        </svg>
+      </div>
+      <p class="viz-caption">A timeline is not a verdict. It shows when a statement or record enters the evidence chain and helps prevent a later recollection from being mistaken for a contemporaneous record.</p>
+    </div>
+
+    <div class="viz-panel">
+      <div class="viz-heading">
+        <div>
+          <p class="text-meta">VIEW 02 · PROVENANCE</p>
+          <h3 class="text-h3">Four layers of an evidence machine</h3>
+        </div>
+      </div>
+
+      <div class="provenance-grid" role="table" aria-label="Evidence provenance matrix">
+        <div class="prov-head" role="columnheader">Event</div>
+        <div class="prov-head" role="columnheader">Surviving record</div>
+        <div class="prov-head" role="columnheader">Interpretation boundary</div>
+        <div class="prov-head" role="columnheader">Next test</div>
+
+        <div class="prov-cell" data-group="edwards" role="cell"><strong>Edwards AFB, 1957</strong><span>Object photographed by Askania camera operators.</span></div>
+        <div class="prov-cell" data-group="edwards" role="cell"><strong>Film inventory + Blue Book file</strong><span>NARA inventory, official case file, later witness reconstruction.</span></div>
+        <div class="prov-cell" data-group="edwards" role="cell"><strong>Identity disputed</strong><span>Official balloon conclusion is preserved; later witnesses rejected it. Later “landing” recollection is a separate testimony layer.</span></div>
+        <div class="prov-cell prov-next" data-group="edwards" role="cell"><strong>Reconstruct measurements</strong><span>Retrieve original camera logs, film metadata, wind/balloon data, and measurement tables.</span></div>
+
+        <div class="prov-cell" data-group="mercury" role="cell"><strong>Mercury-Atlas 9, 1963</strong><span>Cooper reports luminous “firefly” particles and later beacon-related observations.</span></div>
+        <div class="prov-cell" data-group="mercury" role="cell"><strong>Primary mission audio</strong><span>NASA/AARO releases preserve the communications and official contextual descriptions.</span></div>
+        <div class="prov-cell" data-group="mercury" role="cell"><strong>Mission context matters</strong><span>Frozen condensation and xenon-strobe beacons are documented explanations/context in the released records.</span></div>
+        <div class="prov-cell prov-next" data-group="mercury" role="cell"><strong>Keep event classes separate</strong><span>Do not merge visually striking spacecraft phenomena into unrelated UFO claims.</span></div>
+
+        <div class="prov-cell" data-group="apollo" role="cell"><strong>Apollo 10, 1969</strong><span>Crew hears unusual “outer-space-type music” / whistling.</span></div>
+        <div class="prov-cell" data-group="apollo" role="cell"><strong>Onboard transcript + audio</strong><span>Crew discusses VHF ranging and possible radar side-lobe explanations.</span></div>
+        <div class="prov-cell" data-group="apollo" role="cell"><strong>Real sound, uncertain mechanism</strong><span>The record documents anomalous audio; it does not document a visual craft.</span></div>
+        <div class="prov-cell prov-next" data-group="apollo" role="cell"><strong>Correlate hardware state</strong><span>Synchronize VHF, radar, circuit-breaker state, and DSEA audio.</span></div>
+
+        <div class="prov-cell" data-group="apollo" role="cell"><strong>Apollo 11, 1969</strong><span>Crew observes a bright unidentified object during translunar coast.</span></div>
+        <div class="prov-cell" data-group="apollo" role="cell"><strong>Technical crew debrief</strong><span>Multiple crew members describe the object and its changing optical appearance.</span></div>
+        <div class="prov-cell" data-group="apollo" role="cell"><strong>Unidentified ≠ extraterrestrial</strong><span>S-IVB was rejected by reported distance; size/range were not established; spacecraft debris was not excluded.</span></div>
+        <div class="prov-cell prov-next" data-group="apollo" role="cell"><strong>Reconstruct geometry</strong><span>Align mission time, trajectory, known hardware/debris, viewing direction, and optical limits.</span></div>
+      </div>
+    </div>
+
+    <div class="viz-panel">
+      <div class="viz-heading">
+        <div>
+          <p class="text-meta">VIEW 03 · CONTRADICTION ENGINE</p>
+          <h3 class="text-h3">What the Edwards case teaches</h3>
+        </div>
+        <p class="text-body">The contradiction itself becomes structured data. The goal is not to pick the more dramatic account; it is to preserve both records and define the next empirical test.</p>
+      </div>
+
+      <div class="contradiction-list">
+        <article class="contradiction-card" data-group="edwards">
+          <p class="text-meta">01 · EVENT DATE</p>
+          <div class="contradiction-row"><div><strong>Record A</strong><span>NARA film inventory: May 2, 1957</span></div><div class="versus" aria-hidden="true">↔</div><div><strong>Record B</strong><span>McDonald congressional statement: May 3, 1957</span></div></div>
+          <p class="next-test"><strong>Next test:</strong> original range/camera log and film-can or edge metadata.</p>
+        </article>
+
+        <article class="contradiction-card" data-group="edwards">
+          <p class="text-meta">02 · DID IT LAND?</p>
+          <div class="contradiction-row"><div><strong>Earlier reconstruction</strong><span>Bittick/Gettys account describes photography followed by the object moving away.</span></div><div class="versus" aria-hidden="true">↔</div><div><strong>Later recollection</strong><span>Cooper later described a landing, landing legs, and close approach.</span></div></div>
+          <p class="next-test"><strong>Next test:</strong> contemporaneous witness statements, Cooper’s 1957 report, and the complete original negative sequence.</p>
+        </article>
+
+        <article class="contradiction-card" data-group="edwards">
+          <p class="text-meta">03 · BALLOON IDENTIFICATION</p>
+          <div class="contradiction-row"><div><strong>Official record</strong><span>Project Blue Book / ATIC reportedly identified a weather balloon.</span></div><div class="versus" aria-hidden="true">↔</div><div><strong>Later witnesses</strong><span>Bittick and Gettys later rejected that explanation.</span></div></div>
+          <p class="next-test"><strong>Next test:</strong> balloon launch record, winds aloft, phototheodolite azimuth/elevation, and frame timestamps.</p>
+        </article>
+
+        <article class="contradiction-card" data-group="edwards">
+          <p class="text-meta">04 · NUMBER / QUALITY OF IMAGES</p>
+          <div class="contradiction-row"><div><strong>Archive inventory</strong><span>Two 35mm negative filmstrips are listed.</span></div><div class="versus" aria-hidden="true">↔</div><div><strong>Later recollection</strong><span>Gettys remembered roughly 30 exposures and sharp close frames.</span></div></div>
+          <p class="next-test"><strong>Next test:</strong> inspect the highest-generation surviving film and compare frame count, edge data, and optical quality.</p>
+        </article>
+      </div>
+
+      <p class="text-meta source-links"><a href="../ufo-connection/data/evidence-timeline.csv">Timeline CSV</a> · <a href="../ufo-connection/data/gordon-cooper-evidence.json">Gordon Cooper evidence JSON</a> · <a href="../ufo-connection/data/apollo-anomaly-evidence.json">Apollo evidence JSON</a> · <a href="../ufo-connection/data/media-manifest.json">Media manifest</a></p>
     </div>
   </section>
 
   <hr class="divider">
 
-  <section aria-labelledby="not-ufo-h">
-    <h2 id="not-ufo-h" class="text-h2">This is not a UFO class</h2>
-    <p class="text-body">The UAP archive is unusually useful because it contains nearly every evidence problem at once: official records, testimony, photographs, video, sensor traces, missing data, redactions, conflicting interpretations, copied media, metadata problems, institutional uncertainty, and extraordinary public claims.</p>
-    <p class="text-body">That makes it a strong first laboratory for learning how to investigate without collapsing uncertainty into belief or disbelief.</p>
-    <ul class="state-list" aria-label="Evidence conditions">
-      <li>Known</li>
-      <li>Supported</li>
-      <li>Disputed</li>
-      <li>Unresolved</li>
-      <li>Unverified</li>
-      <li>Missing</li>
-    </ul>
-    <p class="text-meta"><a href="../ufo-connection/">Open the current Omoluabi UAP investigation</a> · <a href="../ufo-connection/archive.html">Open the primary-source archive</a></p>
+  <section aria-labelledby="course-h">
+    <p class="text-meta">COURSE PROPOSAL</p>
+    <h2 id="course-h" class="text-h2">A seven-week computational investigation studio</h2>
+    <div class="course-snapshot">
+      <div><span class="text-meta">FORMAT</span><strong>7-week graduate studio / seminar</strong></div>
+      <div><span class="text-meta">MODE</span><strong>Research + making + critique</strong></div>
+      <div><span class="text-meta">FINAL</span><strong>Public evidence machine</strong></div>
+      <div><span class="text-meta">CODE</span><strong>Beginner-accessible, project-driven</strong></div>
+    </div>
+
+    <p class="text-body">Evidence Machines asks students to investigate phenomena that are hard to read because the evidence is incomplete, multimodal, politically or culturally charged, technically mediated, or distributed across incompatible archives. Students do not begin by proving a theory. They begin by building a traceable evidence environment.</p>
+    <p class="text-body">The studio combines computational media, investigative journalism, archival practice, critical AI, data visualization, interface design, and accessibility. Each student chooses a contested or difficult case and develops it from claim → source → structured evidence → contradiction → visualization → public interface.</p>
   </section>
 
   <hr class="divider">
 
-  <section aria-labelledby="path-h">
-    <h2 id="path-h" class="text-h2">One investigation path</h2>
+  <section aria-labelledby="why-h">
+    <h2 id="why-h" class="text-h2">Why this belongs at ITP / IMA</h2>
     <div class="grid-2">
       <article class="card">
-        <p class="text-meta">01 · Claim</p>
-        <h3 class="text-h3">State the question before the answer</h3>
-        <p class="text-body">Write the claim precisely enough that evidence can support, weaken, complicate, or leave it unresolved.</p>
+        <h3 class="text-h3">Computation as a way of seeing</h3>
+        <p class="text-body">Students use code to expose relationships that prose alone can hide: temporal gaps, source inheritance, contradictory accounts, missing modalities, and changes in a claim over time.</p>
       </article>
       <article class="card">
-        <p class="text-meta">02 · Source discovery</p>
-        <h3 class="text-h3">Find the original record</h3>
-        <p class="text-body">Government archives, scientific literature, mission records, FOIA releases, databases, APIs, oral histories, and institutional repositories.</p>
+        <h3 class="text-h3">The weird as a rigorous research condition</h3>
+        <p class="text-body">Strange material forces students to confront uncertainty, ambiguity, institutional authority, belief, and the limits of their tools without rewarding sensationalism.</p>
       </article>
       <article class="card">
-        <p class="text-meta">03 · Provenance</p>
-        <h3 class="text-h3">Ask where this came from</h3>
-        <p class="text-body">Who produced it? When? Is it original, edited, recompressed, quoted, or copied? Can another researcher retrieve it?</p>
+        <h3 class="text-h3">AI as instrument, not oracle</h3>
+        <p class="text-body">Students can use language and multimodal models for search assistance, extraction, transcription, comparison, and interface prototyping, but machine output must remain distinguishable from source evidence.</p>
       </article>
       <article class="card">
-        <p class="text-meta">04 · Multimodal alignment</p>
-        <h3 class="text-h3">Put evidence into the same time and space</h3>
-        <p class="text-body">Align audio, transcript, photographs, video, maps, sensor states, weather, location, and event chronology where the record permits.</p>
-      </article>
-      <article class="card">
-        <p class="text-meta">05 · Contradiction</p>
-        <h3 class="text-h3">Build the strongest counter-reading</h3>
-        <p class="text-body">Record evidence that supports the claim and evidence that complicates it. Do not hide explanatory alternatives.</p>
-      </article>
-      <article class="card">
-        <p class="text-meta">06 · Protected uncertainty</p>
-        <h3 class="text-h3">Leave unresolved things unresolved</h3>
-        <p class="text-body">A responsible system needs a visible state for missing evidence, unresolved interpretation, and claims that exceed the public record.</p>
-      </article>
-      <article class="card">
-        <p class="text-meta">07 · Public interface</p>
-        <h3 class="text-h3">Make the reasoning inspectable</h3>
-        <p class="text-body">Publish timelines, maps, evidence graphs, source ledgers, transcripts, media, accessible descriptions, and citations that let another person reconstruct the investigation.</p>
+        <h3 class="text-h3">Accessibility as epistemology</h3>
+        <p class="text-body">A record that cannot be perceived or navigated by part of the public is an incomplete public record. Access therefore shapes how evidence is represented from the beginning.</p>
       </article>
     </div>
   </section>
 
   <hr class="divider">
 
-  <section aria-labelledby="studio-h">
-    <h2 id="studio-h" class="text-h2">Seven-week pilot studio</h2>
-    <div class="grid-2">
-      <article class="card">
-        <p class="text-meta">Week 01</p>
-        <h3 class="text-h3">The Claim</h3>
-        <p class="text-body">Choose a question strange or difficult enough that the answer is not obvious. Define what would count as evidence.</p>
-      </article>
-      <article class="card">
-        <p class="text-meta">Week 02</p>
-        <h3 class="text-h3">Find the Original</h3>
-        <p class="text-body">Trace circulating claims backward into archives, records, datasets, media, and primary sources.</p>
-      </article>
-      <article class="card">
-        <p class="text-meta">Week 03</p>
-        <h3 class="text-h3">Evidence Has a Body</h3>
-        <p class="text-body">Study what different media and sensors can actually register — and what they leave out.</p>
-      </article>
-      <article class="card">
-        <p class="text-meta">Week 04</p>
-        <h3 class="text-h3">Machines as Investigative Partners</h3>
-        <p class="text-body">Use search, transcription, extraction, clustering, agents, and computational comparison while documenting hallucination and verification risk.</p>
-      </article>
-      <article class="card">
-        <p class="text-meta">Week 05</p>
-        <h3 class="text-h3">Contradiction</h3>
-        <p class="text-body">Actively seek evidence against the working hypothesis and identify what remains genuinely unknown.</p>
-      </article>
-      <article class="card">
-        <p class="text-meta">Week 06</p>
-        <h3 class="text-h3">Code the Evidence</h3>
-        <p class="text-body">Turn structured evidence into a working visualization, map, graph, timeline, sonification, archive interface, or small computational instrument.</p>
-      </article>
-      <article class="card">
-        <p class="text-meta">Week 07</p>
-        <h3 class="text-h3">The Public Record</h3>
-        <p class="text-body">Publish a reproducible investigation that another person can inspect, navigate, challenge, and continue.</p>
-      </article>
+  <section aria-labelledby="outcomes-h">
+    <h2 id="outcomes-h" class="text-h2">Learning outcomes</h2>
+    <p class="text-body">By the end of the course, students should be able to:</p>
+    <ol class="outcome-list">
+      <li><strong>Trace a claim backward</strong> from circulation to the strongest retrievable primary or near-primary source.</li>
+      <li><strong>Structure evidence as data</strong> using JSON, CSV, tables, schemas, identifiers, dates, source classes, and uncertainty states.</li>
+      <li><strong>Use code to interrogate evidence</strong> rather than merely decorate a finished argument.</li>
+      <li><strong>Separate observation from interpretation</strong> and later recollection from contemporaneous record.</li>
+      <li><strong>Build visualizations that preserve uncertainty</strong> instead of manufacturing false precision.</li>
+      <li><strong>Publish an accessible, inspectable investigation</strong> with citations, transcripts, alt text, source data, and a reproducible reasoning trail.</li>
+    </ol>
+  </section>
+
+  <hr class="divider">
+
+  <section aria-labelledby="weeks-h">
+    <h2 id="weeks-h" class="text-h2">Seven weeks</h2>
+    <div class="week-grid">
+      <article class="week-card"><p class="text-meta">WEEK 01 · THE CLAIM</p><h3 class="text-h3">What exactly are you investigating?</h3><p class="text-body">Separate question, claim, assumption, and desired conclusion. Build the first claim ledger.</p><p class="lab"><strong>Lab:</strong> HTML + semantic evidence card.</p><p class="deliverable"><strong>Deliverable:</strong> one-page investigation brief and evidence threshold.</p></article>
+      <article class="week-card"><p class="text-meta">WEEK 02 · FIND THE ORIGINAL</p><h3 class="text-h3">Where did this come from?</h3><p class="text-body">Government archives, institutional repositories, oral history, scientific literature, APIs, FOIA, metadata, and source inheritance.</p><p class="lab"><strong>Lab:</strong> JSON / CSV source ledger; basic Python or JavaScript parsing.</p><p class="deliverable"><strong>Deliverable:</strong> source ladder with at least one primary-source retrieval.</p></article>
+      <article class="week-card"><p class="text-meta">WEEK 03 · EVIDENCE HAS A BODY</p><h3 class="text-h3">What can this medium actually record?</h3><p class="text-body">Audio, video, photography, sensor systems, maps, transcripts, compression, metadata, and the difference between signal and representation.</p><p class="lab"><strong>Lab:</strong> media metadata + synchronized transcript or image annotation.</p><p class="deliverable"><strong>Deliverable:</strong> modality audit: what is present, absent, and unknowable.</p></article>
+      <article class="week-card"><p class="text-meta">WEEK 04 · MACHINES AS INVESTIGATIVE PARTNERS</p><h3 class="text-h3">What should AI be allowed to do?</h3><p class="text-body">Search support, extraction, transcription, clustering, comparison, agent workflows, hallucination, provenance leakage, and human review.</p><p class="lab"><strong>Lab:</strong> machine-suggested vs source-supported comparison.</p><p class="deliverable"><strong>Deliverable:</strong> documented AI research protocol with failure log.</p></article>
+      <article class="week-card"><p class="text-meta">WEEK 05 · CONTRADICTION</p><h3 class="text-h3">What happens when the sources disagree?</h3><p class="text-body">Build the strongest case for competing readings. Preserve date conflicts, witness divergence, institutional interpretation, and missing evidence.</p><p class="lab"><strong>Lab:</strong> contradiction graph / provenance network.</p><p class="deliverable"><strong>Deliverable:</strong> structured contradiction set with next-test questions.</p></article>
+      <article class="week-card"><p class="text-meta">WEEK 06 · CODE THE EVIDENCE</p><h3 class="text-h3">What becomes visible when the evidence computes?</h3><p class="text-body">Turn the ledger into timelines, maps, networks, matrices, small simulations, sonifications, or other computational views.</p><p class="lab"><strong>Lab:</strong> SVG, p5.js, D3.js, or Python/pandas visualization.</p><p class="deliverable"><strong>Deliverable:</strong> one visual view + one equivalent nonvisual representation.</p></article>
+      <article class="week-card"><p class="text-meta">WEEK 07 · THE PUBLIC RECORD</p><h3 class="text-h3">Can someone else inspect your reasoning?</h3><p class="text-body">Accessibility audit, source release, interface critique, documentation, limitations, uncertainty statement, and public presentation.</p><p class="lab"><strong>Lab:</strong> GitHub Pages publishing + keyboard/screen-reader audit.</p><p class="deliverable"><strong>Deliverable:</strong> final evidence machine.</p></article>
     </div>
   </section>
 
   <hr class="divider">
 
   <section aria-labelledby="code-h">
-    <h2 id="code-h" class="text-h2">Code + data visualization lab</h2>
-    <p class="text-body">Students do not only write about evidence. They structure it, query it, and build interfaces from it. The emphasis is not on becoming a conventional software engineer; it is on learning enough code to make evidence behave visibly.</p>
+    <h2 id="code-h" class="text-h2">Coding and data practice</h2>
+    <p class="text-body">The course assumes that code is a medium. Students are not required to arrive as programmers; they are required to make the evidence inspectable. Tool choice follows the research question.</p>
     <ul class="code-stack" aria-label="Possible technical tools">
       <li>HTML / CSS</li>
       <li>JavaScript</li>
@@ -157,110 +311,129 @@
       <li>Python / pandas</li>
       <li>APIs</li>
       <li>Git / GitHub</li>
+      <li>Web Audio</li>
     </ul>
+    <pre class="code-example"><code>const records = evidence.records;
 
-    <div class="course-note">
-      <p class="text-body"><strong>Example exercise:</strong> take a source ledger and code two views of the same evidence — one visual and one nonvisual — then test whether both communicate the same uncertainty, provenance, and contradictions.</p>
-    </div>
+const unresolved = records.filter(record =>
+  record.status.includes('unresolved') ||
+  record.status.includes('uncertain')
+);
 
-    <h3 class="text-h3">Live example: Apollo evidence ledger</h3>
-    <p class="text-body">This visualization is generated in the browser from Omoluabi’s current <a href="../ufo-connection/data/apollo-anomaly-evidence.json">Apollo anomaly evidence JSON</a>. It is deliberately simple: the point is to expose the relationship between source data and interface rather than hide it behind a visualization platform.</p>
-
-    <div class="viz-shell">
-      <p id="viz-summary" class="text-meta" aria-live="polite">Loading structured evidence…</p>
-      <div id="mission-controls" class="viz-controls" aria-label="Filter evidence by mission"></div>
-      <div id="evidence-chart" aria-busy="true"></div>
-      <div class="data-table-wrap">
-        <table class="data-table">
-          <caption class="text-meta">Accessible tabular view of the same evidence records</caption>
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Mission</th>
-              <th scope="col">Event</th>
-              <th scope="col">Evidence class</th>
-              <th scope="col">Status</th>
-            </tr>
-          </thead>
-          <tbody id="evidence-table-body">
-            <tr><td colspan="5">Loading evidence data…</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <p class="text-meta"><a href="./viz.js">Read the visualization code</a> · <a href="./evidence-machines.css">Read the local CSS</a> · <a href="../ufo-connection/data/apollo-anomaly-evidence.json">Inspect the source JSON</a></p>
-
-    <h3 class="text-h3">The coding pattern</h3>
-    <pre class="code-example"><code>fetch('../ufo-connection/data/apollo-anomaly-evidence.json')
-  .then(response =&gt; response.json())
-  .then(data =&gt; {
-    const records = data.records;
-    // filter → compare → visualize → preserve a table equivalent
-  });</code></pre>
-    <p class="text-body">That pattern can expand into timeline reconstruction, geospatial work, sensor comparison, network graphs, source provenance, image metadata, audio analysis, or interfaces that reveal where the evidence stops.</p>
+// The visualization is downstream of the source ledger.
+// If the data changes, the interface must be able to change with it.</code></pre>
+    <p class="text-meta"><a href="./viz.js">Read this page’s interaction code</a> · <a href="../ufo-connection/data/apollo-anomaly-evidence.json">Inspect Apollo JSON</a> · <a href="../ufo-connection/data/evidence-timeline.csv">Inspect timeline CSV</a></p>
   </section>
 
   <hr class="divider">
 
-  <section aria-labelledby="make-h">
-    <h2 id="make-h" class="text-h2">What students make</h2>
-    <p class="text-body">The final artifact is not a conventional paper and is not graded on whether the original hypothesis turns out to be correct. It is an evidence machine: a computational interface that makes a difficult investigation inspectable.</p>
+  <section aria-labelledby="assignments-h">
+    <h2 id="assignments-h" class="text-h2">Assignments</h2>
+    <div class="grid-2">
+      <article class="card"><p class="text-meta">01 · CLAIM LEDGER</p><h3 class="text-h3">One question, many states</h3><p class="text-body">Track a claim as supported, contradicted, unresolved, missing, or unverified. Students must record what evidence would change the state.</p></article>
+      <article class="card"><p class="text-meta">02 · SOURCE AUTOPSY</p><h3 class="text-h3">Follow one object back</h3><p class="text-body">Choose a circulating clip, photograph, quotation, chart, or story and trace it back through copies and interpretations to its best available source.</p></article>
+      <article class="card"><p class="text-meta">03 · TWO VIEWS / SAME DATA</p><h3 class="text-h3">Visual + nonvisual</h3><p class="text-body">Build a coded visualization and an accessible table/text equivalent from the same structured dataset. Compare what each reveals and hides.</p></article>
+      <article class="card"><p class="text-meta">04 · FINAL EVIDENCE MACHINE</p><h3 class="text-h3">A public, inspectable investigation</h3><p class="text-body">Publish the source ledger, interface, uncertainty statement, accessibility layer, and methodological notes as one coherent computational work.</p></article>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section aria-labelledby="assessment-h">
+    <h2 id="assessment-h" class="text-h2">Proposed assessment</h2>
+    <div class="assessment-grid">
+      <div><strong>25%</strong><span>Source and evidence practice</span></div>
+      <div><strong>25%</strong><span>Code / data studies</span></div>
+      <div><strong>40%</strong><span>Final evidence machine</span></div>
+      <div><strong>10%</strong><span>Critique, accessibility, documentation</span></div>
+    </div>
+    <blockquote class="assessment-rule">The project is not evaluated on whether the student’s starting hypothesis was correct. It is evaluated on whether another person can reconstruct how the student reached the published state of the evidence.</blockquote>
+  </section>
+
+  <hr class="divider">
+
+  <section aria-labelledby="final-h">
+    <h2 id="final-h" class="text-h2">Final project requirements</h2>
+    <div class="requirements-grid">
+      <div><span>01</span><strong>A precise research question</strong><p>Not a predetermined answer.</p></div>
+      <div><span>02</span><strong>A machine-readable source ledger</strong><p>JSON, CSV, or documented equivalent.</p></div>
+      <div><span>03</span><strong>At least one coded evidence view</strong><p>Timeline, graph, map, matrix, sonification, or custom instrument.</p></div>
+      <div><span>04</span><strong>A contradiction layer</strong><p>Competing records stay visible.</p></div>
+      <div><span>05</span><strong>An uncertainty statement</strong><p>What remains unknown and why.</p></div>
+      <div><span>06</span><strong>An accessibility-equivalent representation</strong><p>Table, transcript, description, keyboard interaction, or other appropriate equivalent.</p></div>
+      <div><span>07</span><strong>Public documentation</strong><p>Sources, code, limitations, provenance, and update date.</p></div>
+      <div><span>08</span><strong>A human editorial decision</strong><p>What should be published, withheld, or left unresolved.</p></div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section aria-labelledby="case-h">
+    <h2 id="case-h" class="text-h2">Reference case: Omoluabi UAP archive</h2>
+    <p class="text-body">The existing Omoluabi investigation functions as the reference implementation. It is useful precisely because the records do not collapse into one answer.</p>
     <div class="grid-2">
       <article class="card">
-        <h3 class="text-h3">Possible forms</h3>
-        <ul class="text-body">
-          <li>Interactive evidence map</li>
-          <li>Source-provenance graph</li>
-          <li>Multimodal timeline</li>
-          <li>Audio / transcript alignment interface</li>
-          <li>Archive explorer</li>
-          <li>Sensor comparison instrument</li>
-          <li>Claim-mutation visualization</li>
-          <li>Accessible spatial or physical interface</li>
-        </ul>
+        <p class="text-meta">EDWARDS AFB / GORDON COOPER</p>
+        <h3 class="text-h3">How a story changes across decades</h3>
+        <p class="text-body">Students can compare archival film inventory, Project Blue Book material, McDonald’s 1968 congressional reconstruction, Cooper’s 1962 public interview, his 1978 letter, and later recollections. The exercise is provenance before belief.</p>
+        <p class="text-meta"><a href="../ufo-connection/archive.html#cooper">Open dossier</a></p>
       </article>
       <article class="card">
-        <h3 class="text-h3">Evaluation</h3>
-        <ul class="text-body">
-          <li>Can another person reconstruct the research path?</li>
-          <li>Are primary and secondary sources distinguishable?</li>
-          <li>Are contradictions visible?</li>
-          <li>Is uncertainty represented rather than hidden?</li>
-          <li>Does the interface communicate what a sensor or source cannot establish?</li>
-          <li>Can disabled users inspect the same evidentiary logic?</li>
-        </ul>
+        <p class="text-meta">APOLLO 10</p>
+        <h3 class="text-h3">An anomaly with an onboard hypothesis</h3>
+        <p class="text-body">The crew hears unusual whistling while in lunar orbit and discusses radio/ranging explanations. Students can align transcript, audio, and hardware state rather than extracting the unusual phrase from its technical context.</p>
+        <p class="text-meta"><a href="../ufo-connection/archive.html#apollo">Open Apollo ledger</a></p>
       </article>
-    </div>
-    <div class="card">
-      <p class="text-meta">Core assessment rule</p>
-      <p class="text-h3">The grade is not based on whether your hypothesis was right. It is based on whether another person can reconstruct how you reached it.</p>
+      <article class="card">
+        <p class="text-meta">APOLLO 11</p>
+        <h3 class="text-h3">Unidentified does not specify origin</h3>
+        <p class="text-body">The crew reports a bright object during translunar coast. A known rocket-stage candidate is rejected by reported distance, while range, size, and identity remain unresolved and spacecraft-origin debris is not excluded.</p>
+        <p class="text-meta"><a href="../ufo-connection/data/apollo-anomaly-evidence.json">Open structured evidence</a></p>
+      </article>
+      <article class="card">
+        <p class="text-meta">APOLLO 17</p>
+        <h3 class="text-h3">The crew’s own alternatives belong in the record</h3>
+        <p class="text-body">Mission audio preserves bright jagged/angular fragments and crew discussion of paint, ice, or debris. The hypothesis is part of the evidence environment, not an afterthought.</p>
+        <p class="text-meta"><a href="../ufo-connection/data/media-manifest.json">Open media manifest</a></p>
+      </article>
     </div>
   </section>
 
   <hr class="divider">
 
   <section aria-labelledby="access-h">
-    <h2 id="access-h" class="text-h2">Accessibility is part of the evidence</h2>
-    <p class="text-body">Evidence changes when access changes. A video without an audio description, an audio record without a transcript, a map without a textual spatial equivalent, or a chart without its underlying data withholds part of the investigation from part of the public.</p>
-    <p class="text-body">The studio therefore treats accessibility as a research requirement rather than a final formatting pass: keyboard navigation, semantic structure, transcripts, captions, alt text, plain-language summaries, nonvisual equivalents for spatial information, and accessible source trails are part of the investigative method.</p>
+    <h2 id="access-h" class="text-h2">Accessibility is part of the evidence model</h2>
+    <p class="text-body">A visualization that communicates only through color, a video without description, audio without transcript, a map without a spatial text equivalent, or a source image without legible transcription creates an evidentiary asymmetry. The course treats that as a research failure rather than a cosmetic defect.</p>
+    <ul class="text-body">
+      <li>Keyboard-first navigation and visible focus.</li>
+      <li>Semantic headings, tables, lists, and native controls.</li>
+      <li>Captions and transcripts for audio/video evidence.</li>
+      <li>Alt text and extended descriptions for meaningful images.</li>
+      <li>Text/table equivalents for charts, diagrams, and maps.</li>
+      <li>Plain-language summaries that do not erase methodological complexity.</li>
+      <li>Source links and identifiers available outside the visualization.</li>
+      <li>Reduced-motion and low-bandwidth compatibility where appropriate.</li>
+    </ul>
   </section>
 
   <hr class="divider">
 
-  <section aria-labelledby="omoluabi-h">
-    <h2 id="omoluabi-h" class="text-h2">Omoluabi as the reference implementation</h2>
-    <p class="text-body">Students do not have to reproduce Omoluabi. They use it as a working example of a larger proposition: computational systems can help people investigate difficult public evidence while keeping provenance, contradiction, consent, missingness, accessibility, and human editorial judgment visible.</p>
-    <p class="text-body">The current UAP work demonstrates the method with official imagery, astronaut and witness records, mission chronology, source notes, and protected uncertainty. Future student investigations could examine disputed photographs, unidentified sounds, lost internet artifacts, historical mysteries, machine-learning anomalies, environmental events, or other contested records.</p>
-    <p class="text-meta"><a href="../">About Omoluabi</a> · <a href="../ufo-connection/">UAP case study</a> · <a href="../SSL-METHOD.md">Small Systems Lab method</a></p>
+  <section aria-labelledby="boundaries-h">
+    <h2 id="boundaries-h" class="text-h2">Editorial boundaries</h2>
+    <div class="boundary-grid">
+      <div><strong>No belief requirement</strong><span>Students are not rewarded for proving or debunking an extraordinary claim.</span></div>
+      <div><strong>No AI answer as evidence</strong><span>A model can help locate or organize a source. Its generated statement is not the source.</span></div>
+      <div><strong>No invisible contradiction</strong><span>Material counter-evidence must remain inspectable.</span></div>
+      <div><strong>No false precision</strong><span>Unknown range, missing metadata, uncertain timestamps, and disputed identities stay marked as uncertain.</span></div>
+    </div>
   </section>
 
   <hr class="divider">
 
   <section aria-labelledby="status-h">
     <h2 id="status-h" class="text-h2">Proposal status</h2>
-    <p class="text-body">Working course concept for discussion with NYU ITP / IMA. The page is a public research artifact, not a statement that the course has been approved or scheduled.</p>
-    <p class="text-meta">Version 0.2 · September 24, 2026 · Small Systems Lab / Omoluabi</p>
+    <p class="text-body">Completed working course proposal for discussion with NYU ITP / IMA / Emerging Media Institute. It is a public research and teaching artifact; it does not imply that NYU has approved or scheduled the course.</p>
+    <p class="text-meta">Version 1.0 · September 24, 2026 · Adekemi (Kemi) Sijuwade Ukadike · Small Systems Lab / Omoluabi</p>
   </section>
 
 </main>
@@ -268,7 +441,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <p class="text-body"><strong>Evidence Machines</strong> is a teaching and research concept within Omoluabi, a Small Systems Lab project.</p>
-    <p class="text-meta"><a href="../">Omoluabi</a> · <a href="https://github.com/ukadike/omoluabi">Repository</a> · Copyright Adekemi (Kemi) Sijuwade Ukadike.</p>
+    <p class="text-meta"><a href="../">Omoluabi</a> · <a href="../ufo-connection/">UAP investigation</a> · <a href="https://github.com/ukadike/omoluabi">Repository</a></p>
   </div>
 </footer>
 </body>

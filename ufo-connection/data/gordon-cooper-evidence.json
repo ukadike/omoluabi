@@ -232,5 +232,29 @@
       "recordB": "Gettys later remembered roughly 30 exposures and sharp close frames.",
       "nextTest": "Digitize/inspect highest-generation surviving film and compare frame count and optical quality."
     }
+  ],
+  "researchLeads": [
+    {
+      "sourceTier": "secondary — retrieve against primary before use as fact",
+      "source": "NICAP / Brad Sparks Edwards AFB case directory",
+      "url": "https://www.nicap.org/570502edwardsafb_dir.htm",
+      "possibleFrames": [
+        609,
+        614,
+        620,
+        651
+      ],
+      "reportedGeometry": [
+        {
+          "azimuth": "10°28′",
+          "elevation": "2°24′"
+        },
+        {
+          "azimuth": "40°30′",
+          "elevation": "1°00′"
+        }
+      ],
+      "requiredVerification": "Match frame numbers and geometry to original 35mm edge data, camera log, or official Blue Book pages."
+    }
   ]
 }

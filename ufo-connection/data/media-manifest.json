@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-09-24T18:00:00Z",
+  "editorialRule": "Descriptions report what the source contains; they do not infer an object's origin.",
+  "items": [
+    {
+      "id": "media-gc-1962",
+      "subject": "Gordon Cooper",
+      "title": "NASA-UAP-D023 — Interview Excerpt with Astronaut Gordon Cooper",
+      "eventDate": "1962-11-01",
+      "publicationDate": "2026-06-11",
+      "medium": "archival video with audio",
+      "evidenceRole": "primary audiovisual statement",
+      "publisher": "All-domain Anomaly Resolution Office via DVIDS; underlying NASA archival interview",
+      "identifiers": [
+        "DVIDS 1010337",
+        "VIRIN 621101-D-D0360-5375",
+        "NARA 86027191"
+      ],
+      "sourceUrl": "https://www.dvidshub.net/video/1010337/nasa-uap-d023-interview-excerpt-with-astronaut-gordon-cooper-1962",
+      "embedUrl": "https://www.dvidshub.net/video/embed/1010337",
+      "accessibility": {
+        "altOrMediaDescription": "Archival television interview in which Walter Cronkite asks astronaut Gordon Cooper about reports of unidentified flying objects and the possibility of life elsewhere.",
+        "transcriptStatus": "editorial transcript summary published; official DVIDS transcript-download control also exists",
+        "transcriptPath": "../transcripts/gordon-cooper-1962-selected-transcript.md"
+      },
+      "interpretationBoundary": "Establishes Cooper's public 1962 position, not the identity or origin of any specific object."
+    },
+    {
+      "id": "media-ma9-d010",
+      "subject": "Mercury-Atlas 9 / Gordon Cooper",
+      "title": "NASA-UAP-D010 — Mercury Atlas 9 Audio Excerpt",
+      "eventDate": "1963-05-15",
+      "publicationDate": "2026-05-22",
+      "medium": "mission audio released in video container",
+      "evidenceRole": "primary mission audio",
+      "publisher": "All-domain Anomaly Resolution Office via DVIDS; NASA mission audio",
+      "identifiers": [
+        "DVIDS 1007874",
+        "VIRIN 630515-D-D0360-4757"
+      ],
+      "sourceUrl": "https://www.dvidshub.net/video/1007874/nasa-uap-d010-mercury-atlas-9-audio-excerpt-may-15-1963",
+      "embedUrl": "https://www.dvidshub.net/video/embed/1007874",
+      "accessibility": {
+        "altOrMediaDescription": "Audio-only spacecraft communications in which Cooper reports firefly-like luminous particles during Faith 7.",
+        "transcriptStatus": "editorial transcript summary published; official transcript download exists but automated retrieval returned 403",
+        "transcriptPath": "../transcripts/mercury-atlas-9-d010-transcript-summary.md"
+      },
+      "officialContext": "DVIDS states NASA attributed the fireflies to frozen condensation separating from the spacecraft and reflecting sunlight."
+    },
+    {
+      "id": "media-ma9-d011",
+      "subject": "Mercury-Atlas 9 / Gordon Cooper",
+      "title": "NASA-UAP-D011 — Mercury Atlas 9 Audio Excerpt",
+      "eventDate": "1963-05-15",
+      "publicationDate": "2026-05-22",
+      "medium": "mission audio released in video container",
+      "evidenceRole": "primary mission audio",
+      "publisher": "All-domain Anomaly Resolution Office via DVIDS; NASA mission audio",
+      "identifiers": [
+        "DVIDS 1007876",
+        "VIRIN 630515-D-D0360-9975"
+      ],
+      "sourceUrl": "https://www.dvidshub.net/video/1007876/nasa-uap-d011-mercury-atlas-9-audio-excerpt-may-15-1963",
+      "embedUrl": "https://www.dvidshub.net/video/embed/1007876",
+      "accessibility": {
+        "altOrMediaDescription": "Audio-only spacecraft communications in which Cooper describes sunrise, small brilliant white particles drifting from Faith 7, and observations after deployment of spherical xenon-strobe beacons.",
+        "transcriptStatus": "editorial transcript summary published; official transcript download exists but automated retrieval returned 403",
+        "transcriptPath": "../transcripts/mercury-atlas-9-d011-transcript-summary.md"
+      }
+    },
+    {
+      "id": "media-ap17-d009",
+      "subject": "Apollo 17",
+      "title": "NASA-UAP-D009 — Apollo 17 Audio Excerpt",
+      "eventDate": "1972-12-07",
+      "publicationDate": "2026-05-22",
+      "medium": "mission audio released in video container",
+      "evidenceRole": "primary mission audio",
+      "publisher": "All-domain Anomaly Resolution Office via DVIDS; NASA Apollo mission audio",
+      "identifiers": [
+        "DVIDS 1007872",
+        "VIRIN 721207-D-D0360-7123"
+      ],
+      "sourceUrl": "https://www.dvidshub.net/video/1007872/nasa-uap-d009-apollo-17-audio-excerpt-december-7-1972",
+      "embedUrl": "https://www.dvidshub.net/video/embed/1007872",
+      "accessibility": {
+        "altOrMediaDescription": "Audio-only Apollo 17 communications in which the crew describes bright angular or jagged fragments drifting outside the spacecraft and discusses paint or ice as possible sources.",
+        "transcriptStatus": "editorial transcript summary published; official transcript download exists but automated retrieval returned 403",
+        "transcriptPath": "../transcripts/apollo-17-d009-transcript-summary.md"
+      },
+      "interpretationBoundary": "The audio documents observed fragments and crew hypotheses; it does not establish a separate controlled craft."
+    },
+    {
+      "id": "doc-edwards-film-inventory",
+      "subject": "Edwards AFB / Gettys and Bittick",
+      "title": "Project Blue Book motion-picture inventory entry",
+      "eventDate": "1957-05-02",
+      "medium": "archival inventory PDF",
+      "evidenceRole": "primary archival catalog record",
+      "publisher": "U.S. National Archives",
+      "identifiers": [
+        "NARA item 1003460"
+      ],
+      "sourceUrl": "https://prologue.blogs.archives.gov/wp-content/uploads/sites/9/2018/03/report.pdf",
+      "accessibility": {
+        "altOrMediaDescription": "Inventory table entry identifying Edwards AFB, Gettys and Bittick, and two 35mm black-and-white negative filmstrips.",
+        "transcriptStatus": "text description published in Gordon Cooper dossier"
+      },
+      "interpretationBoundary": "Catalogs surviving film material; it does not by itself establish what the photographed object was."
+    },
+    {
+      "id": "doc-house-1968-mcdonald",
+      "subject": "Edwards AFB / James E. McDonald",
+      "title": "1968 Symposium on Unidentified Flying Objects",
+      "eventDate": "1968-07-29",
+      "medium": "congressional hearing document",
+      "evidenceRole": "primary public congressional record containing McDonald's later witness reconstruction",
+      "publisher": "U.S. House Committee on Science and Astronautics / Government Printing Office",
+      "identifiers": [
+        "CHRG-90hhrg97818"
+      ],
+      "sourceUrl": "https://www.govinfo.gov/app/details/CHRG-90hhrg97818",
+      "accessibility": {
+        "altOrMediaDescription": "Congressional hearing record containing physicist James E. McDonald's account of interviews with Edwards camera operators James Bittick and John Gettys Jr. and supervisor Frank Baker.",
+        "transcriptStatus": "searchable text source available; dossier summarizes relevant section"
+      }
+    },
+    {
+      "id": "doc-ap11-debrief",
+      "subject": "Apollo 11",
+      "title": "Apollo 11 Technical Crew Debriefing",
+      "eventDate": "1969-07",
+      "medium": "NASA technical debrief PDF",
+      "evidenceRole": "primary postflight crew record",
+      "publisher": "NASA",
+      "sourceUrl": "https://sma.nasa.gov/SignificantIncidents/assets/a11_tcdb.pdf",
+      "accessibility": {
+        "altOrMediaDescription": "Technical debrief record in which Armstrong, Aldrin and Collins discuss a bright object observed during translunar flight, optical appearance, and uncertainty about its range and size.",
+        "transcriptStatus": "native text/PDF; exact relevant page/time indexing remains in research queue"
+      }
+    },
+    {
+      "id": "doc-ap11-aristarchus",
+      "subject": "Apollo 11",
+      "title": "Apollo 11 Technical Air-to-Ground Voice Transmission",
+      "eventDate": "1969-07",
+      "medium": "NASA transcript PDF",
+      "evidenceRole": "primary mission transcript",
+      "publisher": "NASA",
+      "sourceUrl": "https://www.nasa.gov/wp-content/uploads/2026/01/as11-tec.pdf?emrc=340ba7",
+      "accessibility": {
+        "altOrMediaDescription": "Mission transcript recording Houston's request that Apollo 11 inspect the Aristarchus region after reports of transient lunar phenomena and the crew's subsequent visual observations.",
+        "transcriptStatus": "native transcript; exact event extraction remains in research queue"
+      }
+    }
+  ]
+}

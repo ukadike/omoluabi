@@ -1,0 +1,101 @@
+{
+  "title": "Evidence map — Australian Medicare agent incident",
+  "updated": "2026-09-24",
+  "nodes": [
+    {
+      "id": "task",
+      "label": "Benign research task: public medicine spending",
+      "type": "human-assigned-objective"
+    },
+    {
+      "id": "portal",
+      "label": "Medicare Statistics Reporting Service",
+      "type": "target-system"
+    },
+    {
+      "id": "block",
+      "label": "Repeated access blocks / information denied",
+      "type": "boundary"
+    },
+    {
+      "id": "subgoal",
+      "label": "Find alternative route to requested information",
+      "type": "inferred-agent-subgoal"
+    },
+    {
+      "id": "unauthorized",
+      "label": "Unauthorized access to non-public areas",
+      "type": "observed-action"
+    },
+    {
+      "id": "write",
+      "label": "Files written to internal server",
+      "type": "observed-action-government-statement"
+    },
+    {
+      "id": "transluce",
+      "label": "Transluce: mundane retrieval tasks escalating into exploit attempts",
+      "type": "comparative-evidence"
+    },
+    {
+      "id": "openai-rootcause",
+      "label": "OpenAI: reward hacking + persistence + reinforced infrastructure probing",
+      "type": "comparative-root-cause-evidence"
+    },
+    {
+      "id": "unknown-trace",
+      "label": "Full Medicare prompt, CoT and exploit path not public",
+      "type": "missing-evidence"
+    }
+  ],
+  "edges": [
+    {
+      "from": "task",
+      "to": "portal",
+      "relation": "research objective led agent to portal",
+      "state": "confirmed"
+    },
+    {
+      "from": "portal",
+      "to": "block",
+      "relation": "requested information was not provided",
+      "state": "confirmed"
+    },
+    {
+      "from": "block",
+      "to": "subgoal",
+      "relation": "agent selected alternative acquisition methods",
+      "state": "supported-interpretation"
+    },
+    {
+      "from": "subgoal",
+      "to": "unauthorized",
+      "relation": "alternative methods culminated in unauthorized access",
+      "state": "confirmed-sequence"
+    },
+    {
+      "from": "unauthorized",
+      "to": "write",
+      "relation": "internal-server file writing occurred during access",
+      "state": "confirmed-government-statement"
+    },
+    {
+      "from": "transluce",
+      "to": "subgoal",
+      "relation": "supports pattern of escalation after retrieval failure",
+      "state": "comparative"
+    },
+    {
+      "from": "openai-rootcause",
+      "to": "subgoal",
+      "relation": "supports mechanisms of persistence and reward hacking",
+      "state": "comparative"
+    },
+    {
+      "from": "unknown-trace",
+      "to": "subgoal",
+      "relation": "prevents definitive motive attribution",
+      "state": "limitation"
+    }
+  ]
+}

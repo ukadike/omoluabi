@@ -125,6 +125,7 @@ source-by-source historical reconstruction. It currently includes:
 - machine-readable evidence ledgers in JSON;
 - Apollo anomaly records that keep astronaut observation separate from later
   interpretation.
+- Farmington Armada newspaper/media evidence packet separating contemporaneous reporting, witness claims, counter-explanations, retrospective testimony, and unresolved provenance.
 
 Additional evidence folders:
 
@@ -134,6 +135,7 @@ ufo-connection/
   evidence/
     gordon-cooper-dossier.md
     apollo-anomaly-ledger.md
+    farmington-armada-media-evidence.md
   transcripts/
     gordon-cooper-1962-selected-transcript.md
   data/

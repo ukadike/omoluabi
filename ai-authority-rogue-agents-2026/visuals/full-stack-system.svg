@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-labelledby="fs-title fs-desc">
+<title id="fs-title">Full-stack AI authority system</title>
+<desc id="fs-desc">A left-to-right systems diagram from lithography and fabrication through rack-scale compute, software, model, agent harness, tools and external systems, with governance controls surrounding the action layers.</desc>
+<style>text{font-family:Arial,sans-serif;fill:#111}.box{fill:#fff;stroke:#111;stroke-width:2}.arrow{stroke:#111;stroke-width:2;marker-end:url(#m)}</style>
+<defs><marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#111"/></marker></defs>
+<text x="600" y="38" text-anchor="middle" font-size="27" font-weight="700">AI authority is a full-stack systems problem</text>
+<g>
+<rect class="box" x="30" y="110" width="130" height="90"/><text x="95" y="145" text-anchor="middle" font-size="18">Lithography</text><text x="95" y="173" text-anchor="middle" font-size="15">ASML / EUV</text>
+<rect class="box" x="190" y="110" width="140" height="90"/><text x="260" y="145" text-anchor="middle" font-size="18">Fabrication</text><text x="260" y="173" text-anchor="middle" font-size="15">Foundries / HBM</text>
+<rect class="box" x="360" y="110" width="150" height="90"/><text x="435" y="145" text-anchor="middle" font-size="18">Compute rack</text><text x="435" y="173" text-anchor="middle" font-size="15">GPU / CPU / network</text>
+<rect class="box" x="540" y="110" width="140" height="90"/><text x="610" y="145" text-anchor="middle" font-size="18">Runtime</text><text x="610" y="173" text-anchor="middle" font-size="15">containers / orchestration</text>
+<rect class="box" x="710" y="110" width="130" height="90"/><text x="775" y="145" text-anchor="middle" font-size="18">Model</text><text x="775" y="173" text-anchor="middle" font-size="15">weights + inference</text>
+<rect class="box" x="870" y="110" width="130" height="90"/><text x="935" y="145" text-anchor="middle" font-size="18">Agent</text><text x="935" y="173" text-anchor="middle" font-size="15">objective + planner</text>
+<rect class="box" x="1030" y="110" width="140" height="90"/><text x="1100" y="145" text-anchor="middle" font-size="18">External action</text><text x="1100" y="173" text-anchor="middle" font-size="15">tools / APIs / systems</text>
+</g>
+<g class="arrow"><line x1="160" y1="155" x2="190" y2="155"/><line x1="330" y1="155" x2="360" y2="155"/><line x1="510" y1="155" x2="540" y2="155"/><line x1="680" y1="155" x2="710" y2="155"/><line x1="840" y1="155" x2="870" y2="155"/><line x1="1000" y1="155" x2="1030" y2="155"/></g>
+<rect x="690" y="275" width="480" height="145" fill="#fff" stroke="#111" stroke-width="3" stroke-dasharray="9 7"/>
+<text x="930" y="307" text-anchor="middle" font-size="22" font-weight="700">Governance and containment</text>
+<text x="930" y="340" text-anchor="middle" font-size="17">permissions · network boundaries · credentials · logging</text>
+<text x="930" y="370" text-anchor="middle" font-size="17">evaluation rules · independent review · incident response</text>
+<text x="930" y="400" text-anchor="middle" font-size="17">human authority and escalation</text>
+</svg>

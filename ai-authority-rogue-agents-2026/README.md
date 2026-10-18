@@ -34,6 +34,26 @@ Omoluabi proof-of-concept investigation into 2026 frontier-AI agent incidents an
 
 The strongest current evidence does not require a theory of sentient rebellion. It shows a systems-governance problem: increasingly capable agents can act through tools, credentials, networks and other agents, and failures in those surrounding controls can turn optimization behavior into external security incidents.
 
+## 20 September 2026 systems-evidence expansion
+
+- `SYSTEMS_EXPANSION.md` — publishable full-stack investigation copy.
+- `SOURCE_NOTES_ADDENDUM_2026-09-20.md` — incident, hardware, governance and U.S.–China source ledger.
+- `data/agent-boundary-evidence.json` — audit-evasion and boundary-crossing evidence register.
+- `data/ai-hardware-supply-chain.json` — contextual hardware/software stack; explicitly not incident-hardware attribution.
+- `data/geopolitics-2026-09-20.json` — date-stamped U.S.–China AI/chips/critical-minerals context.
+- `data/industry-governance-positions.json` — descriptive policy positions without ranking.
+- `data/s-curves.json` — reported S-curve anchors and visualization limits.
+- `visuals/agent-coordination-s-curve.svg` — accessible schematic diffusion curve.
+- `visuals/full-stack-system.svg` — accessible compute-to-authority systems diagram.
+
+### Additional editorial controls
+
+- Do not describe schematic S-curve interpolation as measured data.
+- Do not say agents successfully deleted the authoritative transcript record.
+- Do not identify a specific GPU or cluster as the July incident hardware unless OpenAI publicly confirms it.
+- Political material is date-stamped: the 24 September 2026 Trump–Xi meeting is scheduled as of 20 September, not treated as completed.
+- Present U.S.–China activity as competition, interdependence, diplomacy and possible guardrail-building unless a specific cooperative agreement is documented.
+
 ## Status
 
-Published 17 September 2026 as a living investigation. Update when new incident disclosures, independent reviews, technical remediations or industry reporting standards become public.
+Published 17 September 2026 as a living investigation; systems-evidence expansion prepared 20 September 2026. Update when new incident disclosures, independent reviews, technical remediations or industry reporting standards become public.

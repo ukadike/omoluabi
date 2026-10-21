@@ -103,7 +103,7 @@
             "status": {"enum": ["UNKNOWN", "UNSUPPORTED", "NEEDS_CORROBORATION", "READY_FOR_REVIEW", "CORROBORATED", "DISPUTED", "INVALIDATED"]},
             "reviewer": {"type": "string", "minLength": 1},
             "reviewer_role": {"type": "string", "minLength": 1},
-            "authorization_status": {"const": "NOT_AUTHENTICATED"},
+            "authorization_status": {"enum": ["AUTHENTICATED", "NOT_AUTHENTICATED", "UNKNOWN"]},
             "reason": {"type": "string", "minLength": 1},
             "decided_at": {"type": "string", "format": "date-time"}
           },

@@ -7,10 +7,12 @@ import {
   renderPublication,
   renderArchive,
 } from "./views.js";
+import { renderClaimChecks } from "./claim-check-view.js";
 
 const ROUTES = [
   { pattern: /^#\/$/, handler: (c) => renderInbox(c) },
   { pattern: /^#\/archive$/, handler: (c) => renderArchive(c) },
+  { pattern: /^#\/claim-checks$/, handler: (c) => renderClaimChecks(c) },
   {
     pattern: /^#\/observation\/([^/]+)$/,
     handler: (c, m) => renderObservationDetail(c, { id: decodeURIComponent(m[1]) }),

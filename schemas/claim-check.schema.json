@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://smallsystemslab.com/schemas/claim-check.schema.json",
+  "title": "Omoluabi Claim Check Dossier",
+  "description": "Evidence dossier for ssl.editorial.claim_check. Verification states are governed by ssl.core.claim_verification.",
+  "type": "object",
+  "required": ["check_id", "status", "created_at", "updated_at", "claim", "subclaims", "evidence_assessments", "verification", "assessment_flags", "human_decision", "correction_history"],
+  "properties": {
+    "check_id": {"type": "string", "minLength": 1},
+    "story_ref": {"type": ["string", "null"]},
+    "investigation_ref": {"type": ["string", "null"]},
+    "status": {"enum": ["OPEN", "SCOPING", "COLLECTING", "ASSESSING", "READY_FOR_REVIEW", "CLOSED", "ARCHIVED"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "claim": {
+      "type": "object",
+      "required": ["exact_wording"],
+      "properties": {
+        "claim_id": {"type": "string"},
+        "exact_wording": {"type": "string", "minLength": 1},
+        "claimant": {"type": "string"},
+        "source_ref": {"type": "string"},
+        "source_location": {"type": "string"},
+        "published_at": {"type": "string"},
+        "captured_at": {"type": "string", "format": "date-time"},
+        "claimed_event_time": {"type": "string"},
+        "geographic_scope": {"type": "array", "items": {"type": "string"}},
+        "temporal_scope": {"type": "string"},
+        "original_language": {"type": "string"},
+        "translation_ref": {"type": "string"},
+        "context": {"type": "string"},
+        "claim_type": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "subclaims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["subclaim_id", "question", "state"],
+        "properties": {
+          "subclaim_id": {"type": "string", "minLength": 1},
+          "question": {"type": "string", "minLength": 1},
+          "scope": {"type": "string"},
+          "evidence_needed": {"type": "array", "items": {"type": "string"}},
+          "findings": {"type": "array", "items": {"type": "string"}},
+          "state": {"enum": ["OPEN", "PARTIALLY_ADDRESSED", "ADDRESSED", "UNRESOLVED"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "evidence_assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["evidence_id", "relationship", "evidence_ref", "source_ref", "source_chain_ref", "independence_confirmed", "material", "recorded_at"],
+        "properties": {
+          "evidence_id": {"type": "string", "minLength": 1},
+          "relationship": {"enum": ["SUPPORTS", "CHALLENGES", "CONTEXTUALIZES", "DOES_NOT_ADDRESS", "CONFLICTS"]},
+          "evidence_ref": {"type": "string", "minLength": 1},
+          "source_ref": {"type": "string", "minLength": 1},
+          "source_chain_ref": {"type": "string", "minLength": 1},
+          "evidence_state": {"type": "string"},
+          "provenance_ref": {"type": "string"},
+          "independence_confirmed": {"type": "boolean"},
+          "directness": {"type": "string"},
+          "time_fit": {"type": "string"},
+          "geography_fit": {"type": "string"},
+          "language_or_translation_notes": {"type": "array", "items": {"type": "string"}},
+          "summary": {"type": "string"},
+          "limitations": {"type": "array", "items": {"type": "string"}},
+          "material": {"type": "boolean"},
+          "recorded_at": {"type": "string", "format": "date-time"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "source_analysis": {"type": "object", "additionalProperties": true},
+    "evidence_gaps": {"type": "array", "items": {"type": "string"}},
+    "contradictions": {"type": "array", "items": {"type": "string"}},
+    "protected_unknowns": {"type": "array", "items": {"type": "string"}},
+    "verification": {
+      "type": "object",
+      "required": ["schema_id", "rule_status", "rule_ids", "independent_supporting_groups", "human_review_required", "evaluated_at"],
+      "properties": {
+        "schema_id": {"const": "ssl.core.claim_verification"},
+        "rule_status": {"enum": ["UNKNOWN", "UNSUPPORTED", "NEEDS_CORROBORATION", "READY_FOR_REVIEW", "CORROBORATED", "DISPUTED", "INVALIDATED"]},
+        "rule_ids": {"type": "array", "items": {"enum": ["CLAIM.R001", "CLAIM.R002", "CLAIM.R003", "CLAIM.R004"]}},
+        "independent_supporting_groups": {"type": "integer", "minimum": 0},
+        "human_review_required": {"const": true},
+        "evaluated_at": {"type": "string", "format": "date-time"}
+      },
+      "additionalProperties": true
+    },
+    "assessment_flags": {"type": "array", "items": {"enum": ["MISSING_CONTEXT", "MIXED_EVIDENCE", "OUTDATED", "NOT_YET_VERIFIABLE", "TRANSLATION_UNCERTAINTY", "SOURCE_CHAIN_UNRESOLVED"]}},
+    "human_decision": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "required": ["status", "reviewer", "reason", "decided_at"],
+          "properties": {
+            "status": {"enum": ["UNKNOWN", "UNSUPPORTED", "NEEDS_CORROBORATION", "READY_FOR_REVIEW", "CORROBORATED", "DISPUTED", "INVALIDATED"]},
+            "reviewer": {"type": "string", "minLength": 1},
+            "reason": {"type": "string", "minLength": 1},
+            "decided_at": {"type": "string", "format": "date-time"}
+          },
+          "additionalProperties": true
+        }
+      ]
+    },
+    "correction_history": {"type": "array", "items": {"type": "object", "additionalProperties": true}}
+  },
+  "additionalProperties": true
+}

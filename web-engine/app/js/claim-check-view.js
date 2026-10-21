@@ -14,7 +14,7 @@ function newId() {
 function evidenceReference(value) {
   const text = esc(value);
   try {
-    const url = new URL(value, window.location.href);
+    const url = new URL(value);
     if (["http:", "https:"].includes(url.protocol)) {
       return `<a href="${esc(url.href)}" rel="noreferrer">${text}</a>`;
     }
@@ -70,7 +70,7 @@ function decisionForm(check) {
   return `
     <form class="review-form claim-decision-form" data-role="human-decision" data-check-id="${esc(check.check_id)}">
       <h4>Human editorial decision</h4>
-      <p class="help-text">This is separate from the rule state. A rule result never records a claim as corroborated or invalidated.</p>
+      <p class="help-text">This is separate from the rule state. This browser-only prototype records the name and role you enter but does not authenticate them; no decision is publishable from this screen.</p>
       <div class="form-row">
         <label for="decision-${esc(check.check_id)}">Record a human decision</label>
         <select id="decision-${esc(check.check_id)}" name="status" required>
@@ -81,6 +81,10 @@ function decisionForm(check) {
       <div class="form-row">
         <label for="reviewer-${esc(check.check_id)}">Reviewer</label>
         <input id="reviewer-${esc(check.check_id)}" name="reviewer" value="${esc(check.human_decision?.reviewer || "")}" required />
+      </div>
+      <div class="form-row">
+        <label for="reviewer-role-${esc(check.check_id)}">Reviewer role</label>
+        <input id="reviewer-role-${esc(check.check_id)}" name="reviewer_role" value="${esc(check.human_decision?.reviewer_role || "")}" required />
       </div>
       <div class="form-row">
         <label for="reason-${esc(check.check_id)}">Reason and evidence considered</label>
@@ -218,10 +222,23 @@ export async function renderClaimChecks(container) {
       const decision = {
         status: form.elements.status.value,
         reviewer: form.elements.reviewer.value.trim(),
+        reviewer_role: form.elements.reviewer_role.value.trim(),
         reason: form.elements.reason.value.trim(),
+        authorization_status: "NOT_AUTHENTICATED",
         decided_at: new Date().toISOString(),
       };
-      if (!decision.status || !decision.reviewer || !decision.reason) return;
+      const hasMaterialChallenge = (check.evidence_assessments || []).some((item) => ["CHALLENGES", "CONFLICTS"].includes(item.relationship) && item.material === true && Boolean(item.evidence_ref));
+      if (decision.status === "CORROBORATED" && check.verification?.rule_status !== "READY_FOR_REVIEW") {
+        form.querySelector('[data-role="decision-error"]')?.remove();
+        form.insertAdjacentHTML("afterbegin", '<p data-role="decision-error" role="alert">The rule threshold must reach READY_FOR_REVIEW before corroboration can be recorded.</p>');
+        return;
+      }
+      if (decision.status === "INVALIDATED" && !hasMaterialChallenge) {
+        form.querySelector('[data-role="decision-error"]')?.remove();
+        form.insertAdjacentHTML("afterbegin", '<p data-role="decision-error" role="alert">Record material contradicting evidence before invalidation can be recorded.</p>');
+        return;
+      }
+      if (!decision.status || !decision.reviewer || !decision.reviewer_role || !decision.reason) return;
       check.correction_history ||= [];
       if (previous) check.correction_history.push({ previous, replaced_at: decision.decided_at });
       check.human_decision = decision;

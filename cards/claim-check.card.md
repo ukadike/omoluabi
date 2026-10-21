@@ -47,6 +47,7 @@ Context flags such as `MISSING_CONTEXT`, `MIXED_EVIDENCE`, `OUTDATED`, and `NOT_
 9. Do not calculate a truth score from source count, popularity, reputation, or model confidence.
 10. Keep rule output, human decision, and publication status as separate fields.
 11. Preserve prior decisions and corrections; never silently overwrite an assessment.
+12. The current browser prototype records reviewer attribution but does not authenticate identity or role; its review records are not publication authorization.
 
 ## Deterministic rule mapping
 

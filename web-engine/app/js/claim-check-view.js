@@ -108,7 +108,7 @@ function renderCheck(check) {
         <dt>Original language</dt><dd>${esc(check.claim?.original_language || "Not recorded")}</dd>
         <dt>Assessment flags</dt><dd>${(check.assessment_flags || []).length ? esc(check.assessment_flags.join(", ").replaceAll("_", " ")) : "None recorded"}</dd>
         <dt>Subclaims to check</dt><dd>${(check.subclaims || []).length ? `<ul>${check.subclaims.map((q) => `<li>${esc(q.question)}</li>`).join("")}</ul>` : "None recorded"}</dd>
-        <dt>Human decision</dt><dd>${check.human_decision ? `${esc(check.human_decision.status.replaceAll("_", " "))} — ${esc(check.human_decision.reviewer)}: ${esc(check.human_decision.reason)}` : "Not recorded"}</dd>
+        <dt>Human decision</dt><dd>${check.human_decision ? `${esc(check.human_decision.status.replaceAll("_", " "))} — ${esc(check.human_decision.reviewer)} (${esc(check.human_decision.reviewer_role)}; ${esc(check.human_decision.authorization_status)}): ${esc(check.human_decision.reason)}` : "Not recorded"}</dd>
       </dl>
       <p class="inline-note" role="status">${ruleResult.rule_status === "UNSUPPORTED" ? "Unsupported means this card has no qualifying supporting source recorded; it does not mean the claim is false." : ruleResult.rule_status === "READY_FOR_REVIEW" ? "This meets the rule threshold for human review. It is not automatically corroborated." : ruleResult.rule_status === "DISPUTED" ? "A material challenge is recorded. Keep the conflict visible for review." : "Rule output is a review aid, not an editorial conclusion."}</p>
       <h4>Evidence ledger</h4>

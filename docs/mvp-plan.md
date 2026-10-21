@@ -81,7 +81,7 @@ A passing rule evaluation is not the same as editorial approval.
 
 ### 5. Claim Check dossier
 
-The Web Engine includes a local-first Claim Checks workspace backed by `ssl.editorial.claim_check` and the existing `ssl.core.claim_verification` rules. It preserves exact wording and context, supports atomic subclaims, records evidence relationships and originating source chains, surfaces missing context and contradictions, and stores deterministic rule state separately from a reviewer’s decision. It does not assign truth scores, fetch evidence automatically, or publish claims.
+The Web Engine includes a local-first Claim Checks workspace backed by `ssl.editorial.claim_check` and the existing `ssl.core.claim_verification` rules. It preserves exact wording and context, supports atomic subclaims, records evidence relationships and originating source chains, surfaces missing context and contradictions, and stores deterministic rule state separately from a reviewer’s decision. It does not assign truth scores, fetch evidence automatically, or publish claims. The prototype records reviewer-entered name and role but does not authenticate them; it must not be treated as publication authorization.
 
 ### 6. Offline and local-first behavior
 

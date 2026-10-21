@@ -84,7 +84,7 @@
       "required": ["schema_id", "rule_status", "rule_ids", "independent_supporting_groups", "human_review_required", "evaluated_at"],
       "properties": {
         "schema_id": {"const": "ssl.core.claim_verification"},
-        "rule_status": {"enum": ["UNKNOWN", "UNSUPPORTED", "NEEDS_CORROBORATION", "READY_FOR_REVIEW", "CORROBORATED", "DISPUTED", "INVALIDATED"]},
+        "rule_status": {"enum": ["UNKNOWN", "UNSUPPORTED", "NEEDS_CORROBORATION", "READY_FOR_REVIEW", "DISPUTED"]},
         "rule_ids": {"type": "array", "items": {"enum": ["CLAIM.R001", "CLAIM.R002", "CLAIM.R003", "CLAIM.R004"]}},
         "independent_supporting_groups": {"type": "integer", "minimum": 0},
         "human_review_required": {"const": true},
@@ -98,10 +98,12 @@
         {"type": "null"},
         {
           "type": "object",
-          "required": ["status", "reviewer", "reason", "decided_at"],
+          "required": ["status", "reviewer", "reviewer_role", "authorization_status", "reason", "decided_at"],
           "properties": {
             "status": {"enum": ["UNKNOWN", "UNSUPPORTED", "NEEDS_CORROBORATION", "READY_FOR_REVIEW", "CORROBORATED", "DISPUTED", "INVALIDATED"]},
             "reviewer": {"type": "string", "minLength": 1},
+            "reviewer_role": {"type": "string", "minLength": 1},
+            "authorization_status": {"const": "NOT_AUTHENTICATED"},
             "reason": {"type": "string", "minLength": 1},
             "decided_at": {"type": "string", "format": "date-time"}
           },

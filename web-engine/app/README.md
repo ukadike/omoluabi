@@ -15,7 +15,13 @@ cd omoluabi
 python3 -m http.server 8000
 ```
 
-Then open `http://localhost:8000/web-engine/app/index.html`.\n\nRun the deterministic verification tests from the repository root with:\n\n```bash\nnode --test web-engine/app/js/claim-verification.test.mjs\n```
+Then open `http://localhost:8000/web-engine/app/index.html`.
+
+Run the deterministic verification tests from the repository root with:
+
+```bash
+node --test web-engine/app/js/claim-verification.test.mjs
+```
 
 On first load it seeds one observation from this repo's own worked
 examples (`../../examples/omoluabi-field-observation.json` and the
@@ -66,6 +72,8 @@ real record to review.
 - `js/seed-data.js` — the repo's own example records, copied verbatim.
 - `js/gate.js` — governance-pipeline stage order and lock/current/complete logic.
 - `js/ai-assist.js` — labeled stub suggestion generator, advisory only.
-- `js/views.js` — render functions for the observation governance screens.\n- `js/claim-check-view.js` — local Claim Checks workspace, separate from the observation publication pipeline.\n- `js/claim-verification.mjs` — deterministic rule preview for `ssl.core.claim_verification`.
+- `js/views.js` — render functions for the observation governance screens.
+- `js/claim-check-view.js` — local Claim Checks workspace, separate from the observation publication pipeline.
+- `js/claim-verification.mjs` — deterministic rule preview for `ssl.core.claim_verification`.
 - `js/router.js` — hash router; moves focus to `<main>` on every navigation.
 - `js/main.js` — seeds the store on first run, then starts the router.

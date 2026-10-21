@@ -67,6 +67,7 @@ Human-readable companion documents to the JSON Schemas in `schemas/`. Each card 
 ### Agent Memory Layer
 
 20. `agent-memory.card.md` — machine continuity, persistent context, hand-off memory, instruction/data separation, provenance, revocation, and contamination state. This is separate from community/oral memory.
+21. `claim-check.card.md` — a claim evidence dossier that uses, and does not replace, `ssl.core.claim_verification`.
 
 ## Status
 

@@ -34,6 +34,10 @@ Extend, and do not replace, `observation.schema.json`'s `location` object. See `
 - `map-missingness.schema.json` — gaps in the map dataset itself, distinct from a physically erased feature
 - `location-protection.schema.json` — exact vs. generalized vs. withheld coordinate precision for sensitive locations
 
+## Claim Check Dossier
+
+- `claim-check.schema.json` — exact claim context, atomic subclaims, evidence relationships, originating source chains, deterministic verification state, human decision, and correction history. It feeds `ssl.core.claim_verification`; it does not create a second verdict vocabulary.
+
 ## Schema Philosophy
 
 Each schema is intended to be:

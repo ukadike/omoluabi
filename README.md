@@ -47,7 +47,7 @@ Observation → Consent → Source → Risk → Accessibility → Human Review �
 
 ## SSL Rules and Universal Media
 
-Omoluabi now applies the [Small Systems Lab Universal Schema Card](standards/SSL_SCHEMA_CARD.md), the [SSL Universal Media Schema Card](standards/media/SSL_MEDIA_SCHEMA_CARD.md), and the versioned [SSL rules](rules/ssl-rules.v1.json). The UFO Connection is the first browser implementation: governed records, image/video/audio/slideshow media, visible rule outcomes, optional p5 analysis, and human review kept separate from automated checks.
+Omoluabi now applies the [Small Systems Lab Universal Schema Card](standards/SSL_SCHEMA_CARD.md), the [SSL Universal Media Schema Card](standards/media/SSL_MEDIA_SCHEMA_CARD.md), and the versioned [SSL rules](rules/ssl-rules.v1.json). The UFO Connection is the first browser implementation: governed records, image/video/audio/slideshow media, visible rule outcomes, optional p5 analysis, and human review kept separate from automated checks. The local-first Web Engine also provides a Claim Checks workspace linking claim context, subclaims, evidence relationships, source chains, deterministic verification states, and a separate human decision.
 
 ## Demonstrations
 

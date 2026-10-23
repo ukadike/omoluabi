@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17372f">
+  <title>Omoluabi — Editorial workspace</title>
+  <meta name="description" content="A human-governed editorial workspace for investigations, sources, claims, evidence, review and publication decisions.">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to workspace</a>
+  <header class="topbar">
+    <a class="brand" href="../../" aria-label="Omoluabi home"><span class="brand-mark" aria-hidden="true">O</span><span><strong>Omoluabi</strong><small>Editorial workspace</small></span></a>
+    <div class="topbar-actions">
+      <span id="connection-status" class="connection"><span class="status-dot"></span><span>Not connected</span></span>
+      <button id="settings-open" class="quiet-button" type="button" aria-haspopup="dialog">Settings</button>
+      <button id="sign-out" class="quiet-button hidden" type="button">Sign out</button>
+    </div>
+  </header>
+
+  <main id="main" class="shell" tabindex="-1">
+    <section id="setup-view" class="center-card hidden" aria-labelledby="setup-title">
+      <p class="eyebrow">One-time connection</p>
+      <h1 id="setup-title">Connect your workspace</h1>
+      <p>Use your Supabase project URL and public anon key. The key is safe to use in a browser when your database’s row-level security is enabled. Never enter a service-role key here.</p>
+      <form id="setup-form" class="stack-form">
+        <label>Supabase project URL<input name="url" type="url" placeholder="https://your-project.supabase.co" required autocomplete="url"></label>
+        <label>Public anon key<input name="key" type="password" required autocomplete="off" spellcheck="false"></label>
+        <button class="primary-button" type="submit">Connect workspace</button>
+      </form>
+      <p id="setup-error" class="form-error" role="alert"></p>
+      <p class="fine-print">This saves the public project settings in this browser only. The service-role key is never used.</p>
+    </section>
+
+    <section id="login-view" class="center-card hidden" aria-labelledby="login-title">
+      <p class="eyebrow">Private workspace</p>
+      <h1 id="login-title">Sign in to Omoluabi</h1>
+      <p>We’ll email you a secure sign-in link. Access is limited to people invited to this workspace.</p>
+      <form id="login-form" class="stack-form">
+        <label>Email address<input name="email" type="email" required autocomplete="email" inputmode="email"></label>
+        <button class="primary-button" type="submit">Email me a sign-in link</button>
+      </form>
+      <p id="login-message" class="form-message" role="status" aria-live="polite"></p>
+      <button id="change-project" class="text-button" type="button">Change project settings</button>
+    </section>
+
+    <section id="access-view" class="center-card hidden" aria-labelledby="access-title">
+      <p class="eyebrow">Invitation required</p>
+      <h1 id="access-title">This account isn’t on the team yet</h1>
+      <p>Ask a workspace publisher to invite your email and add you as a member. Your research records remain protected until then.</p>
+      <button id="access-sign-out" class="secondary-button" type="button">Sign out</button>
+    </section>
+
+    <section id="workspace-view" class="workspace hidden" aria-label="Editorial workspace">
+      <aside class="sidebar" aria-label="Workspace navigation">
+        <p class="eyebrow">Workspace</p>
+        <button class="nav-item is-active" data-screen="investigations" type="button"><span aria-hidden="true">▤</span> Investigations</button>
+        <button class="nav-item" data-screen="intake" type="button"><span aria-hidden="true">⇩</span> Temporary intake <span id="intake-count" class="nav-count">0</span></button>
+        <div class="sidebar-note"><strong>Human governed</strong><p>People review evidence and make every publication decision. No model publishes or decides what is true.</p></div>
+      </aside>
+      <div class="content-column">
+        <div id="notice" class="notice hidden" role="status" aria-live="polite"></div>
+        <section id="list-screen" class="screen" aria-labelledby="list-title">
+          <div class="page-heading">
+            <div><p class="eyebrow">Research desk</p><h1 id="list-title">Investigations</h1><p class="subheading">Keep questions, sources and claims together. Decide publication status only after review.</p></div>
+            <button id="new-investigation" class="primary-button" type="button">New investigation <span aria-hidden="true">＋</span></button>
+          </div>
+          <form id="new-form" class="new-form hidden">
+            <label>Investigation title<input name="title" required minlength="4" maxlength="160" placeholder="What are you investigating?"></label>
+            <label>Short brief<textarea name="summary" rows="3" placeholder="What is known, and what still needs to be established?"></textarea></label>
+            <div class="form-actions"><button class="secondary-button" id="cancel-new" type="button">Cancel</button><button class="primary-button" type="submit">Create investigation</button></div>
+          </form>
+          <div id="investigation-list" class="investigation-list" aria-live="polite"></div>
+        </section>
+        <section id="detail-screen" class="screen hidden" aria-labelledby="detail-title"></section>
+        <section id="intake-screen" class="screen hidden" aria-labelledby="intake-title">
+          <div class="page-heading"><div><p class="eyebrow">72-hour holding area</p><h1 id="intake-title">Temporary intake</h1><p class="subheading">Incoming material expires automatically. Review it before promoting it into a permanent investigation.</p></div></div>
+          <form id="intake-form" class="new-form">
+            <label>Item title<input name="title" required maxlength="160" placeholder="A short label for this submission"></label>
+            <label>Notes or structured content<textarea name="payload" rows="4" required placeholder="Paste a note, observation, or JSON package. Avoid sensitive personal data unless you have consent."></textarea></label>
+            <button class="primary-button" type="submit">Add to temporary intake</button>
+          </form>
+          <div id="intake-list" class="investigation-list" aria-live="polite"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="settings-dialog" aria-labelledby="settings-title">
+    <form id="settings-form" method="dialog" class="dialog-card">
+      <div class="dialog-heading"><div><p class="eyebrow">Connection</p><h2 id="settings-title">Workspace settings</h2></div><button class="icon-button" value="cancel" aria-label="Close settings">×</button></div>
+      <p>These values connect this browser to your Supabase project. The public anon key is intended for browser use; database row-level security controls access.</p>
+      <label>Project URL<input name="url" type="url" required autocomplete="url"></label>
+      <label>Public anon key<input name="key" type="password" required autocomplete="off" spellcheck="false"></label>
+      <div class="form-actions"><button class="secondary-button" value="cancel">Cancel</button><button id="save-settings" class="primary-button" value="save">Save connection</button></div>
+      <p class="fine-print">Do not paste a service-role key. Saving a new project signs this browser out of the current one.</p>
+    </form>
+  </dialog>
+  <footer class="footer"><a href="../../">Omoluabi</a><span>Records stay private until a human authorizes publication.</span><a href="../README.md">About the web engine</a></footer>
+</body>
+</html>

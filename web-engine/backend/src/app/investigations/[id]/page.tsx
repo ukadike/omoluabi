@@ -11,7 +11,7 @@ export default async function InvestigationPage({ params, searchParams }: { para
     supabase.from("investigations").select("*").eq("id", id).maybeSingle(),
     supabase.from("sources").select("id,title,url,publisher,source_type,consent_status,notes,created_at").eq("investigation_id", id).order("created_at"),
     supabase.from("claims").select("id,claim_text,status,reviewed_by,reviewed_at,created_at").eq("investigation_id", id).order("created_at"),
-    supabase.from("claim_evidence").select("claim_id,relationship,excerpt,sources(title,url)").eq("investigation_id", id),
+    supabase.from("claim_evidence").select("claim_id,source_id,relationship,excerpt").eq("investigation_id", id),
     supabase.from("audit_events").select("action,table_name,record_id,details,created_at,actor_id").eq("record_id", id).order("created_at", { ascending: false }).limit(20),
   ]);
   if (!inv) notFound();
@@ -41,7 +41,7 @@ export default async function InvestigationPage({ params, searchParams }: { para
     </section>
 
     <section id="claims"><h2>Claims and review</h2>{claims?.map((c) => <article className="card" key={c.id}><p>{c.claim_text}</p><p className="muted">Status: {c.status.replaceAll("_", " ")}{c.reviewed_at ? ` · reviewed ${new Date(c.reviewed_at).toLocaleDateString()}` : " · awaits human review"}</p>
-      {evidence?.filter((e) => e.claim_id === c.id).map((e, i) => <p key={i}>Evidence ({e.relationship}): <a href={e.sources?.url || "#"} target="_blank" rel="noreferrer">{e.sources?.title || "Source"}</a>{e.excerpt ? ` — ${e.excerpt}` : ""}</p>)}
+      {evidence?.filter((e) => e.claim_id === c.id).map((e, i) => { const source = sources?.find((item) => item.id === e.source_id); return <p key={i}>Evidence ({e.relationship}): <a href={source?.url || "#"} target="_blank" rel="noreferrer">{source?.title || "Source"}</a>{e.excerpt ? ` — ${e.excerpt}` : ""}</p>; })}
       <details><summary>Link or add evidence</summary><form action={linkEvidence}><input type="hidden" name="claim_id" value={c.id}/><input type="hidden" name="investigation_id" value={id}/>
         <label htmlFor={`evidence-sources-${c.id}`}>Sources for this claim</label><select id={`evidence-sources-${c.id}`} name="source_ids" multiple required size={Math.min(Math.max(sources?.length || 1, 2), 6)}>{sources?.map((s) => <option key={s.id} value={s.id}>{s.title}</option>)}</select>
         <label htmlFor={`evidence-relationship-${c.id}`}>Relationship</label><select id={`evidence-relationship-${c.id}`} name="relationship"><option value="supports">Supports</option><option value="challenges">Challenges</option><option value="context">Context</option></select>

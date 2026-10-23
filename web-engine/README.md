@@ -24,7 +24,9 @@ The web engine never bypasses the governance pipeline. It surfaces consent, sour
 
 - `app/` is the running browser prototype: ten review screens, local IndexedDB, and no server sync. See `app/README.md`.
 - `backend/` is the first production-oriented application scaffold: Next.js, Supabase Auth/Postgres/RLS, persistent investigations, source and claim evidence, expiring intake, and human publication gates enforced in PostgreSQL. It is open for review, but needs an owner-configured Supabase and Vercel project before it can run as a hosted service. See `backend/README.md`.
-- GitHub hosts source; Vercel is the intended app host; Supabase is the intended managed database and identity provider. This does not replace the local prototype or connect it to shared storage yet.
+- `backend-ui/` is a mobile-friendly static workspace served by the existing GitHub Pages site. It connects to Supabase Auth and PostgreSQL directly, using the public anon key with the migration's row-level security policies. The interface covers investigations, sources, claims, evidence, governance checks, temporary intake, and human promotion.
+- `backend/` is the server-rendered Next.js implementation and can be deployed separately on Vercel. It is not required for the `.github.io` workspace page.
+- GitHub Pages serves the interface; Supabase provides the persistent database and identity service. A Supabase project, applied migration, invited publisher, allowed redirect URL, and one-time browser connection are required before a team can sign in.
 - The publication status inside the backend is an editorial state. The first release does not render public articles or provide public article distribution.
 - AI assistance, private file uploads, team/workspace separation, and conflict-safe offline sync remain future work. No model makes claims or publication decisions.
 

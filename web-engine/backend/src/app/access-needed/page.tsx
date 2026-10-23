@@ -1,0 +1,2 @@
+import { signOut } from "../actions";
+export default function AccessNeeded(){return <section className="card" style={{maxWidth:650}}><h1>Workspace access needed</h1><p>Your account is signed in, but it has not been added to the Omoluabi workspace. Ask the workspace administrator to add your account as an editor, reviewer, or publisher.</p><form action={signOut}><button type="submit">Sign out</button></form></section>}

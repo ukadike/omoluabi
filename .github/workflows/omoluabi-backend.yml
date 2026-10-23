@@ -1,0 +1,35 @@
+name: Omoluabi backend checks
+
+on:
+  pull_request:
+    paths:
+      - "web-engine/backend/**"
+      - ".github/workflows/omoluabi-backend.yml"
+  push:
+    branches: [main]
+    paths:
+      - "web-engine/backend/**"
+      - ".github/workflows/omoluabi-backend.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web-engine/backend
+    env:
+      NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ci-placeholder
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npm run typecheck
+      - run: npm run build

@@ -20,21 +20,22 @@ Observation packages arrive from the device or from manual entry as structured J
 
 The web engine never bypasses the governance pipeline. It surfaces consent, source, risk, and accessibility fields for human review; it does not decide publication status on its own.
 
-## What is still unknown?
+## Status: prototype and production backend scaffold
 
-Sync design, conflict resolution across devices, and the production framework choice are not yet scoped. See `local-first-plan.md`. The storage layer question is answered for the prototype only (browser IndexedDB) — that is a prototype decision, not a production ruling.
-
-## Status: prototype running
-
-`app/` is the first running implementation of this directory's plans — a browser-only human review interface over the ten screens in `screens.md`, gated in the exact order of `architecture/governance-pipeline.md`. It is not the production web engine: no framework decision has been made, there is no sync/backend, and AI assist is a labeled stub (no model wired in). See `app/README.md` for how to run it and what it deliberately does not do yet.
+- `app/` is the running browser prototype: ten review screens, local IndexedDB, and no server sync. See `app/README.md`.
+- `backend/` is the first production-oriented application scaffold: Next.js, Supabase Auth/Postgres/RLS, persistent investigations, source and claim evidence, expiring intake, and human publication gates enforced in PostgreSQL. It is open for review, but needs an owner-configured Supabase and Vercel project before it can run as a hosted service. See `backend/README.md`.
+- GitHub hosts source; Vercel is the intended app host; Supabase is the intended managed database and identity provider. This does not replace the local prototype or connect it to shared storage yet.
+- The publication status inside the backend is an editorial state. The first release does not render public articles or provide public article distribution.
+- AI assistance, private file uploads, team/workspace separation, and conflict-safe offline sync remain future work. No model makes claims or publication decisions.
 
 ## Directory Index
 
-- `architecture.md` — stack and MVP user flow
-- `screens.md` — first screens list (now implemented — see `app/`)
-- `local-first-plan.md` — local-first storage; prototype decision recorded, production still research
-- `p5-ml5-prototype-plan.md` — role of p5.js/ml5.js prototyping, and what it must not be used for
-- `app/` — running prototype: review screens, governance gate, local IndexedDB store
+- `architecture.md` — chosen MVP architecture and governed workflow
+- `screens.md` — first screens list, implemented by the prototype
+- `local-first-plan.md` — local-first prototype decisions; production sync design remains open
+- `p5-ml5-prototype-plan.md` — p5.js/ml5.js prototyping boundaries
+- `app/` — browser prototype and local IndexedDB store
+- `backend/` — deployable Next.js app scaffold, Supabase migration, and setup instructions
 
 ## Source
 

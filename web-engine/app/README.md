@@ -1,8 +1,9 @@
 # Web Engine — Running Prototype
 
 First running implementation of the plans in `web-engine/`. A browser-only
-human review interface over the ten screens in `../screens.md`, gated in
-the order of `../../architecture/governance-pipeline.md`.
+human review interface over the governance pipeline, plus a local Claim Checks
+workspace. Observation review remains gated in the order of
+`../../architecture/governance-pipeline.md`.
 
 ## Run it
 
@@ -16,12 +17,21 @@ python3 -m http.server 8000
 
 Then open `http://localhost:8000/web-engine/app/index.html`.
 
+Run the deterministic verification tests from the repository root with:
+
+```bash
+node --test web-engine/app/js/claim-verification.test.mjs
+```
+
 On first load it seeds one observation from this repo's own worked
 examples (`../../examples/omoluabi-field-observation.json` and the
 `examples` arrays in `../../schemas/*.schema.json`) so the pipeline has a
 real record to review.
 
 ## What it does
+
+- Claim Checks: create a claim record, split compound wording into subclaims, attach supporting/challenging/context evidence, group records by originating source chain, preview the deterministic `ssl.core.claim_verification` state, and record a separate human decision. Data stays in browser IndexedDB.
+- `UNSUPPORTED` means no qualifying support is recorded, not false; `READY_FOR_REVIEW` is not corroboration. Reviewer names and roles are recorded but not authenticated in this prototype, and the Claim Checks screen does not publish.
 
 - Inbox of observations, each showing how many governance stages are reviewed.
 - Observation detail with a pipeline stepper (Source → Consent → Risk →
@@ -62,6 +72,8 @@ real record to review.
 - `js/seed-data.js` — the repo's own example records, copied verbatim.
 - `js/gate.js` — governance-pipeline stage order and lock/current/complete logic.
 - `js/ai-assist.js` — labeled stub suggestion generator, advisory only.
-- `js/views.js` — render functions for all ten screens.
+- `js/views.js` — render functions for the observation governance screens.
+- `js/claim-check-view.js` — local Claim Checks workspace, separate from the observation publication pipeline.
+- `js/claim-verification.mjs` — deterministic rule preview for `ssl.core.claim_verification`.
 - `js/router.js` — hash router; moves focus to `<main>` on every navigation.
 - `js/main.js` — seeds the store on first run, then starts the router.

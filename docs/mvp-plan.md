@@ -2,7 +2,7 @@
 
 **Version:** 1.0.0  
 **Status:** Active prototype plan  
-**Updated:** 2026-07-15
+**Updated:** 2026-10-21
 
 ## MVP proposition
 
@@ -79,7 +79,11 @@ The interface distinguishes:
 
 A passing rule evaluation is not the same as editorial approval.
 
-### 5. Offline and local-first behavior
+### 5. Claim Check dossier
+
+The Web Engine includes a local-first Claim Checks workspace backed by `ssl.editorial.claim_check` and the existing `ssl.core.claim_verification` rules. It preserves exact wording and context, supports atomic subclaims, records evidence relationships and originating source chains, surfaces missing context and contradictions, and stores deterministic rule state separately from a reviewer’s decision. It does not assign truth scores, fetch evidence automatically, or publish claims. The prototype records reviewer-entered name and role but does not authenticate them; it must not be treated as publication authorization.
+
+### 6. Offline and local-first behavior
 
 - Cached data and media remain usable without a live third-party source.
 - User-selected CSV files are parsed locally in the browser.
@@ -118,6 +122,12 @@ The MVP is present when all of the following are true:
 12. The page remains functional when official data is unavailable.
 13. The repository contains the universal SSL schema card, media schema card, JSON Schemas, and versioned rules.
 14. A project can extend the same media field and rule set without copying UFO-specific logic.
+15. A user can create and retain Claim Checks in browser IndexedDB.
+16. Compound claims can be split into individually testable subclaims.
+17. Evidence can be marked as supporting, challenging, contextual, conflicting, or not addressing the claim, with provenance and source-chain references.
+18. Repeated republications are not counted as independent corroboration; independence must be explicitly confirmed.
+19. Claim states follow `ssl.core.claim_verification`; `CORROBORATED` and `INVALIDATED` require a recorded human decision.
+20. A rule result never automatically publishes or determines truth.
 
 ## Not in this MVP
 

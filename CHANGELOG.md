@@ -4,6 +4,13 @@ All notable changes to this repository are documented here. Format loosely follo
 
 ## [Unreleased]
 
+### Added — Claim Check workspace
+
+- `cards/claim-check.card.md` and `schemas/claim-check.schema.json` define a structured evidence dossier that extends the existing `ssl.core.claim_verification` rules.
+- The local-first Web Engine can create claim checks, record subclaims and evidence/source chains, preview deterministic rule states, and preserve separate human decisions.
+- Five Node built-in tests cover zero/one/two independent support chains, material contradiction precedence, and unconfirmed source independence.
+- `docs/mvp-plan.md` records the workflow and acceptance criteria.
+
 ### Added — v0.02: Photographic and Cartographic Witness Layers
 
 Formalizes photography and cartography as first-class evidentiary subsystems, per the Omoluabi MVP Instrumentation and Research-Evidence Directive. No existing schema, card, governance rule, or accessibility commitment was weakened or replaced; all additions extend `schemas/observation.schema.json`'s existing `media`/`location` objects.

@@ -11,7 +11,7 @@
  */
 
 const DB_NAME = "omoluabi-web-engine";
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 
 const STORES = {
   observations: "observation_id",
@@ -21,6 +21,7 @@ const STORES = {
   accessibility: "accessibility_id",
   publications: "publication_id",
   reviews: "review_id", // prototype-only: human sign-off log, no canonical schema yet
+  claimChecks: "check_id",
 };
 
 let dbPromise = null;

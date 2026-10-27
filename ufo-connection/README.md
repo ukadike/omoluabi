@@ -44,18 +44,18 @@ known paths (`uap-csv.csv`, `uap-release001..003.csv`) if discovery finds none.
 To pin a specific endpoint and bypass discovery, set `PURSUE_CSV_URL` (in
 `.github/workflows/cache-pursue.yml` or as an environment variable).
 
-### Why the demo may show no records
+### Current snapshot and source labels
 
-war.gov fronts its site with edge bot-protection that returns `403 Forbidden`
-to automated requests from datacenter IPs — including GitHub Actions runners. So
-the scheduled cache job usually cannot reach the official source and the page
-shows empty states by design. This is intentional: the demo only ever displays
-records cached from the official source, never invented or third-party data, and
-the cache job keeps the existing data untouched and exits cleanly when the
-source is unreachable.
+The cache currently contains the 28 listings in Release 07 (published October
+23, 2026). WAR.GOV blocks some automated requests, so the catalog descriptions
+were obtained from the Declassified UAP JSON export. Its `description` field
+contains WAR.GOV's published description; the separate machine-written summary
+is intentionally excluded. Each record links to its original WAR.GOV file and
+page. The catalog is a third-party index, not a government API, and the PDFs
+are not mirrored in this repository.
 
-To populate real records, run the cache once from a network that can load
-war.gov (for example your own machine):
+When the official CSV is reachable, the cache script continues to prefer it.
+If the source cannot be reached, it leaves the checked-in snapshot untouched.
 
 ```bash
 cd ufo-connection && npm run cache:pursue

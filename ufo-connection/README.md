@@ -126,6 +126,7 @@ source-by-source historical reconstruction. It currently includes:
 - Apollo anomaly records that keep astronaut observation separate from later
   interpretation.
 - Farmington Armada newspaper/media evidence packet separating contemporaneous reporting, witness claims, counter-explanations, retrospective testimony, and unresolved provenance.
+- [PURSUE Release 07 catalog index](evidence/pursue-release-07-index.md) — 28 catalog listings published October 23, 2026; metadata only, not locally cached PDF contents.
 
 Additional evidence folders:
 
@@ -136,6 +137,7 @@ ufo-connection/
     gordon-cooper-dossier.md
     apollo-anomaly-ledger.md
     farmington-armada-media-evidence.md
+    pursue-release-07-index.md
   transcripts/
     gordon-cooper-1962-selected-transcript.md
   data/

@@ -74,12 +74,18 @@ function setDataset(records, options = {}) {
 function showOfficialCache() {
   const records = Array.isArray(cachedDisclosure?.records) ? cachedDisclosure.records : [];
   const fetchedAt = cachedDisclosure?._fetchedAt || 'not yet fetched';
+  const catalogProvider = cachedDisclosure?.catalogProvider || '';
+  const isMirroredCatalog = Boolean(catalogProvider);
   setDataset(records, {
-    mode: 'official',
-    statusText: `${records.length} cached official record${records.length === 1 ? '' : 's'} loaded. Last cache update: ${fetchedAt}.`,
-    bannerText: records.length
-      ? 'OFFICIAL CACHE · Records are normalized for review. Rule results do not replace human verification.'
-      : 'OFFICIAL CACHE EMPTY · Load the governed demonstration or select an official PURSUE CSV.'
+    mode: isMirroredCatalog ? 'catalog' : 'official',
+    statusText: isMirroredCatalog
+      ? records.length + ' Release 07 catalog record' + (records.length === 1 ? '' : 's') + ' loaded. WAR.GOV descriptions via ' + catalogProvider + '; cache updated ' + fetchedAt + '.'
+      : records.length + ' cached official record' + (records.length === 1 ? '' : 's') + ' loaded. Last cache update: ' + fetchedAt + '.',
+    bannerText: isMirroredCatalog
+      ? 'MIRRORED CATALOG · Description text is WAR.GOV’s published description, retrieved from Declassified UAP. Original files link to WAR.GOV. Machine summaries are excluded; human verification remains required.'
+      : records.length
+        ? 'OFFICIAL CACHE · Records are normalized for review. Rule results do not replace human verification.'
+        : 'OFFICIAL CACHE EMPTY · Load the governed demonstration or select an official PURSUE CSV.'
   });
   if (elements.csvInput) elements.csvInput.value = '';
   elements.loadStatus.textContent = records.length ? '' : 'The official cache is currently empty.';
@@ -474,7 +480,7 @@ function ruleBadge(summary = {}) {
 }
 
 function datasetModeLabel(mode) {
-  return ({ official: 'Official cache', synthetic: 'Synthetic demonstration', local: 'Local CSV session' })[mode] || 'Unknown dataset';
+  return ({ official: 'Official cache', catalog: 'WAR.GOV description catalog', synthetic: 'Synthetic demonstration', local: 'Local CSV session' })[mode] || 'Unknown dataset';
 }
 
 function sourceStatusLabel(value) {

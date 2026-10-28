@@ -263,6 +263,15 @@ Access notes are included so readers can tell which records are freely readable 
 
 - [NewspaperArchive: Farmington Daily Times collection](https://newspaperarchive.com/search/location/us/nm/farmington/farmington-daily-times/) — lists coverage from 1949–2019. Searching the site is free, but the vendor says full newspaper images require a subscription. [Current plans and trial terms](https://newspaperarchive.com/subscribe/) can change; check renewal and cancellation terms before starting a trial.
 
+### Audio and recorded witness material
+
+I have not found a recording made during the March 1950 event itself. The available audio/video records are later interviews or compilations; keep that distinction clear when using them.
+
+- [Eyes on Cinema: “Eyewitnesses discuss the 1950 UFO armada spotted over Farmington”](https://www.youtube.com/watch?v=goiRNIFxTPY) — free to stream. The description credits interviews with Virgil Riggs and Marlo Webb to David Marler, and James E. McDonald interviews to the University of Arizona Library Special Collections and David Marler. This is a later compilation, not an original, unedited archive master.
+- [KOAT: “Witness recalls 1950 Farmington UFO Armada”](https://www.koat.com/article/witness-recalls-1950-farmington-ufo-armada/5068732) — free news video/interview with Virgil Riggs, recorded decades after the event. Riggs was a child when he said he saw the objects.
+- [KOAT: “Lecture on UFO Mass Sighting”](https://www.koat.com/article/lecture-on-mass-ufo-sighting/4486119) — free news video with witness recollections and researcher David Marler’s commentary; retrospective reporting, not a 1950 recording.
+- [McDonald audio archive index](https://wolfdigitalmedia.com/ufo/jamesmcdonaldarchive.htm) — the public index lists 1968 Farmington interview segments with Clayton Boddy, Marlow Webb, Wilson Jones, Roy Hicks, and Andy Andrews. It identifies edited masters derived from original recordings, but I did not find a free direct download of the Farmington recordings. Ask the archive/custodian about an access copy, original-generation files, notes, and reuse permission.
+
 ## Editorial rule
 
 **Observation ≠ explanation.**

@@ -243,6 +243,26 @@ This investigation is unusually returnable because it contains:
 
 ---
 
+## 11. Source access guide — free, library access, and subscription
+
+Access notes are included so readers can tell which records are freely readable online and which may require institutional or paid access. Availability and vendor terms can change.
+
+### Free to read online
+
+- [National Archives catalog: Kirtland AFB, New Mexico, March 1950 (NAID 28937615)](https://catalog.archives.gov/id/28937615) — official catalog record and digitized frames. The March 21 Air Intelligence Information Report concerns three objects observed from Kirtland on March 17. [Frame guide and readable notes](https://weightofevidence.org/documents/1169). **Context:** the Farmington information-only card in this file was added after 1963 and reproduces a book excerpt; it is not a contemporaneous Air Force investigation of the Farmington reports.
+- [Farmington Daily Times, March 18, 1950 — online reproduction](https://www.ufologie.patrickgross.org/press/farmingtondailytimes18mar1950.htm) — free reading copy of “HUGE ‘SAUCER’ ARMADA JOLTS FARMINGTON.” It is a reproduction/transcription, not an archival-quality scan of the complete newspaper page.
+- [NOAA Climate Data Online](https://www.ncei.noaa.gov/cdo-web/) — free historical climate-data search. Farmington Four Corners Regional Airport station: [GHCND:USW00023090](https://www.ncdc.noaa.gov/cdo-web/datasets/GHCND/stations/GHCND:USW00023090/detail). Check station history and data frequency; daily data alone cannot establish conditions at a specific sighting hour.
+- [James E. McDonald audio archive index](https://wolfdigitalmedia.com/ufo/jamesmcdonaldarchive.htm) — free index listing the 1968 Farmington interviews with Boddy, Webb, Jones, Hicks, and Andrews. The index is free to read; it does not establish that the audio files are freely downloadable or reusable.
+
+### Library access — check eligibility and fees
+
+- [San Juan College Library: digitized Farmington Daily Times archive](https://libguides.sanjuancollege.edu/c.php?g=1424676&p=10566674) — listed coverage is 1949–2019, with some years also on microfilm. The digital archive may require library credentials or on-site access; ask the library what access is available to non-students.
+- [New Mexico State Library newspaper collection](https://nmstatelibrary.org/research-and-collections/collections/newspaper-collection/) — describes newspaper microfilm and interlibrary loan. Eligible reels may be requested through a local library for in-library use. Confirm title/date availability and any shipping, copying, or local ILL charges before ordering.
+
+### Subscription access
+
+- [NewspaperArchive: Farmington Daily Times collection](https://newspaperarchive.com/search/location/us/nm/farmington/farmington-daily-times/) — lists coverage from 1949–2019. Searching the site is free, but the vendor says full newspaper images require a subscription. [Current plans and trial terms](https://newspaperarchive.com/subscribe/) can change; check renewal and cancellation terms before starting a trial.
+
 ## Editorial rule
 
 **Observation ≠ explanation.**

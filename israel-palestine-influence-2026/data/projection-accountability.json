@@ -10,7 +10,7 @@
     "Alaska and Hawaii are inset and are not at the scale of the contiguous states.",
     "Map shape, area, and distance should not be inferred from the displayed geometry."
   ],
-  "source_dataset": "us-atlas state topology embedded in index.html; data CSVs in data/",
+  "source_dataset": "us-atlas v3 state topology from https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json; thematic data CSVs in data/",
   "source_resolution": "State/DC aggregation; no congressional district boundaries",
   "interpolation_status": "none",
   "recorded_at": "2026-11-03T00:00:00Z"

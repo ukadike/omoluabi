@@ -27,3 +27,6 @@ Obligations, disbursements, CRS program totals, lobbying expenses, candidate con
 
 ## Map geometry
 - [us-atlas 3 states-10m.json](https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json) — state boundaries for the interactive map. Alaska and Hawaii are inset in the Albers USA composite projection.
+
+## Map geometry
+- [us-atlas v3 states-10m.json](https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json) — state boundaries loaded by the interactive map. Alaska and Hawaii are inset in the Albers USA composite projection.

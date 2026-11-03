@@ -1,0 +1,8 @@
+{
+  "map_missingness_id": "map-coverage-2026-001",
+  "map_view_id": "aid-and-influence-state-map",
+  "area_description": "U.S. territories and non-state jurisdictions outside the 50 states and DC",
+  "missingness_type": "no_coverage",
+  "notes": "Intentional scope boundary. No territories or congressional districts are mapped. Candidate roster coverage depends on the cited tracker.",
+  "recorded_at": "2026-11-03T00:00:00Z"
+}

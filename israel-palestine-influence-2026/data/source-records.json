@@ -1,0 +1,90 @@
+[
+  {
+    "source_id": "SRC-FA-ISR",
+    "origin_type": "import",
+    "import_method": "Human-reviewed web-source import; see SOURCES.md",
+    "recorded_at": "2026-11-03T00:00:00Z",
+    "title": "ForeignAssistance.gov Israel FY2025",
+    "url": "https://foreignassistance.gov/cd/ISR/"
+  },
+  {
+    "source_id": "SRC-FA-WBG",
+    "origin_type": "import",
+    "import_method": "Human-reviewed web-source import; see SOURCES.md",
+    "recorded_at": "2026-11-03T00:00:00Z",
+    "title": "ForeignAssistance.gov West Bank/Gaza FY2025",
+    "url": "https://foreignassistance.gov/cd/WBG/"
+  },
+  {
+    "source_id": "SRC-IRS-GROSS",
+    "origin_type": "import",
+    "import_method": "Human-reviewed web-source import; see SOURCES.md",
+    "recorded_at": "2026-11-03T00:00:00Z",
+    "title": "IRS gross collections FY2025",
+    "url": "https://www.irs.gov/statistics/soi-tax-stats-gross-collections-by-type-of-tax-and-state-irs-data-book-table-1-5"
+  },
+  {
+    "source_id": "SRC-IRS-SOI",
+    "origin_type": "import",
+    "import_method": "Human-reviewed web-source import; see SOURCES.md",
+    "recorded_at": "2026-11-03T00:00:00Z",
+    "title": "IRS SOI Historic Table 2",
+    "url": "https://www.irs.gov/statistics/soi-tax-stats-historic-table-2"
+  },
+  {
+    "source_id": "SRC-FEC-AIPAC",
+    "origin_type": "import",
+    "import_method": "Human-reviewed web-source import; see SOURCES.md",
+    "recorded_at": "2026-11-03T00:00:00Z",
+    "title": "FEC AIPAC PAC",
+    "url": "https://www.fec.gov/data/committee/C00797670/"
+  },
+  {
+    "source_id": "SRC-FEC-UDP",
+    "origin_type": "import",
+    "import_method": "Human-reviewed web-source import; see SOURCES.md",
+    "recorded_at": "2026-11-03T00:00:00Z",
+    "title": "FEC United Democracy Project",
+    "url": "https://www.fec.gov/data/committee/C00799031/"
+  },
+  {
+    "source_id": "SRC-LDA",
+    "origin_type": "import",
+    "import_method": "Human-reviewed web-source import; see SOURCES.md",
+    "recorded_at": "2026-11-03T00:00:00Z",
+    "title": "LDA.gov lobbying disclosure",
+    "url": "https://lda.gov/"
+  },
+  {
+    "source_id": "SRC-FUNDVOTER",
+    "origin_type": "import",
+    "import_method": "Human-reviewed web-source import; see SOURCES.md",
+    "recorded_at": "2026-11-03T00:00:00Z",
+    "title": "FundVoter FEC-based tracker",
+    "url": "https://fundvoter.org/aipac"
+  },
+  {
+    "source_id": "SRC-PALPAC",
+    "origin_type": "import",
+    "import_method": "Human-reviewed web-source import; see SOURCES.md",
+    "recorded_at": "2026-11-03T00:00:00Z",
+    "title": "PAL PAC recipient details",
+    "url": "https://otrecord.news/pacs/palestine-american-league-pac-c00949958/"
+  },
+  {
+    "source_id": "SRC-AJP",
+    "origin_type": "import",
+    "import_method": "Human-reviewed web-source import; see SOURCES.md",
+    "recorded_at": "2026-11-03T00:00:00Z",
+    "title": "AJP Action endorsements",
+    "url": "https://ajpaction.org/ajp-actions-2026-candidate-endorsements/"
+  },
+  {
+    "source_id": "SRC-GAO",
+    "origin_type": "import",
+    "import_method": "Human-reviewed web-source import; see SOURCES.md",
+    "recorded_at": "2026-11-03T00:00:00Z",
+    "title": "GAO-26-107939",
+    "url": "https://www.gao.gov/products/gao-26-107939"
+  }
+]

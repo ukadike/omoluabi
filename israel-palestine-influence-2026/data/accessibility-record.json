@@ -1,0 +1,9 @@
+{
+  "accessibility_id": "access-state-map-2026-001",
+  "observation_id": "om-israel-palestine-2026-001",
+  "alt_text": "Interactive U.S. map colors states by modeled FY2025 federal assistance allocations for Israel or West Bank and Gaza, or by AIPAC-linked contributions to candidate profiles on the 2026 federal roster. A full state table and candidate records accompany the map.",
+  "plain_language_summary": "Choose a measure and select a state. Aid totals are estimates based on tax shares, not state payments. Campaign support, lobbying, and independent spending are shown separately.",
+  "screen_reader_label": "State-level aid allocation and election-finance map with equivalent data table",
+  "reduced_motion_safe": true,
+  "recorded_at": "2026-11-03T00:00:00Z"
+}

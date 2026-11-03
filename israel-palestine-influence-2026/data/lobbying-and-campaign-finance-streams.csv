@@ -1,0 +1,6 @@
+stream,period,amount_usd,measure,source_url,notes
+"AIPAC lobbying","2024",3324268,"LD-2 reported amount (sum of quarterly reports)","https://lda.gov/filings/public/filing/search/?registrant=american+israel&search=search","Registrant reports lobbying-related income as good-faith estimate; not a PAC donation or federal aid"
+"AIPAC lobbying","2025",3757105,"LD-2 reported amount (sum of quarterly reports)","https://lda.gov/filings/public/filing/search/?registrant=american+israel&search=search","Registrant reports lobbying-related income as good-faith estimate; not a PAC donation or federal aid"
+"AIPAC PAC","2023-2024",53699474.91,"Contributions to other committees","https://www.fec.gov/data/committee/C00797670/?cycle=2024","FEC committee summary; PAC total receipts were 57871196.42; independent expenditures 0"
+"United Democracy Project","2023-2024",87176557,"Total receipts","https://www.fec.gov/resources/campaign-finance-statistics/2024/tables/pac/PAC12a_2024_24m.pdf","FEC PAC Table 12a, Jan 1 2023-Dec 31 2024"
+"United Democracy Project","2024",34800000,"Independent expenditures","https://www.factcheck.org/2026/08/united-democracy-project-3/","FactCheck.org summary of FEC/OpenSecrets data; approx. $61.4M total spending"

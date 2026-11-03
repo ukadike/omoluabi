@@ -1,0 +1,15 @@
+{
+  "observation_id": "om-israel-palestine-2026-001",
+  "created_at": "2026-11-03T00:00:00Z",
+  "updated_at": "2026-11-03T00:00:00Z",
+  "system": "omoluabi",
+  "source_id": "SRC-FA-ISR",
+  "publication_status": "public",
+  "ai_assist": {
+    "enabled": true,
+    "task": "Research synthesis and state-level data visualization",
+    "human_verified": false
+  },
+  "accessibility_id": "access-state-map-2026-001",
+  "risk_id": "risk-israel-palestine-2026-001"
+}

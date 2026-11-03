@@ -1,0 +1,17 @@
+{
+  "projection_accountability_id": "proj-us-state-map-2026-001",
+  "map_view_id": "aid-and-influence-state-map",
+  "projection": "d3.geoAlbersUsa composite",
+  "projection_purpose": "Readable state-level U.S. comparison",
+  "properties_preserved": [
+    "none"
+  ],
+  "known_distortions": [
+    "Alaska and Hawaii are inset and are not at the scale of the contiguous states.",
+    "Map shape, area, and distance should not be inferred from the displayed geometry."
+  ],
+  "source_dataset": "us-atlas state topology embedded in index.html; data CSVs in data/",
+  "source_resolution": "State/DC aggregation; no congressional district boundaries",
+  "interpolation_status": "none",
+  "recorded_at": "2026-11-03T00:00:00Z"
+}

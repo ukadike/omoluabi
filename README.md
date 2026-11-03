@@ -51,6 +51,8 @@ Omoluabi now applies the [Small Systems Lab Universal Schema Card](standards/SSL
 
 ## Demonstrations
 
+- [`israel-palestine-influence-2026/`](israel-palestine-influence-2026/) — integrated Omoluabi investigation on federal assistance, modeled state attribution, lobbying, campaign finance, outside spending, 2026 candidates, source provenance, and the 15-layer reasoning pass.
+
 - [`ufo-connection/`](ufo-connection/) — **The UFO Connection**, an Omoluabi user case that
   reads official PURSUE UAP/UFO disclosure records through the evidence-reading layer (known /
   missing / unresolved), keeping official records separate from public discourse and making no

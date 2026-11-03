@@ -55,6 +55,10 @@ A sitemap of this repository. Start with `000_START_HERE.md` if you haven't alre
 - [`research/references.md`](research/references.md)
 - ADRs: [`ADR-0001`](research/design-decisions/ADR-0001-schema-first.md) (schema-first) · [`ADR-0002`](research/design-decisions/ADR-0002-governance-before-ai.md) (governance before AI) · [`ADR-0003`](research/design-decisions/ADR-0003-device-as-observation-instrument.md) (device as observation instrument) · [`ADR-0004`](research/design-decisions/ADR-0004-consent-and-publication-status-are-distinct.md) (consent vs. publication status)
 
+## Investigations
+
+- [`israel-palestine-influence-2026/`](israel-palestine-influence-2026/index.html) — Israel and West Bank/Gaza federal assistance; state allocation models; lobbying, campaign finance, 2026 candidate activity; reasoning layers and schema-backed records.
+
 ## Schemas & Cards
 
 - [`schemas/README.md`](schemas/README.md) — sixteen JSON Schemas (draft 2020-12): observation, consent, source, risk, accessibility, publication, correction, ai-permission, federation, memory, photographic-witness, media-provenance, observer-perception, location-evidence, landscape-memory, movement-trace, projection-accountability, map-missingness, location-protection

@@ -1,0 +1,15 @@
+{
+  "risk_id": "risk-israel-palestine-2026-001",
+  "observation_id": "om-israel-palestine-2026-001",
+  "risk_level": "moderate",
+  "risk_factors": [
+    "Readers may mistake modeled tax-share estimates for state payments.",
+    "Different reporting periods and financial categories may be combined incorrectly.",
+    "Political spending may be read as proof of motive or causation.",
+    "Tracker records can change as FEC filings are processed."
+  ],
+  "mitigations": "Label every measure and period; separate aid, lobbying, candidate contributions, independent expenditures, and endorsements; provide source links, alternate estimates, full CSVs, and correction path.",
+  "reach_constraint": "Public research POC; no claims of causal influence or wrongdoing.",
+  "assessed_by": "Research assembly; human editorial review required for future status changes.",
+  "assessed_at": "2026-11-03T00:00:00Z"
+}

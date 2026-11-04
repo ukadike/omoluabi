@@ -88,7 +88,7 @@
   stroke-width: 4;
 }
 .event-mark[hidden],
-.prov-cell[hidden],
+.provenance-grid tr[hidden],
 .contradiction-card[hidden] { display: none; }
 .viz-caption {
   max-width: 48rem;
@@ -96,11 +96,15 @@
   font-family: var(--font-body);
   line-height: var(--line-body);
 }
+.provenance-scroll {
+  overflow-x: auto;
+  border: var(--border-thin);
+}
 .provenance-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: var(--border-thin);
-  border-left: var(--border-thin);
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  table-layout: fixed;
 }
 .prov-head,
 .prov-cell {
@@ -108,6 +112,8 @@
   border-right: var(--border-thin);
   border-bottom: var(--border-thin);
   padding: var(--space-md);
+  text-align: left;
+  vertical-align: top;
 }
 .prov-head {
   font-family: var(--font-mono);

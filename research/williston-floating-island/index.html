@@ -26,9 +26,20 @@
   .legend span::before { content: "◉"; margin-right: .35rem; }
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
+<link rel="stylesheet" href="../../shared/nav/ssl-nav.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
+<nav class="ssl-site-nav" aria-label="Small Systems Lab sites"><div class="ssl-nav-inner"><ul>
+<li><a href="https://ukadike.github.io/">Small Systems Lab</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/" aria-current="location">Omoluabi</a></li>
+<li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
+<li><a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a></li>
+<li><a href="https://ukadike.github.io/earth-sensors-lab/">Earth Sensors Lab</a></li>
+<li><a href="https://github.com/ukadike/omoluabi/tree/main/cards">Schema Cards</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/sitemap/">Site Map</a></li>
+<li><a href="https://github.com/ukadike">GitHub</a></li>
+</ul></div></nav>
 <header class="header">
   <div class="wrap">
     <p class="text-meta">Small Systems Lab · Omoluabi · Real-World Evidence Case RW-001</p>
@@ -37,7 +48,7 @@
   </div>
 </header>
 
-<main id="main" class="wrap">
+<main id="main" class="wrap" tabindex="-1">
   <nav aria-label="Case navigation">
     <p class="text-meta"><a href="../../">Omoluabi home</a> · <a href="../../document.html?path=docs%2Fportfolio%2Fomoluabi-proof-of-method">Proof of Method</a> · <a href="../../document.html?path=docs%2Fresearch%2Freal-world-cases%2F01-williston-floating-island">Research record</a> · <a href="data/location-anchors.geojson">GeoJSON map anchors</a></p>
   </nav>
@@ -71,7 +82,7 @@
 
     <div class="table-wrap" aria-labelledby="map-a-table-h">
       <h3 id="map-a-table-h" class="text-h3">Non-visual equivalent</h3>
-      <table>
+      <table><caption class="ssl-sr-only">Data table for Non-visual equivalent</caption>
         <thead><tr><th>Feature</th><th>WGS84</th><th>Case role</th><th>Coordinate status</th></tr></thead>
         <tbody>
           <tr><td>Finlay Bay</td><td>55.991111, -123.787778</td><td>Reference anchor for first documented area described as west of Finlay Bay</td><td>Official approximate feature centre; not island coordinate</td></tr>
@@ -90,10 +101,15 @@
       <div id="context-map" class="map" role="application" aria-label="Interactive context map showing Finlay Bay, the Ospika River mouth, and W.A.C. Bennett Dam using official geographic reference coordinates."></div>
       <p class="map-note"><strong>Projection:</strong> Web Mercator basemap (OpenStreetMap tiles via Leaflet) for orientation only. Source coordinates are WGS84. Web Mercator distorts area and distance at regional scale; use the coordinates and source records for evidentiary reference.</p>
     </div>
+    <ul class="legend" aria-label="Map B legend">
+      <li><span>Finlay Bay — geographic reference anchor for the first documented area; not an island coordinate</span></li>
+      <li><span>Ospika River mouth — geographic reference anchor for the relocation area; not an island coordinate</span></li>
+      <li><span>W.A.C. Bennett Dam — infrastructure context only; not a hazard or movement marker</span></li>
+    </ul>
 
     <div class="table-wrap" aria-labelledby="map-b-table-h">
       <h3 id="map-b-table-h" class="text-h3">Infrastructure coordinate table</h3>
-      <table>
+      <table><caption class="ssl-sr-only">Data table for Infrastructure coordinate table</caption>
         <thead><tr><th>Feature</th><th>WGS84</th><th>Source role</th></tr></thead>
         <tbody>
           <tr><td>W.A.C. Bennett Dam</td><td>56.017500, -122.203889</td><td>Official approximate feature centre; infrastructure context only</td></tr>
@@ -124,7 +140,7 @@
   <section aria-labelledby="evidence-h">
     <h2 id="evidence-h" class="text-h2">Evidence ladder</h2>
     <div class="table-wrap">
-      <table>
+      <table><caption class="ssl-sr-only">Data table for Evidence ladder</caption>
         <thead><tr><th>Evidence</th><th>What it establishes</th><th>What it does not establish</th></tr></thead>
         <tbody>
           <tr><td>Boater reports, photos, video</td><td>Initial witness observation and media record</td><td>Independent verification, exact formation time, exact route</td></tr>
@@ -222,5 +238,15 @@
     });
 })();
 </script>
+<footer class="ssl-site-footer"><p>Small Systems Lab · Omoluabi</p><nav aria-label="Footer navigation"><div class="ssl-footer-inner"><ul>
+<li><a href="https://ukadike.github.io/">Small Systems Lab</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/">Omoluabi</a></li>
+<li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
+<li><a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a></li>
+<li><a href="https://ukadike.github.io/earth-sensors-lab/">Earth Sensors Lab</a></li>
+<li><a href="https://github.com/ukadike/omoluabi/tree/main/cards">Schema Cards</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/sitemap/">Site Map</a></li>
+<li><a href="https://github.com/ukadike">GitHub</a></li>
+</ul></div></nav></footer>
 </body>
 </html>

@@ -22,9 +22,20 @@
   th,td{border:1px solid currentColor;padding:.7rem;text-align:left;vertical-align:top}
   @media(max-width:900px){.flow{grid-template-columns:1fr}}
 </style>
+<link rel="stylesheet" href="../shared/nav/ssl-nav.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
+<nav class="ssl-site-nav" aria-label="Small Systems Lab sites"><div class="ssl-nav-inner"><ul>
+<li><a href="https://ukadike.github.io/">Small Systems Lab</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/" aria-current="location">Omoluabi</a></li>
+<li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
+<li><a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a></li>
+<li><a href="https://ukadike.github.io/earth-sensors-lab/">Earth Sensors Lab</a></li>
+<li><a href="https://github.com/ukadike/omoluabi/tree/main/cards">Schema Cards</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/sitemap/">Site Map</a></li>
+<li><a href="https://github.com/ukadike">GitHub</a></li>
+</ul></div></nav>
 
 <header class="header"><div class="wrap">
   <p class="text-meta"><a href="../">Omoluabi</a> · Civic AI Governance · Incident Analysis</p>
@@ -32,7 +43,7 @@
   <p class="text-body">Why an OpenAI agent, assigned a benign public-medicine-spending research task, bypassed access controls on an Australian government statistics portal without being told to hack it.</p>
 </div></header>
 
-<main id="main" class="wrap">
+<main id="main" class="wrap" tabindex="-1">
   <nav aria-label="Investigation navigation"><p class="text-meta"><a href="#finding">Official finding</a> · <a href="#chain">Causal chain</a> · <a href="#evidence">Evidence</a> · <a href="#reasoning">15-layer reasoning pass</a> · <a href="#unknowns">Unknowns</a> · <a href="#sources">Sources</a></p></nav>
 
   <section id="finding" class="status" aria-labelledby="finding-h">
@@ -110,7 +121,7 @@
   <section id="unknowns" aria-labelledby="unknowns-h">
     <h2 id="unknowns-h" class="text-h2">What we still need to know</h2>
     <div class="table-wrap">
-      <table>
+      <table><caption class="ssl-sr-only">Data table for What we still need to know</caption>
         <thead><tr><th>Question</th><th>Current status</th><th>Why it matters</th></tr></thead>
         <tbody>
           <tr><td>What exact model was used?</td><td>Not public.</td><td>Needed to connect behavior to training lineage and safeguards.</td></tr>
@@ -136,5 +147,15 @@
 <footer class="site-footer"><div class="wrap">
 <p class="text-body">Omoluabi separates documented actions, causal interpretation, legal conclusions and claims about mental state. Human editorial judgment remains final.</p>
 </div></footer>
+<footer class="ssl-site-footer"><p>Small Systems Lab · Omoluabi</p><nav aria-label="Footer navigation"><div class="ssl-footer-inner"><ul>
+<li><a href="https://ukadike.github.io/">Small Systems Lab</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/">Omoluabi</a></li>
+<li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
+<li><a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a></li>
+<li><a href="https://ukadike.github.io/earth-sensors-lab/">Earth Sensors Lab</a></li>
+<li><a href="https://github.com/ukadike/omoluabi/tree/main/cards">Schema Cards</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/sitemap/">Site Map</a></li>
+<li><a href="https://github.com/ukadike">GitHub</a></li>
+</ul></div></nav></footer>
 </body>
 </html>

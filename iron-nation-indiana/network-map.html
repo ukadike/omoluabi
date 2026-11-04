@@ -10,11 +10,22 @@
 <style>
 .map-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;align-items:start}.node{border:2px solid currentColor;padding:1rem;min-height:150px}.edge{margin:.75rem 0;padding:.75rem;border-left:4px solid currentColor}.status{font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:.85rem}.map-note{max-width:74ch}.route{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:1rem 0}.route span{border:1px solid currentColor;padding:.5rem}.arrow{border:0!important;padding:.25rem!important}.missing{border-style:dashed}.small{font-size:.92rem}.edge-card{border:1px solid currentColor;margin:1rem 0}.edge-card summary{cursor:pointer;padding:1rem;font-weight:700}.edge-body{padding:0 1rem 1rem}.edge-body dl{display:grid;grid-template-columns:minmax(8rem,11rem) 1fr;gap:.5rem 1rem}.edge-body dt{font-weight:700}.edge-body dd{margin:0}.edge-id{font-family:monospace;font-size:.9rem}.edge-unresolved{border-style:dashed}.request-box{border:2px dashed currentColor;padding:1rem;margin:1rem 0}.jump{display:flex;gap:.75rem;flex-wrap:wrap}.jump a{display:inline-block;border:1px solid currentColor;padding:.5rem}.legend-list{display:flex;gap:1rem;flex-wrap:wrap;padding-left:1.25rem}
 </style>
+<link rel="stylesheet" href="../shared/nav/ssl-nav.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
+<nav class="ssl-site-nav" aria-label="Small Systems Lab sites"><div class="ssl-nav-inner"><ul>
+<li><a href="https://ukadike.github.io/">Small Systems Lab</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/" aria-current="location">Omoluabi</a></li>
+<li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
+<li><a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a></li>
+<li><a href="https://ukadike.github.io/earth-sensors-lab/">Earth Sensors Lab</a></li>
+<li><a href="https://github.com/ukadike/omoluabi/tree/main/cards">Schema Cards</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/sitemap/">Site Map</a></li>
+<li><a href="https://github.com/ukadike">GitHub</a></li>
+</ul></div></nav>
 <header class="header"><div class="wrap"><p class="text-meta"><a href="./">Iron Nation–Indiana Research Dossier</a> · Evidence Map</p><h1 class="text-h1">Entity + Funds Evidence Map</h1><p class="text-body">Click an evidence edge to see what proves it, what the source does not prove, and which document a reporter should seek next.</p></div></header>
-<main id="main" class="wrap">
+<main id="main" class="wrap" tabindex="-1">
 <section aria-labelledby="legend"><h2 id="legend" class="text-h2">How to read this map</h2><p class="text-body map-note">Omoluabi treats every relationship as a separate evidentiary edge. A source may establish one edge without establishing the next. Solid relationships are supported by records currently in the dossier. Dashed relationships are unresolved and must not be silently completed by inference.</p><ul class="legend-list text-body"><li><strong>Confirmed:</strong> primary or official record supports the edge.</li><li><strong>Reported:</strong> credible reporting supports it; underlying record still sought.</li><li><strong>Unresolved:</strong> decisive documentary link is missing.</li><li><strong>Not established:</strong> current evidence does not prove the claim.</li></ul><nav class="jump" aria-label="Map shortcuts"><a href="#edges">Evidence edges</a><a href="#entities">Entities</a><a href="#sector">Defense / dual-use</a><a href="#geo">Geography</a><a href="../document.html?path=iron-nation-indiana%2FREPORTER_RECORDS_GUIDE">Records guide</a></nav></section>
 <hr class="divider">
 <section aria-labelledby="flow"><h2 id="flow" class="text-h2">Public-money trace</h2><div class="route" aria-label="Current evidence path"><span>State of Indiana</span><span class="arrow" aria-hidden="true">→</span><span>IEDC / Office of Commerce</span><span class="arrow" aria-hidden="true">→</span><span>$15M announced commitment</span><span class="arrow" aria-hidden="true">→</span><span class="missing">Recipient legal instrument missing</span><span class="arrow" aria-hidden="true">→</span><span>Iron Nation vehicle?</span><span class="arrow" aria-hidden="true">→</span><span class="missing">Portfolio attribution not established</span></div><p class="text-meta">The missing executed instrument is the central reporting gap. Nothing on this map assumes a direct Indiana → Iron Nation II → portfolio-company path unless a record establishes each step.</p></section>
@@ -38,5 +49,15 @@
 <section aria-labelledby="next"><h2 id="next" class="text-h2">Reporter resources</h2><p class="text-body">The map is an index into the research, not a substitute for the underlying records.</p><p class="text-meta"><a href="../document.html?path=iron-nation-indiana%2FREPORTER_RECORDS_GUIDE">Documents to seek + APRA language</a> · <a href="../document.html?path=iron-nation-indiana%2FSOURCE_NOTES">Annotated source ledger</a> · <a href="data/claims.json">Machine-readable claim states</a> · <a href="https://github.com/ukadike/omoluabi/issues">Submit a document or correction</a></p></section>
 </main>
 <footer class="site-footer"><div class="wrap"><p class="text-body">Part of Omoluabi's journalist-facing research desk. Evidence status is human-reviewed and version-controlled.</p></div></footer>
+<footer class="ssl-site-footer"><p>Small Systems Lab · Omoluabi</p><nav aria-label="Footer navigation"><div class="ssl-footer-inner"><ul>
+<li><a href="https://ukadike.github.io/">Small Systems Lab</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/">Omoluabi</a></li>
+<li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
+<li><a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a></li>
+<li><a href="https://ukadike.github.io/earth-sensors-lab/">Earth Sensors Lab</a></li>
+<li><a href="https://github.com/ukadike/omoluabi/tree/main/cards">Schema Cards</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/sitemap/">Site Map</a></li>
+<li><a href="https://github.com/ukadike">GitHub</a></li>
+</ul></div></nav></footer>
 </body>
 </html>

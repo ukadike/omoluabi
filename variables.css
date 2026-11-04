@@ -14,8 +14,8 @@
   --color-white: #ffffff;
 
   /* TYPOGRAPHY - FONTS */
-  --font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-body: Georgia, 'Garamond', serif;
+  --font-display: Georgia, 'Garamond', serif;
+  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-mono: 'Courier Prime', 'Courier New', monospace;
 
   /* TYPOGRAPHY - SIZES */

@@ -1,0 +1,16 @@
+/* SSL / Omoluabi shared navigation and accessibility utilities */
+.ssl-site-nav, .ssl-site-footer { font-family: var(--font-body, system-ui, sans-serif); }
+.ssl-site-nav { border-block: 1px solid var(--color-line, #d0cdc6); background: var(--color-paper, #efece2); color: var(--color-ink, #1a1a1a); }
+.ssl-site-nav .ssl-nav-inner, .ssl-site-footer .ssl-footer-inner { max-width: 64rem; margin: 0 auto; padding: .75rem 1rem; }
+.ssl-site-nav ul, .ssl-site-footer ul { display: flex; flex-wrap: wrap; gap: .25rem 1rem; margin: 0; padding: 0; list-style: none; }
+.ssl-site-nav a, .ssl-site-footer a { display: inline-block; padding: .4rem .15rem; color: inherit; text-decoration: underline; text-underline-offset: .2em; }
+.ssl-site-nav a[aria-current], .ssl-site-footer a[aria-current] { font-weight: 700; text-decoration-thickness: .18em; }
+.ssl-site-nav a:focus-visible, .ssl-site-footer a:focus-visible, .skip-link:focus-visible { outline: 3px solid #315f86; outline-offset: 3px; }
+.skip-link { position:absolute; left:-9999px; top:.5rem; z-index:1000; padding:.65rem .9rem; background:var(--color-ink, #1a1a1a); color:var(--color-paper, #efece2); }
+.skip-link:focus { left:.5rem; top:.5rem; }
+:where(a,button,input,textarea,select,[tabindex]):focus-visible { outline:3px solid #315f86; outline-offset:3px; }
+.ssl-site-footer { border-top: 2px solid var(--color-ink, #1a1a1a); margin-top: 2rem; padding: 1rem; background: var(--color-paper, #efece2); color: var(--color-ink, #1a1a1a); }
+.ssl-site-footer p { max-width: 64rem; margin: 0 auto .5rem; font-family: var(--font-mono, monospace); font-size: .8rem; letter-spacing: .04em; }
+.ssl-sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+@media (max-width: 42rem) { .ssl-site-nav .ssl-nav-inner, .ssl-site-footer .ssl-footer-inner { padding-inline: .75rem; } .ssl-site-nav ul, .ssl-site-footer ul { gap: .2rem .6rem; } }
+@media print { .ssl-site-nav { display: none; } }

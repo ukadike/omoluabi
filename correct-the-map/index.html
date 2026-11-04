@@ -26,9 +26,20 @@
   figcaption { margin-top: var(--space-sm); }
   @media (max-width: 40rem) { .comparison-table, .ledger-table { min-width: 38rem; } }
 </style>
+<link rel="stylesheet" href="../shared/nav/ssl-nav.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
+<nav class="ssl-site-nav" aria-label="Small Systems Lab sites"><div class="ssl-nav-inner"><ul>
+<li><a href="https://ukadike.github.io/">Small Systems Lab</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/" aria-current="location">Omoluabi</a></li>
+<li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
+<li><a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a></li>
+<li><a href="https://ukadike.github.io/earth-sensors-lab/">Earth Sensors Lab</a></li>
+<li><a href="https://github.com/ukadike/omoluabi/tree/main/cards">Schema Cards</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/sitemap/">Site Map</a></li>
+<li><a href="https://github.com/ukadike">GitHub</a></li>
+</ul></div></nav>
 <header class="header"><div class="wrap">
 <p class="text-meta"><a href="../">Omoluabi</a> · Map-Data case study</p>
 <p class="desk-mark">Published proof of concept · 2026-09-14</p>
@@ -36,7 +47,7 @@
 <p class="text-body">Africa did not shrink. A dominant world-map projection made it look smaller.</p>
 </div></header>
 
-<main id="main" class="wrap">
+<main id="main" class="wrap" tabindex="-1">
 <section aria-labelledby="finding-h">
 <h2 id="finding-h" class="text-h2">The finding</h2>
 <p class="text-body">On 4 September 2026, the United Nations General Assembly adopted <em>Correct the Map</em>, an African Union–backed resolution encouraging governments, schools, international organizations, and technology companies to use equal-area projections when comparative size matters—particularly the Equal Earth projection. The vote was 164 in favour, 1 against, and 6 abstentions.</p>
@@ -68,7 +79,7 @@
 <section aria-labelledby="compare-h">
 <h2 id="compare-h" class="text-h2">What the projections do—and do not do</h2>
 <div class="table-scroll">
-<table class="comparison-table text-body">
+<table class="comparison-table text-body"><caption class="ssl-sr-only">Data table for What the projections do—and do not do</caption>
 <thead><tr><th scope="col">Question</th><th scope="col">Mercator</th><th scope="col">Equal Earth</th><th scope="col">Omoluabi editorial rule</th></tr></thead>
 <tbody>
 <tr><th scope="row">Relative land area</th><td>Distorted, increasingly toward the poles.</td><td>Preserved.</td><td>Use Equal Earth or another equal-area projection when comparing the scale of countries, regions, climate impact, resources, population, or land.</td></tr>
@@ -105,7 +116,7 @@
 <section aria-labelledby="ledger-h">
 <h2 id="ledger-h" class="text-h2">Evidence ledger</h2>
 <div class="table-scroll">
-<table class="ledger-table text-body">
+<table class="ledger-table text-body"><caption class="ssl-sr-only">Data table for Evidence ledger</caption>
 <thead><tr><th scope="col">Claim</th><th scope="col">Status</th><th scope="col">What the evidence establishes</th><th scope="col">What it does not establish</th></tr></thead>
 <tbody>
 <tr><th scope="row">The UN adopted <em>Correct the Map</em> on 4 September 2026.</th><td><span class="status status-confirmed">Confirmed</span></td><td>The General Assembly adopted the text by recorded vote.</td><td>A binding mandate that eliminates Mercator everywhere.</td></tr>
@@ -127,5 +138,15 @@
 </section>
 </main>
 <footer class="site-footer"><div class="wrap"><p class="text-body">Part of Omoluabi, a Small Systems Lab public-interest research project.</p></div></footer>
+<footer class="ssl-site-footer"><p>Small Systems Lab · Omoluabi</p><nav aria-label="Footer navigation"><div class="ssl-footer-inner"><ul>
+<li><a href="https://ukadike.github.io/">Small Systems Lab</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/">Omoluabi</a></li>
+<li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
+<li><a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a></li>
+<li><a href="https://ukadike.github.io/earth-sensors-lab/">Earth Sensors Lab</a></li>
+<li><a href="https://github.com/ukadike/omoluabi/tree/main/cards">Schema Cards</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/sitemap/">Site Map</a></li>
+<li><a href="https://github.com/ukadike">GitHub</a></li>
+</ul></div></nav></footer>
 </body>
 </html>

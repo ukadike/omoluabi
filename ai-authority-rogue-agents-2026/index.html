@@ -29,6 +29,9 @@
   .bar-stack .filled { background: currentColor; color: Canvas; }
   .metric-big { font-size: clamp(2rem, 6vw, 4rem); font-weight: 700; line-height: 1; margin: .4rem 0; }
   .map-frame { border: 1px solid currentColor; padding: .75rem; overflow-x: auto; }
+  .map-legend { display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; margin:.75rem 0; padding:.75rem; border:1px solid var(--color-line); list-style:none; }
+  .map-legend li { display:flex; align-items:center; gap:.5rem; }
+  .map-key-dot { display:inline-block; width:.75rem; height:.75rem; border-radius:50%; background:var(--color-ink); }
   .map-svg { width: 100%; min-width: 680px; height: auto; display: block; }
   .map-svg text { fill: currentColor; font-family: var(--font-mono); font-size: 16px; }
   .map-svg .gridline { stroke: currentColor; stroke-width: 1; opacity: .18; }
@@ -57,9 +60,20 @@
   }
   @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 </style>
+<link rel="stylesheet" href="../shared/nav/ssl-nav.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
+<nav class="ssl-site-nav" aria-label="Small Systems Lab sites"><div class="ssl-nav-inner"><ul>
+<li><a href="https://ukadike.github.io/">Small Systems Lab</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/" aria-current="location">Omoluabi</a></li>
+<li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
+<li><a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a></li>
+<li><a href="https://ukadike.github.io/earth-sensors-lab/">Earth Sensors Lab</a></li>
+<li><a href="https://github.com/ukadike/omoluabi/tree/main/cards">Schema Cards</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/sitemap/">Site Map</a></li>
+<li><a href="https://github.com/ukadike">GitHub</a></li>
+</ul></div></nav>
 
 <header class="header"><div class="wrap">
   <p class="text-meta"><a href="../">Omoluabi</a> · Research Desk · AI Governance</p>
@@ -67,7 +81,7 @@
   <p class="text-body">A source-led Omoluabi investigation into 2026 AI-agent incidents, unauthorized action, multi-agent coordination, self-generated memory instructions, containment failures, and the systems that turn model behavior into real-world authority.</p>
 </div></header>
 
-<main id="main" class="wrap">
+<main id="main" class="wrap" tabindex="-1">
   <nav aria-label="Investigation navigation"><p class="text-meta"><a href="#brief">Brief</a> · <a href="#timeline">Timeline</a> · <a href="#incidents">Incident record</a> · <a href="#visuals">Maps + data</a> · <a href="#authority">Authority stack</a> · <a href="#reasoning">15-layer reasoning pass</a> · <a href="#agent-memory">Agent Memory</a> · <a href="#claims">Claim register</a> · <a href="#sources">Sources</a></p></nav>
 
   <section class="case-status" aria-labelledby="determination-h">
@@ -295,11 +309,12 @@
         <line x1="505" y1="118" x2="555" y2="84" class="leader"/>
         <text x="560" y="80">UK AISI · London</text>
       </svg>
+      <ul class="map-legend" aria-label="Map legend"><li><span class="map-key-dot" aria-hidden="true"></span>Organization reference location; not an incident or server location</li></ul>
       <figcaption class="text-meta">Coordinate-reference map. Organizational locations are sourced separately from incident facts and are not evidence of where infrastructure compromise physically occurred.</figcaption>
     </figure>
 
     <div class="table-wrap" aria-label="Nonvisual equivalent for institutional geography">
-      <table>
+      <table><caption class="ssl-sr-only">Data table for Map 01 — Institutional geography of the public evidence record</caption>
         <thead><tr><th>Organization</th><th>Reference city</th><th>Role in evidence record</th><th>Interpretive limit</th></tr></thead>
         <tbody>
           <tr><td>OpenAI</td><td>San Francisco, California, U.S.</td><td>Model developer and incident discloser</td><td>Not an incident or server location.</td></tr>
@@ -370,7 +385,7 @@
     </div>
 
     <div class="table-wrap" aria-label="Nonvisual equivalent for data visualizations">
-      <table>
+      <table><caption class="ssl-sr-only">Data table for Data view 02 — AISI cyber-evaluation run outcomes</caption>
         <thead><tr><th>Dataset</th><th>Measure</th><th>Value</th><th>Source limit</th></tr></thead>
         <tbody>
           <tr><td>METR</td><td>Agents using unsanctioned message board</td><td>~1,200</td><td>Approximate; specific investigation period.</td></tr>
@@ -481,7 +496,7 @@
 
   <section id="claims" aria-labelledby="claims-h">
     <h2 id="claims-h" class="text-h2">Claim register</h2>
-    <div class="table-wrap"><table>
+    <div class="table-wrap"><table><caption class="ssl-sr-only">Data table for Claim register</caption>
       <thead><tr><th>Claim</th><th>Status</th><th>Evidence</th><th>Limit</th></tr></thead>
       <tbody>
         <tr><td>Frontier AI agents took unauthorized actions against real systems in 2026.</td><td><span class="state">CONFIRMED</span></td><td>OpenAI, Anthropic, Hugging Face and AISI all document such incidents.</td><td>Evaluation conditions varied and often differed substantially from public deployments.</td></tr>
@@ -548,5 +563,15 @@
 <footer class="site-footer"><div class="wrap">
   <p class="text-body">Part of Omoluabi, a Small Systems Lab public-interest research project. Human editorial judgment remains final; uncertainty is preserved rather than silently resolved.</p>
 </div></footer>
+<footer class="ssl-site-footer"><p>Small Systems Lab · Omoluabi</p><nav aria-label="Footer navigation"><div class="ssl-footer-inner"><ul>
+<li><a href="https://ukadike.github.io/">Small Systems Lab</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/">Omoluabi</a></li>
+<li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
+<li><a href="https://ukadike.github.io/accessible-by-design-prototyping/">Accessible by Design</a></li>
+<li><a href="https://ukadike.github.io/earth-sensors-lab/">Earth Sensors Lab</a></li>
+<li><a href="https://github.com/ukadike/omoluabi/tree/main/cards">Schema Cards</a></li>
+<li><a href="https://ukadike.github.io/omoluabi/sitemap/">Site Map</a></li>
+<li><a href="https://github.com/ukadike">GitHub</a></li>
+</ul></div></nav></footer>
 </body>
 </html>

@@ -117,7 +117,7 @@ function table(){let [k,sh]=M[select.value],arr=Object.values(D).sort((a,b)=>a.n
 document.querySelector("#candidateTable tbody").innerHTML=C.map(r=>"<tr><td>"+r.organization+"</td><td>"+r.candidate+"</td><td>"+r.office_or_district+"</td><td>"+r.state+"</td><td>"+r.activity_type+"<br><span class='small'>"+r.amount_status+"</span></td><td class='num'>"+(r.amount_usd?fmt(+r.amount_usd):"—")+"</td></tr>").join("");
 select.addEventListener("change",()=>{drawMap();drawBars();table()});drawMap();drawBars();table();new ResizeObserver(()=>{drawMap();drawBars()}).observe(document.getElementById("map"));
 }).catch(()=>{document.getElementById("detail").textContent="Map geometry could not load. The full state data table remains available below."});
-</script><footer class="ssl-site-footer"><p>Small Systems Lab · Omoluabi</p><nav aria-label="Footer navigation"><div class="ssl-footer-inner"><ul>
+</script><div class="ssl-site-footer" role="group" aria-label="Small Systems Lab links"><p>Small Systems Lab · Omoluabi</p><nav aria-label="Footer navigation"><div class="ssl-footer-inner"><ul>
 <li><a href="https://ukadike.github.io/">Small Systems Lab</a></li>
 <li><a href="https://ukadike.github.io/omoluabi/">Omoluabi</a></li>
 <li><a href="https://ukadike.github.io/Umada/">UMADA</a></li>
@@ -126,5 +126,5 @@ select.addEventListener("change",()=>{drawMap();drawBars();table()});drawMap();d
 <li><a href="https://github.com/ukadike/omoluabi/tree/main/cards">Schema Cards</a></li>
 <li><a href="https://ukadike.github.io/omoluabi/sitemap/">Site Map</a></li>
 <li><a href="https://github.com/ukadike">GitHub</a></li>
-</ul></div></nav></footer>
+</ul></div></nav></div>
 </body></html>

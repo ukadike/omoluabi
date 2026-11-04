@@ -174,35 +174,42 @@
         </div>
       </div>
 
-      <div class="provenance-grid" role="table" aria-label="Evidence provenance matrix">
-        <div class="prov-head" role="columnheader">Event</div>
-        <div class="prov-head" role="columnheader">Surviving record</div>
-        <div class="prov-head" role="columnheader">Interpretation boundary</div>
-        <div class="prov-head" role="columnheader">Next test</div>
-
-        <div class="prov-cell" data-group="edwards" role="cell"><strong>Edwards AFB, 1957</strong><span>Object photographed by Askania camera operators.</span></div>
-        <div class="prov-cell" data-group="edwards" role="cell"><strong>Film inventory + Blue Book file</strong><span>NARA inventory, official case file, later witness reconstruction.</span></div>
-        <div class="prov-cell" data-group="edwards" role="cell"><strong>Identity disputed</strong><span>Official balloon conclusion is preserved; later witnesses rejected it. Later “landing” recollection is a separate testimony layer.</span></div>
-        <div class="prov-cell prov-next" data-group="edwards" role="cell"><strong>Reconstruct measurements</strong><span>Retrieve original camera logs, film metadata, wind/balloon data, and measurement tables.</span></div>
-
-        <div class="prov-cell" data-group="mercury" role="cell"><strong>Mercury-Atlas 9, 1963</strong><span>Cooper reports luminous “firefly” particles and later beacon-related observations.</span></div>
-        <div class="prov-cell" data-group="mercury" role="cell"><strong>Primary mission audio</strong><span>NASA/AARO releases preserve the communications and official contextual descriptions.</span></div>
-        <div class="prov-cell" data-group="mercury" role="cell"><strong>Mission context matters</strong><span>Frozen condensation and xenon-strobe beacons are documented explanations/context in the released records.</span></div>
-        <div class="prov-cell prov-next" data-group="mercury" role="cell"><strong>Keep event classes separate</strong><span>Do not merge visually striking spacecraft phenomena into unrelated UFO claims.</span></div>
-
-        <div class="prov-cell" data-group="apollo" role="cell"><strong>Apollo 10, 1969</strong><span>Crew hears unusual “outer-space-type music” / whistling.</span></div>
-        <div class="prov-cell" data-group="apollo" role="cell"><strong>Onboard transcript + audio</strong><span>Crew discusses VHF ranging and possible radar side-lobe explanations.</span></div>
-        <div class="prov-cell" data-group="apollo" role="cell"><strong>Real sound, uncertain mechanism</strong><span>The record documents anomalous audio; it does not document a visual craft.</span></div>
-        <div class="prov-cell prov-next" data-group="apollo" role="cell"><strong>Correlate hardware state</strong><span>Synchronize VHF, radar, circuit-breaker state, and DSEA audio.</span></div>
-
-        <div class="prov-cell" data-group="apollo" role="cell"><strong>Apollo 11, 1969</strong><span>Crew observes a bright unidentified object during translunar coast.</span></div>
-        <div class="prov-cell" data-group="apollo" role="cell"><strong>Technical crew debrief</strong><span>Multiple crew members describe the object and its changing optical appearance.</span></div>
-        <div class="prov-cell" data-group="apollo" role="cell"><strong>Unidentified ≠ extraterrestrial</strong><span>S-IVB was rejected by reported distance; size/range were not established; spacecraft debris was not excluded.</span></div>
-        <div class="prov-cell prov-next" data-group="apollo" role="cell"><strong>Reconstruct geometry</strong><span>Align mission time, trajectory, known hardware/debris, viewing direction, and optical limits.</span></div>
-      </div>
-    </div>
-
-    <div class="viz-panel">
+      <table class="provenance-grid" aria-label="Evidence provenance matrix">
+        <thead>
+          <tr>
+            <th class="prov-head" scope="col">Event</th>
+            <th class="prov-head" scope="col">Surviving record</th>
+            <th class="prov-head" scope="col">Interpretation boundary</th>
+            <th class="prov-head" scope="col">Next test</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-group="edwards">
+            <td class="prov-cell" data-group="edwards" data-label="Event"><strong>Edwards AFB, 1957</strong><span>Object photographed by Askania camera operators.</span></td>
+            <td class="prov-cell" data-group="edwards" data-label="Surviving record"><strong>Film inventory + Blue Book file</strong><span>NARA inventory, official case file, later witness reconstruction.</span></td>
+            <td class="prov-cell" data-group="edwards" data-label="Interpretation boundary"><strong>Identity disputed</strong><span>Official balloon conclusion is preserved; later witnesses rejected it. Later “landing” recollection is a separate testimony layer.</span></td>
+            <td class="prov-cell prov-next" data-group="edwards" data-label="Next test"><strong>Reconstruct measurements</strong><span>Retrieve original camera logs, film metadata, wind/balloon data, and measurement tables.</span></td>
+          </tr>
+          <tr data-group="mercury">
+            <td class="prov-cell" data-group="mercury" data-label="Event"><strong>Mercury-Atlas 9, 1963</strong><span>Cooper reports luminous “firefly” particles and later beacon-related observations.</span></td>
+            <td class="prov-cell" data-group="mercury" data-label="Surviving record"><strong>Primary mission audio</strong><span>NASA/AARO releases preserve the communications and official contextual descriptions.</span></td>
+            <td class="prov-cell" data-group="mercury" data-label="Interpretation boundary"><strong>Mission context matters</strong><span>Frozen condensation and xenon-strobe beacons are documented explanations/context in the released records.</span></td>
+            <td class="prov-cell prov-next" data-group="mercury" data-label="Next test"><strong>Keep event classes separate</strong><span>Do not merge visually striking spacecraft phenomena into unrelated UFO claims.</span></td>
+          </tr>
+          <tr data-group="apollo">
+            <td class="prov-cell" data-group="apollo" data-label="Event"><strong>Apollo 10, 1969</strong><span>Crew hears unusual “outer-space-type music” / whistling.</span></td>
+            <td class="prov-cell" data-group="apollo" data-label="Surviving record"><strong>Onboard transcript + audio</strong><span>Crew discusses VHF ranging and possible radar side-lobe explanations.</span></td>
+            <td class="prov-cell" data-group="apollo" data-label="Interpretation boundary"><strong>Real sound, uncertain mechanism</strong><span>The record documents anomalous audio; it does not document a visual craft.</span></td>
+            <td class="prov-cell prov-next" data-group="apollo" data-label="Next test"><strong>Correlate hardware state</strong><span>Synchronize VHF, radar, circuit-breaker state, and DSEA audio.</span></td>
+          </tr>
+          <tr data-group="apollo">
+            <td class="prov-cell" data-group="apollo" data-label="Event"><strong>Apollo 11, 1969</strong><span>Crew observes a bright unidentified object during translunar coast.</span></td>
+            <td class="prov-cell" data-group="apollo" data-label="Surviving record"><strong>Technical crew debrief</strong><span>Multiple crew members describe the object and its changing optical appearance.</span></td>
+            <td class="prov-cell" data-group="apollo" data-label="Interpretation boundary"><strong>Unidentified ≠ extraterrestrial</strong><span>S-IVB was rejected by reported distance; size/range were not established; spacecraft debris was not excluded.</span></td>
+            <td class="prov-cell prov-next" data-group="apollo" data-label="Next test"><strong>Reconstruct geometry</strong><span>Align mission time, trajectory, known hardware/debris, viewing direction, and optical limits.</span></td>
+          </tr>
+        </tbody>
+      </table>="viz-panel">
       <div class="viz-heading">
         <div>
           <p class="text-meta">VIEW 03 · CONTRADICTION ENGINE</p>

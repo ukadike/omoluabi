@@ -3,7 +3,7 @@
 
   const buttons = Array.from(document.querySelectorAll('.viz-toolbar button[data-filter]'));
   const marks = Array.from(document.querySelectorAll('.event-mark[data-group]'));
-  const provCells = Array.from(document.querySelectorAll('.prov-cell[data-group]'));
+  const provRows = Array.from(document.querySelectorAll('.provenance-grid tbody tr[data-group]'));
   const contradictionCards = Array.from(document.querySelectorAll('.contradiction-card[data-group]'));
   const summary = document.querySelector('#timeline-summary');
 
@@ -26,8 +26,8 @@
       mark.hidden = filter !== 'all' && mark.dataset.group !== filter;
     });
 
-    provCells.forEach(cell => {
-      cell.hidden = filter !== 'all' && cell.dataset.group !== filter;
+    provRows.forEach(row => {
+      row.hidden = filter !== 'all' && row.dataset.group !== filter;
     });
 
     contradictionCards.forEach(card => {

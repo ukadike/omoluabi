@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Middletown Lead Azide Detonation: Resident Map & Safety Guide</title>
+  <style>
+    :root { --ink:#171717; --muted:#4b5563; --paper:#fff; --panel:#f2f5f4; --line:#c5ceca; --alert:#7a1f16; --accent:#145647; --focus:#004f9e; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { max-width:920px; margin:auto; padding:1.2rem; }
+    h1,h2,h3 { line-height:1.2; }
+    h1 { font-size:clamp(1.8rem,4vw,2.8rem); margin:.25rem 0 .7rem; }
+    h2 { margin-top:2rem; font-size:1.45rem; }
+    h3 { font-size:1.12rem; }
+    a { color:#064f8b; text-decoration-thickness:.1em; text-underline-offset:.16em; }
+    a:focus-visible, button:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.08em; font-weight:750; color:var(--accent); font-size:.85rem; }
+    .alert { border:2px solid var(--alert); border-left-width:8px; padding:1rem 1.1rem; background:#fff7f5; margin:1rem 0; }
+    .muted { color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,350px),1fr)); gap:1rem; }
+    .card { border:1px solid var(--line); border-radius:.6rem; background:var(--panel); padding:1rem; }
+    .actions li { padding:.2rem 0; }
+    .mapkey { display:grid; grid-template-columns:1.15rem 1fr; gap:.65rem; align-items:start; }
+    .swatch { width:1rem; height:1rem; border:1px solid #333; margin-top:.25rem; }
+    .pink { background:#ef9bc8; } .orange { background:#e58034; } .cyan { background:#5fcbd2; }
+    .small { font-size:.92rem; }
+    .button { display:inline-block; background:#123f36; color:white; font-weight:700; padding:.65rem .85rem; border-radius:.35rem; margin:.3rem .3rem .3rem 0; }
+    .button:hover { background:#0b3029; }
+    .maplink { display:block; border:1px solid var(--line); background:white; padding:.8rem; border-radius:.4rem; margin:.6rem 0; }
+    .checklist li { list-style:none; margin:.7rem 0; }
+    .checklist input { width:1.1rem; height:1.1rem; vertical-align:middle; margin-right:.55rem; }
+    footer { border-top:1px solid var(--line); margin-top:2rem; padding-top:1rem; font-size:.9rem; }
+    @media print { .button { color:#000; background:#fff; border:1px solid #000; } main { max-width:none; } a { color:#000; } }
+  </style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Community map companion · Updated November 19, 2026</p>
+  <h1>Middletown lead azide detonation</h1>
+  <p>This guide helps residents find the Army’s current maps and understand the official instructions. It is an independent companion, not an Army alert or a public-health order. <strong>Check the official update links below before acting; forecasts and instructions can change.</strong></p>
+
+  <section class="alert" aria-labelledby="event-heading">
+    <h2 id="event-heading" style="margin-top:0">Planned for Friday, November 20</h2>
+    <p>The Army currently schedules two controlled detonations at about <strong>noon Central Time</strong> at the Iowa Army Ammunition Plant near Middletown. The operation may cause a loud noise, ground vibration, and a dust plume containing some lead.</p>
+    <p><strong>Identified homes near Middletown City Park:</strong> the Army asks residents to leave from <strong>8 a.m. to 2 p.m. Central Time</strong>, mainly because vibration could break windows. This temporary request applies to identified nearby homes, not all of Iowa.</p>
+    <p class="small">Temporary place listed in the updated Army advisory: Armed Forces Reserve Center, 16815 DMC Highway 34, Middletown, IA. Access is controlled and limited to identified Middletown residents. Confirm details with the Army if you need assistance.</p>
+  </section>
+
+  <h2>Open the latest official maps</h2>
+  <p>The Army map package posted November 18 contains separate maps for possible airborne lead and possible lead dust on surfaces. The mapped outlines are conservative model areas, not measurements of actual contamination. Weather can change the projected area.</p>
+  <a class="maplink" href="https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_78366.pdf#page=2">
+    <strong>Surface deposition map — PDF, page 2</strong><br>
+    <span class="small">Shows modeled dust on surfaces: pink outer contour (5 µg/ft²) and orange inner contour (100 µg/ft²). The higher contour triggers additional wet-cleaning instructions in the EPA permit.</span>
+  </a>
+  <a class="maplink" href="https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_78366.pdf#page=3">
+    <strong>Air dispersion map — PDF, page 3</strong><br>
+    <span class="small">Shows a conservative modeled air contour using an outer concentration of 0.18 µg/m³. EPA required the model to assume a 1.00 emission factor to avoid underestimating the possible area. This is not a reading from an air monitor.</span>
+  </a>
+  <p><a class="button" href="https://www.army.mil/asc#org-iowa-army-ammunition-plant">Check Army live updates and forecast maps</a>
+     <a class="button" href="https://response.epa.gov/site/site_profile.aspx?site_id=17211">Check EPA incident information</a></p>
+  <p class="small muted">The EPA permit requires a forecast six hours before the operation, hourly updates from then until completion, and a final modeled impact estimate within six hours after the event. Check again Friday morning and follow any local alerts.</p>
+
+  <div class="grid">
+    <section class="card" aria-labelledby="map-legend">
+      <h3 id="map-legend">How to read the colors</h3>
+      <div class="mapkey"><span class="swatch pink" aria-hidden="true"></span><span><strong>Pink:</strong> modeled surface deposition of at least 5 µg/ft². Follow the indoor-air and travel precautions in the official notice.</span></div>
+      <div class="mapkey"><span class="swatch orange" aria-hidden="true"></span><span><strong>Orange:</strong> modeled surface deposition of at least 100 µg/ft². The EPA permit adds wet-cleaning of high-contact surfaces after the official exposure period.</span></div>
+      <div class="mapkey"><span class="swatch cyan" aria-hidden="true"></span><span><strong>Cyan:</strong> modeled airborne-lead contour. It marks a conservative planning area, not a measured concentration at every location.</span></div>
+    </section>
+    <section class="card" aria-labelledby="what-map-means">
+      <h3 id="what-map-means">What a shaded area does not mean</h3>
+      <ul>
+        <li>It does not mean monitors have measured lead there.</li>
+        <li>It does not predict the same amount of lead at every point inside.</li>
+        <li>Its boundary is not a line between “safe” and “unsafe.”</li>
+        <li>It can move when wind and weather forecasts change.</li>
+      </ul>
+    </section>
+  </div>
+
+  <h2>What to do if your location is in the latest affected area</h2>
+  <ol class="actions">
+    <li>Follow the newest Army map and your county or state health department’s incident-specific instructions.</li>
+    <li>During the official exposure period, stay indoors if you cannot leave; close windows and exterior doors.</li>
+    <li>If safe, set heating/cooling to recirculate and reduce outdoor-air intake. Avoid unnecessary travel through the mapped area.</li>
+    <li>Wait for the Army’s all-clear or local public-health direction before resuming outdoor activities or cleaning.</li>
+    <li>If your address is in the higher surface-deposition area, wet-clean high-contact surfaces as instructed. Keep children away until surfaces are cleaned. Do not dry-sweep suspected dust; EPA recommends damp-cloth cleaning for potential lead dust.</li>
+  </ol>
+
+  <aside class="card">
+    <h3>Additional guidance for potentially affected Illinois residents</h3>
+    <p>Illinois Department of Public Health advises people who may be affected to stay indoors with windows closed for <strong>24–48 hours</strong> after the detonation. It also advises handwashing, washing outdoor surfaces with soap and water, and removing shoes at the entrance to reduce dust tracked inside. Follow any newer local or state instructions.</p>
+    <p><a href="https://dph.illinois.gov/resource-center/news/2026/november/18-release-2.html">Read the Illinois EPA and IDPH notice</a></p>
+  </aside>
+
+  <h2>Quick household checklist</h2>
+  <ul class="checklist">
+    <li><label><input type="checkbox">I checked the latest Army map and my local emergency-management updates.</label></li>
+    <li><label><input type="checkbox">I know whether my address is in an affected area and the exposure period stated for it.</label></li>
+    <li><label><input type="checkbox">I know how to close windows and set ventilation to recirculate, if my system allows it.</label></li>
+    <li><label><input type="checkbox">I have a plan for children, older adults, people with disabilities, pets, and essential medication.</label></li>
+    <li><label><input type="checkbox">I will wait for the official all-clear before outdoor cleanup or return to normal activity.</label></li>
+  </ul>
+
+  <h2>Health and contact information</h2>
+  <ul>
+    <li>For health concerns or possible exposure, contact your clinician or local public-health department. Illinois IDPH advises asking a clinician about blood-lead testing if you are concerned that you or a child may have been exposed.</li>
+    <li>For operation-specific information, use the <a href="https://www.army.mil/asc#org-iowa-army-ammunition-plant">Army IAAAP updates page</a>. The EPA permit lists Region 7 contacts: Patricia Murrow, 913-551-7627; Patrick Hurley, 913-551-7202.</li>
+    <li>For immediate danger, call local emergency services.</li>
+  </ul>
+
+  <footer>
+    <p><strong>Source and date note:</strong> This guide reflects official Army/EPA maps and notices and Illinois IDPH guidance available through November 19, 2026. The Army map PDF was posted November 18 and the maps are labeled November 17. Detonation schedule, forecast area, and public instructions may change. This page does not issue an evacuation order or determine whether a specific home is affected.</p>
+    <p>Primary links: <a href="https://d34w7g4gy10iej.cloudfront.net/pubs/pdf_78366.pdf">Army map/advisory PDF</a> · <a href="https://www.epa.gov/ia/iowa-army-ammunition-plant-middletown-iowa-3">EPA emergency permit notice</a> · <a href="https://www.johnsoncountyiowa.gov/public-health-public-notice-middletown-plant-detonation">Johnson County Public Health notice</a> · <a href="https://linncounty-ema.org/index.asp?DE=D4D6F525-A5DF-4B9D-B448-8DD4C4B9D124&SEC=B970B908-1B12-422F-93BB-29606907EE06">Linn County Emergency Management update</a> · <a href="https://www.epa.gov/lead/actions-reduce-potential-lead-exposure">EPA lead dust cleaning guidance</a>.</p>
+  </footer>
+</main>
+</body>
+</html>

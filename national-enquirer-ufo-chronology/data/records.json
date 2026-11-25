@@ -90,6 +90,24 @@
     ]
   },
   {
+    "id": "ne-1973-11-04-mass-sighting",
+    "issueDate": "1973-11-04",
+    "eventDate": null,
+    "headline": "Mysterious wave of UFOs reported in mass sighting; saucer ran car off the road",
+    "theme": "Civilian reports / mass sighting",
+    "reportedClaim": "A surviving archive catalog identifies these two headlines on page 41 of this Enquirer issue.",
+    "recordNote": "This is a headline-level record. The archival catalog confirms the issue and page, but the underlying clipping has not yet been transcribed. Do not infer the number or identity of witnesses from the headline.",
+    "status": "headline-only",
+    "dateNote": "Issue date and page confirmed by an archive image-credit record; reproduction rights for the scan are not established.",
+    "sources": [
+      {
+        "label": "NHI Archives image credits — National Enquirer, 4 Nov 1973, page 41",
+        "url": "https://www.nhiarchives.com/image-credits/",
+        "kind": "archive image catalog"
+      }
+    ]
+  },
+  {
     "id": "ne-1974-06-23-coyne-award",
     "issueDate": "1974-06-23",
     "eventDate": "1973-10-19",

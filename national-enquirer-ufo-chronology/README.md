@@ -10,6 +10,10 @@ When GitHub Pages is enabled for the repository, this page is served at:
 
 The main interface is `index.html`. Structured records are maintained in `data/records.json`.
 
+## Site formatting
+
+The page now follows the Omoluabi/Small Systems Lab visual system: warm paper background, serif reading text, sans-serif headings, mono metadata, square borders, visible keyboard focus, and a skip link. Its data and image files load from relative paths, so the folder can be served under the GitHub Pages path or moved beneath a custom domain without rewriting asset URLs. Keep the `data/` directory alongside `index.html`.
+
 ## Research status
 
 This is a starter corpus, not a complete issue-by-issue chronology. The Earl J. Neff clipping collection catalog describes a volume containing a couple hundred *National Enquirer* UFO articles from 1961–1988. That inventory, plus original issue scans, is the route to testing completeness. Current entries are selected records found through bibliographies, contemporary clipping digests, article transcriptions, and retrospective case research.

@@ -57,6 +57,7 @@ A sitemap of this repository. Start with `000_START_HERE.md` if you haven't alre
 
 ## Investigations
 
+- [`national-enquirer-ufo-chronology/`](national-enquirer-ufo-chronology/index.html) — sourced chronology POC for *National Enquirer* UFO coverage, with issue/event date separation, source ladder, and unresolved contradictions.
 - [`israel-palestine-influence-2026/`](israel-palestine-influence-2026/index.html) — Israel and West Bank/Gaza federal assistance; state allocation models; lobbying, campaign finance, 2026 candidate activity; reasoning layers and schema-backed records.
 
 ## Schemas & Cards

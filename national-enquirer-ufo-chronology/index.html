@@ -6,23 +6,82 @@
 <meta name="description" content="An Omoluabi research prototype tracing National Enquirer UFO coverage through issue dates, sources, claims, and unresolved discrepancies.">
 <title>National Enquirer UFO Chronology — Omoluabi</title>
 <style>
-:root{color-scheme:dark;--ink:#edf1f5;--muted:#a9b4c2;--bg:#0d131c;--panel:#151e2a;--line:#29384a;--accent:#a7d6c8;--gold:#f0c775;--red:#edaaa2}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}a{color:var(--accent);text-underline-offset:3px}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-header,main,footer{max-width:1100px;margin:auto;padding:24px}header{padding-top:42px;padding-bottom:22px}nav{font-size:.9rem;color:var(--muted)}.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.78rem}h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.08;max-width:850px;margin:.45rem 0 1rem}h2{line-height:1.2}p{max-width:78ch}.lede{font-size:1.12rem;color:#c9d3df}.notice{padding:16px 18px;border:1px solid #725f38;background:#241f15;border-radius:12px;color:#f3dfb3;margin:22px 0}.controls{display:grid;grid-template-columns:minmax(220px,1fr) 190px auto;gap:12px;align-items:end;margin:24px 0}.field label{display:block;color:var(--muted);font-size:.86rem;margin-bottom:5px}.field input,.field select{width:100%;min-height:44px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font:inherit}button{min-height:44px;border:1px solid var(--line);border-radius:8px;background:#243547;color:var(--ink);padding:8px 15px;font:inherit;cursor:pointer}.count{color:var(--muted);font-size:.9rem;margin:8px 0}.timeline{display:grid;gap:14px}.record{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}.record-top{display:flex;gap:12px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:.88rem}.date{font-weight:700;color:var(--gold)}.badge{border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:.78rem}.record h3{font-size:1.23rem;margin:.55rem 0}.dates{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:.88rem}.record p{margin:.5rem 0}.record strong{color:#e8edf2}.read{border-top:1px solid var(--line);margin-top:13px;padding-top:10px}.read summary{cursor:pointer;color:var(--accent);font-weight:650}.sources{padding-left:20px}.sources li{margin:5px 0}.media-grid,.report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px}.media-card,.report-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}.media-card figure{margin:0}.media-card img{display:block;width:100%;height:auto;max-height:440px;object-fit:contain;background:#0a0e14;border-radius:8px}.media-card figcaption{color:var(--muted);font-size:.9rem;padding-top:10px}.report-card h3{margin:.25rem 0}.report-card .reported-by{color:var(--gold);font-weight:700}.report-card .report-meta{color:var(--muted);font-size:.88rem}.report-card p{margin:.55rem 0}.media-card .rights,.report-card .basis{color:var(--muted);font-size:.86rem}.media-card .rights{border-top:1px solid var(--line);padding-top:10px;margin-top:10px}.section-intro{color:var(--muted);max-width:78ch}.archive-link{display:inline-block;padding:10px 12px;border:1px dashed var(--line);border-radius:8px;margin-top:8px}.method{margin:32px 0;padding:20px;border:1px solid var(--line);border-radius:14px;background:#111a25}.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.method-grid section{padding:12px;border-left:2px solid var(--accent)}.method-grid h3{font-size:1rem;margin:0 0 4px}.method-grid p{color:var(--muted);font-size:.92rem;margin:0}.empty{padding:28px;text-align:center;border:1px dashed var(--line);border-radius:12px;color:var(--muted)}footer{color:var(--muted);border-top:1px solid var(--line);font-size:.9rem;margin-top:30px}
-@media(max-width:680px){header,main,footer{padding-left:16px;padding-right:16px}.controls{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}.record{padding:15px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+:root{color-scheme:light;--color-paper:#efece2;--color-ink:#1a1a1a;--color-line:#d0cdc6;--color-muted:#6f6f6f;--color-soft:#f9f9f7;--color-white:#fff;--font-display:"Helvetica Neue",Helvetica,Arial,sans-serif;--font-body:Georgia,"Garamond",serif;--font-mono:"Courier Prime","Courier New",monospace;--line-body:1.7;--line-display:1.3;--space-xs:.25rem;--space-sm:.5rem;--space-md:1rem;--space-lg:1.5rem;--space-xl:2rem;--space-2xl:3rem;--space-3xl:4rem;--border-thin:1px solid var(--color-line);--border-thick:2px solid var(--color-ink);--focus-outline:2px solid var(--color-ink);--focus-offset:3px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--color-paper);color:var(--color-ink);font-family:var(--font-body);line-height:var(--line-body)}
+a{color:var(--color-ink);text-decoration:underline;text-underline-offset:.18em}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:var(--focus-outline);outline-offset:var(--focus-offset)}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--color-ink);color:var(--color-paper);padding:var(--space-sm) var(--space-md);font-family:var(--font-mono);z-index:100}
+.skip-link:focus{left:var(--space-sm);top:var(--space-sm)}
+header,main,footer{max-width:64rem;margin:0 auto;padding-left:var(--space-lg);padding-right:var(--space-lg)}
+header{padding-top:var(--space-xl);padding-bottom:var(--space-xl);border-bottom:var(--border-thick)}
+main{padding-top:var(--space-2xl);padding-bottom:var(--space-3xl)}
+footer{padding-top:var(--space-xl);padding-bottom:var(--space-2xl);border-top:var(--border-thick)}
+nav{font-family:var(--font-mono);font-size:.88rem}
+.site-nav{display:flex;gap:var(--space-sm);align-items:center;margin-bottom:var(--space-xl)}
+.eyebrow{font-family:var(--font-mono);color:var(--color-muted);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+h1,h2,h3{font-family:var(--font-display);line-height:var(--line-display);letter-spacing:-.01em}
+h1{font-size:clamp(2rem,5vw,3.25rem);margin:.45rem 0 1rem}
+h2{font-size:1.45rem;margin:0 0 var(--space-md)}
+h3{font-size:1.12rem}
+p{max-width:78ch;margin:.6rem 0}
+.lede{font-size:1.13rem;line-height:1.65}
+.notice{padding:var(--space-lg);border:var(--border-thick);background:var(--color-soft);color:var(--color-ink);margin:var(--space-lg) 0}
+.controls{display:grid;grid-template-columns:minmax(220px,1fr) 190px auto;gap:var(--space-md);align-items:end;margin:var(--space-lg) 0}
+.field label{display:block;color:var(--color-muted);font-family:var(--font-mono);font-size:.82rem;margin-bottom:var(--space-xs)}
+.field input,.field select{width:100%;min-height:44px;padding:9px 12px;border:var(--border-thin);border-radius:0;background:var(--color-soft);color:var(--color-ink);font:inherit}
+button{min-height:44px;border:var(--border-thick);border-radius:0;background:var(--color-paper);color:var(--color-ink);padding:8px 15px;font-family:var(--font-display);font-weight:700;cursor:pointer}
+button:hover{background:var(--color-soft)}
+.count{color:var(--color-muted);font-family:var(--font-mono);font-size:.85rem;margin:8px 0}
+.timeline{display:grid;gap:var(--space-md)}
+.record,.media-card,.report-card{background:var(--color-soft);border:var(--border-thin);border-radius:0;padding:var(--space-lg)}
+.record-top{display:flex;gap:var(--space-sm);flex-wrap:wrap;align-items:center;color:var(--color-muted);font-family:var(--font-mono);font-size:.82rem}
+.date{font-weight:700;color:var(--color-ink)}
+.badge{border:var(--border-thin);border-radius:0;padding:2px 9px;font-family:var(--font-mono);font-size:.75rem}
+.record h3{margin:.55rem 0}
+.dates{display:flex;gap:var(--space-lg);flex-wrap:wrap;color:var(--color-muted);font-family:var(--font-mono);font-size:.82rem}
+.record p{margin:.5rem 0}
+.record strong{color:var(--color-ink)}
+.read{border-top:var(--border-thin);margin-top:var(--space-md);padding-top:var(--space-sm)}
+.read summary{cursor:pointer;color:var(--color-ink);font-family:var(--font-display);font-weight:700;text-decoration:underline;text-underline-offset:.18em}
+.sources{padding-left:20px}
+.sources li{margin:5px 0}
+.empty{padding:var(--space-lg);text-align:center;border:var(--border-thin);color:var(--color-muted)}
+.method{margin:var(--space-3xl) 0;padding:var(--space-lg);border:var(--border-thick);background:var(--color-soft)}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+.method-grid section{padding:var(--space-md);border-left:var(--border-thick)}
+.method-grid h3{margin:0 0 4px}
+.method-grid p{color:var(--color-muted);font-size:.92rem;margin:0}
+.media-grid,.report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:var(--space-md)}
+.media-card figure{margin:0}
+.media-card img{display:block;width:100%;height:auto;max-height:440px;object-fit:contain;background:var(--color-paper);border:var(--border-thin)}
+.media-card figcaption{color:var(--color-muted);font-size:.9rem;padding-top:var(--space-sm)}
+.report-card h3{margin:.25rem 0}
+.report-card .reported-by{color:var(--color-ink);font-weight:700}
+.report-card .report-meta,.media-card .rights,.report-card .basis{color:var(--color-muted);font-size:.86rem}
+.report-card p{margin:.55rem 0}
+.media-card .rights{border-top:var(--border-thin);padding-top:var(--space-sm);margin-top:var(--space-sm)}
+.section-intro{color:var(--color-muted);max-width:78ch}
+.archive-link{display:inline-block;padding:10px 12px;border:var(--border-thin);margin-top:8px}
+footer{color:var(--color-muted);font-size:.9rem;margin-top:var(--space-xl)}
+footer strong{color:var(--color-ink)}
+@media(max-width:680px){header,main,footer{padding-left:var(--space-md);padding-right:var(--space-md)}.controls{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}.record,.media-card,.report-card{padding:var(--space-md)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 <header>
-<nav><a href="../">Omoluabi</a> / research prototype</nav>
+<nav class="site-nav" aria-label="Breadcrumb"><a href="../">Omoluabi home</a><span aria-hidden="true">/</span><span aria-current="page">Research prototype</span></nav>
 <p class="eyebrow">Chronology · Source ladder · Contradiction</p>
 <h1>National Enquirer UFO coverage</h1>
 <p class="lede">An issue-by-issue research prototype for tracing how UFO claims were framed, sourced, disputed, and repeated in <em>The National Enquirer</em>.</p>
 <div class="notice"><strong>Coverage status:</strong> This is a starter corpus, not a verified complete account of every UFO-related item. A clipping archive is described as containing a couple hundred Enquirer articles from 1961–1988. This prototype currently indexes selected items for method development. Absence from this list does not mean an issue had no UFO coverage.</div>
 <p>Omoluabi rule: <strong>AI assists. Rules govern. Humans publish.</strong> A published headline is evidence that a claim was printed; it is not, by itself, evidence that the event happened.</p>
 </header>
-<main>
+<main id="main">
 <section aria-labelledby="browse-title">
 <h2 id="browse-title">Browse the chronology</h2>
 <div class="controls">

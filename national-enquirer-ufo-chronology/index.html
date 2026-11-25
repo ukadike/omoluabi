@@ -29,11 +29,13 @@ h3{font-size:1.12rem}
 p{max-width:78ch;margin:.6rem 0}
 .lede{font-size:1.13rem;line-height:1.65}
 .notice{padding:var(--space-lg);border:var(--border-thick);background:var(--color-soft);color:var(--color-ink);margin:var(--space-lg) 0}
-.controls{display:grid;grid-template-columns:minmax(220px,1fr) 190px auto;gap:var(--space-md);align-items:end;margin:var(--space-lg) 0}
+.controls{display:grid;grid-template-columns:minmax(220px,1fr) 190px auto auto;gap:var(--space-md);align-items:end;margin:var(--space-lg) 0}
 .field label{display:block;color:var(--color-muted);font-family:var(--font-mono);font-size:.82rem;margin-bottom:var(--space-xs)}
 .field input,.field select{width:100%;min-height:44px;padding:9px 12px;border:var(--border-thin);border-radius:0;background:var(--color-soft);color:var(--color-ink);font:inherit}
 button{min-height:44px;border:var(--border-thick);border-radius:0;background:var(--color-paper);color:var(--color-ink);padding:8px 15px;font-family:var(--font-display);font-weight:700;cursor:pointer}
 button:hover{background:var(--color-soft)}
+button[type="submit"]{background:var(--color-ink);color:var(--color-white)}
+button[type="submit"]:hover{background:#3b3935}
 .field input::placeholder{color:var(--color-muted);opacity:1}
 .count{color:var(--color-muted);font-family:var(--font-mono);font-size:.85rem;margin:8px 0}
 .timeline,.media-grid,.report-grid{list-style:none;padding:0;margin:0}
@@ -87,11 +89,12 @@ footer strong{color:var(--color-ink)}
 <section aria-labelledby="browse-title">
 <h2 id="browse-title">Browse the chronology</h2>
 <p class="section-intro">Newest issue first.</p>
-<div class="controls">
-<div class="field"><label for="search">Search title, claim, or theme</label><input id="search" type="search" autocomplete="off" placeholder="Try “Carter” or “reward”"></div>
+<form class="controls" id="chronology-filters">
+<div class="field"><label for="search">Search title, claim, or theme</label><input id="search" type="search" enterkeyhint="search" autocomplete="off" placeholder="Try “Carter” or “reward”"></div>
 <div class="field"><label for="year">Issue year</label><select id="year"><option value="">All indexed years</option></select></div>
+<button class="search-button" type="submit">Search</button>
 <button id="clear" type="button">Clear filters</button>
-</div>
+</form>
 <p class="count" id="count" role="status" aria-atomic="true">Loading chronology…</p>
 <ol class="timeline" id="timeline" aria-label="Chronological list of indexed articles"><li><p class="empty">Loading indexed articles…</p></li></ol>
 </section>
@@ -103,11 +106,12 @@ footer strong{color:var(--color-ink)}
 <section aria-labelledby="reports-title">
 <h2 id="reports-title">Citizen and witness reports</h2>
 <p class="section-intro">These are people’s accounts as attributed in contemporary coverage or preserved in records. The page distinguishes civilian observers, pilots, and a military helicopter crew. A report is testimony about an experience; it does not by itself identify what caused it.</p>
-<div class="controls">
-<div class="field"><label for="report-search">Search people, places, or descriptions</label><input id="report-search" type="search" autocomplete="off" placeholder="Try “Long Island” or “Cohen”"></div>
+<form class="controls" id="report-filters">
+<div class="field"><label for="report-search">Search people, places, or descriptions</label><input id="report-search" type="search" enterkeyhint="search" autocomplete="off" placeholder="Try “Long Island” or “Cohen”"></div>
 <div class="field"><label for="report-type">Report group</label><select id="report-type"><option value="">All report groups</option><option value="civilian">Civilian witnesses</option><option value="pilot">Pilots</option><option value="crew">Crew accounts</option></select></div>
+<button class="search-button" type="submit">Search reports</button>
 <button id="report-clear" type="button">Clear report filters</button>
-</div>
+</form>
 <p class="count" id="report-count" role="status" aria-atomic="true">Loading witness reports…</p>
 <ul class="report-grid" id="report-grid" aria-label="Citizen, witness, pilot, and crew reports"><li><p class="empty">Loading witness reports…</p></li></ul>
 </section>
@@ -137,7 +141,7 @@ function drawImages(){imageGrid.replaceChildren();imageRecords.forEach(item=>{co
 function drawReports(){const q=reportSearch.value.trim().toLowerCase(),type=reportType.value;const shown=witnessReports.filter(r=>(!type||r.reportKind.startsWith(type))&&(!q||[r.person,r.personRole,r.reportedExperience,r.publishedIn,r.reportKind].join(" ").toLowerCase().includes(q)));reportGrid.replaceChildren();reportCount.textContent=shown.length+" of "+witnessReports.length+" witness/report records";if(!shown.length){const item=node("li","report-item");item.append(node("p","empty","No reports match those filters."));reportGrid.append(item);return}shown.forEach(r=>{const listItem=node("li","report-item"),card=node("article","report-card");card.append(node("div","record-top"));card.firstChild.append(node("span","badge",r.reportKind),node("span","badge",r.status));card.append(node("h3","reported-by",r.person),node("p","report-meta",r.personRole+" · Reported event: "+r.reportDate),node("p","",r.reportedExperience),node("p","report-meta","Publication context: "+r.publishedIn));const details=document.createElement("details");details.className="read";details.append(node("summary","","Source and limits"),node("p","basis",r.sourceBasis),node("strong","","Source trail"),sourceList(r.sources));card.append(details);listItem.append(card);reportGrid.append(listItem)})}
 function populateYears(){[...new Set(records.map(r=>r.issueDate.slice(0,4)))].sort().forEach(y=>{const option=document.createElement("option");option.value=y;option.textContent=y;year.append(option)})}
 async function start(){try{const responses=await Promise.all([fetch("./data/records.json"),fetch("./data/witness-reports.json"),fetch("./data/images.json")]);if(responses.some(r=>!r.ok))throw new Error("One or more local research files could not be loaded.");[records,witnessReports,imageRecords]=await Promise.all(responses.map(r=>r.json()));populateYears();drawRecords();drawImages();drawReports()}catch(error){timeline.replaceChildren();const errorItem=node("li","timeline-item");errorItem.append(node("p","empty","Research data could not be loaded. Read the source records in the README or try again later."));timeline.append(errorItem);count.setAttribute("role","alert");count.textContent="Research data unavailable";console.error(error)}}
-search.addEventListener("input",drawRecords);year.addEventListener("change",drawRecords);document.getElementById("clear").addEventListener("click",()=>{search.value="";year.value="";drawRecords();search.focus()});reportSearch.addEventListener("input",drawReports);reportType.addEventListener("change",drawReports);document.getElementById("report-clear").addEventListener("click",()=>{reportSearch.value="";reportType.value="";drawReports();reportSearch.focus()});start();
+document.getElementById("chronology-filters").addEventListener("submit",event=>{event.preventDefault();drawRecords()});document.getElementById("clear").addEventListener("click",()=>{search.value="";year.value="";drawRecords();search.focus()});document.getElementById("report-filters").addEventListener("submit",event=>{event.preventDefault();drawReports()});document.getElementById("report-clear").addEventListener("click",()=>{reportSearch.value="";reportType.value="";drawReports();reportSearch.focus()});start();
 </script>
 </body>
 </html>

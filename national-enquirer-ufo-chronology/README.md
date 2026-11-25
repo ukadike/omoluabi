@@ -46,6 +46,15 @@ The word “magazine” is often used conversationally, but the Library of Congr
 - [UFO Magazine Archive: APCIC contemporary clipping digests](https://www.ufomagazines.com/)
 - [Isaac Koi Archive: National Enquirer panel citations](https://isaackoi.com/ufog/best-ufo-cases/10-consensus-lists-national-enquirer-panel/)
 
+## Images and people’s reports
+
+The page now has two evidence views:
+
+- An image gallery embeds the White House Staff Photographers image cataloged by the National Archives as Frank Moore receiving 9,000 letters about UFO incidents in connection with an Enquirer article. The gallery includes image credit, rights status, alt text, and the distinction between a documented mail response and the uninspected contents of individual letters.
+- An Enquirer page 41 clipping from 4 November 1973 is indexed as an image lead only. NHI Archives says reuse permissions are not established, so the prototype links to its catalog record instead of reproducing the scan.
+- The report view includes attributed civilian and pilot accounts from the Enquirer’s 1977 poll coverage, plus the 1973 helicopter crew account with its Army and later testimony sources. The 9,000-letter figure is an aggregate public-response record, not 9,000 verified sightings.
+- Report summaries are paraphrases of their linked sources. A clipping-service digest is labeled as secondary; testimony and issue scans are not implied where they have not been inspected.
+
 ## Next research pass
 
 1. Obtain or inspect the full 1961–1988 clipping inventory and record each item's issue date and page.

@@ -134,5 +134,28 @@
         "kind": "case-study and reproduced source documents"
       }
     ]
+  },
+  {
+    "id": "report-1978-citizen-mail",
+    "reportDate": "1978-04-26",
+    "person": "Public correspondence received by Frank Moore",
+    "personRole": "Aggregated citizen response; individual senders not identified in the catalog record",
+    "reportKind": "civilian correspondence",
+    "publishedIn": "Letters are cataloged as being received in connection with a National Enquirer UFO article; the article and exact issue have not yet been identified here",
+    "reportedExperience": "The National Archives photo catalog describes Frank Moore as receiving 9,000 letters concerning UFO incidents in conjunction with a National Enquirer article. This is an archival count of correspondence, not a count of unique sightings or verified reports.",
+    "sourceBasis": "The photograph and its catalog title document the reported mail volume and context. The contents of individual letters have not been examined; no witness statements are inferred from the number.",
+    "status": "archival aggregate; letters not transcribed",
+    "sources": [
+      {
+        "label": "National Archives — image record 179066",
+        "url": "https://catalog.archives.gov/id/179066",
+        "kind": "archival photograph catalog"
+      },
+      {
+        "label": "Wikimedia Commons / DPLA image and rights record",
+        "url": "https://commons.wikimedia.org/wiki/File:Frank_Moore_-_Receives_9000_letters_concerning_UFO_incidents_in_conjunction_with_National_Enquirer_article_-_DPLA_-_c5a0c573e5c74fd28bea081870c21f21_(page_1).jpg",
+        "kind": "image and rights metadata"
+      }
+    ]
   }
 ]

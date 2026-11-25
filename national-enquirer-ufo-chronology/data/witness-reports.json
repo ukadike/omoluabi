@@ -1,0 +1,138 @@
+[
+  {
+    "id": "report-1970-pilot-duncan",
+    "reportDate": "1970-11",
+    "person": "Kenneth Duncan",
+    "personRole": "Piedmont Airlines pilot",
+    "reportKind": "pilot witness",
+    "publishedIn": "National Enquirer pilot poll, issue reported as 8 February 1977",
+    "reportedExperience": "Duncan said he and his crew saw a pale blue light at about 24,000 feet. In the account summarized by the clipping digest, the light appeared to pace their aircraft, then accelerate, turn sharply across their path, and disappear over the ocean.",
+    "sourceBasis": "A contemporary clipping-service digest summarizes the Enquirer poll and identifies Duncan and the reported sighting. The Enquirer page and original interview were not inspected for this POC.",
+    "status": "secondary account of attributed testimony",
+    "sources": [
+      {
+        "label": "APCIC clipping digest, February 1977",
+        "url": "https://www.ufomagazines.com/apcic-clipping-service-apcic-vol-02-no-02-1977/",
+        "kind": "contemporary secondary digest"
+      }
+    ]
+  },
+  {
+    "id": "report-1975-pilot-kievman",
+    "reportDate": "1975-12",
+    "person": "Kenneth Kievman",
+    "personRole": "Charter airline pilot and flight instructor",
+    "reportKind": "pilot witness",
+    "publishedIn": "National Enquirer pilot poll, issue reported as 8 February 1977",
+    "reportedExperience": "Kievman reported seeing two unusually bright bluish objects over Long Island at about 2 a.m.; the digest says they appeared to hover and seemed brighter than aircraft.",
+    "sourceBasis": "A contemporary clipping-service digest summarizes the Enquirer poll and identifies Kievman. Original issue page and interview not inspected.",
+    "status": "secondary account of attributed testimony",
+    "sources": [
+      {
+        "label": "APCIC clipping digest, February 1977",
+        "url": "https://www.ufomagazines.com/apcic-clipping-service-apcic-vol-02-no-02-1977/",
+        "kind": "contemporary secondary digest"
+      }
+    ]
+  },
+  {
+    "id": "report-pilot-dejonghe",
+    "reportDate": "not stated",
+    "person": "H. F. De Jonghe",
+    "personRole": "United Airlines captain",
+    "reportKind": "pilot witness",
+    "publishedIn": "National Enquirer pilot poll, issue reported as 8 February 1977",
+    "reportedExperience": "The digest attributes to De Jonghe and his crew an observation over the Pacific of two bright, egg-shaped lights that separated and moved closer together.",
+    "sourceBasis": "A contemporary clipping-service digest summarizes the Enquirer poll. The date, route, and original issue wording remain to be checked against the issue.",
+    "status": "secondary account of attributed testimony",
+    "sources": [
+      {
+        "label": "APCIC clipping digest, February 1977",
+        "url": "https://www.ufomagazines.com/apcic-clipping-service-apcic-vol-02-no-02-1977/",
+        "kind": "contemporary secondary digest"
+      }
+    ]
+  },
+  {
+    "id": "report-pilot-herrick",
+    "reportDate": "not stated",
+    "person": "P. K. Herrick",
+    "personRole": "United Airlines captain",
+    "reportKind": "pilot witness",
+    "publishedIn": "National Enquirer pilot poll, issue reported as 8 February 1977",
+    "reportedExperience": "The digest says Herrick saw a bright light rise rapidly over the Virginia countryside, slow, and move erratically.",
+    "sourceBasis": "A contemporary clipping-service digest summarizes the Enquirer poll. Original issue, date, and interview wording not inspected.",
+    "status": "secondary account of attributed testimony",
+    "sources": [
+      {
+        "label": "APCIC clipping digest, February 1977",
+        "url": "https://www.ufomagazines.com/apcic-clipping-service-apcic-vol-02-no-02-1977/",
+        "kind": "contemporary secondary digest"
+      }
+    ]
+  },
+  {
+    "id": "report-ansonia-cohen",
+    "reportDate": "not stated",
+    "person": "Percy M. Cohen",
+    "personRole": "Ansonia, Connecticut resident",
+    "reportKind": "civilian witness",
+    "publishedIn": "Enquirer item titled “Ansonian Spots UFO”; exact issue date not yet confirmed",
+    "reportedExperience": "A contemporary digest attributes a sighting of a large, low-flying, flaming-red, barrel-shaped object to Cohen.",
+    "sourceBasis": "This is a short third-party digest of an Enquirer item, not a direct interview transcript. The issue date, original article, and any additional witnesses remain unverified.",
+    "status": "secondary account of attributed testimony",
+    "sources": [
+      {
+        "label": "APCIC clipping digest, February 1977",
+        "url": "https://www.ufomagazines.com/apcic-clipping-service-apcic-vol-02-no-02-1977/",
+        "kind": "contemporary secondary digest"
+      }
+    ]
+  },
+  {
+    "id": "report-mass-sighting-car",
+    "reportDate": "not stated",
+    "person": "Unidentified motorists and mass-sighting witnesses",
+    "personRole": "Civilian witnesses named collectively by the headline",
+    "reportKind": "civilian report · headline only",
+    "publishedIn": "National Enquirer, 4 November 1973, page 41",
+    "reportedExperience": "The archived page is indexed with the headlines “Mysterious Wave of UFOs Reported in Mass Sighting” and “Flying Saucer Ran Our Car Off the Road.” The image-credit record confirms the issue and page, but the underlying scan has not been examined here; no detailed witness account is inferred from the headline.",
+    "sourceBasis": "NHI Archives identifies the Enquirer issue and page. Rights for reproducing the scan are not established, so this prototype links to the archive rather than displaying the clipping.",
+    "status": "issue-page reference; testimony not yet transcribed",
+    "sources": [
+      {
+        "label": "NHI Archives image credits — National Enquirer, 4 Nov 1973, page 41",
+        "url": "https://www.nhiarchives.com/image-credits/",
+        "kind": "archive image catalog"
+      }
+    ]
+  },
+  {
+    "id": "report-coyne-crew",
+    "reportDate": "1973-10-18",
+    "person": "Lawrence Coyne, Arrigo Jezzi, John Healey, and Robert Yanacsek",
+    "personRole": "Four-person Army Reserve helicopter crew",
+    "reportKind": "crew witness report",
+    "publishedIn": "National Enquirer coverage and 1974 award; crew report and later testimony survive separately",
+    "reportedExperience": "The crew described a red light that appeared to approach their helicopter, an evasive descent, and later instrument readings they found anomalous. Their accounts overlap but are not identical; the Army disposition form records their shared report, while later testimony preserves differences in observations.",
+    "sourceBasis": "A signed Army disposition form, early newspaper coverage, CUFOS interviews, and Coyne's later UN testimony are separately identified in the witness-source review. These records document what the witnesses reported; they do not determine the object's origin.",
+    "status": "multi-source witness record; differences retained",
+    "sources": [
+      {
+        "label": "UAPRAD — crew accounts and source chronology",
+        "url": "https://uaprad.org/witnesses/coyne-witnesses-1973/",
+        "kind": "witness-source review"
+      },
+      {
+        "label": "United Nations Digital Library — Coyne statement, 27 Nov 1978",
+        "url": "https://digitallibrary.un.org/record/673553/files/A_SPC_33_PV.35-EN.pdf",
+        "kind": "primary testimony record"
+      },
+      {
+        "label": "CUFOS — A Helicopter-UFO Encounter Over Ohio",
+        "url": "https://cufos.org/PDFs/books/A%20Helicopter-UFO%20Encounter%20Over%20Ohio.pdf",
+        "kind": "case-study and reproduced source documents"
+      }
+    ]
+  }
+]
